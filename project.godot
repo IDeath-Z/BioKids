@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="BioKids"
+run/main_scene="uid://dod8gqpfd6n80"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://assets/icon.svg"
+config/icon="res://assets/imagens/icon.svg"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1080
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
@@ -20,4 +29,5 @@ project/assembly_name="BioKids"
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
