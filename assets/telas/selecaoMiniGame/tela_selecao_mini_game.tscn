@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://uparhuansh1g"]
+[gd_scene load_steps=4 format=3 uid="uid://uparhuansh1g"]
 
 [ext_resource type="Texture2D" uid="uid://dxk34w5mbknmq" path="res://assets/imagens/background.png" id="1_fa21y"]
+[ext_resource type="Script" uid="uid://mnlv7kfq6qry" path="res://assets/telas/selecaoMiniGame/tela_selecao_mini_game.gd" id="1_g0fu6"]
 [ext_resource type="Texture2D" uid="uid://bpqgxo67mvjlp" path="res://assets/imagens/exBackgroundButton.png" id="2_v2fs8"]
 
 [node name="TelaSelecaoMiniGame" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g0fu6")
 
 [node name="TexturaFundo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 2
 
-[node name="Miigame1" type="TextureButton" parent="GridBotoes"]
+[node name="MiniGame-RaioX" type="TextureButton" parent="GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -67,3 +69,5 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("2_v2fs8")
 stretch_mode = 1
+
+[connection signal="pressed" from="GridBotoes/MiniGame-RaioX" to="." method="_on_mini_game_raio_x_pressed"]
