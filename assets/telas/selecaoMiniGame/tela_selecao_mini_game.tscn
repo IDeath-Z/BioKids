@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://uparhuansh1g"]
+
+[ext_resource type="Texture2D" uid="uid://dxk34w5mbknmq" path="res://assets/imagens/background.png" id="1_fa21y"]
+[ext_resource type="Texture2D" uid="uid://bpqgxo67mvjlp" path="res://assets/imagens/exBackgroundButton.png" id="2_v2fs8"]
+
+[node name="TelaSelecaoMiniGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TexturaFundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fa21y")
+
+[node name="GridBotoes" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.5
+offset_top = -360.0
+offset_right = 310.5
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Miigame1" type="TextureButton" parent="GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("2_v2fs8")
+stretch_mode = 1
+
+[node name="Miigame2" type="TextureButton" parent="GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("2_v2fs8")
+stretch_mode = 1
+
+[node name="Miigame3" type="TextureButton" parent="GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_v2fs8")
+stretch_mode = 1
+
+[node name="Miigame4" type="TextureButton" parent="GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_v2fs8")
+stretch_mode = 1

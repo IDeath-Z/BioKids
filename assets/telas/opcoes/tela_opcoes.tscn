@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsfehnuvqqial"]
+
+[ext_resource type="Script" uid="uid://cq2sihlxyr00n" path="res://assets/telas/opcoes/tela_opcoes.gd" id="1_brw4w"]
+[ext_resource type="Texture2D" uid="uid://dxk34w5mbknmq" path="res://assets/imagens/background.png" id="2_0cs76"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="3_ondap"]
+
+[node name="TelaOpcoes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_brw4w")
+
+[node name="TexturaFundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0cs76")
+
+[node name="GridBotoes" type="VBoxContainer" parent="TexturaFundo"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ondap")
+theme_override_constants/separation = 40
+
+[node name="HSlider" type="HSlider" parent="TexturaFundo/GridBotoes"]
+layout_mode = 2
+value = 100.0
+tick_count = 100
+
+[node name="Botao" type="Button" parent="TexturaFundo/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "É um botão"
+
+[node name="BotaoCreditos" type="Button" parent="TexturaFundo/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Créditos"
+
+[node name="BotaoVoltar" type="Button" parent="TexturaFundo/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Voltar"
+
+[connection signal="pressed" from="TexturaFundo/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
