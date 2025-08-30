@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dod8gqpfd6n80"]
+[gd_scene load_steps=6 format=3 uid="uid://dod8gqpfd6n80"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_etvai"]
 [ext_resource type="Script" uid="uid://2uv5nt6t6m71" path="res://assets/telas/inicio/tela_inicial.gd" id="2_dubg5"]
-[ext_resource type="Texture2D" uid="uid://dxk34w5mbknmq" path="res://assets/imagens/background.png" id="2_ne61g"]
+[ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://assets/imagens/background_inicio.png" id="3_f1mra"]
+[ext_resource type="Texture2D" uid="uid://c07qq22oglaud" path="res://assets/imagens/mascote_saudacoes.png" id="4_dyi0n"]
+[ext_resource type="Texture2D" uid="uid://6iedsdq1tpls" path="res://assets/imagens/logo_biokids.png" id="5_f1mra"]
 
 [node name="TelaInicial" type="Control"]
 layout_mode = 3
@@ -21,26 +23,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ne61g")
-
-[node name="NomeJogo" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 58.0
-offset_right = 20.0
-offset_bottom = 98.0
-grow_horizontal = 2
-theme_override_colors/default_color = Color(0.682353, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 75
-text = "Aqui vai a logo"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-justification_flags = 171
+texture = ExtResource("3_f1mra")
+expand_mode = 1
 
 [node name="GridBotoes" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(400, 400)
@@ -63,49 +47,48 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Jogar"
+text = "▶ Jogar"
 
 [node name="BotaoOpcoes" type="Button" parent="GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Opções"
+text = "⚙️ Opções"
 
 [node name="BotaoSair" type="Button" parent="GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Sair"
+text = "X Sair"
 
-[node name="Urso" type="ColorRect" parent="."]
+[node name="TexturaUrso" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -311.0
-offset_top = -294.0
+offset_left = -462.0
+offset_top = -221.0
+offset_right = -19.0
+offset_bottom = 209.0
 grow_horizontal = 0
 grow_vertical = 0
+rotation = -0.523599
+texture = ExtResource("4_dyi0n")
+expand_mode = 2
 
-[node name="NomeJogo" type="RichTextLabel" parent="Urso"]
+[node name="TexturaLogo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -156.5
-offset_top = 29.0
-offset_right = 156.5
-offset_bottom = 235.0
+offset_left = -316.0
+offset_right = 316.0
+offset_bottom = 307.0
 grow_horizontal = 2
-theme_override_colors/default_color = Color(0.682353, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 70
-text = "Mascote aqui"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-justification_flags = 171
+texture = ExtResource("5_f1mra")
+expand_mode = 2
 
 [connection signal="pressed" from="GridBotoes/BotaoJogar" to="." method="_on_botao_jogar_pressed"]
 [connection signal="pressed" from="GridBotoes/BotaoOpcoes" to="." method="_on_botao_opcoes_pressed"]
