@@ -22,6 +22,7 @@ window/size/viewport_height=1080
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/handheld/orientation=1
 
 [dotnet]
 
@@ -35,3 +36,4 @@ enabled=PackedStringArray("res://addons/GodotAndroidCamera/plugin.cfg")
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

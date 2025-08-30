@@ -1,0 +1,156 @@
+[gd_scene load_steps=5 format=3 uid="uid://owwcejoga1xw"]
+
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_sipkm"]
+[ext_resource type="Script" uid="uid://jo5kkhuk3aqb" path="res://assets/telas/raioX/raio_x_menu.gd" id="2_54yyf"]
+[ext_resource type="Texture2D" uid="uid://bo3jfs7vq0ug5" path="res://assets/imagens/x-ray.jpg" id="3_iu87t"]
+[ext_resource type="Script" uid="uid://b5dwsui2efrk" path="res://addons/GodotAndroidCamera/android_camera.gd" id="4_nmco0"]
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sipkm")
+script = ExtResource("2_54yyf")
+
+[node name="MainBackgroud" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.441002, 0.0653469, 0.148433, 1)
+
+[node name="TextTitulo" type="Label" parent="MainBackgroud"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_top = 68.0
+offset_right = 65.0
+offset_bottom = 91.0
+grow_horizontal = 2
+text = "Teste de Camera"
+
+[node name="TextScanner" type="Label" parent="."]
+visibility_layer = 7
+z_index = 5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 104.0
+offset_right = 60.0
+offset_bottom = 133.0
+grow_horizontal = 2
+size_flags_vertical = 0
+
+[node name="CameraDisplay" type="SubViewportContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CameraDisplay"]
+handle_input_locally = false
+size = Vector2i(720, 1080)
+render_target_update_mode = 0
+
+[node name="CameraView" type="TextureRect" parent="CameraDisplay/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 270.0
+offset_top = 180.0
+offset_right = 630.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(540, 360)
+
+[node name="FotoRaioX" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_iu87t")
+expand_mode = 1
+
+[node name="BotoesContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -203.5
+offset_right = 187.0
+offset_bottom = 203.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BotaoCamera" type="Button" parent="BotoesContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Camera"
+
+[node name="BotaoOpcoes" type="Button" parent="BotoesContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Opções"
+
+[node name="BotaoSair" type="Button" parent="BotoesContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Sair"
+
+[node name="AndroidCamera" type="Node" parent="."]
+script = ExtResource("4_nmco0")
+metadata/_custom_type_script = "uid://b5dwsui2efrk"
+
+[node name="ContaineBotaoScanner" type="VBoxContainer" parent="."]
+visibility_layer = 7
+z_index = 5
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -200.0
+offset_right = 106.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BotaoScanner" type="Button" parent="ContaineBotaoScanner"]
+visibility_layer = 7
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+text = "Escanear"
+
+[node name="Timer" type="Timer" parent="ContaineBotaoScanner"]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="pressed" from="BotoesContainer/BotaoCamera" to="." method="_on_botao_camera_pressed"]
+[connection signal="pressed" from="BotoesContainer/BotaoOpcoes" to="." method="_on_botao_opcoes_pressed"]
+[connection signal="pressed" from="BotoesContainer/BotaoSair" to="." method="_on_botao_sair_pressed"]
+[connection signal="pressed" from="ContaineBotaoScanner/BotaoScanner" to="." method="_on_botao_scan_pressed"]
+[connection signal="timeout" from="ContaineBotaoScanner/Timer" to="." method="_on_timer_timeout"]
