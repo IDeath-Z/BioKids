@@ -26,8 +26,7 @@ grow_vertical = 2
 texture = ExtResource("3_f1mra")
 expand_mode = 1
 
-[node name="GridBotoes" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(400, 400)
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,22 +39,27 @@ offset_right = 200.0
 offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GridBotoes" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 40
 
-[node name="BotaoJogar" type="Button" parent="GridBotoes"]
+[node name="BotaoJogar" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "▶ Jogar"
 
-[node name="BotaoOpcoes" type="Button" parent="GridBotoes"]
+[node name="BotaoOpcoes" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "⚙️ Opções"
 
-[node name="BotaoSair" type="Button" parent="GridBotoes"]
+[node name="BotaoSair" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -90,5 +94,6 @@ grow_horizontal = 2
 texture = ExtResource("5_f1mra")
 expand_mode = 2
 
-[connection signal="pressed" from="GridBotoes/BotaoJogar" to="." method="_on_botao_jogar_pressed"]
-[connection signal="pressed" from="GridBotoes/BotaoOpcoes" to="." method="_on_botao_opcoes_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/BotaoJogar" to="." method="_on_botao_jogar_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/BotaoOpcoes" to="." method="_on_botao_opcoes_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/BotaoSair" to="." method="_on_botao_sair_pressed"]

@@ -25,8 +25,7 @@ grow_vertical = 2
 texture = ExtResource("2_brw4w")
 expand_mode = 1
 
-[node name="GridBotoes" type="VBoxContainer" parent="TexturaFundo"]
-custom_minimum_size = Vector2(400, 400)
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,33 +33,37 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -238.0
+offset_top = -218.0
 offset_right = 200.0
-offset_bottom = 238.0
+offset_bottom = 218.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GridBotoes" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
 theme = ExtResource("3_ondap")
 theme_override_constants/separation = 40
 
-[node name="HSlider" type="HSlider" parent="TexturaFundo/GridBotoes"]
+[node name="HSlider" type="HSlider" parent="MarginContainer/GridBotoes"]
 layout_mode = 2
 value = 100.0
 tick_count = 100
 
-[node name="Botao" type="Button" parent="TexturaFundo/GridBotoes"]
+[node name="Botao" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "É um botão"
 
-[node name="BotaoCreditos" type="Button" parent="TexturaFundo/GridBotoes"]
+[node name="BotaoCreditos" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Créditos"
 
-[node name="BotaoVoltar" type="Button" parent="TexturaFundo/GridBotoes"]
+[node name="BotaoVoltar" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -95,4 +98,4 @@ grow_horizontal = 2
 texture = ExtResource("5_ondap")
 expand_mode = 2
 
-[connection signal="pressed" from="TexturaFundo/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]

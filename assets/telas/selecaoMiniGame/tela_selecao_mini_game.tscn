@@ -25,6 +25,55 @@ grow_vertical = 2
 texture = ExtResource("3_kkrmv")
 expand_mode = 1
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.2
+offset_left = -302.0
+offset_right = 302.0
+offset_bottom = 400.0
+grow_horizontal = 2
+
+[node name="GridBotoes" type="GridContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+columns = 2
+
+[node name="MiniGame-RaioX" type="TextureButton" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("2_v2fs8")
+stretch_mode = 1
+
+[node name="Miigame2" type="TextureButton" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("2_v2fs8")
+stretch_mode = 1
+
+[node name="Miigame3" type="TextureButton" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_v2fs8")
+stretch_mode = 1
+
+[node name="Miigame4" type="TextureButton" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_v2fs8")
+stretch_mode = 1
+
 [node name="BotaoVoltar" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 1
@@ -42,53 +91,5 @@ grow_vertical = 0
 size_flags_horizontal = 4
 text = "Voltar"
 
-[node name="GridBotoes" type="GridContainer" parent="."]
-custom_minimum_size = Vector2(400, 400)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -310.5
-offset_top = -360.0
-offset_right = 310.5
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 2
-
-[node name="MiniGame-RaioX" type="TextureButton" parent="GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-texture_normal = ExtResource("2_v2fs8")
-stretch_mode = 1
-
-[node name="Miigame2" type="TextureButton" parent="GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-texture_normal = ExtResource("2_v2fs8")
-stretch_mode = 1
-
-[node name="Miigame3" type="TextureButton" parent="GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("2_v2fs8")
-stretch_mode = 1
-
-[node name="Miigame4" type="TextureButton" parent="GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("2_v2fs8")
-stretch_mode = 1
-
+[connection signal="pressed" from="MarginContainer/GridBotoes/MiniGame-RaioX" to="." method="_on_mini_game_raio_x_pressed"]
 [connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
-[connection signal="pressed" from="GridBotoes/MiniGame-RaioX" to="." method="_on_mini_game_raio_x_pressed"]
