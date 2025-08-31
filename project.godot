@@ -15,11 +15,18 @@ run/main_scene="uid://dod8gqpfd6n80"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://assets/imagens/icon.svg"
 
+[autoload]
+
+EstadoVariaveisGlobais="*res://assets/telas/estado_variaveis_globais.gd"
+
+[debug]
+
+gdscript/autoload_on_startup=false
+
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=1080
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
@@ -37,3 +44,5 @@ enabled=PackedStringArray("res://addons/GodotAndroidCamera/plugin.cfg")
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
