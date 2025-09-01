@@ -42,7 +42,7 @@ func _on_botao_camera_pressed() -> void:
 		_on_check_camera_permissions()
 	elif OS.get_name() == "Windows":
 		titulo_principal.text = "Rodando no Windows"
-		camera_view.texture = preload("res://assets/imagens/x-ray.jpg")
+		camera_view.texture = preload("res://assets/imagens/interface/x-ray.jpg")
 		camera_display.visible = true
 	elif OS.get_name() == "iOS":
 		titulo_principal.text = "Rodando no iOS"

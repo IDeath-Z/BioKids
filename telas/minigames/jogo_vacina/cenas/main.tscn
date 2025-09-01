@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbm1u8444elh2"]
 
-[ext_resource type="Texture2D" uid="uid://bcvr5b6tl14yq" path="res://assets/telas/jogo_vacina/assets/laboratorio.png" id="1_vis02"]
-[ext_resource type="Script" uid="uid://xe8b7a8qbymr" path="res://assets/telas/jogo_vacina/scripts/seringa.gd" id="2_jtrjw"]
-[ext_resource type="Texture2D" uid="uid://bkbh0v6sfsp21" path="res://assets/telas/jogo_vacina/assets/seringa.png" id="2_po2u7"]
+[ext_resource type="Texture2D" uid="uid://bcvr5b6tl14yq" path="res://telas/minigames/jogo_vacina/assets/laboratorio.png" id="1_vis02"]
+[ext_resource type="Script" uid="uid://xe8b7a8qbymr" path="res://telas/minigames/jogo_vacina/scripts/seringa.gd" id="2_jtrjw"]
+[ext_resource type="Texture2D" uid="uid://bkbh0v6sfsp21" path="res://telas/minigames/jogo_vacina/assets/seringa.png" id="2_po2u7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jtrjw"]
 radius = 25.0937

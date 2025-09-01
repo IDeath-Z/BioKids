@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctdxjry75j3np"
-path="res://.godot/imported/nuvem_opcoes.png-834be7bf16e9d732f3b0ad743a0dc58b.ctex"
+uid="uid://x7l1w5y35td4"
+path="res://.godot/imported/icon_biokids.png-200a3e4d776fbf64a6b74a89eca2b95d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/nuvem_opcoes.png"
-dest_files=["res://.godot/imported/nuvem_opcoes.png-834be7bf16e9d732f3b0ad743a0dc58b.ctex"]
+source_file="res://assets/imagens/interface/icon_biokids.png"
+dest_files=["res://.godot/imported/icon_biokids.png-200a3e4d776fbf64a6b74a89eca2b95d.ctex"]
 
 [params]
 

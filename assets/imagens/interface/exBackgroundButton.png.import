@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8lgun1lam1b2"
-path="res://.godot/imported/mascote_pensando.png-e6ce0eadb2080d2e17c33ecb66c4d32f.ctex"
+uid="uid://bpqgxo67mvjlp"
+path="res://.godot/imported/exBackgroundButton.png-4090168d39f2434a5c1ee6372264d236.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/mascote_pensando.png"
-dest_files=["res://.godot/imported/mascote_pensando.png-e6ce0eadb2080d2e17c33ecb66c4d32f.ctex"]
+source_file="res://assets/imagens/interface/exBackgroundButton.png"
+dest_files=["res://.godot/imported/exBackgroundButton.png-4090168d39f2434a5c1ee6372264d236.ctex"]
 
 [params]
 

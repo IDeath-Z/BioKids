@@ -22,9 +22,9 @@ func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "sair_tela":
 		match botao_pressionado:
 			"jogar":
-				get_tree().change_scene_to_file("res://assets/telas/selecaoMiniGame/tela_selecao_mini_game.tscn")
+				get_tree().change_scene_to_file("res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.tscn")
 			"opcoes":
-				get_tree().change_scene_to_file("res://assets/telas/opcoes/tela_opcoes.tscn")
+				get_tree().change_scene_to_file("res://telas/interface/opcoes/tela_opcoes.tscn")
 
 func _on_botao_jogar_pressed() -> void:
 	botao_pressionado = "jogar"

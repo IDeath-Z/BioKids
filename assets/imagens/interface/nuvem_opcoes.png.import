@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo3jfs7vq0ug5"
-path="res://.godot/imported/x-ray.jpg-9c813a9c8c4c8a4a5797786185bbfe6e.ctex"
+uid="uid://ctdxjry75j3np"
+path="res://.godot/imported/nuvem_opcoes.png-06e352eb38ed99172d5fbd23bf7703d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/x-ray.jpg"
-dest_files=["res://.godot/imported/x-ray.jpg-9c813a9c8c4c8a4a5797786185bbfe6e.ctex"]
+source_file="res://assets/imagens/interface/nuvem_opcoes.png"
+dest_files=["res://.godot/imported/nuvem_opcoes.png-06e352eb38ed99172d5fbd23bf7703d3.ctex"]
 
 [params]
 

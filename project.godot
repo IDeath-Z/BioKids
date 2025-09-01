@@ -17,7 +17,7 @@ config/icon="res://assets/imagens/icon.svg"
 
 [autoload]
 
-EstadoVariaveisGlobais="*res://assets/telas/estado_variaveis_globais.gd"
+EstadoVariaveisGlobais="*res://global/estado_variaveis_globais.gd"
 
 [debug]
 

@@ -19,7 +19,7 @@ func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:
 	match botao_pressionado:
 		"voltar":
 			EstadoVariaveisGlobais.urso_saiu_tela_menu = true
-			get_tree().change_scene_to_file("res://assets/telas/inicio/tela_inicial.tscn")
+			get_tree().change_scene_to_file("res://telas/interface/inicio/tela_inicial.tscn")
 				
 func _on_botao_voltar_pressed() -> void:
 	botao_pressionado = "voltar"

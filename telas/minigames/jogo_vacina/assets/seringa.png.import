@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcvr5b6tl14yq"
-path="res://.godot/imported/laboratorio.png-bca840b9aa3fddd65a74f8ac358e199d.ctex"
+uid="uid://bkbh0v6sfsp21"
+path="res://.godot/imported/seringa.png-28abf43cf4e5b2e79fe1a9735842f222.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/telas/jogo_vacina/assets/laboratorio.png"
-dest_files=["res://.godot/imported/laboratorio.png-bca840b9aa3fddd65a74f8ac358e199d.ctex"]
+source_file="res://telas/minigames/jogo_vacina/assets/seringa.png"
+dest_files=["res://.godot/imported/seringa.png-28abf43cf4e5b2e79fe1a9735842f222.ctex"]
 
 [params]
 

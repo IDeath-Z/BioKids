@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://owwcejoga1xw"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_sipkm"]
-[ext_resource type="Script" uid="uid://jo5kkhuk3aqb" path="res://assets/telas/raioX/raio_x_menu.gd" id="2_54yyf"]
-[ext_resource type="Texture2D" uid="uid://bo3jfs7vq0ug5" path="res://assets/imagens/x-ray.jpg" id="3_iu87t"]
+[ext_resource type="Script" uid="uid://jo5kkhuk3aqb" path="res://telas/minigames/raioX/raio_x_menu.gd" id="2_54yyf"]
+[ext_resource type="Texture2D" uid="uid://bo3jfs7vq0ug5" path="res://assets/imagens/interface/x-ray.jpg" id="3_iu87t"]
 [ext_resource type="Script" uid="uid://b5dwsui2efrk" path="res://addons/GodotAndroidCamera/android_camera.gd" id="4_nmco0"]
 
 [node name="MenuPrincipal" type="Control"]

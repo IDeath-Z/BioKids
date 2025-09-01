@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x7l1w5y35td4"
-path="res://.godot/imported/icon_biokids.png-61dd8575ee47e580b38f3016b959aaa0.ctex"
+uid="uid://6iedsdq1tpls"
+path="res://.godot/imported/logo_biokids.png-a62a41a8161c648fcdec57b683ac1396.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/icon_biokids.png"
-dest_files=["res://.godot/imported/icon_biokids.png-61dd8575ee47e580b38f3016b959aaa0.ctex"]
+source_file="res://assets/imagens/interface/logo_biokids.png"
+dest_files=["res://.godot/imported/logo_biokids.png-a62a41a8161c648fcdec57b683ac1396.ctex"]
 
 [params]
 

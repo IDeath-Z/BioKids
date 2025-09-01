@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkbh0v6sfsp21"
-path="res://.godot/imported/seringa.png-0ec0c04872effcaf7a8b846e484799e8.ctex"
+uid="uid://bo3jfs7vq0ug5"
+path="res://.godot/imported/x-ray.jpg-bad4de9be89736dca8397cc663bc66c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/telas/jogo_vacina/assets/seringa.png"
-dest_files=["res://.godot/imported/seringa.png-0ec0c04872effcaf7a8b846e484799e8.ctex"]
+source_file="res://assets/imagens/interface/x-ray.jpg"
+dest_files=["res://.godot/imported/x-ray.jpg-bad4de9be89736dca8397cc663bc66c7.ctex"]
 
 [params]
 
