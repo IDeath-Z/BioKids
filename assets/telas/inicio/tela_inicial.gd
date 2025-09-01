@@ -18,7 +18,7 @@ func _on_animacao_urso_animation_started(anim_name: StringName) -> void:
 	await get_tree().create_timer(0.1).timeout
 	textura_urso.visible = true
 	
-func _on_sair_tela_animation_finished(anim_name: StringName) -> void:
+func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "sair_tela":
 		match botao_pressionado:
 			"jogar":
