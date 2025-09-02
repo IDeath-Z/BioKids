@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbm1u8444elh2"]
+[gd_scene load_steps=6 format=3 uid="uid://bbm1u8444elh2"]
 
 [ext_resource type="Texture2D" uid="uid://bcvr5b6tl14yq" path="res://telas/minigames/jogo_vacina/assets/laboratorio.png" id="1_vis02"]
 [ext_resource type="Script" uid="uid://xe8b7a8qbymr" path="res://telas/minigames/jogo_vacina/scripts/seringa.gd" id="2_jtrjw"]
 [ext_resource type="Texture2D" uid="uid://bkbh0v6sfsp21" path="res://telas/minigames/jogo_vacina/assets/seringa.png" id="2_po2u7"]
+[ext_resource type="Texture2D" uid="uid://bidtse2weowph" path="res://telas/minigames/jogo_vacina/assets/braco.png" id="4_85va6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jtrjw"]
 radius = 25.0937
@@ -29,3 +30,8 @@ texture = ExtResource("2_po2u7")
 position = Vector2(351, 511)
 rotation = -0.663225
 shape = SubResource("CapsuleShape2D_jtrjw")
+
+[node name="braco" type="Sprite2D" parent="seringa"]
+position = Vector2(214, 535)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_85va6")
