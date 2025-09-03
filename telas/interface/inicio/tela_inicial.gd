@@ -1,21 +1,27 @@
 extends Control
 
+@onready var animacao_logo = $TexturaLogo/AnimacaoLogo
 @onready var animacao_urso = $TexturaUrso/AnimacaoUrso
+@onready var textura_logo = $TexturaLogo
 @onready var textura_urso = $TexturaUrso
 var botao_pressionado = ""
 
 func _ready() -> void:
 	if EstadoVariaveisGlobais.urso_saiu_tela_menu == true:
 		EstadoVariaveisGlobais.urso_saiu_tela_menu = false
+		textura_logo.visible = false
 		textura_urso.visible = false
+		animacao_logo.play_backwards("fade_out")
 		animacao_urso.play_backwards("sair_tela")
 
 func animacao() -> void:
 	if EstadoVariaveisGlobais.urso_saiu_tela_menu == false:
+		animacao_logo.play("fade_out")
 		animacao_urso.play("sair_tela")
 		
 func _on_animacao_urso_animation_started(anim_name: StringName) -> void:
 	await get_tree().create_timer(0.1).timeout
+	textura_logo.visible = true
 	textura_urso.visible = true
 	
 func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:

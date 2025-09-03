@@ -1,10 +1,48 @@
-[gd_scene load_steps=9 format=3 uid="uid://dod8gqpfd6n80"]
+[gd_scene load_steps=13 format=3 uid="uid://dod8gqpfd6n80"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_etvai"]
 [ext_resource type="Script" uid="uid://2uv5nt6t6m71" path="res://telas/interface/inicio/tela_inicial.gd" id="2_dubg5"]
 [ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://assets/imagens/interface/background_inicio.png" id="3_f1mra"]
 [ext_resource type="Texture2D" uid="uid://c07qq22oglaud" path="res://assets/imagens/interface/mascote_saudacoes.png" id="4_dyi0n"]
 [ext_resource type="Texture2D" uid="uid://6iedsdq1tpls" path="res://assets/imagens/interface/logo_biokids.png" id="5_f1mra"]
+[ext_resource type="Texture2D" uid="uid://sco4e0cuo658" path="res://assets/imagens/interface/nuvem.png" id="6_ximrx"]
+
+[sub_resource type="Animation" id="Animation_ximrx"]
+resource_name = "fade_out"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fqulh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gi30i"]
+_data = {
+&"RESET": SubResource("Animation_fqulh"),
+&"fade_out": SubResource("Animation_ximrx")
+}
 
 [sub_resource type="Animation" id="Animation_q202j"]
 length = 0.001
@@ -271,12 +309,26 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "X Sair"
 
+[node name="TexturaNuvem" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.000111108
+anchor_right = 1.00011
+anchor_bottom = 0.284
+offset_left = 0.079998
+offset_right = -0.0800781
+offset_bottom = 0.279999
+grow_horizontal = 2
+texture = ExtResource("6_ximrx")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="TexturaLogo" type="TextureRect" parent="."]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.061
-anchor_right = 0.939
+anchor_right = 1.0
 anchor_bottom = 0.284
 offset_left = 0.079998
 offset_right = -0.0800781
@@ -285,6 +337,12 @@ grow_horizontal = 2
 texture = ExtResource("5_f1mra")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="AnimacaoLogo" type="AnimationPlayer" parent="TexturaLogo"]
+libraries = {
+&"": SubResource("AnimationLibrary_gi30i")
+}
+speed_scale = 2.5
 
 [node name="TexturaUrso" type="TextureRect" parent="."]
 texture_filter = 2

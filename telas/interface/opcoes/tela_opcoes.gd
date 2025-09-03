@@ -1,18 +1,25 @@
 extends Control
 
+@onready var animacao_opcoes = $TexturaOpcoes/AnimacaoOpcoes
 @onready var animacao_urso = $TexturaUrso/AnimacaoUrso
+@onready var textura_opcoes = $TexturaOpcoes
 @onready var textura_urso = $TexturaUrso
 var botao_pressionado = ""
 
 func _ready() -> void:
+	textura_opcoes.visible = false
 	textura_urso.visible = false
+	animacao_opcoes.play("fade_out")
 	animacao_urso.play_backwards("sair_tela")
 
 func animacao() -> void:
+	animacao_opcoes.play_backwards("fade_out")
 	animacao_urso.play("sair_tela")
+	
 	
 func _on_animacao_urso_animation_started(anim_name: StringName) -> void:
 	await get_tree().create_timer(0.1).timeout
+	textura_opcoes.visible = true
 	textura_urso.visible = true
 
 func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:

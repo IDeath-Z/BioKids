@@ -1,22 +1,36 @@
 extends Control
 
 @onready var animacao_tela = $AnimacaoTela
+@onready var animacao_jogos = $TexturaJogos/AnimacaoJogos
+@onready var textura_jogos = $TexturaJogos
+var saindo_tela = false
 var botao_pressionado = ""
 
+func _ready() -> void:
+	textura_jogos.visible = false
+	animacao_jogos.play("fade_out")
+
 func _on_mini_game_raio_x_pressed() -> void:
+	animacao_jogos.play_backwards("fade_out")
 	animacao_tela.play("mover_cenario")
 	botao_pressionado = "raioX"
 	
-
 func _on_botao_voltar_pressed() -> void:
 	EstadoVariaveisGlobais.urso_saiu_tela_menu = true
-	get_tree().change_scene_to_file("res://telas/interface/inicio/tela_inicial.tscn")
+	saindo_tela = true
+	animacao_jogos.play_backwards("fade_out")
 
+func _on_animacao_jogos_animation_started(anim_name: StringName) -> void:
+	await get_tree().create_timer(0.1).timeout
+	textura_jogos.visible = true
+	
+func _on_animacao_jogos_animation_finished(anim_name: StringName) -> void:
+	
+	if saindo_tela == true:
+		get_tree().change_scene_to_file("res://telas/interface/inicio/tela_inicial.tscn")
 
 func _on_animacao_tela_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "mover_cenario":
 		match botao_pressionado:
 			"raioX":
 				get_tree().change_scene_to_file("res://telas/minigames/raioX/raio_x_menu.tscn")
-		
-		
