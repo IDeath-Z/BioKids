@@ -1,9 +1,217 @@
-[gd_scene load_steps=5 format=3 uid="uid://uparhuansh1g"]
+[gd_scene load_steps=10 format=3 uid="uid://uparhuansh1g"]
 
 [ext_resource type="Script" uid="uid://mnlv7kfq6qry" path="res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.gd" id="1_g0fu6"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_p80pi"]
 [ext_resource type="Texture2D" uid="uid://bpqgxo67mvjlp" path="res://assets/imagens/interface/exBackgroundButton.png" id="2_v2fs8"]
 [ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://assets/imagens/interface/background_inicio.png" id="3_kkrmv"]
+[ext_resource type="Texture2D" uid="uid://3yb1i4y67env" path="res://assets/imagens/interface/nuvem_jogos.png" id="5_5c5ps"]
+[ext_resource type="PackedScene" uid="uid://cbah4c8l5c0yu" path="res://telas/minigames/raioX/raio_x_menu_transicao.tscn" id="6_pihxx"]
+
+[sub_resource type="Animation" id="Animation_5uflm"]
+resource_name = "mover_cenario"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:offset_left")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 720.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:offset_top")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:offset_right")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 720.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:offset_bottom")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2675a"]
+length = 0.001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:offset_left")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:offset_top")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:offset_right")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:offset_bottom")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_itvkn"]
+_data = {
+&"RESET": SubResource("Animation_2675a"),
+&"mover_cenario": SubResource("Animation_5uflm")
+}
 
 [node name="TelaSelecaoMiniGame" type="Control"]
 layout_mode = 3
@@ -14,6 +222,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_p80pi")
 script = ExtResource("1_g0fu6")
+metadata/_edit_use_anchors_ = true
 
 [node name="TexturaFundo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -29,13 +238,14 @@ expand_mode = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.1
+anchor_top = 0.32037
 anchor_right = 0.5
-anchor_bottom = 0.2
+anchor_bottom = 0.42037
 offset_left = -302.0
 offset_right = 302.0
 offset_bottom = 400.0
 grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="GridBotoes" type="GridContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(400, 400)
@@ -91,5 +301,31 @@ grow_vertical = 0
 size_flags_horizontal = 4
 text = "Voltar"
 
+[node name="TexturaJogos" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.061
+anchor_right = 0.939
+anchor_bottom = 0.284
+offset_left = 0.079998
+offset_right = -0.0800781
+offset_bottom = 0.279999
+grow_horizontal = 2
+texture = ExtResource("5_5c5ps")
+expand_mode = 2
+
+[node name="AnimacaoTela" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_itvkn")
+}
+
+[node name="MenuRaioX" parent="." instance=ExtResource("6_pihxx")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0
+anchor_right = 0.0
+script = null
+
 [connection signal="pressed" from="MarginContainer/GridBotoes/MiniGame-RaioX" to="." method="_on_mini_game_raio_x_pressed"]
 [connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
+[connection signal="animation_finished" from="AnimacaoTela" to="." method="_on_animacao_tela_animation_finished"]

@@ -272,6 +272,7 @@ size_flags_horizontal = 4
 text = "X Sair"
 
 [node name="TexturaLogo" type="TextureRect" parent="."]
+texture_filter = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.061
@@ -286,6 +287,7 @@ expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TexturaUrso" type="TextureRect" parent="."]
+texture_filter = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7
