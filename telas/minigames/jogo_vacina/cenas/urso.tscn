@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpunx4t38irt0"]
+
+[ext_resource type="Texture2D" uid="uid://b7gm220s6slnp" path="res://telas/minigames/jogo_vacina/assets/banqueta.png" id="1_bvhog"]
+[ext_resource type="Texture2D" uid="uid://d2fdjfbjheux7" path="res://telas/minigames/jogo_vacina/assets/ursinho.png" id="2_rby3a"]
+
+[node name="Urso" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(533, 740)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_bvhog")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(526, 492)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_rby3a")
