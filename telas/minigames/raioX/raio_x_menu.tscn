@@ -1,12 +1,112 @@
-[gd_scene load_steps=11 format=3 uid="uid://owwcejoga1xw"]
+[gd_scene load_steps=12 format=3 uid="uid://owwcejoga1xw"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_sipkm"]
 [ext_resource type="Script" uid="uid://jo5kkhuk3aqb" path="res://telas/minigames/raioX/raio_x_menu.gd" id="2_54yyf"]
 [ext_resource type="Texture2D" uid="uid://ceuydeqdoryjn" path="res://assets/imagens/mini_games/raiox/background_bioX.png" id="3_gno3a"]
 [ext_resource type="Texture2D" uid="uid://bo3jfs7vq0ug5" path="res://assets/imagens/interface/x-ray.jpg" id="3_iu87t"]
 [ext_resource type="Script" uid="uid://b5dwsui2efrk" path="res://addons/GodotAndroidCamera/android_camera.gd" id="4_nmco0"]
+[ext_resource type="Texture2D" uid="uid://c130bl1thyy4i" path="res://assets/imagens/mini_games/raiox/raioX-area.png" id="4_ptl2l"]
 [ext_resource type="Texture2D" uid="uid://cjhwawpagnm2l" path="res://assets/imagens/mini_games/raiox/logo_raioX.png" id="6_qrhgg"]
 [ext_resource type="PackedScene" uid="uid://h2q4jq2ghqsl" path="res://telas/interface/selecaoMiniGame/tela_selecao_mini_game_transicao.tscn" id="7_881kb"]
+
+[sub_resource type="Animation" id="Animation_fv44s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:offset_left")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:offset_top")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:offset_right")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:offset_bottom")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_ptl2l"]
 resource_name = "mover_cenario"
@@ -108,105 +208,6 @@ tracks/7/keys = {
 "values": [0.0, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_fv44s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:anchor_left")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:anchor_top")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:anchor_right")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:anchor_bottom")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:offset_left")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:offset_top")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".:offset_right")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath(".:offset_bottom")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7hp0o"]
 _data = {
 &"RESET": SubResource("Animation_fv44s"),
@@ -244,9 +245,15 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
+[node name="AreaRaioX" type="TextureRect" parent="CameraDisplay"]
+layout_mode = 2
+texture = ExtResource("4_ptl2l")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="SubViewport" type="SubViewport" parent="CameraDisplay"]
 handle_input_locally = false
-size = Vector2i(720, 1080)
+size = Vector2i(720, 940)
 render_target_update_mode = 0
 
 [node name="CameraView" type="TextureRect" parent="CameraDisplay/SubViewport"]
@@ -262,11 +269,22 @@ grow_vertical = 2
 rotation = 1.5708
 pivot_offset = Vector2(540, 360)
 
-[node name="FotoRaioX" type="TextureRect" parent="."]
+[node name="TelaRaioX" type="ColorRect" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="FotoRaioX" type="TextureRect" parent="TelaRaioX"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.3
+anchor_right = 0.85
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -345,7 +363,7 @@ text = "Escanear"
 wait_time = 5.0
 one_shot = true
 
-[node name="TexturaJogos" type="TextureRect" parent="."]
+[node name="TexturaBioX" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.061
