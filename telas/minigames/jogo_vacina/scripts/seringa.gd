@@ -8,7 +8,7 @@ var toque = Vector2.ZERO
 func _ready():
 	braco.visible = false
 	seringa.visible = false
-	self.area_entered.connect(_on_area_entered)
+	connect("area_entered", Callable(self, "_on_area_entered"))
 	
 func _input(event):
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
@@ -29,4 +29,4 @@ func _input(event):
 
 func _on_area_entered(area):
 	if area.name == "local_vacina":
-		get_tree().get_root().get_node("Main").change_scene("conquista")
+		get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/conquista.tscn")

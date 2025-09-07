@@ -5,18 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://oxb2woyttjfv" path="res://telas/minigames/jogo_vacina/assets/mascote_sentado.png" id="3_xvadl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rby3a"]
-radius = 28.1649
-height = 78.0
+radius = 22.1349
+height = 44.2698
 
 [node name="Urso" type="Node2D"]
-script = ExtResource("1_rby3a")
 
 [node name="local_vacina" type="Area2D" parent="."]
-
-[node name="banqueta" type="Sprite2D" parent="local_vacina"]
-position = Vector2(1000, 740)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_bvhog")
+script = ExtResource("1_rby3a")
 
 [node name="macoste" type="Sprite2D" parent="local_vacina"]
 position = Vector2(990, 500)
@@ -24,6 +19,11 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_xvadl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="local_vacina"]
-position = Vector2(955, 560)
+position = Vector2(944, 572)
 rotation = 0.331613
 shape = SubResource("CapsuleShape2D_rby3a")
+
+[node name="banqueta" type="Sprite2D" parent="local_vacina"]
+position = Vector2(1000, 740)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_bvhog")
