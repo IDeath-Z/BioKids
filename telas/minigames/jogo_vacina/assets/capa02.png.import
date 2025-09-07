@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2fdjfbjheux7"
-path="res://.godot/imported/ursinho.png-6fb39d43b501dc6274c544aaedb1ed28.ctex"
+uid="uid://dd81b2e5x3u1t"
+path="res://.godot/imported/capa02.png-a3dd8ffd93e807b3ed4826a043d19c19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/jogo_vacina/assets/ursinho.png"
-dest_files=["res://.godot/imported/ursinho.png-6fb39d43b501dc6274c544aaedb1ed28.ctex"]
+source_file="res://telas/minigames/jogo_vacina/assets/capa02.png"
+dest_files=["res://.godot/imported/capa02.png-a3dd8ffd93e807b3ed4826a043d19c19.ctex"]
 
 [params]
 

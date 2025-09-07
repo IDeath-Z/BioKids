@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmlde1sgv3wrn"]
+
+[ext_resource type="Script" uid="uid://rxb5qlbidclw" path="res://conquista.gd" id="1_xt6j0"]
+[ext_resource type="Texture2D" uid="uid://cg2rq2migdpgh" path="res://telas/minigames/jogo_vacina/assets/fundo_conquista.png" id="2_joacc"]
+[ext_resource type="Texture2D" uid="uid://bjd123jak8fkf" path="res://telas/minigames/jogo_vacina/assets/capa01.png" id="3_fx8rp"]
+[ext_resource type="Texture2D" uid="uid://dd81b2e5x3u1t" path="res://telas/minigames/jogo_vacina/assets/capa02.png" id="4_1jgmo"]
+[ext_resource type="Texture2D" uid="uid://c4va0d68rr653" path="res://telas/minigames/jogo_vacina/assets/capa03.png" id="5_krnk3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p2u7d"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("3_fx8rp")
+}, {
+"duration": 1.4,
+"texture": ExtResource("4_1jgmo")
+}, {
+"duration": 50.0,
+"texture": ExtResource("5_krnk3")
+}],
+"loop": true,
+"name": &"balanco",
+"speed": 3.0
+}]
+
+[node name="Conquista" type="Node2D"]
+script = ExtResource("1_xt6j0")
+
+[node name="fundo" type="Sprite2D" parent="."]
+position = Vector2(362, 540)
+scale = Vector2(0.936979, 0.802083)
+texture = ExtResource("2_joacc")
+
+[node name="capa" type="AnimatedSprite2D" parent="."]
+position = Vector2(350, 800)
+sprite_frames = SubResource("SpriteFrames_p2u7d")
+animation = &"balanco"
+frame_progress = 0.352849
+speed_scale = 0.5

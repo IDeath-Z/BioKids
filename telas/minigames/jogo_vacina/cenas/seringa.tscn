@@ -15,8 +15,8 @@ script = ExtResource("1_0pq5x")
 
 [node name="imagem_sering" type="Sprite2D" parent="seringa"]
 position = Vector2(343, 506)
-rotation = -4.54833
-scale = Vector2(0.174427, 0.172149)
+rotation = -5.02655
+scale = Vector2(0.101, 0.1)
 texture = ExtResource("2_a7v8i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="seringa"]
@@ -25,6 +25,6 @@ rotation = -0.663225
 shape = SubResource("CapsuleShape2D_paeca")
 
 [node name="braco" type="Sprite2D" parent="seringa"]
-position = Vector2(212, 543)
-scale = Vector2(0.2, 0.2)
+position = Vector2(266, 532)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_mvbhp")
