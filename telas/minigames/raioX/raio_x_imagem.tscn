@@ -1,7 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1fc1rvjw5yge"]
+[gd_scene load_steps=7 format=3 uid="uid://c1fc1rvjw5yge"]
 
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_82mj3"]
 [ext_resource type="Texture2D" uid="uid://bo3jfs7vq0ug5" path="res://assets/imagens/interface/x-ray.jpg" id="1_aijxs"]
 [ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="2_82mj3"]
+[ext_resource type="Script" uid="uid://xghafiwgypcb" path="res://telas/minigames/raioX/raio_x_imagem.gd" id="2_pgh2h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fufn5"]
+bg_color = Color(0.992157, 0.105882, 0.12549, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.254902)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82mj3"]
+bg_color = Color(0.992157, 0.105882, 0.12549, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8, 0, 0, 1)
 
 [node name="RaioXImagem" type="Control"]
 layout_mode = 3
@@ -10,6 +39,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_82mj3")
+script = ExtResource("2_pgh2h")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -65,3 +96,36 @@ Quer tentar com o pé agora?
 vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="BotaoSim" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Sim"
+
+[node name="BotaoNao" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+theme_override_styles/hover = SubResource("StyleBoxFlat_fufn5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_82mj3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fufn5")
+text = "Não"
+
+[connection signal="pressed" from="HBoxContainer/BotaoSim" to="." method="_on_botao_sim_pressed"]
+[connection signal="pressed" from="HBoxContainer/BotaoNao" to="." method="_on_botao_nao_pressed"]
