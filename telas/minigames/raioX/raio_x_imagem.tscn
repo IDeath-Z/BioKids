@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1fc1rvjw5yge"]
+
+[ext_resource type="Texture2D" uid="uid://bo3jfs7vq0ug5" path="res://assets/imagens/interface/x-ray.jpg" id="1_aijxs"]
+[ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="2_82mj3"]
+
+[node name="RaioXImagem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="AreaMao2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0166667
+anchor_top = 0.210185
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_aijxs")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainerDicas" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555556
+anchor_top = 0.0101852
+anchor_right = 0.944556
+anchor_bottom = 0.223185
+offset_right = -0.0800171
+offset_bottom = -0.0400085
+ratio = 2.8
+metadata/_edit_use_anchors_ = true
+
+[node name="PopUpDicas" parent="AspectRatioContainerDicas" instance=ExtResource("2_82mj3")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AspectRatioContainerDicas/PopUpDicas"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.308294
+anchor_top = 0.273128
+anchor_right = 0.749261
+anchor_bottom = 0.890185
+offset_right = 0.222015
+offset_bottom = -0.0720062
+theme_override_font_sizes/font_size = 20
+text = "Uau, sua mão em raio-x ficou demais!
+
+Quer tentar com o pé agora?
+"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true

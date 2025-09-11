@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://owwcejoga1xw"]
+[gd_scene load_steps=10 format=3 uid="uid://owwcejoga1xw"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_sipkm"]
 [ext_resource type="Script" uid="uid://jo5kkhuk3aqb" path="res://telas/minigames/raioX/raio_x_menu.gd" id="2_54yyf"]
 [ext_resource type="Texture2D" uid="uid://ceuydeqdoryjn" path="res://assets/imagens/mini_games/raiox/background_bioX.png" id="3_gno3a"]
-[ext_resource type="Texture2D" uid="uid://bo3jfs7vq0ug5" path="res://assets/imagens/interface/x-ray.jpg" id="3_iu87t"]
 [ext_resource type="Script" uid="uid://b5dwsui2efrk" path="res://addons/GodotAndroidCamera/android_camera.gd" id="4_nmco0"]
-[ext_resource type="Texture2D" uid="uid://c130bl1thyy4i" path="res://assets/imagens/mini_games/raiox/raioX-area.png" id="4_ptl2l"]
 [ext_resource type="Texture2D" uid="uid://cjhwawpagnm2l" path="res://assets/imagens/mini_games/raiox/logo_raioX.png" id="6_qrhgg"]
 [ext_resource type="PackedScene" uid="uid://h2q4jq2ghqsl" path="res://telas/interface/selecaoMiniGame/tela_selecao_mini_game_transicao.tscn" id="7_881kb"]
 
@@ -235,66 +233,6 @@ grow_vertical = 2
 texture = ExtResource("3_gno3a")
 expand_mode = 1
 
-[node name="CameraDisplay" type="SubViewportContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="AreaRaioX" type="TextureRect" parent="CameraDisplay"]
-layout_mode = 2
-texture = ExtResource("4_ptl2l")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="SubViewport" type="SubViewport" parent="CameraDisplay"]
-handle_input_locally = false
-size = Vector2i(720, 940)
-render_target_update_mode = 0
-
-[node name="CameraView" type="TextureRect" parent="CameraDisplay/SubViewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 270.0
-offset_top = 180.0
-offset_right = 630.0
-offset_bottom = -180.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-pivot_offset = Vector2(540, 360)
-
-[node name="TelaRaioX" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0862745, 0.0862745, 0.0862745, 1)
-
-[node name="FotoRaioX" type="TextureRect" parent="TelaRaioX"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.15
-anchor_top = 0.3
-anchor_right = 0.85
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_iu87t")
-expand_mode = 1
-
-[node name="AndroidCamera" type="Node" parent="."]
-script = ExtResource("4_nmco0")
-metadata/_custom_type_script = "uid://b5dwsui2efrk"
-
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -336,33 +274,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Voltar"
 
-[node name="ContaineBotaoScanner" type="VBoxContainer" parent="."]
-visibility_layer = 7
-z_index = 5
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -106.0
-offset_top = -200.0
-offset_right = 106.0
-offset_bottom = -75.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="BotaoScanner" type="Button" parent="ContaineBotaoScanner"]
-visibility_layer = 7
-z_index = 1
-layout_mode = 2
-size_flags_vertical = 3
-text = "Escanear"
-
-[node name="Timer" type="Timer" parent="ContaineBotaoScanner"]
-wait_time = 5.0
-one_shot = true
-
 [node name="TexturaBioX" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -388,9 +299,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_7hp0o")
 }
 
+[node name="AndroidCamera" type="Node" parent="."]
+script = ExtResource("4_nmco0")
+metadata/_custom_type_script = "uid://b5dwsui2efrk"
+
 [connection signal="pressed" from="MarginContainer/GridBotoes/BotaoCamera" to="." method="_on_botao_camera_pressed"]
 [connection signal="pressed" from="MarginContainer/GridBotoes/BotaoComoJogar" to="." method="_on_botao_como_jogar_pressed"]
 [connection signal="pressed" from="MarginContainer/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
-[connection signal="pressed" from="ContaineBotaoScanner/BotaoScanner" to="." method="_on_botao_scan_pressed"]
-[connection signal="timeout" from="ContaineBotaoScanner/Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimacaoTela" to="." method="_on_animacao_tela_animation_finished"]

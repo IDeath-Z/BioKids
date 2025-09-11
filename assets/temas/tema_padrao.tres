@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b511ckv5t4uuq"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b511ckv5t4uuq"]
 
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="1_lq1e4"]
 
@@ -82,6 +82,8 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lq1e4"]
+
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
@@ -99,7 +101,7 @@ Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
 Button/constants/align_to_largest_stylebox = 0
 Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
-Button/constants/outline_size = 0
+Button/constants/outline_size = 2
 Button/font_sizes/font_size = 50
 Button/fonts/font = ExtResource("1_lq1e4")
 Button/styles/disabled = SubResource("StyleBoxFlat_2c4lc")
@@ -107,3 +109,14 @@ Button/styles/focus = SubResource("StyleBoxFlat_ongog")
 Button/styles/hover = SubResource("StyleBoxFlat_sfp4r")
 Button/styles/normal = SubResource("StyleBoxFlat_nh1kk")
 Button/styles/pressed = SubResource("StyleBoxFlat_bpn3b")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_lq1e4")
+Label/styles/normal = SubResource("StyleBoxEmpty_lq1e4")

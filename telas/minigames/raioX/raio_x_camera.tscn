@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=3 uid="uid://n1a8i8u3cdhl"]
+
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_r361r"]
+[ext_resource type="Script" uid="uid://cxjm5apdtuy2a" path="res://telas/minigames/raioX/raio_x_camera.gd" id="2_jg0xs"]
+[ext_resource type="Texture2D" uid="uid://c130bl1thyy4i" path="res://assets/imagens/mini_games/raiox/raioX-area.png" id="2_uy3tw"]
+[ext_resource type="Script" uid="uid://b5dwsui2efrk" path="res://addons/GodotAndroidCamera/android_camera.gd" id="3_jg0xs"]
+[ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="5_jg0xs"]
+
+[node name="RaioXCamera" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_r361r")
+script = ExtResource("2_jg0xs")
+
+[node name="CameraDisplay" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="AreaRaioX" type="TextureRect" parent="CameraDisplay"]
+layout_mode = 2
+texture = ExtResource("2_uy3tw")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="CameraDisplay"]
+handle_input_locally = false
+size = Vector2i(720, 1080)
+render_target_update_mode = 4
+
+[node name="CameraView" type="TextureRect" parent="CameraDisplay/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 270.0
+offset_top = 180.0
+offset_right = 630.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(540, 360)
+
+[node name="AndroidCamera" type="Node" parent="."]
+script = ExtResource("3_jg0xs")
+metadata/_custom_type_script = "uid://b5dwsui2efrk"
+
+[node name="AreaMao" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0541667
+anchor_top = 0.210185
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uy3tw")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ContaineBotaoScanner" type="VBoxContainer" parent="."]
+visibility_layer = 7
+z_index = 5
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -200.0
+offset_right = 106.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BotaoCliqueAqui" type="Button" parent="ContaineBotaoScanner"]
+visibility_layer = 7
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 0
+text = "Clique aqui !"
+
+[node name="Timer" type="Timer" parent="ContaineBotaoScanner"]
+wait_time = 5.0
+one_shot = true
+
+[node name="AspectRatioContainerDicas" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555556
+anchor_top = 0.0101852
+anchor_right = 0.944556
+anchor_bottom = 0.223185
+offset_right = -0.0800171
+offset_bottom = -0.0400085
+ratio = 2.8
+metadata/_edit_use_anchors_ = true
+
+[node name="PopUpDicas" parent="AspectRatioContainerDicas" instance=ExtResource("5_jg0xs")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AspectRatioContainerDicas/PopUpDicas"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.308294
+anchor_top = 0.273128
+anchor_right = 0.749261
+anchor_bottom = 0.890185
+offset_right = 0.222015
+offset_bottom = -0.0720062
+theme_override_font_sizes/font_size = 20
+text = "Posicione a sua mão direitinho aqui, tente deixar a mão firme para eu conseguir ver os ossos!"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ContaineBotaoScanner/BotaoCliqueAqui" to="." method="_on_botao_clique_aqui_pressed"]
+[connection signal="timeout" from="ContaineBotaoScanner/Timer" to="." method="_on_timer_timeout"]
