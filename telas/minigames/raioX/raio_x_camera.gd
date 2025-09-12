@@ -37,4 +37,4 @@ func _on_botao_clique_aqui_pressed() -> void:
 func _on_timer_timeout() -> void:
 	if OS.get_name() == "Android":
 		_on_stop_capturing_pressed()
-		get_tree().change_scene_to_file("res://telas/minigames/raioX/raio_x_menu.tscn")
+		get_tree().change_scene_to_file("res://telas/minigames/raioX/raio_x_imagem.tscn")
