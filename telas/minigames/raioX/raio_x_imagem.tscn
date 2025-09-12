@@ -1,9 +1,83 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1fc1rvjw5yge"]
+[gd_scene load_steps=16 format=3 uid="uid://c1fc1rvjw5yge"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_82mj3"]
 [ext_resource type="Texture2D" uid="uid://bo3jfs7vq0ug5" path="res://assets/imagens/interface/x-ray.jpg" id="1_aijxs"]
 [ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="2_82mj3"]
 [ext_resource type="Script" uid="uid://xghafiwgypcb" path="res://telas/minigames/raioX/raio_x_imagem.gd" id="2_pgh2h"]
+
+[sub_resource type="Animation" id="Animation_pgh2h"]
+resource_name = "fade"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fufn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5x1b4"]
+_data = {
+&"RESET": SubResource("Animation_fufn5"),
+&"fade": SubResource("Animation_pgh2h")
+}
+
+[sub_resource type="Animation" id="Animation_2fpk7"]
+resource_name = "fade"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lwv3r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ijva6"]
+_data = {
+&"RESET": SubResource("Animation_lwv3r"),
+&"fade": SubResource("Animation_2fpk7")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fufn5"]
 bg_color = Color(0.992157, 0.105882, 0.12549, 1)
@@ -32,6 +106,43 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.8, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_woo8i"]
+resource_name = "fade"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cxi01"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qm0o5"]
+_data = {
+&"RESET": SubResource("Animation_cxi01"),
+&"fade": SubResource("Animation_woo8i")
+}
+
 [node name="RaioXImagem" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -51,7 +162,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 
-[node name="AreaMao2" type="TextureRect" parent="."]
+[node name="AreaMao" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0166667
@@ -63,6 +175,12 @@ grow_vertical = 2
 texture = ExtResource("1_aijxs")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AnimacaoMao" type="AnimationPlayer" parent="AreaMao"]
+libraries = {
+&"": SubResource("AnimationLibrary_5x1b4")
+}
+speed_scale = 0.8
 
 [node name="AspectRatioContainerDicas" type="AspectRatioContainer" parent="."]
 layout_mode = 1
@@ -97,19 +215,25 @@ vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="AnimacaoTexto" type="AnimationPlayer" parent="AspectRatioContainerDicas/PopUpDicas/Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_ijva6")
+}
+speed_scale = 0.8
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.127778
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.127778
 offset_left = -200.0
-offset_top = -200.0
+offset_top = 97.0
 offset_right = 200.0
-offset_bottom = -75.0
+offset_bottom = 178.0
 grow_horizontal = 2
-grow_vertical = 0
 theme_override_constants/separation = 30
 
 [node name="BotaoSim" type="Button" parent="HBoxContainer"]
@@ -127,5 +251,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_82mj3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fufn5")
 text = "Não"
 
+[node name="AnimacaoBotoes" type="AnimationPlayer" parent="HBoxContainer"]
+libraries = {
+&"": SubResource("AnimationLibrary_qm0o5")
+}
+speed_scale = 0.8
+
+[connection signal="animation_started" from="AreaMao/AnimacaoMao" to="." method="_on_animacao_mao_animation_started"]
 [connection signal="pressed" from="HBoxContainer/BotaoSim" to="." method="_on_botao_sim_pressed"]
 [connection signal="pressed" from="HBoxContainer/BotaoNao" to="." method="_on_botao_nao_pressed"]
