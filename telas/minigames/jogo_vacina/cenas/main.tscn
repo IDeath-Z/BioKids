@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpbqml2qyxoqr"]
+[gd_scene load_steps=8 format=3 uid="uid://cpbqml2qyxoqr"]
 
 [ext_resource type="Texture2D" uid="uid://bcvr5b6tl14yq" path="res://telas/minigames/jogo_vacina/assets/laboratorio.png" id="1_vis02"]
-[ext_resource type="Script" uid="uid://be307mnn060vv" path="res://telas/minigames/jogo_vacina/cenas/main.gd" id="2_dxvjg"]
-[ext_resource type="Texture2D" uid="uid://dn11mx4rvutk4" path="res://telas/minigames/jogo_vacina/assets/pop_up.png" id="4_85va6"]
+[ext_resource type="Script" uid="uid://be307mnn060vv" path="res://telas/minigames/jogo_vacina/scripts/main.gd" id="2_dxvjg"]
+[ext_resource type="Texture2D" uid="uid://bdfunl058p3r6" path="res://telas/minigames/jogo_vacina/assets/pop_up_menssagem.png" id="3_85va6"]
+[ext_resource type="Texture2D" uid="uid://ck50di15teitg" path="res://telas/minigames/jogo_vacina/assets/pop_up_audio.png" id="3_q75vu"]
 
 [sub_resource type="Animation" id="Animation_dxvjg"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../pop_up:visible")
+tracks/0/path = NodePath("pop_up:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +25,7 @@ resource_name = "pop_up"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../pop_up:visible")
+tracks/0/path = NodePath("pop_up:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,6 +49,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(107.578, 160.842)
 scale = Vector2(0.701172, 0.70106)
@@ -59,16 +70,37 @@ script = ExtResource("2_dxvjg")
 
 [node name="Placeholder" type="Node2D" parent="Main"]
 
-[node name="pop_up" type="Sprite2D" parent="."]
+[node name="pop_up" type="Sprite2D" parent="Main"]
 visible = false
 position = Vector2(350, 230)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_85va6")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_85va6")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="pop_up"]
-root_node = NodePath("../../Main")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/pop_up"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_6xvyx")
 }
 autoplay = "pop_up"
 speed_scale = 0.5
+
+[node name="audio_pop_up" type="Sprite2D" parent="Main/pop_up"]
+position = Vector2(230, 75)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_q75vu")
+
+[node name="RichTextLabel" type="TextEdit" parent="Main/pop_up"]
+offset_right = 40.0
+offset_bottom = 40.0
+text = "DÊ A VACINA NO URSINHO PARA QUE ELE SE PROTEJA  DOS VÌRUS"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+use_default_word_separators = false

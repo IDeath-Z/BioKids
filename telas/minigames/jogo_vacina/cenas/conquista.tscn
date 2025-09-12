@@ -1,26 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmlde1sgv3wrn"]
+[gd_scene load_steps=12 format=3 uid="uid://dmlde1sgv3wrn"]
 
 [ext_resource type="Script" uid="uid://rxb5qlbidclw" path="res://conquista.gd" id="1_xt6j0"]
 [ext_resource type="Texture2D" uid="uid://cg2rq2migdpgh" path="res://telas/minigames/jogo_vacina/assets/fundo_conquista.png" id="2_joacc"]
 [ext_resource type="Texture2D" uid="uid://bjd123jak8fkf" path="res://telas/minigames/jogo_vacina/assets/capa01.png" id="3_fx8rp"]
 [ext_resource type="Texture2D" uid="uid://dd81b2e5x3u1t" path="res://telas/minigames/jogo_vacina/assets/capa02.png" id="4_1jgmo"]
+[ext_resource type="Texture2D" uid="uid://ddwmk45d4r6ny" path="res://telas/minigames/jogo_vacina/assets/Capa04.png" id="4_krnk3"]
 [ext_resource type="Texture2D" uid="uid://c4va0d68rr653" path="res://telas/minigames/jogo_vacina/assets/capa03.png" id="5_krnk3"]
+[ext_resource type="Texture2D" uid="uid://bpu7i8jt6vuj2" path="res://telas/minigames/jogo_vacina/assets/urso_sem_capa.png" id="6_joacc"]
+[ext_resource type="Script" uid="uid://cxdp8uxn1hekp" path="res://telas/minigames/jogo_vacina/scripts/urso_sem_capa.gd" id="7_fx8rp"]
+[ext_resource type="Texture2D" uid="uid://cdam4mhchbkd3" path="res://telas/minigames/jogo_vacina/assets/medalha.png" id="7_p2u7d"]
+[ext_resource type="Script" uid="uid://dpxpbjaw6qfke" path="res://telas/minigames/jogo_vacina/scripts/medalha.gd" id="8_qcpju"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p2u7d"]
 animations = [{
 "frames": [{
-"duration": 1.5,
-"texture": ExtResource("3_fx8rp")
-}, {
 "duration": 1.4,
 "texture": ExtResource("4_1jgmo")
 }, {
-"duration": 50.0,
+"duration": 1.0,
+"texture": ExtResource("4_krnk3")
+}, {
+"duration": 1.5,
+"texture": ExtResource("3_fx8rp")
+}, {
+"duration": 1.5,
 "texture": ExtResource("5_krnk3")
 }],
 "loop": true,
 "name": &"balanco",
-"speed": 3.0
+"speed": 2.0
 }]
 
 [node name="Conquista" type="Node2D"]
@@ -32,8 +40,19 @@ scale = Vector2(0.936979, 0.802083)
 texture = ExtResource("2_joacc")
 
 [node name="capa" type="AnimatedSprite2D" parent="."]
-position = Vector2(350, 800)
+position = Vector2(350, 865)
 sprite_frames = SubResource("SpriteFrames_p2u7d")
 animation = &"balanco"
-frame_progress = 0.352849
+frame_progress = 0.668163
 speed_scale = 0.5
+
+[node name="medalha" type="Sprite2D" parent="."]
+position = Vector2(347, 490)
+texture = ExtResource("7_p2u7d")
+script = ExtResource("8_qcpju")
+
+[node name="urso_sem_capa" type="Sprite2D" parent="."]
+position = Vector2(364, 755)
+scale = Vector2(1.078, 1.104)
+texture = ExtResource("6_joacc")
+script = ExtResource("7_fx8rp")
