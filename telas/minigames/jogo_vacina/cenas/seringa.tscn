@@ -1,13 +1,113 @@
-[gd_scene load_steps=6 format=3 uid="uid://upbbd5wxd4u8"]
+[gd_scene load_steps=30 format=3 uid="uid://upbbd5wxd4u8"]
 
 [ext_resource type="Script" uid="uid://xe8b7a8qbymr" path="res://telas/minigames/jogo_vacina/scripts/seringa.gd" id="1_0pq5x"]
 [ext_resource type="Texture2D" uid="uid://bkbh0v6sfsp21" path="res://telas/minigames/jogo_vacina/assets/seringa.png" id="2_a7v8i"]
 [ext_resource type="Texture2D" uid="uid://bidtse2weowph" path="res://telas/minigames/jogo_vacina/assets/braco.png" id="3_mvbhp"]
 [ext_resource type="PackedScene" uid="uid://bpunx4t38irt0" path="res://telas/minigames/jogo_vacina/cenas/urso.tscn" id="4_a7v8i"]
+[ext_resource type="Texture2D" uid="uid://clno8be3rhruv" path="res://assets/animacoes/screen_click/00001.png" id="5_4n0p2"]
+[ext_resource type="Texture2D" uid="uid://rfbf7be30jcg" path="res://assets/animacoes/screen_click/00002.png" id="6_8bdft"]
+[ext_resource type="Texture2D" uid="uid://cu25trw1pumsy" path="res://assets/animacoes/screen_click/00003.png" id="7_g8p80"]
+[ext_resource type="Texture2D" uid="uid://50fvto53gpf7" path="res://assets/animacoes/screen_click/00004.png" id="8_j3wc3"]
+[ext_resource type="Texture2D" uid="uid://bputig857pk08" path="res://assets/animacoes/screen_click/00005.png" id="9_vlouw"]
+[ext_resource type="Texture2D" uid="uid://nfps1wd0fdi" path="res://assets/animacoes/screen_click/00006.png" id="10_mjnsx"]
+[ext_resource type="Texture2D" uid="uid://bbl8frefstyyq" path="res://assets/animacoes/screen_click/00007.png" id="11_mt8jn"]
+[ext_resource type="Texture2D" uid="uid://bkav4vwvo3plh" path="res://assets/animacoes/screen_click/00008.png" id="12_ay4f6"]
+[ext_resource type="Texture2D" uid="uid://cvol0scs7dfrs" path="res://assets/animacoes/screen_click/00009.png" id="13_frwfy"]
+[ext_resource type="Texture2D" uid="uid://du741s3mv0o72" path="res://assets/animacoes/screen_click/00010.png" id="14_lrqwa"]
+[ext_resource type="Texture2D" uid="uid://c1dnlfsgkrvm2" path="res://assets/animacoes/screen_click/00011.png" id="15_bi51x"]
+[ext_resource type="Texture2D" uid="uid://cjd5tsta1wam2" path="res://assets/animacoes/screen_click/00012.png" id="16_4284k"]
+[ext_resource type="Texture2D" uid="uid://c6amwel6lk7en" path="res://assets/animacoes/screen_click/00013.png" id="17_us2n2"]
+[ext_resource type="Texture2D" uid="uid://b0da3ioykg14v" path="res://assets/animacoes/screen_click/00014.png" id="18_0hp4p"]
+[ext_resource type="Texture2D" uid="uid://17csv1bahapr" path="res://assets/animacoes/screen_click/00015.png" id="19_psikx"]
+[ext_resource type="Texture2D" uid="uid://b3qrwm6ptdv0g" path="res://assets/animacoes/screen_click/00016.png" id="20_vo8ag"]
+[ext_resource type="Texture2D" uid="uid://53s25lw48rer" path="res://assets/animacoes/screen_click/00017.png" id="21_4fxuh"]
+[ext_resource type="Texture2D" uid="uid://biyyh2mlube2r" path="res://assets/animacoes/screen_click/00018.png" id="22_j5nco"]
+[ext_resource type="Texture2D" uid="uid://c3bkfcsp7q224" path="res://assets/animacoes/screen_click/00019.png" id="23_kbtsy"]
+[ext_resource type="Texture2D" uid="uid://w0blpmp0rr58" path="res://assets/animacoes/screen_click/00020.png" id="24_06b8f"]
+[ext_resource type="Texture2D" uid="uid://dv7q0cpkk8w1n" path="res://assets/animacoes/screen_click/00021.png" id="25_ovoxh"]
+[ext_resource type="Texture2D" uid="uid://bkh7t4vppgbfs" path="res://assets/animacoes/screen_click/00022.png" id="26_t22lj"]
+[ext_resource type="Texture2D" uid="uid://d00q6q8blv36t" path="res://assets/animacoes/screen_click/00023.png" id="27_no0xi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_paeca"]
 radius = 64.7935
 height = 129.587
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qahkn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_4n0p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8bdft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g8p80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j3wc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vlouw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mjnsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mt8jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ay4f6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_frwfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lrqwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bi51x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4284k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_us2n2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0hp4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_psikx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vo8ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4fxuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_j5nco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_kbtsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_06b8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ovoxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_t22lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_no0xi")
+}],
+"loop": true,
+"name": &"click",
+"speed": 25.0
+}]
 
 [node name="Seringa" type="Node2D"]
 
@@ -31,3 +131,16 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_mvbhp")
 
 [node name="Urso" parent="." instance=ExtResource("4_a7v8i")]
+
+[node name="MaoClick" type="AnimatedSprite2D" parent="."]
+position = Vector2(346, 518)
+scale = Vector2(0.433468, 0.547619)
+sprite_frames = SubResource("SpriteFrames_qahkn")
+animation = &"click"
+
+[node name="TimerMao" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="TimerMao" to="seringa" method="_on_timer_mao_timeout"]

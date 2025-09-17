@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbah4c8l5c0yu"]
+[gd_scene load_steps=5 format=3 uid="uid://wd5o68bowdxn"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_d4kxh"]
 [ext_resource type="Script" uid="uid://jo5kkhuk3aqb" path="res://telas/minigames/raioX/raio_x_menu.gd" id="2_w7b5u"]
