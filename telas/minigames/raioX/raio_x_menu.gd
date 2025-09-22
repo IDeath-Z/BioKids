@@ -14,7 +14,7 @@ func _ready() -> void:
 	menu_botoes_selecao.visible = false
 	textura_urso.visible = false
 	textura_balao_fala.visible = false
-	animacao_urso.play_backwards("sair_tela")
+	animacao_urso.play("entrar_tela")
 
 func _on_botao_iniciar_pressed() -> void:
 	if OS.get_name() == "Android":
@@ -56,7 +56,7 @@ func _on_animacao_tela_animation_finished(anim_name: StringName) -> void:
 		get_tree().change_scene_to_file("res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.tscn")
 
 func _on_animacao_urso_animation_started(anim_name: StringName) -> void:
-	if anim_name == "sair_tela":
+	if anim_name == "entrar_tela":
 		await get_tree().create_timer(0.1).timeout
 		textura_urso.visible = true
 

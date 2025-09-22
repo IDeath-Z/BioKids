@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmair4qiwak0x"]
+[gd_scene load_steps=3 format=3 uid="uid://dmair4qiwak0x"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_g3n1a"]
+[ext_resource type="Texture2D" uid="uid://pvmrww6hcfqy" path="res://assets/imagens/interface/chave_fechada.png" id="2_6jpus"]
 
 [node name="InfoMaoLadoDireito" type="Control"]
 layout_mode = 3
@@ -10,6 +11,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_g3n1a")
+
+[node name="}" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.477778
+anchor_top = 0.330556
+anchor_right = 0.571778
+anchor_bottom = 0.456556
+offset_right = 0.320007
+offset_bottom = -0.0800171
+texture = ExtResource("2_6jpus")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRectCabeca" type="ColorRect" parent="."]
 layout_mode = 1
@@ -131,27 +144,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="}" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.456945
-anchor_top = 0.335185
-anchor_right = 0.588556
-anchor_bottom = 0.459741
-offset_right = 0.240005
-offset_bottom = 0.479858
-theme_override_font_sizes/font_size = 90
-text = "}"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="Falange" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.559723
-anchor_top = 0.378704
-anchor_right = 0.801778
-anchor_bottom = 0.407889
+anchor_left = 0.569444
+anchor_top = 0.382407
+anchor_right = 0.811499
+anchor_bottom = 0.411592
 offset_right = -0.279999
 offset_bottom = -0.52002
 theme_override_font_sizes/font_size = 25

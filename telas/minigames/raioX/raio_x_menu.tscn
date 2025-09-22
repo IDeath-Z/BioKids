@@ -223,10 +223,10 @@ tracks/0/path = NodePath(".:anchor_left")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.17]
+"values": [0.17, 0.17]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -235,10 +235,10 @@ tracks/1/path = NodePath(".:anchor_top")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.651852]
+"values": [1.036, 1.036]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -247,10 +247,10 @@ tracks/2/path = NodePath(".:anchor_right")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.814]
+"values": [0.814, 0.814]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -259,10 +259,10 @@ tracks/3/path = NodePath(".:anchor_bottom")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.08186]
+"values": [1.466, 1.466]
 }
 
 [sub_resource type="Animation" id="Animation_881kb"]
@@ -317,8 +317,8 @@ tracks/3/keys = {
 "values": [1.08186, 1.08186]
 }
 
-[sub_resource type="Animation" id="Animation_qrwxr"]
-resource_name = "sair_tela"
+[sub_resource type="Animation" id="Animation_uhg2j"]
+resource_name = "entrar_tela"
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -342,7 +342,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.651852, 1.03611]
+"values": [1.036, 0.652]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -366,14 +366,14 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.08186, 1.46612]
+"values": [1.464, 1.082]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ptl2l"]
 _data = {
 &"RESET": SubResource("Animation_7hp0o"),
 &"como_jogar": SubResource("Animation_881kb"),
-&"sair_tela": SubResource("Animation_qrwxr")
+&"entrar_tela": SubResource("Animation_uhg2j")
 }
 
 [sub_resource type="Animation" id="Animation_twwl0"]
@@ -547,13 +547,12 @@ size_flags_horizontal = 4
 text = "Voltar"
 
 [node name="TexturaUrso" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.17
-anchor_top = 0.651852
+anchor_top = 1.036
 anchor_right = 0.814
-anchor_bottom = 1.08186
+anchor_bottom = 1.466
 offset_right = 0.319946
 offset_bottom = -0.400024
 grow_horizontal = 2

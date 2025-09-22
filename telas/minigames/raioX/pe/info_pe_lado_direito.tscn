@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bplc11akfp1vl"]
+[gd_scene load_steps=3 format=3 uid="uid://bplc11akfp1vl"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_72bvc"]
+[ext_resource type="Texture2D" uid="uid://pvmrww6hcfqy" path="res://assets/imagens/interface/chave_fechada.png" id="2_416ce"]
 
 [node name="InfoPeLadoDireito" type="Control"]
 layout_mode = 3
@@ -10,6 +11,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_72bvc")
+
+[node name="}" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.708333
+anchor_top = 0.351852
+anchor_right = 0.803722
+anchor_bottom = 0.581556
+offset_right = 0.320007
+offset_bottom = -0.0800171
+texture = ExtResource("2_416ce")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 1
@@ -224,18 +237,4 @@ theme_override_font_sizes/font_size = 25
 text = "Talus"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="{" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.688889
-anchor_top = 0.337963
-anchor_right = 0.8205
-anchor_bottom = 0.562519
-offset_right = 0.240005
-offset_bottom = 0.479858
-theme_override_font_sizes/font_size = 200
-text = "}"
-horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
