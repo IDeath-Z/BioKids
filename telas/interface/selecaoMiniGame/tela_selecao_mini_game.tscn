@@ -298,7 +298,7 @@ size_flags_vertical = 4
 texture_normal = ExtResource("2_v2fs8")
 stretch_mode = 1
 
-[node name="Miigame2" type="TextureButton" parent="MarginContainer/GridBotoes"]
+[node name="MiniGame_Vacina" type="TextureButton" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -385,6 +385,7 @@ anchor_right = 0.0
 script = null
 
 [connection signal="pressed" from="MarginContainer/GridBotoes/MiniGame-RaioX" to="." method="_on_mini_game_raio_x_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/MiniGame_Vacina" to="." method="_on_mini_game_vacina_pressed"]
 [connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="animation_finished" from="TexturaJogos/AnimacaoJogos" to="." method="_on_animacao_jogos_animation_finished"]
 [connection signal="animation_started" from="TexturaJogos/AnimacaoJogos" to="." method="_on_animacao_jogos_animation_started"]

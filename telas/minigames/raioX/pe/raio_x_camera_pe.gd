@@ -58,7 +58,4 @@ func _on_animacao_scanner_animation_finished(anim_name: StringName) -> void:
 		
 func _on_animacao_fundo_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "cobrir":
-		if OS.get_name() == "Android":
-			_on_stop_capturing_pressed()
-			
-		get_tree().change_scene_to_file("res://telas/minigames/raioX/raio_x_imagem.tscn")
+		get_tree().change_scene_to_file("res://telas/minigames/raioX/pe/raio_x_imagem_pe.tscn")

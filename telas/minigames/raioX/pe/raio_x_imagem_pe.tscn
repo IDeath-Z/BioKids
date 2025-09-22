@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://2flxkeoxgtd7"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_mfnik"]
-[ext_resource type="Script" uid="uid://xghafiwgypcb" path="res://telas/minigames/raioX/mao/raio_x_imagem_mao.gd" id="2_1isvd"]
+[ext_resource type="Script" uid="uid://dt7upmqmj5uaj" path="res://telas/minigames/raioX/pe/raio_x_imagem_pe.gd" id="2_s7yp3"]
 [ext_resource type="Texture2D" uid="uid://00dibchsr46i" path="res://assets/imagens/mini_games/raiox/x_ray_pe.jpg" id="3_s7yp3"]
 [ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="4_wfixb"]
 
@@ -151,7 +151,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_mfnik")
-script = ExtResource("2_1isvd")
+script = ExtResource("2_s7yp3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

@@ -1,9 +1,9 @@
 [gd_scene load_steps=26 format=3 uid="uid://c1fc1rvjw5yge"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_82mj3"]
-[ext_resource type="Texture2D" uid="uid://bo3jfs7vq0ug5" path="res://assets/imagens/interface/x-ray.jpg" id="1_aijxs"]
 [ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="2_82mj3"]
 [ext_resource type="Script" uid="uid://xghafiwgypcb" path="res://telas/minigames/raioX/mao/raio_x_imagem_mao.gd" id="2_pgh2h"]
+[ext_resource type="Texture2D" uid="uid://dki71vwu87lly" path="res://assets/imagens/mini_games/raiox/x-ray.jpg" id="3_vwx6e"]
 [ext_resource type="PackedScene" uid="uid://6vfxq1q61ycr" path="res://telas/minigames/raioX/mao/info_mao_lado_esquerdo.tscn" id="5_doiuc"]
 [ext_resource type="PackedScene" uid="uid://dmair4qiwak0x" path="res://telas/minigames/raioX/mao/info_mao_lado_direito.tscn" id="5_vwx6e"]
 
@@ -86,70 +86,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_vwx6e"]
-resource_name = "lado_esquerdo"
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:anchor_left")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0166667, 0.490278]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:anchor_top")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.210185, 0.210185]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:anchor_right")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 1.47361]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:anchor_bottom")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_ml0vr"]
 resource_name = "lado_direito"
 length = 2.00001
@@ -215,12 +151,91 @@ tracks/4/keys = {
 "values": [1.0, 1.0]
 }
 
+[sub_resource type="Animation" id="Animation_vwx6e"]
+resource_name = "lado_esquerdo"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0166667, 0.490278]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.210185, 0.210185]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchor_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.47361]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:anchor_bottom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5x1b4"]
 _data = {
 &"RESET": SubResource("Animation_fufn5"),
 &"fade": SubResource("Animation_pgh2h"),
 &"lado_direito": SubResource("Animation_ml0vr"),
 &"lado_esquerdo": SubResource("Animation_vwx6e")
+}
+
+[sub_resource type="Animation" id="Animation_xtipi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_doiuc"]
@@ -239,7 +254,13 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_xtipi"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ml0vr"]
+_data = {
+&"RESET": SubResource("Animation_xtipi"),
+&"fade": SubResource("Animation_doiuc")
+}
+
+[sub_resource type="Animation" id="Animation_1ftr0"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -252,12 +273,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ml0vr"]
-_data = {
-&"RESET": SubResource("Animation_xtipi"),
-&"fade": SubResource("Animation_doiuc")
 }
 
 [sub_resource type="Animation" id="Animation_gys2s"]
@@ -274,21 +289,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_1ftr0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nmt54"]
@@ -407,7 +407,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_82mj3")
 script = ExtResource("2_pgh2h")
-metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -428,7 +427,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_aijxs")
+texture = ExtResource("3_vwx6e")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -439,7 +438,6 @@ libraries = {
 speed_scale = 0.8
 
 [node name="InfoMaoLadoEsquerdo" parent="." instance=ExtResource("5_doiuc")]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
@@ -468,11 +466,9 @@ offset_right = -0.0800171
 offset_bottom = -0.0400085
 ratio = 2.8
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="PopUpDicas" parent="AspectRatioContainerDicas" instance=ExtResource("2_82mj3")]
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="AspectRatioContainerDicas/PopUpDicas"]
 layout_mode = 1
@@ -491,7 +487,6 @@ Quer conhecer um pouco mais sobre ela?
 vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="AnimacaoTexto" type="AnimationPlayer" parent="AspectRatioContainerDicas/PopUpDicas/Label"]
 libraries = {
@@ -513,14 +508,12 @@ offset_right = 234.0
 offset_bottom = 168.2
 grow_horizontal = 2
 theme_override_constants/separation = 30
-metadata/_edit_lock_ = true
 
 [node name="BotaoSim" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.5
 text = "Sim"
-metadata/_edit_lock_ = true
 
 [node name="BotaoNao" type="Button" parent="HBoxContainer"]
 layout_mode = 2
@@ -530,7 +523,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_fufn5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_82mj3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fufn5")
 text = "Não"
-metadata/_edit_lock_ = true
 
 [node name="AnimacaoBotoes" type="AnimationPlayer" parent="HBoxContainer"]
 libraries = {
@@ -539,7 +531,6 @@ libraries = {
 speed_scale = 0.8
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -552,21 +543,18 @@ offset_right = 234.0
 offset_bottom = 168.0
 grow_horizontal = 2
 theme_override_constants/separation = 30
-metadata/_edit_lock_ = true
 
 [node name="BotaoAnterior" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.5
 text = "Anterior"
-metadata/_edit_lock_ = true
 
 [node name="BotaoProximo" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.5
 text = "Proximo"
-metadata/_edit_lock_ = true
 
 [connection signal="animation_finished" from="AreaMao/AnimacaoMao" to="." method="_on_animacao_mao_animation_finished"]
 [connection signal="animation_started" from="AreaMao/AnimacaoMao" to="." method="_on_animacao_mao_animation_started"]

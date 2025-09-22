@@ -32,7 +32,7 @@ func _on_camera_frame(_timestamp: int, data: PackedByteArray, width: int, height
 func _on_start_capturing_pressed() -> void:
 	if android_camera:
 		android_camera.start_camera(camera_view.get_size().x, camera_view.get_size().y, false)
-
+		
 func _on_stop_capturing_pressed() -> void:
 	if android_camera:
 		android_camera.stop_camera()
@@ -58,9 +58,6 @@ func _on_animacao_scanner_animation_finished(anim_name: StringName) -> void:
 		
 func _on_animacao_fundo_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "cobrir":
-		if OS.get_name() == "Android":
-			_on_stop_capturing_pressed()
-			
 		get_tree().change_scene_to_file("res://telas/minigames/raioX/mao/raio_x_imagem_mao.tscn")
 
 func _on_pop_up_dicas_botao_audio_pressed() -> void:
