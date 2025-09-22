@@ -19,9 +19,7 @@ func _on_botao_sim_pressed() -> void:
 	pass # Fazer a logica pra ir pra tela de raio-x  de novo
 	
 func _on_botao_nao_pressed() -> void:
-	# Colocar a tela do biofato
-	get_tree().change_scene_to_file("res://telas/minigames/raioX/raio_x_menu.tscn")
-
+	get_tree().change_scene_to_file("res://telas/minigames/raioX/bio_fato/bio_fato_raio_x.tscn")
 
 func _on_animacao_mao_animation_started(anim_name: StringName) -> void:
 	if anim_name == "fade":
@@ -29,3 +27,7 @@ func _on_animacao_mao_animation_started(anim_name: StringName) -> void:
 		area_mao.visible = true
 		texto.visible = true
 		botoes.visible = true
+
+func _on_pop_up_dicas_botao_audio_pressed() -> void:
+	# Colocar o audio aqui quando tiver
+	pass

@@ -83,3 +83,5 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_ehml4")
 expand_mode = 1
+
+[connection signal="pressed" from="AspectRatioContainer/BotaoAudio" to="." method="_on_botao_audio_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0nkhbv8diqwc"]
+[gd_scene load_steps=7 format=3 uid="uid://c0nkhbv8diqwc"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_vtkux"]
+[ext_resource type="Script" uid="uid://cnafhvdmfwf4j" path="res://telas/interface/bioFato/bio_fato.gd" id="2_kpqb2"]
 [ext_resource type="Texture2D" uid="uid://hcb1edp5f80d" path="res://assets/imagens/interface/background_bio_fato.png" id="2_w15fc"]
 [ext_resource type="Texture2D" uid="uid://d4dgvw24ry6ec" path="res://assets/imagens/interface/biofato_card.png" id="3_kpqb2"]
 [ext_resource type="Theme" uid="uid://dv6ojfjvk877o" path="res://assets/temas/tema_botao_audio.tres" id="4_axa81"]
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_vtkux")
+script = ExtResource("2_kpqb2")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -89,3 +91,6 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 text = "Continuar"
+
+[connection signal="pressed" from="AspectRatioContainer/BotaoAudio" to="." method="_on_botao_audio_pressed"]
+[connection signal="pressed" from="BotaoContinuar" to="." method="_on_botao_continuar_pressed"]

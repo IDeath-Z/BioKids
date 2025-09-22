@@ -1,9 +1,24 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1fc1rvjw5yge"]
+[gd_scene load_steps=16 format=3 uid="uid://2flxkeoxgtd7"]
 
-[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_82mj3"]
-[ext_resource type="Texture2D" uid="uid://bo3jfs7vq0ug5" path="res://assets/imagens/interface/x-ray.jpg" id="1_aijxs"]
-[ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="2_82mj3"]
-[ext_resource type="Script" uid="uid://xghafiwgypcb" path="res://telas/minigames/raioX/raio_x_imagem.gd" id="2_pgh2h"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_mfnik"]
+[ext_resource type="Script" uid="uid://xghafiwgypcb" path="res://telas/minigames/raioX/mao/raio_x_imagem_mao.gd" id="2_1isvd"]
+[ext_resource type="Texture2D" uid="uid://00dibchsr46i" path="res://assets/imagens/mini_games/raiox/x_ray_pe.jpg" id="3_s7yp3"]
+[ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="4_wfixb"]
+
+[sub_resource type="Animation" id="Animation_fufn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_pgh2h"]
 resource_name = "fade"
@@ -21,7 +36,13 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_fufn5"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5x1b4"]
+_data = {
+&"RESET": SubResource("Animation_fufn5"),
+&"fade": SubResource("Animation_pgh2h")
+}
+
+[sub_resource type="Animation" id="Animation_lwv3r"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -33,13 +54,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5x1b4"]
-_data = {
-&"RESET": SubResource("Animation_fufn5"),
-&"fade": SubResource("Animation_pgh2h")
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_2fpk7"]
@@ -56,21 +71,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_lwv3r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ijva6"]
@@ -106,6 +106,21 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.8, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_cxi01"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_woo8i"]
 resource_name = "fade"
 step = 0.0166667
@@ -122,21 +137,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_cxi01"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qm0o5"]
 _data = {
 &"RESET": SubResource("Animation_cxi01"),
@@ -150,8 +150,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_82mj3")
-script = ExtResource("2_pgh2h")
+theme = ExtResource("1_mfnik")
+script = ExtResource("2_1isvd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -172,7 +172,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_aijxs")
+texture = ExtResource("3_s7yp3")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -194,7 +194,7 @@ offset_bottom = -0.0400085
 ratio = 2.8
 metadata/_edit_use_anchors_ = true
 
-[node name="PopUpDicas" parent="AspectRatioContainerDicas" instance=ExtResource("2_82mj3")]
+[node name="PopUpDicas" parent="AspectRatioContainerDicas" instance=ExtResource("4_wfixb")]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="AspectRatioContainerDicas/PopUpDicas"]
@@ -207,9 +207,9 @@ anchor_bottom = 0.890185
 offset_right = 0.222015
 offset_bottom = -0.0720062
 theme_override_font_sizes/font_size = 20
-text = "Uau, sua mão em raio-x ficou demais!
+text = "Uau, seu pé em raio-x ficou demais!
 
-Quer tentar com o pé agora?
+Quer conhecer um pouco mais sobre ele?
 "
 vertical_alignment = 1
 autowrap_mode = 3
@@ -258,5 +258,6 @@ libraries = {
 speed_scale = 0.8
 
 [connection signal="animation_started" from="AreaMao/AnimacaoMao" to="." method="_on_animacao_mao_animation_started"]
+[connection signal="botao_audio_pressed" from="AspectRatioContainerDicas/PopUpDicas" to="." method="_on_pop_up_dicas_botao_audio_pressed"]
 [connection signal="pressed" from="HBoxContainer/BotaoSim" to="." method="_on_botao_sim_pressed"]
 [connection signal="pressed" from="HBoxContainer/BotaoNao" to="." method="_on_botao_nao_pressed"]
