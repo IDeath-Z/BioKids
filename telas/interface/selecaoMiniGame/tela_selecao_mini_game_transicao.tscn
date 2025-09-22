@@ -3,8 +3,8 @@
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_a8xpm"]
 [ext_resource type="Script" uid="uid://mnlv7kfq6qry" path="res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.gd" id="2_d2w1g"]
 [ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://assets/imagens/interface/background_inicio.png" id="3_3p3ck"]
-[ext_resource type="Texture2D" uid="uid://bpqgxo67mvjlp" path="res://assets/imagens/interface/exBackgroundButton.png" id="4_wkj50"]
 [ext_resource type="Texture2D" uid="uid://sco4e0cuo658" path="res://assets/imagens/interface/nuvem.png" id="5_7a4ux"]
+[ext_resource type="Texture2D" uid="uid://3yb1i4y67env" path="res://assets/imagens/interface/nuvem_jogos.png" id="5_a8xpm"]
 
 [node name="TelaSelecaoMiniGame" type="Control"]
 layout_mode = 3
@@ -30,52 +30,52 @@ expand_mode = 1
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
+anchor_left = 0.081
 anchor_top = 0.32037
-anchor_right = 0.5
-anchor_bottom = 0.42037
-offset_left = -302.0
-offset_right = 302.0
-offset_bottom = 400.0
-grow_horizontal = 2
-metadata/_edit_use_anchors_ = true
+anchor_right = 0.919
+anchor_bottom = 0.759
+offset_left = -0.32
+offset_right = 0.320007
+offset_bottom = 34.2795
 
 [node name="GridBotoes" type="GridContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
 columns = 2
 
-[node name="MiniGame-RaioX" type="TextureButton" parent="MarginContainer/GridBotoes"]
+[node name="BioX" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-texture_normal = ExtResource("4_wkj50")
-stretch_mode = 1
+text = "Bio-x"
 
-[node name="Miigame2" type="TextureButton" parent="MarginContainer/GridBotoes"]
+[node name="BioVacina" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-texture_normal = ExtResource("4_wkj50")
-stretch_mode = 1
+text = "BioVacina"
 
-[node name="Miigame3" type="TextureButton" parent="MarginContainer/GridBotoes"]
+[node name="Caca" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("4_wkj50")
-stretch_mode = 1
+theme_override_font_sizes/font_size = 40
+text = "Caça Bactérias"
 
-[node name="Miigame4" type="TextureButton" parent="MarginContainer/GridBotoes"]
+[node name="Missao" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("4_wkj50")
-stretch_mode = 1
+theme_override_font_sizes/font_size = 34
+text = "Missão Vitaminas"
+
+[node name="BioEscudo" type="Button" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+text = "BioEscudo"
+
+[node name="BioGoods" type="Button" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+text = "BioGoods"
 
 [node name="BotaoVoltar" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 100)
@@ -107,7 +107,15 @@ offset_bottom = 0.279999
 grow_horizontal = 2
 texture = ExtResource("5_7a4ux")
 expand_mode = 2
-metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="MarginContainer/GridBotoes/MiniGame-RaioX" to="." method="_on_mini_game_raio_x_pressed"]
-[connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
+[node name="TexturaJogos" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.028
+anchor_bottom = 0.284
+offset_left = 0.079998
+offset_bottom = 0.279999
+grow_horizontal = 2
+texture = ExtResource("5_a8xpm")
+expand_mode = 2

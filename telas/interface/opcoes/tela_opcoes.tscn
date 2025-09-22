@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bsfehnuvqqial"]
+[gd_scene load_steps=17 format=3 uid="uid://bsfehnuvqqial"]
 
 [ext_resource type="Script" uid="uid://cq2sihlxyr00n" path="res://telas/interface/opcoes/tela_opcoes.gd" id="1_brw4w"]
 [ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://assets/imagens/interface/background_inicio.png" id="2_brw4w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://8lgun1lam1b2" path="res://assets/imagens/interface/mascote_pensando.png" id="4_0cs76"]
 [ext_resource type="Texture2D" uid="uid://ctdxjry75j3np" path="res://assets/imagens/interface/nuvem_opcoes.png" id="5_ondap"]
 [ext_resource type="Texture2D" uid="uid://sco4e0cuo658" path="res://assets/imagens/interface/nuvem.png" id="6_eyhje"]
+[ext_resource type="PackedScene" uid="uid://7b4avd24pbe4" path="res://telas/interface/opcoes/creditos.tscn" id="7_3xww5"]
 
 [sub_resource type="Animation" id="Animation_3xww5"]
 length = 0.001
@@ -249,6 +250,115 @@ _data = {
 &"sair_tela": SubResource("Animation_3kkkp")
 }
 
+[sub_resource type="Animation" id="Animation_rn0bn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_crx1h"]
+resource_name = "entrar_tela"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2vuou"]
+_data = {
+&"RESET": SubResource("Animation_rn0bn"),
+&"entrar_tela": SubResource("Animation_crx1h")
+}
+
 [node name="TelaOpcoes" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -288,12 +398,13 @@ layout_mode = 2
 theme = ExtResource("3_ondap")
 theme_override_constants/separation = 40
 
-[node name="Botao" type="Button" parent="MarginContainer/GridBotoes"]
+[node name="BotaoMusica" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "É um botão"
+theme_override_font_sizes/font_size = 30
+text = "Musica : Ligada"
 
 [node name="BotaoCreditos" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
@@ -362,6 +473,24 @@ libraries = {
 }
 speed_scale = 2.5
 
+[node name="Creditos" parent="." instance=ExtResource("7_3xww5")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 2.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimacaoCreditos" type="AnimationPlayer" parent="Creditos"]
+libraries = {
+&"": SubResource("AnimationLibrary_2vuou")
+}
+speed_scale = 0.8
+
+[connection signal="pressed" from="MarginContainer/GridBotoes/BotaoMusica" to="." method="_on_botao_musica_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/BotaoCreditos" to="." method="_on_botao_creditos_pressed"]
 [connection signal="pressed" from="MarginContainer/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="animation_finished" from="TexturaUrso/AnimacaoUrso" to="." method="_on_animacao_urso_animation_finished"]
 [connection signal="animation_started" from="TexturaUrso/AnimacaoUrso" to="." method="_on_animacao_urso_animation_started"]
+[connection signal="animacao_botao_voltar_finished" from="Creditos" to="." method="_on_creditos_animacao_botao_voltar_finished"]
+[connection signal="botao_voltar_pressed" from="Creditos" to="." method="_on_creditos_botao_voltar_pressed"]
+[connection signal="animation_finished" from="Creditos/AnimacaoCreditos" to="." method="_on_animacao_creditos_animation_finished"]

@@ -10,12 +10,12 @@ func _ready() -> void:
 	textura_jogos.visible = false
 	animacao_jogos.play("fade_out")
 
-func _on_mini_game_raio_x_pressed() -> void:
+func _on_bio_x_pressed() -> void:
 	animacao_jogos.play_backwards("fade_out")
 	animacao_tela.play("mover_cenario")
 	botao_pressionado = "raioX"
-	
-func _on_mini_game_vacina_pressed() -> void:
+
+func _on_bio_vacina_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/main.tscn")
 	
 func _on_botao_voltar_pressed() -> void:

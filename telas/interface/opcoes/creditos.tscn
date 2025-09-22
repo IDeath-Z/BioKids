@@ -1,0 +1,173 @@
+[gd_scene load_steps=7 format=3 uid="uid://7b4avd24pbe4"]
+
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_isp5d"]
+[ext_resource type="Texture2D" uid="uid://bra1a0pqbka7" path="res://assets/imagens/interface/pop_up_creditos.png" id="2_jarm1"]
+[ext_resource type="Script" uid="uid://e7vh3l1j54jf" path="res://telas/interface/opcoes/creditos.gd" id="2_qkrkk"]
+
+[sub_resource type="Animation" id="Animation_qkrkk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jarm1"]
+resource_name = "fade"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ui3gu"]
+_data = {
+&"RESET": SubResource("Animation_qkrkk"),
+&"fade": SubResource("Animation_jarm1")
+}
+
+[node name="Creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_isp5d")
+script = ExtResource("2_qkrkk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.03
+anchor_right = 0.95
+anchor_bottom = 1.0
+offset_bottom = -223.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jarm1")
+expand_mode = 1
+
+[node name="BotaoVoltar" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -180.0
+offset_right = 150.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "Voltar"
+
+[node name="AnimacaoBotaoVoltar" type="AnimationPlayer" parent="BotaoVoltar"]
+libraries = {
+&"": SubResource("AnimationLibrary_ui3gu")
+}
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.101389
+anchor_top = 0.0527778
+anchor_right = 0.611
+anchor_bottom = 0.0977778
+offset_right = 0.0799866
+offset_bottom = 0.399994
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Desenvolvimento:"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.124
+anchor_top = 0.094
+anchor_right = 0.879
+anchor_bottom = 0.285
+offset_left = -0.280006
+offset_top = 0.479996
+offset_right = 0.119934
+offset_bottom = 0.199982
+
+[node name="Label2" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(544, 31)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Bruno Fortes - Caça bactérias"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(544, 31)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Jean Cristian Hertz  - Missão vitaminas"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(544, 31)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "José Antonio M. de Oliveira - Bio-x"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(544, 31)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "José Naildo Silva Costa - BioEscudo"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(544, 31)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Vitor Borges dos Santos - BioGoods"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(544, 31)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Yosaf Marques Machado Silva - BioVacina"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
+[connection signal="animation_finished" from="BotaoVoltar/AnimacaoBotaoVoltar" to="." method="_on_animacao_botao_voltar_animation_finished"]

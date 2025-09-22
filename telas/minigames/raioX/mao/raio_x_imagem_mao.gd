@@ -36,6 +36,7 @@ func _ready() -> void:
 func _on_botao_sim_pressed() -> void:
 	if estado_atual == Estado.INICIAL:
 		estado_atual = Estado.LADO_ESQUERDO
+		texto.text = "Estes são os ossos que formam a sua mão! Com eles, você consegue segurar um lápis, montar brinquedos e dar um 'tchauzinho'!"
 		animacao_mao.play("lado_esquerdo") # Cai na linha 73
 	elif estado_atual == Estado.LADO_DIREITO:
 		# Vira o botão "Anterior" pra reaproveitar
@@ -51,6 +52,7 @@ func _on_botao_anterior_pressed() -> void:
 	estado_atual = Estado.INICIAL
 	botoes_s_n.visible = true
 	botoes_ant_prox.visible = false
+	texto.text = "Uau, sua mão em raio-x ficou demais! \n \nQuer conhecer um pouco mais sobre ela?"
 	animacao_info_lado_esquerdo.play_backwards("fade") # Cai na 92
 		
 func _on_botao_proximo_pressed() -> void:

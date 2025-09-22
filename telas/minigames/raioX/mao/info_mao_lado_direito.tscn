@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_g3n1a")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRectCabeca" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.166722
@@ -24,7 +24,7 @@ offset_right = -0.279999
 offset_bottom = -6.10352e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRectInterno" type="ColorRect" parent="ColorRect2"]
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectCabeca"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -36,7 +36,7 @@ grow_vertical = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 metadata/_edit_lock_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="."]
+[node name="ColorRectCorpo" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.166722
@@ -49,7 +49,7 @@ offset_right = -0.279999
 offset_bottom = -6.10352e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRectInterno" type="ColorRect" parent="ColorRect3"]
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectCorpo"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -61,7 +61,7 @@ grow_vertical = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 metadata/_edit_lock_ = true
 
-[node name="ColorRect4" type="ColorRect" parent="."]
+[node name="ColorRectBase" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.166722
@@ -74,7 +74,7 @@ offset_right = -0.279999
 offset_bottom = -6.10352e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRectInterno" type="ColorRect" parent="ColorRect4"]
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectBase"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -86,7 +86,7 @@ grow_vertical = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Cabeca" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3625
@@ -101,7 +101,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="."]
+[node name="Corpo" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3625
@@ -116,7 +116,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="."]
+[node name="Base" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3625
@@ -131,7 +131,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label4" type="Label" parent="."]
+[node name="}" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.456945
@@ -145,7 +145,7 @@ text = "}"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label5" type="Label" parent="."]
+[node name="Falange" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.559723
@@ -160,7 +160,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect5" type="ColorRect" parent="."]
+[node name="ColorRectOssos" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.354222
@@ -173,7 +173,7 @@ offset_right = -0.279999
 offset_bottom = -6.10352e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRectInterno" type="ColorRect" parent="ColorRect5"]
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectOssos"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -185,7 +185,7 @@ grow_vertical = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 metadata/_edit_lock_ = true
 
-[node name="Label6" type="Label" parent="."]
+[node name="Ossos" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.6375
@@ -200,7 +200,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect6" type="ColorRect" parent="."]
+[node name="ColorRectTrapezoide" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.112222
@@ -213,7 +213,7 @@ offset_right = -0.279999
 offset_bottom = -6.10352e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRectInterno" type="ColorRect" parent="ColorRect6"]
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectTrapezoide"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -225,7 +225,7 @@ grow_vertical = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 metadata/_edit_lock_ = true
 
-[node name="ColorRect7" type="ColorRect" parent="."]
+[node name="ColorRectTrapezio" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.212556
@@ -238,7 +238,7 @@ offset_right = -0.279999
 offset_bottom = -6.10352e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRectInterno" type="ColorRect" parent="ColorRect7"]
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectTrapezio"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -250,7 +250,7 @@ grow_vertical = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 metadata/_edit_lock_ = true
 
-[node name="ColorRect8" type="ColorRect" parent="."]
+[node name="ColorRectCapitato" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0417221
@@ -263,7 +263,7 @@ offset_right = -0.279999
 offset_bottom = -6.10352e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRectInterno" type="ColorRect" parent="ColorRect8"]
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectCapitato"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -275,7 +275,7 @@ grow_vertical = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 metadata/_edit_lock_ = true
 
-[node name="ColorRect9" type="ColorRect" parent="."]
+[node name="ColorRectEscafoide" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1195
@@ -288,7 +288,7 @@ offset_right = -0.279999
 offset_bottom = -6.10352e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRectInterno" type="ColorRect" parent="ColorRect9"]
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectEscafoide"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -300,7 +300,7 @@ grow_vertical = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 metadata/_edit_lock_ = true
 
-[node name="Label7" type="Label" parent="."]
+[node name="Trapezoide" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.765278
@@ -315,7 +315,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label8" type="Label" parent="."]
+[node name="Trapezio" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.665278
@@ -330,7 +330,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label9" type="Label" parent="."]
+[node name="Capitato" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.569445
@@ -345,7 +345,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label10" type="Label" parent="."]
+[node name="Escafoide" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.47639

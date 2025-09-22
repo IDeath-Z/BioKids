@@ -262,6 +262,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_1ftr0"]
 length = 0.001
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -482,8 +483,7 @@ offset_bottom = -0.0720062
 theme_override_font_sizes/font_size = 20
 text = "Uau, sua mão em raio-x ficou demais!
 
-Quer conhecer um pouco mais sobre ela?
-"
+Quer conhecer um pouco mais sobre ela?"
 vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true

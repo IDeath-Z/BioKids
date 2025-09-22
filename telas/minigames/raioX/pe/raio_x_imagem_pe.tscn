@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://2flxkeoxgtd7"]
+[gd_scene load_steps=26 format=3 uid="uid://b7yvdss3tx5rd"]
 
-[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_mfnik"]
-[ext_resource type="Script" uid="uid://dt7upmqmj5uaj" path="res://telas/minigames/raioX/pe/raio_x_imagem_pe.gd" id="2_s7yp3"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_1l3ub"]
+[ext_resource type="Script" uid="uid://ufurtqvrxtvf" path="res://telas/minigames/raioX/pe/raio_x_imagem_pe.gd" id="2_s7yp3"]
+[ext_resource type="PackedScene" uid="uid://2p2hasqjm1sv" path="res://telas/minigames/raioX/pe/info_pe_lado_esquerdo.tscn" id="3_o0hkf"]
 [ext_resource type="Texture2D" uid="uid://00dibchsr46i" path="res://assets/imagens/mini_games/raiox/x_ray_pe.jpg" id="3_s7yp3"]
-[ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="4_wfixb"]
+[ext_resource type="PackedScene" uid="uid://bplc11akfp1vl" path="res://telas/minigames/raioX/pe/info_pe_lado_direito.tscn" id="4_bkhod"]
+[ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="6_6eblv"]
 
 [sub_resource type="Animation" id="Animation_fufn5"]
 length = 0.001
@@ -18,6 +20,54 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0166667]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.210185]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchor_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:anchor_bottom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_pgh2h"]
@@ -36,10 +86,216 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_ml0vr"]
+resource_name = "lado_direito"
+length = 2.00001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.00001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.00001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.49, -0.411]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.00001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.210185, 0.210185]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchor_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.00001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.474, 0.572]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:anchor_bottom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.00001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_vwx6e"]
+resource_name = "lado_esquerdo"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0166667, 0.490278]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.210185, 0.210185]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchor_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.47361]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:anchor_bottom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5x1b4"]
 _data = {
 &"RESET": SubResource("Animation_fufn5"),
-&"fade": SubResource("Animation_pgh2h")
+&"fade": SubResource("Animation_pgh2h"),
+&"lado_direito": SubResource("Animation_ml0vr"),
+&"lado_esquerdo": SubResource("Animation_vwx6e")
+}
+
+[sub_resource type="Animation" id="Animation_xtipi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_doiuc"]
+resource_name = "fade"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ml0vr"]
+_data = {
+&"RESET": SubResource("Animation_xtipi"),
+&"fade": SubResource("Animation_doiuc")
+}
+
+[sub_resource type="Animation" id="Animation_1ftr0"]
+length = 0.001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gys2s"]
+resource_name = "fade"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nmt54"]
+_data = {
+&"RESET": SubResource("Animation_1ftr0"),
+&"fade": SubResource("Animation_gys2s")
 }
 
 [sub_resource type="Animation" id="Animation_lwv3r"]
@@ -150,19 +406,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_mfnik")
+theme = ExtResource("1_1l3ub")
 script = ExtResource("2_s7yp3")
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
 
-[node name="AreaMao" type="TextureRect" parent="."]
+[node name="AreaPe" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -175,12 +433,31 @@ grow_vertical = 2
 texture = ExtResource("3_s7yp3")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
-[node name="AnimacaoMao" type="AnimationPlayer" parent="AreaMao"]
+[node name="AnimacaoPe" type="AnimationPlayer" parent="AreaPe"]
 libraries = {
 &"": SubResource("AnimationLibrary_5x1b4")
 }
 speed_scale = 0.8
+
+[node name="InfoPeLadoEsquerdo" parent="." instance=ExtResource("3_o0hkf")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+
+[node name="AnimacaoLadoEsquerdo" type="AnimationPlayer" parent="InfoPeLadoEsquerdo"]
+libraries = {
+&"": SubResource("AnimationLibrary_ml0vr")
+}
+
+[node name="InfoPeLadoDireito" parent="." instance=ExtResource("4_bkhod")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+
+[node name="AnimacaoLadoDireito" type="AnimationPlayer" parent="InfoPeLadoDireito"]
+libraries = {
+&"": SubResource("AnimationLibrary_nmt54")
+}
 
 [node name="AspectRatioContainerDicas" type="AspectRatioContainer" parent="."]
 layout_mode = 1
@@ -194,25 +471,24 @@ offset_bottom = -0.0400085
 ratio = 2.8
 metadata/_edit_use_anchors_ = true
 
-[node name="PopUpDicas" parent="AspectRatioContainerDicas" instance=ExtResource("4_wfixb")]
+[node name="PopUpDicas" parent="AspectRatioContainerDicas" instance=ExtResource("6_6eblv")]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="AspectRatioContainerDicas/PopUpDicas"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.308294
-anchor_top = 0.273128
-anchor_right = 0.749261
-anchor_bottom = 0.890185
+anchor_left = 0.307812
+anchor_top = 0.214375
+anchor_right = 0.74809
+anchor_bottom = 0.936565
 offset_right = 0.222015
 offset_bottom = -0.0720062
 theme_override_font_sizes/font_size = 20
 text = "Uau, seu pé em raio-x ficou demais!
 
-Quer conhecer um pouco mais sobre ele?
-"
+Quer conhecer um pouco mais sobre ele?"
 vertical_alignment = 1
-autowrap_mode = 3
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimacaoTexto" type="AnimationPlayer" parent="AspectRatioContainerDicas/PopUpDicas/Label"]
@@ -226,15 +502,16 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.127778
+anchor_top = 0.135
 anchor_right = 0.5
-anchor_bottom = 0.127778
-offset_left = -200.0
-offset_top = 97.0
-offset_right = 200.0
-offset_bottom = 178.0
+anchor_bottom = 0.135
+offset_left = -234.0
+offset_top = 87.2
+offset_right = 234.0
+offset_bottom = 168.2
 grow_horizontal = 2
 theme_override_constants/separation = 30
+metadata/_edit_lock_ = true
 
 [node name="BotaoSim" type="Button" parent="HBoxContainer"]
 layout_mode = 2
@@ -257,7 +534,39 @@ libraries = {
 }
 speed_scale = 0.8
 
-[connection signal="animation_started" from="AreaMao/AnimacaoMao" to="." method="_on_animacao_mao_animation_started"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.135185
+anchor_right = 0.5
+anchor_bottom = 0.135185
+offset_left = -234.0
+offset_top = 87.0
+offset_right = 234.0
+offset_bottom = 168.0
+grow_horizontal = 2
+theme_override_constants/separation = 30
+metadata/_edit_lock_ = true
+
+[node name="BotaoAnterior" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Anterior"
+
+[node name="BotaoProximo" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Proximo"
+
+[connection signal="animation_finished" from="AreaPe/AnimacaoPe" to="." method="_on_animacao_pe_animation_finished"]
+[connection signal="animation_started" from="AreaPe/AnimacaoPe" to="." method="_on_animacao_pe_animation_started"]
+[connection signal="animation_finished" from="InfoPeLadoEsquerdo/AnimacaoLadoEsquerdo" to="." method="_on_animacao_lado_esquerdo_animation_finished"]
+[connection signal="animation_finished" from="InfoPeLadoDireito/AnimacaoLadoDireito" to="." method="_on_animacao_lado_direito_animation_finished"]
 [connection signal="botao_audio_pressed" from="AspectRatioContainerDicas/PopUpDicas" to="." method="_on_pop_up_dicas_botao_audio_pressed"]
 [connection signal="pressed" from="HBoxContainer/BotaoSim" to="." method="_on_botao_sim_pressed"]
 [connection signal="pressed" from="HBoxContainer/BotaoNao" to="." method="_on_botao_nao_pressed"]
+[connection signal="pressed" from="HBoxContainer2/BotaoAnterior" to="." method="_on_botao_anterior_pressed"]
+[connection signal="pressed" from="HBoxContainer2/BotaoProximo" to="." method="_on_botao_proximo_pressed"]

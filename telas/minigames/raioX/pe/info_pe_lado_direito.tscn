@@ -1,0 +1,241 @@
+[gd_scene load_steps=2 format=3 uid="uid://bplc11akfp1vl"]
+
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_72bvc"]
+
+[node name="InfoPeLadoDireito" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_72bvc")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.409778
+anchor_top = 0.389222
+anchor_right = 0.567056
+anchor_bottom = 0.394444
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.372278
+anchor_top = 0.468852
+anchor_right = 0.567
+anchor_bottom = 0.474074
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRect3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3195
+anchor_top = 0.53737
+anchor_right = 0.567
+anchor_bottom = 0.542593
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRect4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="Cabeca" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.573611
+anchor_top = 0.376852
+anchor_right = 0.697611
+anchor_bottom = 0.406037
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Cabeça"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cabeca2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.573611
+anchor_top = 0.457407
+anchor_right = 0.726778
+anchor_bottom = 0.486593
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Corpo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cabeca3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.573611
+anchor_top = 0.525
+anchor_right = 0.726778
+anchor_bottom = 0.554185
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Base"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cabeca4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8125
+anchor_top = 0.45463
+anchor_right = 0.987889
+anchor_bottom = 0.483815
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Metatarso"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3195
+anchor_top = 0.654037
+anchor_right = 0.626778
+anchor_bottom = 0.659259
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRect5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="Cabeca5" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.634722
+anchor_top = 0.641667
+anchor_right = 0.885111
+anchor_bottom = 0.670852
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Osso navicular"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.200056
+anchor_top = 0.740148
+anchor_right = 0.715667
+anchor_bottom = 0.74537
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRect6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="Cabeca6" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.647222
+anchor_top = 0.727778
+anchor_right = 0.897611
+anchor_bottom = 0.756963
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Talus"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="{" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.688889
+anchor_top = 0.337963
+anchor_right = 0.8205
+anchor_bottom = 0.562519
+offset_right = 0.240005
+offset_bottom = 0.479858
+theme_override_font_sizes/font_size = 200
+text = "}"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

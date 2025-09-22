@@ -58,7 +58,7 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 37
-text = "📖 Como Jogar?
+text = "Como Jogar?
 "
 
 [node name="BotaoVoltar" type="Button" parent="MarginContainer/GridBotoes"]

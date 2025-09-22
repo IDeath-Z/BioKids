@@ -18,6 +18,7 @@ config/icon="res://assets/imagens/icon.svg"
 [autoload]
 
 EstadoVariaveisGlobais="*res://global/estado_variaveis_globais.gd"
+MusicPlayer="*res://telas/interface/reprodutorMusica/music_player.tscn"
 
 [debug]
 
