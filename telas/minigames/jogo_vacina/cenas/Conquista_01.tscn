@@ -1,0 +1,1522 @@
+[gd_scene load_steps=373 format=3 uid="uid://d11l5tmq68ypy"]
+
+[ext_resource type="Script" uid="uid://rxb5qlbidclw" path="res://conquista.gd" id="1_4mq2m"]
+[ext_resource type="Texture2D" uid="uid://dvutt3d1y1wam" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00001.png" id="2_rnfbg"]
+[ext_resource type="Texture2D" uid="uid://drymh3x6p8rc0" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00002.png" id="3_f6ucy"]
+[ext_resource type="Texture2D" uid="uid://48g5aveiyg55" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00003.png" id="4_ysxhc"]
+[ext_resource type="Texture2D" uid="uid://bonsi1t37nphm" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00004.png" id="5_7ias4"]
+[ext_resource type="Texture2D" uid="uid://bqh7nr8w7cmgk" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00005.png" id="6_cldqo"]
+[ext_resource type="Texture2D" uid="uid://cld2txtr0chmf" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00006.png" id="7_lsmqc"]
+[ext_resource type="Texture2D" uid="uid://cp0v3rqj858xj" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00007.png" id="8_8ktmw"]
+[ext_resource type="Texture2D" uid="uid://cn301a4fw4hhv" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00008.png" id="9_m3veq"]
+[ext_resource type="Texture2D" uid="uid://bksmqp5xae8u6" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00009.png" id="10_xnk6a"]
+[ext_resource type="Texture2D" uid="uid://bljmtlfwppphx" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00010.png" id="11_qfefl"]
+[ext_resource type="Texture2D" uid="uid://djupnpiukk15w" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00011.png" id="12_ck2ql"]
+[ext_resource type="Texture2D" uid="uid://b0wqpm0q270gc" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00012.png" id="13_pikgn"]
+[ext_resource type="Texture2D" uid="uid://cgy58w6lk0mwo" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00013.png" id="14_4aa4h"]
+[ext_resource type="Texture2D" uid="uid://blh636ybd2e4c" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00014.png" id="15_pkxoy"]
+[ext_resource type="Texture2D" uid="uid://c0e384hc8dpjf" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00015.png" id="16_msnb1"]
+[ext_resource type="Texture2D" uid="uid://buslu2uc4b2s4" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00016.png" id="17_gc6lj"]
+[ext_resource type="Texture2D" uid="uid://cl7im46x441q6" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00017.png" id="18_xl4nh"]
+[ext_resource type="Texture2D" uid="uid://bi5i0q6ll0wrj" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00018.png" id="19_1b10b"]
+[ext_resource type="Texture2D" uid="uid://b4r1m6m4j8xby" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00019.png" id="20_nd1dq"]
+[ext_resource type="Texture2D" uid="uid://cy7su0j6a1tfl" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00020.png" id="21_in1ji"]
+[ext_resource type="Texture2D" uid="uid://5rtweboyd4d2" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00021.png" id="22_ftg3j"]
+[ext_resource type="Texture2D" uid="uid://cr06cgy3eexw7" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00022.png" id="23_2uxu5"]
+[ext_resource type="Texture2D" uid="uid://bw5kiijqwa8k6" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00023.png" id="24_eyqvj"]
+[ext_resource type="Texture2D" uid="uid://d2uxpvf5mlkeg" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00024.png" id="25_f61yn"]
+[ext_resource type="Texture2D" uid="uid://bjbey1r1lanrw" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00025.png" id="26_y7kim"]
+[ext_resource type="Texture2D" uid="uid://ce87jaia3gyaa" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00026.png" id="27_81ty1"]
+[ext_resource type="Texture2D" uid="uid://dpoog00tl4b5c" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00027.png" id="28_s1vr8"]
+[ext_resource type="Texture2D" uid="uid://rd1biv4ivaif" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00028.png" id="29_74qex"]
+[ext_resource type="Texture2D" uid="uid://bgaii74bchq20" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00029.png" id="30_bsbt7"]
+[ext_resource type="Texture2D" uid="uid://6gmq3fs1u1im" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00030.png" id="31_8ixtm"]
+[ext_resource type="Texture2D" uid="uid://bpmssc7f3pluv" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00031.png" id="32_0ydle"]
+[ext_resource type="Texture2D" uid="uid://dgynobuq3mg8p" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00032.png" id="33_ovurd"]
+[ext_resource type="Texture2D" uid="uid://ykfsms6sv3jt" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00033.png" id="34_amxln"]
+[ext_resource type="Texture2D" uid="uid://begwdedvo4gln" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00034.png" id="35_tleyw"]
+[ext_resource type="Texture2D" uid="uid://du6ht80ncr0i8" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00035.png" id="36_ic4qx"]
+[ext_resource type="Texture2D" uid="uid://bdodny5dbsvw6" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00036.png" id="37_ehq8f"]
+[ext_resource type="Texture2D" uid="uid://cb8p4mhn272lo" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00037.png" id="38_g388p"]
+[ext_resource type="Texture2D" uid="uid://djcxkgm4asv1f" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00038.png" id="39_nt4br"]
+[ext_resource type="Texture2D" uid="uid://b0i7oebl7uyap" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00039.png" id="40_wuj7k"]
+[ext_resource type="Texture2D" uid="uid://bu8xefa55d5bv" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00040.png" id="41_dmq20"]
+[ext_resource type="Texture2D" uid="uid://d0onf4li7dst0" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00041.png" id="42_1qa1r"]
+[ext_resource type="Texture2D" uid="uid://cwgngccri1ytg" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00042.png" id="43_jbuul"]
+[ext_resource type="Texture2D" uid="uid://cviu1y1dreaty" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00043.png" id="44_xtkyf"]
+[ext_resource type="Texture2D" uid="uid://i3wbsf5eu2pa" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00044.png" id="45_gyngx"]
+[ext_resource type="Texture2D" uid="uid://b3s5uk15wqcrp" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00045.png" id="46_t20k4"]
+[ext_resource type="Texture2D" uid="uid://bktsnsbru3iph" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00046.png" id="47_keln7"]
+[ext_resource type="Texture2D" uid="uid://drrne5penurfc" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00047.png" id="48_5gkut"]
+[ext_resource type="Texture2D" uid="uid://d3f0xl5p52vgr" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00048.png" id="49_y0tyi"]
+[ext_resource type="Texture2D" uid="uid://bh8bxg8ash1lf" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00049.png" id="50_davsc"]
+[ext_resource type="Texture2D" uid="uid://bijru0cwnrqri" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00050.png" id="51_jer60"]
+[ext_resource type="Texture2D" uid="uid://bpws32iajngiy" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00051.png" id="52_pmd8n"]
+[ext_resource type="Texture2D" uid="uid://b0kdl2c3cqrb3" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00052.png" id="53_771es"]
+[ext_resource type="Texture2D" uid="uid://b15fnthb60qof" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00053.png" id="54_7ail6"]
+[ext_resource type="Texture2D" uid="uid://cwwhibo38h55" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00054.png" id="55_ux3e8"]
+[ext_resource type="Texture2D" uid="uid://bvgebrflku7l" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00055.png" id="56_0tlvw"]
+[ext_resource type="Texture2D" uid="uid://fv1m851gsa3f" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00056.png" id="57_dr0of"]
+[ext_resource type="Texture2D" uid="uid://dbcw6yo70p63e" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00057.png" id="58_mh2qo"]
+[ext_resource type="Texture2D" uid="uid://cpdegj4gmc5yi" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00058.png" id="59_1rcsf"]
+[ext_resource type="Texture2D" uid="uid://brlm1bnlw5d5q" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00059.png" id="60_rustq"]
+[ext_resource type="Texture2D" uid="uid://cx4h3ai5xhilx" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00060.png" id="61_57aui"]
+[ext_resource type="Texture2D" uid="uid://d4d7qyem4yxo8" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00061.png" id="62_phqem"]
+[ext_resource type="Texture2D" uid="uid://cmnoxs42cnnqr" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00062.png" id="63_3qp4g"]
+[ext_resource type="Texture2D" uid="uid://cscrtxpqdj7qm" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00063.png" id="64_m4j0r"]
+[ext_resource type="Texture2D" uid="uid://b4ndtl3y2vdsh" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00064.png" id="65_rrffy"]
+[ext_resource type="Texture2D" uid="uid://bp1g3waterbod" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00065.png" id="66_mylka"]
+[ext_resource type="Texture2D" uid="uid://bjyjvdljcpt6b" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00066.png" id="67_fyxjx"]
+[ext_resource type="Texture2D" uid="uid://kjbutlqpn6of" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00067.png" id="68_c55w4"]
+[ext_resource type="Texture2D" uid="uid://dlhnx6oyjwy34" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00068.png" id="69_knttk"]
+[ext_resource type="Texture2D" uid="uid://d24o535rafr7f" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00069.png" id="70_7q6my"]
+[ext_resource type="Texture2D" uid="uid://dieyj01q4orfl" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00070.png" id="71_6owvl"]
+[ext_resource type="Texture2D" uid="uid://bewjpkiwnjb4l" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00071.png" id="72_0hp8h"]
+[ext_resource type="Texture2D" uid="uid://c3dwfr25ajmfs" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00072.png" id="73_w5fsl"]
+[ext_resource type="Texture2D" uid="uid://caywq8jjjwp1o" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00073.png" id="74_rqhhr"]
+[ext_resource type="Texture2D" uid="uid://0gyu8hpoqvos" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00074.png" id="75_udf84"]
+[ext_resource type="Texture2D" uid="uid://cqnl2m7s1m6yx" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00075.png" id="76_hr70g"]
+[ext_resource type="Texture2D" uid="uid://bpikqr3h50jsu" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00076.png" id="77_eeouv"]
+[ext_resource type="Texture2D" uid="uid://bqc47svdpgqwy" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00077.png" id="78_eo7qw"]
+[ext_resource type="Texture2D" uid="uid://hl00xep6n2br" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00078.png" id="79_hll8c"]
+[ext_resource type="Texture2D" uid="uid://ejaw1qdjoc8g" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00079.png" id="80_bcao4"]
+[ext_resource type="Texture2D" uid="uid://iftf57s73u8v" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00080.png" id="81_bk0m6"]
+[ext_resource type="Texture2D" uid="uid://ccq5ufpj3plne" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00081.png" id="82_uhcf6"]
+[ext_resource type="Texture2D" uid="uid://btq8f2cykehfw" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00082.png" id="83_qt3g8"]
+[ext_resource type="Texture2D" uid="uid://bqh2pcwrtbuya" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00083.png" id="84_xmm25"]
+[ext_resource type="Texture2D" uid="uid://ctskw8gk3bshy" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00084.png" id="85_38jbh"]
+[ext_resource type="Texture2D" uid="uid://cwjvdcxkj85j0" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00085.png" id="86_7d51b"]
+[ext_resource type="Texture2D" uid="uid://by3tleymdpkrd" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00086.png" id="87_wadq2"]
+[ext_resource type="Texture2D" uid="uid://csgdigr6pyo7m" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00087.png" id="88_qxalj"]
+[ext_resource type="Texture2D" uid="uid://dax4w6s2d8i8i" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00088.png" id="89_83dsf"]
+[ext_resource type="Texture2D" uid="uid://dtpnmlyvh405r" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00089.png" id="90_tn3yc"]
+[ext_resource type="Texture2D" uid="uid://dnhapc3yrudqb" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00090.png" id="91_icnnb"]
+[ext_resource type="Texture2D" uid="uid://bfoou28vrpqsi" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00091.png" id="92_qeni4"]
+[ext_resource type="Texture2D" uid="uid://kngrg6y2mpje" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00092.png" id="93_41dim"]
+[ext_resource type="Texture2D" uid="uid://dvqht7jmihyu3" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00093.png" id="94_lggrg"]
+[ext_resource type="Texture2D" uid="uid://xia6yuh20uq0" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00094.png" id="95_jpi8w"]
+[ext_resource type="Texture2D" uid="uid://preyuhxjfqnn" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00095.png" id="96_jv5xa"]
+[ext_resource type="Texture2D" uid="uid://wfmlhfefi33w" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00096.png" id="97_u0xso"]
+[ext_resource type="Texture2D" uid="uid://b2kg3m0ogdq7a" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00097.png" id="98_3ovns"]
+[ext_resource type="Texture2D" uid="uid://buivcibo413yk" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00098.png" id="99_mw7du"]
+[ext_resource type="Texture2D" uid="uid://bus0sd5c0n2bi" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00099.png" id="100_au1w1"]
+[ext_resource type="Texture2D" uid="uid://bmu0q4ummvdo5" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00100.png" id="101_vf0al"]
+[ext_resource type="Texture2D" uid="uid://gw23jli573se" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00101.png" id="102_0yd7p"]
+[ext_resource type="Texture2D" uid="uid://cuw5jcmri342u" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00102.png" id="103_3o10a"]
+[ext_resource type="Texture2D" uid="uid://csawg7007pl5" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00103.png" id="104_htb4w"]
+[ext_resource type="Texture2D" uid="uid://o6xqtv14f2ud" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00104.png" id="105_og0jv"]
+[ext_resource type="Texture2D" uid="uid://dey12sc0mifi5" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00105.png" id="106_gs03u"]
+[ext_resource type="Texture2D" uid="uid://b35emgdhb1q0x" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00106.png" id="107_mnixy"]
+[ext_resource type="Texture2D" uid="uid://clnhm5ur3mrii" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00107.png" id="108_n6nha"]
+[ext_resource type="Texture2D" uid="uid://cgtitpjd0chy7" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00108.png" id="109_jjo3n"]
+[ext_resource type="Texture2D" uid="uid://cqs12hh2kcf03" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00109.png" id="110_hwe6t"]
+[ext_resource type="Texture2D" uid="uid://grnpjvvu1a2u" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00110.png" id="111_gkmwx"]
+[ext_resource type="Texture2D" uid="uid://deid4gc1knv8q" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00113.png" id="112_xs31w"]
+[ext_resource type="Texture2D" uid="uid://lwks6q8d7wr2" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00114.png" id="113_57frr"]
+[ext_resource type="Texture2D" uid="uid://diiavh03cc6ig" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00115.png" id="114_ryesm"]
+[ext_resource type="Texture2D" uid="uid://c6vjopwkcae1h" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00116.png" id="115_g2eo7"]
+[ext_resource type="Texture2D" uid="uid://deiuucs0x74tr" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00117.png" id="116_6esks"]
+[ext_resource type="Texture2D" uid="uid://vqy0iy1ivrtd" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00118.png" id="117_6gxkl"]
+[ext_resource type="Texture2D" uid="uid://b8k44fixaj38u" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00119.png" id="118_jywys"]
+[ext_resource type="Texture2D" uid="uid://dxacpyoqd2ko5" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00120.png" id="119_uv0j1"]
+[ext_resource type="Texture2D" uid="uid://camfu3680umvj" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00121.png" id="120_5hnvv"]
+[ext_resource type="Texture2D" uid="uid://dl3i0htrf3p5t" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00122.png" id="121_4e5bl"]
+[ext_resource type="Texture2D" uid="uid://cjykf8yyaln2t" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00123.png" id="122_gi8m7"]
+[ext_resource type="Texture2D" uid="uid://cu5wl0css21bj" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00124.png" id="123_2j5my"]
+[ext_resource type="Texture2D" uid="uid://bdur46o4c3gwx" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00125.png" id="124_e8vde"]
+[ext_resource type="Texture2D" uid="uid://ddngnqi7hoo3n" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00126.png" id="125_j81dm"]
+[ext_resource type="Texture2D" uid="uid://5mli1cfm50hx" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00127.png" id="126_ffgvd"]
+[ext_resource type="Texture2D" uid="uid://c7ps6xyb3cm3w" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00128.png" id="127_36v7c"]
+[ext_resource type="Texture2D" uid="uid://d4ig0tbdasucq" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00129.png" id="128_rm2u1"]
+[ext_resource type="Texture2D" uid="uid://dy7jqfynv0vsg" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00130.png" id="129_emmke"]
+[ext_resource type="Texture2D" uid="uid://dkdutpqmnjify" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00131.png" id="130_rw40t"]
+[ext_resource type="Texture2D" uid="uid://dynwulm7ctsts" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00132.png" id="131_gakku"]
+[ext_resource type="Texture2D" uid="uid://b38jjkogv3xr7" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00133.png" id="132_3kgk1"]
+[ext_resource type="Texture2D" uid="uid://b3p31xjuxro4d" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00134.png" id="133_6u2jf"]
+[ext_resource type="Texture2D" uid="uid://c6airq3up2wpm" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00135.png" id="134_3mt55"]
+[ext_resource type="Script" uid="uid://dj8euph1b6ics" path="res://telas/minigames/jogo_vacina/scripts/movimento_urso.gd" id="135_lrvcy"]
+[ext_resource type="Texture2D" uid="uid://cucfu1sbc28x4" path="res://telas/minigames/jogo_vacina/assets/medalha/00001.png" id="136_eqg4l"]
+[ext_resource type="Texture2D" uid="uid://bhvgko66xc1j" path="res://telas/minigames/jogo_vacina/assets/medalha/00002.png" id="137_f612b"]
+[ext_resource type="Texture2D" uid="uid://csas8qf6kc65" path="res://telas/minigames/jogo_vacina/assets/medalha/00003.png" id="138_y84o1"]
+[ext_resource type="Texture2D" uid="uid://8hmqxd1wrebw" path="res://telas/minigames/jogo_vacina/assets/medalha/00004.png" id="139_1bg6x"]
+[ext_resource type="Texture2D" uid="uid://djtkskus5piwq" path="res://telas/minigames/jogo_vacina/assets/medalha/00005.png" id="140_k3tg7"]
+[ext_resource type="Texture2D" uid="uid://blwwlm0bco2fj" path="res://telas/minigames/jogo_vacina/assets/medalha/00006.png" id="141_8hgvf"]
+[ext_resource type="Texture2D" uid="uid://dbrweywnl5ly8" path="res://telas/minigames/jogo_vacina/assets/medalha/00007.png" id="142_y1m42"]
+[ext_resource type="Texture2D" uid="uid://bmuntllf36upg" path="res://telas/minigames/jogo_vacina/assets/medalha/00008.png" id="143_7q3kl"]
+[ext_resource type="Texture2D" uid="uid://cw0a4ge58xf6m" path="res://telas/minigames/jogo_vacina/assets/medalha/00009.png" id="144_5pg12"]
+[ext_resource type="Texture2D" uid="uid://ckmf32dkg38hr" path="res://telas/minigames/jogo_vacina/assets/medalha/00010.png" id="145_5024x"]
+[ext_resource type="Texture2D" uid="uid://cy52nb8qrffi7" path="res://telas/minigames/jogo_vacina/assets/medalha/00011.png" id="146_2xeuo"]
+[ext_resource type="Texture2D" uid="uid://ca26lm7x5i3pk" path="res://telas/minigames/jogo_vacina/assets/medalha/00012.png" id="147_rah6i"]
+[ext_resource type="Texture2D" uid="uid://ddcd22amg5c52" path="res://telas/minigames/jogo_vacina/assets/medalha/00013.png" id="148_xi7c3"]
+[ext_resource type="Texture2D" uid="uid://cj2nais7g8hm7" path="res://telas/minigames/jogo_vacina/assets/medalha/00014.png" id="149_xx5gg"]
+[ext_resource type="Texture2D" uid="uid://ceg4p64xan4ko" path="res://telas/minigames/jogo_vacina/assets/medalha/00015.png" id="150_xlcte"]
+[ext_resource type="Texture2D" uid="uid://dnvsaq5x8ddt1" path="res://telas/minigames/jogo_vacina/assets/medalha/00016.png" id="151_aw1hm"]
+[ext_resource type="Texture2D" uid="uid://dprru6c5cqixy" path="res://telas/minigames/jogo_vacina/assets/medalha/00017.png" id="152_imq54"]
+[ext_resource type="Texture2D" uid="uid://bm03m6detj4yf" path="res://telas/minigames/jogo_vacina/assets/medalha/00018.png" id="153_d6m1x"]
+[ext_resource type="Texture2D" uid="uid://7sv4lp7xcjn0" path="res://telas/minigames/jogo_vacina/assets/medalha/00019.png" id="154_e3xym"]
+[ext_resource type="Texture2D" uid="uid://c6cid2ollypba" path="res://telas/minigames/jogo_vacina/assets/medalha/00020.png" id="155_1ytts"]
+[ext_resource type="Texture2D" uid="uid://clbwjw5fq8u3o" path="res://telas/minigames/jogo_vacina/assets/medalha/00021.png" id="156_7e5gg"]
+[ext_resource type="Texture2D" uid="uid://b82v8vel0o7c3" path="res://telas/minigames/jogo_vacina/assets/medalha/00022.png" id="157_vbcy6"]
+[ext_resource type="Texture2D" uid="uid://2225rih28q31" path="res://telas/minigames/jogo_vacina/assets/medalha/00023.png" id="158_xi3ub"]
+[ext_resource type="Texture2D" uid="uid://ds76i20gyyb52" path="res://telas/minigames/jogo_vacina/assets/medalha/00024.png" id="159_m8nfr"]
+[ext_resource type="Texture2D" uid="uid://h8fbfv602se7" path="res://telas/minigames/jogo_vacina/assets/medalha/00025.png" id="160_2a3h1"]
+[ext_resource type="Texture2D" uid="uid://bohofuxorhnyq" path="res://telas/minigames/jogo_vacina/assets/medalha/00026.png" id="161_in43n"]
+[ext_resource type="Texture2D" uid="uid://bw5pqbtusvm8y" path="res://telas/minigames/jogo_vacina/assets/medalha/00027.png" id="162_gwlc7"]
+[ext_resource type="Texture2D" uid="uid://c2hqjhvn0xf3q" path="res://telas/minigames/jogo_vacina/assets/medalha/00028.png" id="163_vncjl"]
+[ext_resource type="Texture2D" uid="uid://dnjltuqwoebq" path="res://telas/minigames/jogo_vacina/assets/medalha/00029.png" id="164_47n0w"]
+[ext_resource type="Texture2D" uid="uid://b1f48ai8fiiy1" path="res://telas/minigames/jogo_vacina/assets/medalha/00030.png" id="165_mtb27"]
+[ext_resource type="Texture2D" uid="uid://duha4dcoxyin3" path="res://telas/minigames/jogo_vacina/assets/medalha/00031.png" id="166_ug43f"]
+[ext_resource type="Texture2D" uid="uid://dbj2gko0cplcr" path="res://telas/minigames/jogo_vacina/assets/medalha/00032.png" id="167_e7ff4"]
+[ext_resource type="Texture2D" uid="uid://cfe12trcg1n2" path="res://telas/minigames/jogo_vacina/assets/medalha/00033.png" id="168_urjny"]
+[ext_resource type="Texture2D" uid="uid://flga0nqcm46" path="res://telas/minigames/jogo_vacina/assets/medalha/00034.png" id="169_ofdmu"]
+[ext_resource type="Texture2D" uid="uid://y838olqdfuiq" path="res://telas/minigames/jogo_vacina/assets/medalha/00035.png" id="170_dct6e"]
+[ext_resource type="Texture2D" uid="uid://cs0cng7krjknu" path="res://telas/minigames/jogo_vacina/assets/medalha/00036.png" id="171_k2uhp"]
+[ext_resource type="Texture2D" uid="uid://du5rbu2mpnq4s" path="res://telas/minigames/jogo_vacina/assets/medalha/00037.png" id="172_i6k3q"]
+[ext_resource type="Texture2D" uid="uid://c6xvqpjnbi3pp" path="res://telas/minigames/jogo_vacina/assets/medalha/00038.png" id="173_vomja"]
+[ext_resource type="Texture2D" uid="uid://b6oxunsogy7ak" path="res://telas/minigames/jogo_vacina/assets/medalha/00039.png" id="174_68dkl"]
+[ext_resource type="Texture2D" uid="uid://d24oqkr8gtbbg" path="res://telas/minigames/jogo_vacina/assets/medalha/00040.png" id="175_0vydf"]
+[ext_resource type="Texture2D" uid="uid://7btv0oxowbua" path="res://telas/minigames/jogo_vacina/assets/medalha/00041.png" id="176_tyra0"]
+[ext_resource type="Texture2D" uid="uid://b41kss4wq1wa" path="res://telas/minigames/jogo_vacina/assets/medalha/00042.png" id="177_urcos"]
+[ext_resource type="Texture2D" uid="uid://kwai4ubqwurg" path="res://telas/minigames/jogo_vacina/assets/medalha/00043.png" id="178_m7fdi"]
+[ext_resource type="Texture2D" uid="uid://dhbu1qi1ldxac" path="res://telas/minigames/jogo_vacina/assets/medalha/00044.png" id="179_4liao"]
+[ext_resource type="Texture2D" uid="uid://dnk7a3ydiixxx" path="res://telas/minigames/jogo_vacina/assets/medalha/00045.png" id="180_xutu7"]
+[ext_resource type="Texture2D" uid="uid://bk3wmwtuyh0rx" path="res://telas/minigames/jogo_vacina/assets/medalha/00046.png" id="181_awhwt"]
+[ext_resource type="Texture2D" uid="uid://c0bb8sr0jxuqg" path="res://telas/minigames/jogo_vacina/assets/medalha/00047.png" id="182_xrrqi"]
+[ext_resource type="Texture2D" uid="uid://dnmhgojfk62jt" path="res://telas/minigames/jogo_vacina/assets/medalha/00048.png" id="183_4ug1b"]
+[ext_resource type="Texture2D" uid="uid://c01btxphisw7h" path="res://telas/minigames/jogo_vacina/assets/medalha/00049.png" id="184_2ul3a"]
+[ext_resource type="Texture2D" uid="uid://c1hc6ek4ewdsm" path="res://telas/minigames/jogo_vacina/assets/medalha/00050.png" id="185_tkv5m"]
+[ext_resource type="Texture2D" uid="uid://bywk3h58w4ypi" path="res://telas/minigames/jogo_vacina/assets/medalha/00051.png" id="186_ymwfy"]
+[ext_resource type="Texture2D" uid="uid://crht8dofqcei2" path="res://telas/minigames/jogo_vacina/assets/medalha/00052.png" id="187_k61g4"]
+[ext_resource type="Texture2D" uid="uid://bdgy4fibon6u3" path="res://telas/minigames/jogo_vacina/assets/medalha/00053.png" id="188_df4ku"]
+[ext_resource type="Texture2D" uid="uid://dywe2htknf4d8" path="res://telas/minigames/jogo_vacina/assets/medalha/00054.png" id="189_uay6u"]
+[ext_resource type="Texture2D" uid="uid://dnhc22n8ffpc7" path="res://telas/minigames/jogo_vacina/assets/medalha/00055.png" id="190_jlcy3"]
+[ext_resource type="Texture2D" uid="uid://brlqh1k7ipw0j" path="res://telas/minigames/jogo_vacina/assets/medalha/00056.png" id="191_wrgvh"]
+[ext_resource type="Texture2D" uid="uid://c2t50kdxh6b2c" path="res://telas/minigames/jogo_vacina/assets/medalha/00057.png" id="192_pxwkh"]
+[ext_resource type="Texture2D" uid="uid://cu3r3tnrxfrv0" path="res://telas/minigames/jogo_vacina/assets/medalha/00058.png" id="193_7fuai"]
+[ext_resource type="Texture2D" uid="uid://c2w0y355i004g" path="res://telas/minigames/jogo_vacina/assets/medalha/00059.png" id="194_8wvtp"]
+[ext_resource type="Texture2D" uid="uid://c0tj6545dnl4u" path="res://telas/minigames/jogo_vacina/assets/medalha/00060.png" id="195_hptvc"]
+[ext_resource type="Texture2D" uid="uid://bufjbad81o8vj" path="res://telas/minigames/jogo_vacina/assets/medalha/00061.png" id="196_hu3oj"]
+[ext_resource type="Texture2D" uid="uid://k5su81fsimai" path="res://telas/minigames/jogo_vacina/assets/medalha/00062.png" id="197_0kai4"]
+[ext_resource type="Texture2D" uid="uid://dir0cnbemcvhq" path="res://telas/minigames/jogo_vacina/assets/medalha/00063.png" id="198_wrgcx"]
+[ext_resource type="Texture2D" uid="uid://b5c2y27j0d7yh" path="res://telas/minigames/jogo_vacina/assets/medalha/00064.png" id="199_qwnt5"]
+[ext_resource type="Texture2D" uid="uid://b5jhqeveueh5b" path="res://telas/minigames/jogo_vacina/assets/medalha/00065.png" id="200_b1dkj"]
+[ext_resource type="Texture2D" uid="uid://buqrvob7rx14u" path="res://telas/minigames/jogo_vacina/assets/medalha/00066.png" id="201_fvw1u"]
+[ext_resource type="Texture2D" uid="uid://ddg0x2mrnl7dg" path="res://telas/minigames/jogo_vacina/assets/medalha/00067.png" id="202_iiqp8"]
+[ext_resource type="Texture2D" uid="uid://thkffwsukyn7" path="res://telas/minigames/jogo_vacina/assets/medalha/00068.png" id="203_nv5nu"]
+[ext_resource type="Texture2D" uid="uid://bkqwv3jv0dbc8" path="res://telas/minigames/jogo_vacina/assets/medalha/00069.png" id="204_g4ajj"]
+[ext_resource type="Texture2D" uid="uid://ch6sxhtw4q23i" path="res://telas/minigames/jogo_vacina/assets/medalha/00070.png" id="205_lrlie"]
+[ext_resource type="Texture2D" uid="uid://cucundmxhkyh8" path="res://telas/minigames/jogo_vacina/assets/medalha/00071.png" id="206_1s6vs"]
+[ext_resource type="Texture2D" uid="uid://cpvovd1sauj3v" path="res://telas/minigames/jogo_vacina/assets/medalha/00072.png" id="207_co5ve"]
+[ext_resource type="Texture2D" uid="uid://ooeoesirfvtu" path="res://telas/minigames/jogo_vacina/assets/medalha/00073.png" id="208_l75sb"]
+[ext_resource type="Texture2D" uid="uid://b1muwunmc2u6g" path="res://telas/minigames/jogo_vacina/assets/medalha/00074.png" id="209_r8vkn"]
+[ext_resource type="Texture2D" uid="uid://dh3x0o3aljvg1" path="res://telas/minigames/jogo_vacina/assets/medalha/00075.png" id="210_dop1d"]
+[ext_resource type="Texture2D" uid="uid://d0natn3te1865" path="res://telas/minigames/jogo_vacina/assets/medalha/00076.png" id="211_brm15"]
+[ext_resource type="Texture2D" uid="uid://c074fhuo1p4v8" path="res://telas/minigames/jogo_vacina/assets/medalha/00077.png" id="212_1ddnc"]
+[ext_resource type="Texture2D" uid="uid://bu52n853qpye2" path="res://telas/minigames/jogo_vacina/assets/medalha/00078.png" id="213_6n0n5"]
+[ext_resource type="Texture2D" uid="uid://b8nfvukjd4tss" path="res://telas/minigames/jogo_vacina/assets/medalha/00079.png" id="214_sownu"]
+[ext_resource type="Texture2D" uid="uid://ctlm7vtvhrnqk" path="res://telas/minigames/jogo_vacina/assets/medalha/00080.png" id="215_gwgrp"]
+[ext_resource type="Texture2D" uid="uid://gipbih8y4usu" path="res://telas/minigames/jogo_vacina/assets/medalha/00081.png" id="216_1676l"]
+[ext_resource type="Texture2D" uid="uid://084ubea3g48h" path="res://telas/minigames/jogo_vacina/assets/medalha/00082.png" id="217_ixdmd"]
+[ext_resource type="Texture2D" uid="uid://usaefnexbiku" path="res://telas/minigames/jogo_vacina/assets/medalha/00083.png" id="218_higus"]
+[ext_resource type="Texture2D" uid="uid://crvcoiinvvy5n" path="res://telas/minigames/jogo_vacina/assets/medalha/00084.png" id="219_f4tv6"]
+[ext_resource type="Texture2D" uid="uid://bspeh1lcpub2c" path="res://telas/minigames/jogo_vacina/assets/medalha/00085.png" id="220_jvs3j"]
+[ext_resource type="Texture2D" uid="uid://do1lv32242p0r" path="res://telas/minigames/jogo_vacina/assets/medalha/00086.png" id="221_xgs2q"]
+[ext_resource type="Texture2D" uid="uid://dotam61vbrbgy" path="res://telas/minigames/jogo_vacina/assets/medalha/00087.png" id="222_obhcm"]
+[ext_resource type="Texture2D" uid="uid://d2gvrrim1ae12" path="res://telas/minigames/jogo_vacina/assets/medalha/00088.png" id="223_m6ukm"]
+[ext_resource type="Texture2D" uid="uid://cj48v5whhospu" path="res://telas/minigames/jogo_vacina/assets/medalha/00089.png" id="224_xoyw5"]
+[ext_resource type="Texture2D" uid="uid://dxhkeu1lrp2v1" path="res://telas/minigames/jogo_vacina/assets/medalha/00090.png" id="225_hr4hm"]
+[ext_resource type="Texture2D" uid="uid://ij3o342yo1dx" path="res://telas/minigames/jogo_vacina/assets/medalha/00091.png" id="226_agm0r"]
+[ext_resource type="Texture2D" uid="uid://bilgvqd0hnieg" path="res://telas/minigames/jogo_vacina/assets/medalha/00092.png" id="227_ceytd"]
+[ext_resource type="Texture2D" uid="uid://dkdvf3v85ubi3" path="res://telas/minigames/jogo_vacina/assets/medalha/00093.png" id="228_2hksx"]
+[ext_resource type="Texture2D" uid="uid://tak0txeovgwo" path="res://telas/minigames/jogo_vacina/assets/medalha/00094.png" id="229_hgccb"]
+[ext_resource type="Texture2D" uid="uid://bmg7s5lsxclnw" path="res://telas/minigames/jogo_vacina/assets/medalha/00095.png" id="230_x1ht4"]
+[ext_resource type="Texture2D" uid="uid://cutqt2fxprwps" path="res://telas/minigames/jogo_vacina/assets/medalha/00096.png" id="231_1rsqu"]
+[ext_resource type="Texture2D" uid="uid://dr004wvydgyns" path="res://telas/minigames/jogo_vacina/assets/medalha/00097.png" id="232_llskh"]
+[ext_resource type="Texture2D" uid="uid://bv1wg8iv88dts" path="res://telas/minigames/jogo_vacina/assets/medalha/00098.png" id="233_4cs1k"]
+[ext_resource type="Texture2D" uid="uid://q1f8od6st84p" path="res://telas/minigames/jogo_vacina/assets/medalha/00099.png" id="234_pro48"]
+[ext_resource type="Texture2D" uid="uid://c4b6d8njymgmj" path="res://telas/minigames/jogo_vacina/assets/medalha/00100.png" id="235_v08au"]
+[ext_resource type="Texture2D" uid="uid://ci06rp3vwft7b" path="res://telas/minigames/jogo_vacina/assets/medalha/00101.png" id="236_6ex36"]
+[ext_resource type="Texture2D" uid="uid://b5ksve4l4xllh" path="res://telas/minigames/jogo_vacina/assets/medalha/00102.png" id="237_54oyb"]
+[ext_resource type="Texture2D" uid="uid://jpx8vei0qkq4" path="res://telas/minigames/jogo_vacina/assets/medalha/00103.png" id="238_t53bv"]
+[ext_resource type="Texture2D" uid="uid://dqs42ek56oyhf" path="res://telas/minigames/jogo_vacina/assets/medalha/00104.png" id="239_8lkfh"]
+[ext_resource type="Texture2D" uid="uid://y4mn21becy4d" path="res://telas/minigames/jogo_vacina/assets/medalha/00105.png" id="240_bcj6m"]
+[ext_resource type="Texture2D" uid="uid://d0vdkq7agg8a6" path="res://telas/minigames/jogo_vacina/assets/medalha/00106.png" id="241_3nwrc"]
+[ext_resource type="Texture2D" uid="uid://buvxmhl8t1r03" path="res://telas/minigames/jogo_vacina/assets/medalha/00107.png" id="242_32u3g"]
+[ext_resource type="Texture2D" uid="uid://0tx64cy4if61" path="res://telas/minigames/jogo_vacina/assets/medalha/00108.png" id="243_f8o67"]
+[ext_resource type="Texture2D" uid="uid://lsfgicyv2i5u" path="res://telas/minigames/jogo_vacina/assets/medalha/00109.png" id="244_aqbro"]
+[ext_resource type="Texture2D" uid="uid://cnsf36cqxifhg" path="res://telas/minigames/jogo_vacina/assets/medalha/00110.png" id="245_rhxxc"]
+[ext_resource type="Texture2D" uid="uid://phr7x54qy0on" path="res://telas/minigames/jogo_vacina/assets/medalha/00111.png" id="246_7m4b5"]
+[ext_resource type="Texture2D" uid="uid://d1hserh8dkeqc" path="res://telas/minigames/jogo_vacina/assets/medalha/00112.png" id="247_vsqqt"]
+[ext_resource type="Texture2D" uid="uid://c7sm78frle3ui" path="res://telas/minigames/jogo_vacina/assets/medalha/00113.png" id="248_wf2oy"]
+[ext_resource type="Texture2D" uid="uid://hdc21duku45u" path="res://telas/minigames/jogo_vacina/assets/medalha/00114.png" id="249_mopkr"]
+[ext_resource type="Texture2D" uid="uid://bjmhy3t81tark" path="res://telas/minigames/jogo_vacina/assets/medalha/00115.png" id="250_wq6kn"]
+[ext_resource type="Texture2D" uid="uid://dqp402gnetcwp" path="res://telas/minigames/jogo_vacina/assets/medalha/00116.png" id="251_n7vfs"]
+[ext_resource type="Texture2D" uid="uid://7jtyah7bjs60" path="res://telas/minigames/jogo_vacina/assets/medalha/00117.png" id="252_tvhb8"]
+[ext_resource type="Texture2D" uid="uid://bgabr64nycrhl" path="res://telas/minigames/jogo_vacina/assets/medalha/00118.png" id="253_vxude"]
+[ext_resource type="Texture2D" uid="uid://bjsy3lbc3k4ts" path="res://telas/minigames/jogo_vacina/assets/medalha/00119.png" id="254_sf35t"]
+[ext_resource type="Texture2D" uid="uid://caignvmn661k5" path="res://telas/minigames/jogo_vacina/assets/medalha/00120.png" id="255_ovl42"]
+[ext_resource type="Texture2D" uid="uid://31ldvdw7deeh" path="res://telas/minigames/jogo_vacina/assets/medalha/00121.png" id="256_uqkay"]
+[ext_resource type="Texture2D" uid="uid://dvrupou0hh074" path="res://telas/minigames/jogo_vacina/assets/medalha/00122.png" id="257_u523p"]
+[ext_resource type="Texture2D" uid="uid://7q236nc8fl4i" path="res://telas/minigames/jogo_vacina/assets/medalha/00123.png" id="258_a4qnx"]
+[ext_resource type="Texture2D" uid="uid://cumtruitjki2g" path="res://telas/minigames/jogo_vacina/assets/medalha/00124.png" id="259_dcfvr"]
+[ext_resource type="Texture2D" uid="uid://2ta81noaf34i" path="res://telas/minigames/jogo_vacina/assets/medalha/00125.png" id="260_crodk"]
+[ext_resource type="Texture2D" uid="uid://c73t3wudpxpib" path="res://telas/minigames/jogo_vacina/assets/medalha/00126.png" id="261_egl15"]
+[ext_resource type="Texture2D" uid="uid://x1iowve2tm8p" path="res://telas/minigames/jogo_vacina/assets/medalha/00127.png" id="262_3p5l0"]
+[ext_resource type="Texture2D" uid="uid://b1fwjuyareht8" path="res://telas/minigames/jogo_vacina/assets/medalha/00128.png" id="263_srfwf"]
+[ext_resource type="Texture2D" uid="uid://b1ut0etm62gal" path="res://telas/minigames/jogo_vacina/assets/medalha/00129.png" id="264_xsg2m"]
+[ext_resource type="Texture2D" uid="uid://bxu7hns5teymj" path="res://telas/minigames/jogo_vacina/assets/medalha/00130.png" id="265_6f2mj"]
+[ext_resource type="Texture2D" uid="uid://cv4cp7ti1n1vc" path="res://telas/minigames/jogo_vacina/assets/medalha/00131.png" id="266_2wx7n"]
+[ext_resource type="Texture2D" uid="uid://qsjglec8d3o7" path="res://telas/minigames/jogo_vacina/assets/medalha/00132.png" id="267_y1n7y"]
+[ext_resource type="Texture2D" uid="uid://bbmdmwvgknjsk" path="res://telas/minigames/jogo_vacina/assets/medalha/00133.png" id="268_6vsun"]
+[ext_resource type="Texture2D" uid="uid://in67nscbl1js" path="res://telas/minigames/jogo_vacina/assets/medalha/00134.png" id="269_ivyde"]
+[ext_resource type="Texture2D" uid="uid://byqfnss6r34wo" path="res://telas/minigames/jogo_vacina/assets/medalha/00135.png" id="270_k78ho"]
+[ext_resource type="Texture2D" uid="uid://bn5vfk7xhklyj" path="res://telas/minigames/jogo_vacina/assets/medalha/00136.png" id="271_iu57i"]
+[ext_resource type="Texture2D" uid="uid://d1xfquqgfjxct" path="res://telas/minigames/jogo_vacina/assets/medalha/00137.png" id="272_msm8j"]
+[ext_resource type="Texture2D" uid="uid://dllnohvkv0u08" path="res://telas/minigames/jogo_vacina/assets/medalha/00138.png" id="273_1m4nm"]
+[ext_resource type="Texture2D" uid="uid://dc1o30rvcj4yq" path="res://telas/minigames/jogo_vacina/assets/medalha/00139.png" id="274_6swpu"]
+[ext_resource type="Texture2D" uid="uid://hckdnsgojrc8" path="res://telas/minigames/jogo_vacina/assets/medalha/00140.png" id="275_3t6dj"]
+[ext_resource type="Texture2D" uid="uid://u7h37auvrx7b" path="res://telas/minigames/jogo_vacina/assets/medalha/00141.png" id="276_ibvbo"]
+[ext_resource type="Texture2D" uid="uid://dr5dhvycy2km" path="res://telas/minigames/jogo_vacina/assets/medalha/00142.png" id="277_jbr41"]
+[ext_resource type="Texture2D" uid="uid://08swkhbx03a" path="res://telas/minigames/jogo_vacina/assets/medalha/00143.png" id="278_rl5jj"]
+[ext_resource type="Texture2D" uid="uid://d14kaj1egkxni" path="res://telas/minigames/jogo_vacina/assets/medalha/00144.png" id="279_ji14k"]
+[ext_resource type="Texture2D" uid="uid://bgdhw7jyronux" path="res://telas/minigames/jogo_vacina/assets/medalha/00145.png" id="280_x64va"]
+[ext_resource type="Texture2D" uid="uid://blk6yrqvc64hn" path="res://telas/minigames/jogo_vacina/assets/medalha/00146.png" id="281_nghj5"]
+[ext_resource type="Texture2D" uid="uid://v7iuvpc6driw" path="res://telas/minigames/jogo_vacina/assets/medalha/00147.png" id="282_nm2q8"]
+[ext_resource type="Texture2D" uid="uid://civlt1vdl0piy" path="res://telas/minigames/jogo_vacina/assets/medalha/00148.png" id="283_6u56n"]
+[ext_resource type="Texture2D" uid="uid://caccge0dau5ju" path="res://telas/minigames/jogo_vacina/assets/medalha/00149.png" id="284_1ns4b"]
+[ext_resource type="Texture2D" uid="uid://bm1baxa2tt0u6" path="res://telas/minigames/jogo_vacina/assets/medalha/00150.png" id="285_m0fpc"]
+[ext_resource type="Texture2D" uid="uid://cvjcsv3f88ue6" path="res://telas/minigames/jogo_vacina/assets/medalha/00151.png" id="286_vrmk2"]
+[ext_resource type="Texture2D" uid="uid://cb4du1vh2f5cu" path="res://telas/minigames/jogo_vacina/assets/medalha/00152.png" id="287_yyvd5"]
+[ext_resource type="Texture2D" uid="uid://bh3tnhub4xyj" path="res://telas/minigames/jogo_vacina/assets/medalha/00153.png" id="288_ndvup"]
+[ext_resource type="Texture2D" uid="uid://f4a5rclllvja" path="res://telas/minigames/jogo_vacina/assets/medalha/00154.png" id="289_2yoef"]
+[ext_resource type="Texture2D" uid="uid://lik2j1ye7604" path="res://telas/minigames/jogo_vacina/assets/medalha/00155.png" id="290_a10eh"]
+[ext_resource type="Texture2D" uid="uid://dmbfcgp7p4ibf" path="res://telas/minigames/jogo_vacina/assets/medalha/00156.png" id="291_lvda7"]
+[ext_resource type="Texture2D" uid="uid://k7rxdhnie4bm" path="res://telas/minigames/jogo_vacina/assets/medalha/00157.png" id="292_x1sm6"]
+[ext_resource type="Texture2D" uid="uid://d3tnil8i3xwbl" path="res://telas/minigames/jogo_vacina/assets/medalha/00158.png" id="293_ym28i"]
+[ext_resource type="Texture2D" uid="uid://dg8l3yuuepf1c" path="res://telas/minigames/jogo_vacina/assets/medalha/00159.png" id="294_hjfis"]
+[ext_resource type="Texture2D" uid="uid://c86hcwppyh7ms" path="res://telas/minigames/jogo_vacina/assets/medalha/00160.png" id="295_rvy3s"]
+[ext_resource type="Texture2D" uid="uid://6p4f5ao742pa" path="res://telas/minigames/jogo_vacina/assets/medalha/00161.png" id="296_huhqk"]
+[ext_resource type="Texture2D" uid="uid://c1g5qca7bwnby" path="res://telas/minigames/jogo_vacina/assets/medalha/00162.png" id="297_ri3gv"]
+[ext_resource type="Texture2D" uid="uid://bxf81kop3pwqh" path="res://telas/minigames/jogo_vacina/assets/medalha/00163.png" id="298_3rku3"]
+[ext_resource type="Texture2D" uid="uid://bopwrre1htgun" path="res://telas/minigames/jogo_vacina/assets/medalha/00164.png" id="299_wfnb0"]
+[ext_resource type="Texture2D" uid="uid://b1cqwxx5mny3u" path="res://telas/minigames/jogo_vacina/assets/medalha/00165.png" id="300_ye364"]
+[ext_resource type="Texture2D" uid="uid://c6b6ss2h1wbfy" path="res://telas/minigames/jogo_vacina/assets/medalha/00166.png" id="301_51knf"]
+[ext_resource type="Texture2D" uid="uid://du3lwo0dke4d4" path="res://telas/minigames/jogo_vacina/assets/medalha/00167.png" id="302_mkatr"]
+[ext_resource type="Texture2D" uid="uid://bp6m7dpp61t6o" path="res://telas/minigames/jogo_vacina/assets/medalha/00168.png" id="303_3vjyx"]
+[ext_resource type="Texture2D" uid="uid://mu33ewumsj05" path="res://telas/minigames/jogo_vacina/assets/medalha/00169.png" id="304_3y0sw"]
+[ext_resource type="Texture2D" uid="uid://scbjxstgc4a0" path="res://telas/minigames/jogo_vacina/assets/medalha/00170.png" id="305_2xru8"]
+[ext_resource type="Texture2D" uid="uid://emoutk4oxmmr" path="res://telas/minigames/jogo_vacina/assets/medalha/00171.png" id="306_5nguj"]
+[ext_resource type="Texture2D" uid="uid://boc14chneppum" path="res://telas/minigames/jogo_vacina/assets/medalha/00172.png" id="307_0fuus"]
+[ext_resource type="Texture2D" uid="uid://louhbdd2lphm" path="res://telas/minigames/jogo_vacina/assets/medalha/00173.png" id="308_pkvof"]
+[ext_resource type="Texture2D" uid="uid://dkqc6mjuxh3ju" path="res://telas/minigames/jogo_vacina/assets/medalha/00174.png" id="309_gljjd"]
+[ext_resource type="Texture2D" uid="uid://bm83fpg5n1tvy" path="res://telas/minigames/jogo_vacina/assets/medalha/00175.png" id="310_02rwt"]
+[ext_resource type="Texture2D" uid="uid://cdhj10rw7s42" path="res://telas/minigames/jogo_vacina/assets/medalha/00176.png" id="311_eyrly"]
+[ext_resource type="Texture2D" uid="uid://oyv02adto2og" path="res://telas/minigames/jogo_vacina/assets/medalha/00177.png" id="312_8gjeu"]
+[ext_resource type="Texture2D" uid="uid://dvo8pqlte1qil" path="res://telas/minigames/jogo_vacina/assets/medalha/00178.png" id="313_nicwx"]
+[ext_resource type="Texture2D" uid="uid://w5d42jtre40c" path="res://telas/minigames/jogo_vacina/assets/medalha/00179.png" id="314_es6df"]
+[ext_resource type="Texture2D" uid="uid://mf8stj02f44v" path="res://telas/minigames/jogo_vacina/assets/medalha/00180.png" id="315_yaiw2"]
+[ext_resource type="Texture2D" uid="uid://lb616psjx5vw" path="res://telas/minigames/jogo_vacina/assets/medalha/00181.png" id="316_ivt64"]
+[ext_resource type="Texture2D" uid="uid://otqa7bd7fngd" path="res://telas/minigames/jogo_vacina/assets/medalha/00182.png" id="317_dop68"]
+[ext_resource type="Texture2D" uid="uid://j0n4wwt4i04x" path="res://telas/minigames/jogo_vacina/assets/medalha/00183.png" id="318_g8hqw"]
+[ext_resource type="Texture2D" uid="uid://cwk4rrr4ak43s" path="res://telas/minigames/jogo_vacina/assets/medalha/00184.png" id="319_0i8jc"]
+[ext_resource type="Texture2D" uid="uid://b3cs2ghayeuru" path="res://telas/minigames/jogo_vacina/assets/medalha/00185.png" id="320_xamun"]
+[ext_resource type="Texture2D" uid="uid://ddub52l3c88i7" path="res://telas/minigames/jogo_vacina/assets/medalha/00186.png" id="321_ui0r6"]
+[ext_resource type="Texture2D" uid="uid://cfvi72eq4tx3m" path="res://telas/minigames/jogo_vacina/assets/medalha/00187.png" id="322_u1o0n"]
+[ext_resource type="Texture2D" uid="uid://bga8ksp4rg5ok" path="res://telas/minigames/jogo_vacina/assets/medalha/00188.png" id="323_woyox"]
+[ext_resource type="Texture2D" uid="uid://jsjtmn11u2vp" path="res://telas/minigames/jogo_vacina/assets/medalha/00189.png" id="324_fyh3m"]
+[ext_resource type="Texture2D" uid="uid://daks3tyxvbob3" path="res://telas/minigames/jogo_vacina/assets/medalha/00190.png" id="325_lf7ab"]
+[ext_resource type="Texture2D" uid="uid://c8p4pas1odk5n" path="res://telas/minigames/jogo_vacina/assets/medalha/00191.png" id="326_4hvo3"]
+[ext_resource type="Texture2D" uid="uid://c4pwjuqtiendx" path="res://telas/minigames/jogo_vacina/assets/medalha/00192.png" id="327_igvqc"]
+[ext_resource type="Texture2D" uid="uid://pbxaeg0sqfjy" path="res://telas/minigames/jogo_vacina/assets/medalha/00193.png" id="328_fe7r8"]
+[ext_resource type="Texture2D" uid="uid://8obw4u155wta" path="res://telas/minigames/jogo_vacina/assets/medalha/00194.png" id="329_4fybo"]
+[ext_resource type="Texture2D" uid="uid://dtcga8axnk1t5" path="res://telas/minigames/jogo_vacina/assets/medalha/00195.png" id="330_dphe1"]
+[ext_resource type="Texture2D" uid="uid://1hqsfu0os1iy" path="res://telas/minigames/jogo_vacina/assets/medalha/00196.png" id="331_rfuk6"]
+[ext_resource type="Texture2D" uid="uid://duif858ua1q8r" path="res://telas/minigames/jogo_vacina/assets/medalha/00197.png" id="332_v48r5"]
+[ext_resource type="Texture2D" uid="uid://xq3qhkqeikd6" path="res://telas/minigames/jogo_vacina/assets/medalha/00198.png" id="333_iop7s"]
+[ext_resource type="Texture2D" uid="uid://bdgkfn8vxvc1h" path="res://telas/minigames/jogo_vacina/assets/medalha/00199.png" id="334_p21r0"]
+[ext_resource type="Texture2D" uid="uid://c8ta36cn8erb1" path="res://telas/minigames/jogo_vacina/assets/medalha/00200.png" id="335_lqpif"]
+[ext_resource type="Texture2D" uid="uid://c77377fttwhiy" path="res://telas/minigames/jogo_vacina/assets/medalha/00201.png" id="336_rdiyq"]
+[ext_resource type="Texture2D" uid="uid://d345t6vp7s4dx" path="res://telas/minigames/jogo_vacina/assets/medalha/00202.png" id="337_gnvg4"]
+[ext_resource type="Texture2D" uid="uid://jacq47ddlhkb" path="res://telas/minigames/jogo_vacina/assets/medalha/00203.png" id="338_am12p"]
+[ext_resource type="Texture2D" uid="uid://cydiksw1yjir1" path="res://telas/minigames/jogo_vacina/assets/medalha/00204.png" id="339_4vcod"]
+[ext_resource type="Texture2D" uid="uid://b2exm6r6fnb7o" path="res://telas/minigames/jogo_vacina/assets/medalha/00205.png" id="340_4plav"]
+[ext_resource type="Texture2D" uid="uid://bcau25dlvrpwc" path="res://telas/minigames/jogo_vacina/assets/medalha/00206.png" id="341_muuad"]
+[ext_resource type="Texture2D" uid="uid://ds5kk8epvtyyp" path="res://telas/minigames/jogo_vacina/assets/medalha/00207.png" id="342_gbm6x"]
+[ext_resource type="Texture2D" uid="uid://seab1ka6puv4" path="res://telas/minigames/jogo_vacina/assets/medalha/00208.png" id="343_fxrk8"]
+[ext_resource type="Texture2D" uid="uid://ceglydpvvfj0u" path="res://telas/minigames/jogo_vacina/assets/medalha/00209.png" id="344_4j3re"]
+[ext_resource type="Texture2D" uid="uid://cboktbua0gdud" path="res://telas/minigames/jogo_vacina/assets/medalha/00210.png" id="345_dc15c"]
+[ext_resource type="Texture2D" uid="uid://bc4jd546dgmpu" path="res://telas/minigames/jogo_vacina/assets/medalha/00211.png" id="346_fipmm"]
+[ext_resource type="Texture2D" uid="uid://dxo0v8wcym7vk" path="res://telas/minigames/jogo_vacina/assets/medalha/00212.png" id="347_dvc7l"]
+[ext_resource type="Texture2D" uid="uid://bj2anariiqc2d" path="res://telas/minigames/jogo_vacina/assets/medalha/00213.png" id="348_3ndem"]
+[ext_resource type="Texture2D" uid="uid://bx53b653hbwl4" path="res://telas/minigames/jogo_vacina/assets/medalha/00214.png" id="349_4brqt"]
+[ext_resource type="Texture2D" uid="uid://df5w74ktjgwsu" path="res://telas/minigames/jogo_vacina/assets/medalha/00215.png" id="350_3swn0"]
+[ext_resource type="Texture2D" uid="uid://c5dtrhlkcikyw" path="res://telas/minigames/jogo_vacina/assets/medalha/00216.png" id="351_3oppu"]
+[ext_resource type="Texture2D" uid="uid://m7khqwc6g1sa" path="res://telas/minigames/jogo_vacina/assets/medalha/00217.png" id="352_1ahv3"]
+[ext_resource type="Texture2D" uid="uid://djda8x6lsmgn" path="res://telas/minigames/jogo_vacina/assets/medalha/00218.png" id="353_c4itk"]
+[ext_resource type="Texture2D" uid="uid://o5j20vsuu3a8" path="res://telas/minigames/jogo_vacina/assets/medalha/00219.png" id="354_buijp"]
+[ext_resource type="Texture2D" uid="uid://dy5ectl6ablk6" path="res://telas/minigames/jogo_vacina/assets/medalha/00220.png" id="355_0vo13"]
+[ext_resource type="Texture2D" uid="uid://ru6y1woownin" path="res://telas/minigames/jogo_vacina/assets/medalha/00221.png" id="356_1jxwo"]
+[ext_resource type="Texture2D" uid="uid://bkfqyd17k0pbq" path="res://telas/minigames/jogo_vacina/assets/medalha/00222.png" id="357_exp1s"]
+[ext_resource type="Texture2D" uid="uid://dlu7350ftu2eu" path="res://telas/minigames/jogo_vacina/assets/medalha/00223.png" id="358_3brtd"]
+[ext_resource type="Texture2D" uid="uid://bdfn6trjpp2uq" path="res://telas/minigames/jogo_vacina/assets/medalha/00224.png" id="359_ji06u"]
+[ext_resource type="Texture2D" uid="uid://bnh6r73gmsyud" path="res://telas/minigames/jogo_vacina/assets/medalha/00225.png" id="360_ssv2q"]
+[ext_resource type="Texture2D" uid="uid://ccaxaanrelmwv" path="res://telas/minigames/jogo_vacina/assets/medalha/00226.png" id="361_ivj3u"]
+[ext_resource type="Texture2D" uid="uid://cgdwcwd7osgku" path="res://telas/minigames/jogo_vacina/assets/medalha/00227.png" id="362_lmhqw"]
+[ext_resource type="Texture2D" uid="uid://d3g1cuv46djo" path="res://telas/minigames/jogo_vacina/assets/medalha/00228.png" id="363_5pcnl"]
+[ext_resource type="Texture2D" uid="uid://3itpmvk2dhuv" path="res://telas/minigames/jogo_vacina/assets/medalha/00229.png" id="364_xiily"]
+[ext_resource type="Texture2D" uid="uid://cshxv7rhxr8yi" path="res://telas/minigames/jogo_vacina/assets/medalha/00230.png" id="365_apc8l"]
+[ext_resource type="Texture2D" uid="uid://dpa62cvjr1l1c" path="res://telas/minigames/jogo_vacina/assets/medalha/00231.png" id="366_huoxh"]
+[ext_resource type="Texture2D" uid="uid://snlnt8yndeu5" path="res://telas/minigames/jogo_vacina/assets/medalha/00232.png" id="367_sk522"]
+[ext_resource type="Texture2D" uid="uid://dx7sgjxd24rnh" path="res://telas/minigames/jogo_vacina/assets/medalha/00233.png" id="368_747k6"]
+[ext_resource type="Texture2D" uid="uid://cekailfwlk7u6" path="res://telas/minigames/jogo_vacina/assets/medalha/00234.png" id="369_q4ih7"]
+[ext_resource type="Script" uid="uid://dpxpbjaw6qfke" path="res://telas/minigames/jogo_vacina/scripts/medalha.gd" id="370_eo67r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjcsn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rnfbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f6ucy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ysxhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7ias4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cldqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lsmqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8ktmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_m3veq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xnk6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qfefl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ck2ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pikgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4aa4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pkxoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_msnb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gc6lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xl4nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1b10b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nd1dq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_in1ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ftg3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_2uxu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_eyqvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_f61yn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_y7kim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_81ty1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_s1vr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_74qex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bsbt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8ixtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_0ydle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ovurd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_amxln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_tleyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ic4qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ehq8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_g388p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_nt4br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_wuj7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_dmq20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_1qa1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_jbuul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_xtkyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_gyngx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_t20k4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_keln7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_5gkut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_y0tyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_davsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_jer60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_pmd8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_771es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_7ail6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_ux3e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_0tlvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_dr0of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_mh2qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_1rcsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_rustq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_57aui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_phqem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_3qp4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_m4j0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_rrffy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_mylka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_fyxjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_c55w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_knttk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_7q6my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_6owvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_0hp8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_w5fsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_rqhhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_udf84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_hr70g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_eeouv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_eo7qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_hll8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bcao4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_bk0m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_uhcf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_qt3g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_xmm25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_38jbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_7d51b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_wadq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_qxalj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_83dsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_tn3yc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_icnnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_qeni4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_41dim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_lggrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_jpi8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_jv5xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_u0xso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_3ovns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_mw7du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_au1w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_vf0al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_0yd7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_3o10a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_htb4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_og0jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_gs03u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_mnixy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_n6nha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_jjo3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_hwe6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_gkmwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_xs31w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_57frr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_ryesm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_g2eo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_6esks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_6gxkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_jywys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_uv0j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_5hnvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_4e5bl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_gi8m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_2j5my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_e8vde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_j81dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_ffgvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_36v7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_rm2u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_emmke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_rw40t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_gakku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_3kgk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_6u2jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}],
+"loop": false,
+"name": &"urso_heroi",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r67v1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("136_eqg4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_f612b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_y84o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_1bg6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_k3tg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_8hgvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_y1m42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_7q3kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_5pg12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_5024x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_2xeuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_rah6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_xi7c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_xx5gg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_xlcte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_aw1hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_imq54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_d6m1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_e3xym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_1ytts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_7e5gg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_vbcy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_xi3ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_m8nfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_2a3h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_in43n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_gwlc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_vncjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_47n0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_mtb27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_ug43f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_e7ff4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_urjny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_ofdmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_dct6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_k2uhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_i6k3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_vomja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_68dkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_0vydf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_tyra0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_urcos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_m7fdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_4liao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_xutu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_awhwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_xrrqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_4ug1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_2ul3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_tkv5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_ymwfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_k61g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_df4ku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_uay6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_jlcy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_wrgvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_pxwkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_7fuai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_8wvtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_hptvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_hu3oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_0kai4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_wrgcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_qwnt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_b1dkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_fvw1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_iiqp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_nv5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_g4ajj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_lrlie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_1s6vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_co5ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_l75sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_r8vkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_dop1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_brm15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_1ddnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_6n0n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_sownu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_gwgrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_1676l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_ixdmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_higus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_f4tv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_jvs3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_xgs2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_obhcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_m6ukm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_xoyw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_hr4hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_agm0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227_ceytd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_2hksx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_hgccb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("230_x1ht4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("231_1rsqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_llskh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_4cs1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_pro48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_v08au")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_6ex36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_54oyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_t53bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_8lkfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_bcj6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_3nwrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_32u3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_f8o67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_aqbro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_rhxxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_7m4b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_vsqqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_wf2oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_mopkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_wq6kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_n7vfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_tvhb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_vxude")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_sf35t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("255_ovl42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_uqkay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257_u523p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258_a4qnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259_dcfvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("260_crodk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("261_egl15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_3p5l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("263_srfwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("264_xsg2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("265_6f2mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("266_2wx7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("267_y1n7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("268_6vsun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("269_ivyde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("270_k78ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("271_iu57i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("272_msm8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("273_1m4nm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("274_6swpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("275_3t6dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("276_ibvbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("277_jbr41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("278_rl5jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("279_ji14k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("280_x64va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("281_nghj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("282_nm2q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("283_6u56n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("284_1ns4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("285_m0fpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("286_vrmk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("287_yyvd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("288_ndvup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("289_2yoef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("290_a10eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("291_lvda7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("292_x1sm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("293_ym28i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("294_hjfis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("295_rvy3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("296_huhqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("297_ri3gv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("298_3rku3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("299_wfnb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("300_ye364")
+}, {
+"duration": 1.0,
+"texture": ExtResource("301_51knf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("302_mkatr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("303_3vjyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("304_3y0sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("305_2xru8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("306_5nguj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("307_0fuus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("308_pkvof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("309_gljjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("310_02rwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("311_eyrly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("312_8gjeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("313_nicwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("314_es6df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("315_yaiw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("316_ivt64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_dop68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("318_g8hqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("319_0i8jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("320_xamun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("321_ui0r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("322_u1o0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("323_woyox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("324_fyh3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("325_lf7ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("326_4hvo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("327_igvqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("328_fe7r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("329_4fybo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("330_dphe1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("331_rfuk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("332_v48r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("333_iop7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("334_p21r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("335_lqpif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("336_rdiyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("337_gnvg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("338_am12p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("339_4vcod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("340_4plav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("341_muuad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("342_gbm6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("343_fxrk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("344_4j3re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("345_dc15c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("346_fipmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("347_dvc7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("348_3ndem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("349_4brqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("350_3swn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("351_3oppu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("352_1ahv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("353_c4itk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("354_buijp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("355_0vo13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("356_1jxwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("357_exp1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("358_3brtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("359_ji06u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("360_ssv2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("361_ivj3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("362_lmhqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("363_5pcnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("364_xiily")
+}, {
+"duration": 1.0,
+"texture": ExtResource("365_apc8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("366_huoxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("367_sk522")
+}, {
+"duration": 1.0,
+"texture": ExtResource("368_747k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("369_q4ih7")
+}],
+"loop": false,
+"name": &"medalha_conquista",
+"speed": 20.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.952941, 0.894118, 0.2, 1)
+
+[node name="Conquista" type="Node2D" parent="."]
+script = ExtResource("1_4mq2m")
+
+[node name="animacao_urso" type="AnimatedSprite2D" parent="Conquista"]
+position = Vector2(400, 1300)
+sprite_frames = SubResource("SpriteFrames_sjcsn")
+animation = &"urso_heroi"
+script = ExtResource("135_lrvcy")
+
+[node name="medalha" type="AnimatedSprite2D" parent="Conquista"]
+position = Vector2(369, -359)
+sprite_frames = SubResource("SpriteFrames_r67v1")
+animation = &"medalha_conquista"
+speed_scale = 1.2
+script = ExtResource("370_eo67r")

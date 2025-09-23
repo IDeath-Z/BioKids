@@ -3,7 +3,7 @@ extends Node2D
 # dicionário com as cenas que podem ser carregadas
 var scenes = {
 	"seringa": preload("res://telas/minigames/jogo_vacina/cenas/seringa.tscn"),
-	"conquista":preload("res://telas/minigames/jogo_vacina/cenas/conquista.tscn")
+	"conquista":preload("res://telas/minigames/jogo_vacina/cenas/Conquista_01.tscn")
 }
 
 # cena atual
@@ -28,4 +28,4 @@ func change_scene(scene_name: String):
 		push_error("Cena '%s' não encontrada!" % scene_name)
 		
 func _on_conquista_feita():
-	get_tree().change_scene("res://telas/minigames/jogo_vacina/cenas/conquista.tscn")
+	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/Conquista_01.tscn")

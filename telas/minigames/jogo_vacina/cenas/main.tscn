@@ -59,11 +59,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(107.578, 160.842)
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 304.0
+offset_bottom = 456.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.701172, 0.70106)
 texture = ExtResource("1_vis02")
-offset = Vector2(360, 540)
 
 [node name="Main" type="Node2D" parent="."]
 script = ExtResource("2_dxvjg")

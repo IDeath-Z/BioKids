@@ -48,4 +48,4 @@ func _input(event):
 
 func _on_area_entered(area):
 	if area.name == "local_vacina":
-		get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/conquista.tscn")
+		get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/Conquista_01.tscn")
