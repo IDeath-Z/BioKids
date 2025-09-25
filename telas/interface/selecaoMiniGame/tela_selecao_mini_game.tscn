@@ -382,10 +382,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -1.0
 anchor_right = 0.0
-script = null
 
 [connection signal="pressed" from="MarginContainer/GridBotoes/BioX" to="." method="_on_bio_x_pressed"]
 [connection signal="pressed" from="MarginContainer/GridBotoes/BioVacina" to="." method="_on_bio_vacina_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/Caca" to="." method="_on_caca_pressed"]
 [connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="animation_finished" from="TexturaJogos/AnimacaoJogos" to="." method="_on_animacao_jogos_animation_finished"]
 [connection signal="animation_started" from="TexturaJogos/AnimacaoJogos" to="." method="_on_animacao_jogos_animation_started"]

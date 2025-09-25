@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4bs18k2ahj0y"]
+
+[ext_resource type="Script" uid="uid://dhqrm71fjvths" path="res://Cenas/info.gd" id="1_oosus"]
+[ext_resource type="Texture2D" uid="uid://cor3y1s5x06vt" path="res://Imagens/backgrounds/Informativo.png" id="2_bjdky"]
+[ext_resource type="Texture2D" uid="uid://bmomiw2jrnlmx" path="res://Imagens/Outros/Seta.png" id="3_22jaq"]
+
+[node name="Info" type="Node2D"]
+script = ExtResource("1_oosus")
+
+[node name="InfoSprite" type="Sprite2D" parent="."]
+position = Vector2(300, 450)
+texture = ExtResource("2_bjdky")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 390.0
+offset_bottom = 307.0
+scale = Vector2(0.33, 0.33)
+icon = ExtResource("3_22jaq")
+flat = true

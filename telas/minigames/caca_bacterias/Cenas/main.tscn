@@ -1,0 +1,243 @@
+[gd_scene load_steps=23 format=3 uid="uid://dmcb7usur13uo"]
+
+[ext_resource type="Script" uid="uid://bg2cvcv2ln1xw" path="res://telas/minigames/caca_bacterias/scripts/player.gd" id="1_74bqr"]
+[ext_resource type="Script" uid="uid://ds8efov5xt1uw" path="res://telas/minigames/caca_bacterias/Cenas/main.gd" id="1_jjrtw"]
+[ext_resource type="Texture2D" uid="uid://b5spcq42uolqr" path="res://telas/minigames/caca_bacterias/Imagens/backgrounds/fundo3.png" id="1_x6di6"]
+[ext_resource type="Texture2D" uid="uid://dwoppsibblqui" path="res://telas/minigames/caca_bacterias/Imagens/backgrounds/FundoDesfocado.png" id="2_7yi6i"]
+[ext_resource type="Texture2D" uid="uid://dkknyql3fvm32" path="res://telas/minigames/caca_bacterias/Imagens/Player/Player1.png" id="3_x6di6"]
+[ext_resource type="Texture2D" uid="uid://dfsvs7tatxpvi" path="res://telas/minigames/caca_bacterias/Imagens/Player/Player2.png" id="4_btbr3"]
+[ext_resource type="Texture2D" uid="uid://di58ggibs6xhd" path="res://telas/minigames/caca_bacterias/Imagens/Player/Player3.png" id="5_jjrtw"]
+[ext_resource type="Texture2D" uid="uid://d22ef8ohguwnp" path="res://telas/minigames/caca_bacterias/Imagens/Player/Player4.png" id="6_7yi6i"]
+[ext_resource type="Script" uid="uid://cjag0p6s53il6" path="res://telas/minigames/caca_bacterias/scripts/spawner.gd" id="6_qns0q"]
+[ext_resource type="FontFile" uid="uid://r2jpja4hkslp" path="res://telas/minigames/caca_bacterias/Fontes/pixel_lcd_7.ttf" id="7_n00j1"]
+[ext_resource type="AudioStream" uid="uid://ctxybxussh3mk" path="res://telas/minigames/caca_bacterias/sounds/pickup_saudavel.wav" id="11_7yi6i"]
+[ext_resource type="AudioStream" uid="uid://capdibl6rxrcx" path="res://telas/minigames/caca_bacterias/sounds/damage.wav" id="12_irhh0"]
+[ext_resource type="AudioStream" uid="uid://coxdfeo7ulfi1" path="res://telas/minigames/caca_bacterias/sounds/game_over.wav" id="13_me8gh"]
+[ext_resource type="AudioStream" uid="uid://cy8jnaidp13aa" path="res://telas/minigames/caca_bacterias/sounds/countdown_tick.wav" id="14_3ea3k"]
+[ext_resource type="AudioStream" uid="uid://b50baestxtdnu" path="res://telas/minigames/caca_bacterias/sounds/start_race.wav" id="15_xaxpv"]
+[ext_resource type="AudioStream" uid="uid://dkjhygl1h1hi1" path="res://telas/minigames/caca_bacterias/sounds/background_music.mp3" id="16_xaxpv"]
+[ext_resource type="Texture2D" uid="uid://bd5vg84lh3gf8" path="res://telas/minigames/caca_bacterias/Imagens/Outros/touchesq.png" id="17_neu2f"]
+[ext_resource type="Texture2D" uid="uid://cs6edlcltpv6p" path="res://telas/minigames/caca_bacterias/Imagens/Outros/touchdir.png" id="18_wnyw5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x6di6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x6di6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("3_x6di6")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_btbr3")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_jjrtw")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_7yi6i")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_jjrtw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lb8y5"]
+size = Vector2(78, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja1os"]
+size = Vector2(78, 134)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_erht2"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jjrtw")
+
+[node name="BackgroundBlurred" type="Sprite2D" parent="."]
+position = Vector2(300, 450)
+texture = ExtResource("2_7yi6i")
+
+[node name="BackgroundNormal" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(300, 450)
+texture = ExtResource("1_x6di6")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(300, 810)
+up_direction = Vector2(1, -5e-06)
+script = ExtResource("1_74bqr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_x6di6")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_lb8y5")
+
+[node name="Hitbox" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_ja1os")
+
+[node name="SpawnerComida" type="Node2D" parent="."]
+script = ExtResource("6_qns0q")
+
+[node name="SpawnTimer" type="Timer" parent="SpawnerComida"]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="MenuButton" type="Button" parent="UILayer"]
+offset_left = 100.0
+offset_top = 500.0
+offset_right = 500.0
+offset_bottom = 570.0
+scale = Vector2(0.965, 0.965)
+theme_override_fonts/font = ExtResource("7_n00j1")
+theme_override_font_sizes/font_size = 40
+text = "Voltar Ao Menu"
+
+[node name="PontosLabel" type="Label" parent="UILayer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 180.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("7_n00j1")
+theme_override_font_sizes/font_size = 26
+text = "Pontos: 0"
+
+[node name="VidasLabel" type="Label" parent="UILayer"]
+offset_left = 435.0
+offset_top = 15.0
+offset_right = 580.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("7_n00j1")
+theme_override_font_sizes/font_size = 26
+text = "Vidas: 3"
+
+[node name="CountdownLabel" type="Label" parent="UILayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -47.5
+offset_right = 200.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_n00j1")
+theme_override_font_sizes/font_size = 70
+text = "CONTAGEM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="UILayer"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("7_n00j1")
+theme_override_font_sizes/font_size = 48
+text = "Fim de Jogo"
+
+[node name="FinalScoreLabel" type="Label" parent="UILayer"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("7_n00j1")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="UILayer"]
+stream = ExtResource("11_7yi6i")
+
+[node name="DamageSound" type="AudioStreamPlayer" parent="UILayer"]
+stream = ExtResource("12_irhh0")
+volume_db = -10.0
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="UILayer"]
+stream = ExtResource("13_me8gh")
+
+[node name="CountdownTickSound" type="AudioStreamPlayer" parent="UILayer"]
+stream = ExtResource("14_3ea3k")
+
+[node name="StartRaceSound" type="AudioStreamPlayer" parent="UILayer"]
+stream = ExtResource("15_xaxpv")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="UILayer"]
+stream = ExtResource("16_xaxpv")
+
+[node name="TouchControls" type="Control" parent="UILayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftButton" type="TouchScreenButton" parent="UILayer/TouchControls"]
+visible = false
+position = Vector2(90, 840)
+scale = Vector2(9, 9)
+shape = SubResource("CircleShape2D_erht2")
+action = "ui_left"
+
+[node name="ButtonVisual" type="Sprite2D" parent="UILayer/TouchControls/LeftButton"]
+modulate = Color(1, 1, 1, 0.745098)
+self_modulate = Color(1, 1, 1, 0.745098)
+position = Vector2(0.22, -1)
+scale = Vector2(0.033, 0.033)
+texture = ExtResource("17_neu2f")
+
+[node name="RightButton" type="TouchScreenButton" parent="UILayer/TouchControls"]
+visible = false
+position = Vector2(510, 840)
+scale = Vector2(9, 9)
+shape = SubResource("CircleShape2D_erht2")
+action = "ui_right"
+
+[node name="ButtonVisual" type="Sprite2D" parent="UILayer/TouchControls/RightButton"]
+modulate = Color(1, 1, 1, 0.745098)
+self_modulate = Color(1, 1, 1, 0.745098)
+position = Vector2(0.22, -1)
+scale = Vector2(0.033, 0.033)
+texture = ExtResource("18_wnyw5")
+
+[node name="MenuLayer" type="CanvasLayer" parent="."]
+
+[node name="StartButton" type="Button" parent="MenuLayer"]
+offset_left = 150.0
+offset_top = 360.0
+offset_right = 450.0
+offset_bottom = 460.0
+theme_override_fonts/font = ExtResource("7_n00j1")
+theme_override_font_sizes/font_size = 50
+text = "INCIAR"
+icon_alignment = 1
+
+[node name="InfoButton" type="Button" parent="MenuLayer"]
+offset_left = 150.0
+offset_top = 500.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("7_n00j1")
+theme_override_font_sizes/font_size = 50
+text = "detalhes"
+
+[connection signal="pressed" from="UILayer/MenuButton" to="." method="_on_menu_button_pressed"]

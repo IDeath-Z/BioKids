@@ -18,6 +18,9 @@ func _on_bio_x_pressed() -> void:
 func _on_bio_vacina_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/main.tscn")
 	
+func _on_caca_pressed() -> void:
+	get_tree().change_scene_to_file("res://telas/minigames/caca_bacterias/Cenas/main.tscn")
+	
 func _on_botao_voltar_pressed() -> void:
 	EstadoVariaveisGlobais.urso_saiu_tela_menu = true
 	saindo_tela = true
