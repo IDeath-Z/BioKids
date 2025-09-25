@@ -15,3 +15,6 @@ func _ready():
 	
 	await animacao_medalha.animation_finished
 	animacao_medalha.stop()
+	
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/bio_fato_vacina.tscn")

@@ -1505,16 +1505,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.952941, 0.894118, 0.2, 1)
 
-[node name="Conquista" type="Node2D" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Conquista" type="Node2D" parent="AspectRatioContainer"]
 script = ExtResource("1_4mq2m")
 
-[node name="animacao_urso" type="AnimatedSprite2D" parent="Conquista"]
+[node name="animacao_urso" type="AnimatedSprite2D" parent="AspectRatioContainer/Conquista"]
 position = Vector2(400, 1300)
 sprite_frames = SubResource("SpriteFrames_sjcsn")
 animation = &"urso_heroi"
 script = ExtResource("135_lrvcy")
 
-[node name="medalha" type="AnimatedSprite2D" parent="Conquista"]
+[node name="medalha" type="AnimatedSprite2D" parent="AspectRatioContainer/Conquista"]
 position = Vector2(369, -359)
 sprite_frames = SubResource("SpriteFrames_r67v1")
 animation = &"medalha_conquista"

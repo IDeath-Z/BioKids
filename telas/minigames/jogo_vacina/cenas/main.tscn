@@ -49,27 +49,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="background" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 304.0
-offset_bottom = 456.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.701172, 0.70106)
 texture = ExtResource("1_vis02")
+expand_mode = 1
 
 [node name="Main" type="Node2D" parent="."]
 script = ExtResource("2_dxvjg")

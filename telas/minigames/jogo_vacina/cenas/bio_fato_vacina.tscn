@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://cse432ygis1bf"]
+
+[ext_resource type="Script" uid="uid://dhv5qhrqmghft" path="res://telas/minigames/jogo_vacina/cenas/bio_fato_vacina.gd" id="1_3215y"]
+[ext_resource type="PackedScene" uid="uid://c0nkhbv8diqwc" path="res://telas/interface/bioFato/bio_fato.tscn" id="1_pumwj"]
+
+[node name="BioFato" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3215y")
+
+[node name="BioFato" parent="." instance=ExtResource("1_pumwj")]
+layout_mode = 1
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.336
+anchor_top = 0.494
+anchor_right = 0.671
+anchor_bottom = 0.522
+offset_left = 0.0799866
+offset_top = -0.52002
+offset_right = -0.119995
+offset_bottom = 0.23999
+theme_override_colors/font_color = Color(0.337255, 0.223529, 0.113725, 1)
+theme_override_font_sizes/font_size = 22
+text = "Seja um Super Herói"
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Texto" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.175
+anchor_top = 0.526
+anchor_right = 0.801
+anchor_bottom = 0.695
+offset_top = -0.0800171
+offset_right = 3.27997
+offset_bottom = 0.399963
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.337255, 0.223529, 0.113725, 1)
+theme_override_font_sizes/font_size = 20
+text = "A vacina é um superpoder que protege você de ficar doente. 
+Ela funciona como um escudo, deixando 
+seu corpo preparado para lutar 
+contra bichinhos de doença."
+vertical_alignment = 1
+autowrap_mode = 3
