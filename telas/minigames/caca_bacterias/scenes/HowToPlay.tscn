@@ -1,21 +1,23 @@
 [gd_scene load_steps=3 format=3 uid="uid://jtoh7ea2cuxd"]
 
-[ext_resource type="Script" uid="uid://b0dilotbehkss" path="res://how_to_play.gd" id="1_j20v8"]
-[ext_resource type="FontFile" uid="uid://bvrlssneuq3d8" path="res://assets/fonts/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/connection_ii/ConnectionII.otf" id="2_qyvf2"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_gt11o"]
+[ext_resource type="Script" uid="uid://b0dilotbehkss" path="res://telas/minigames/caca_bacterias/how_to_play.gd" id="1_j20v8"]
 
 [node name="HowToPlay" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 1.0
 offset_bottom = 1.0
+theme = ExtResource("1_gt11o")
 script = ExtResource("1_j20v8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 768.0
-color = Color(0.65882355, 0.65882355, 0.9411765, 1)
+color = Color(0.658824, 0.658824, 0.941176, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -26,7 +28,6 @@ offset_right = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_qyvf2")
 theme_override_font_sizes/font_size = 40
 text = "Algumas bactérias escaparam no laboratório! Ajude o Ursinho a encontrar as bactérias certas. 
 Clique apenas nas que ele pedir!"

@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://b5eg22bqqwiv4"]
 
 [ext_resource type="Script" uid="uid://mnlv7kfq6qry" path="res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.gd" id="1_g0fu6"]
-[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_p80pi"]
-[ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://assets/imagens/interface/background_inicio.png" id="3_kkrmv"]
-[ext_resource type="Texture2D" uid="uid://3yb1i4y67env" path="res://assets/imagens/interface/nuvem_jogos.png" id="5_5c5ps"]
-[ext_resource type="Texture2D" uid="uid://sco4e0cuo658" path="res://assets/imagens/interface/nuvem.png" id="5_5uflm"]
-[ext_resource type="PackedScene" uid="uid://wd5o68bowdxn" path="res://telas/minigames/raioX/raio_x_menu_transicao.tscn" id="6_pihxx"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_p80pi"]
+[ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://telas/interface/assets/imagens/background_inicio.png" id="3_kkrmv"]
+[ext_resource type="Texture2D" uid="uid://3yb1i4y67env" path="res://telas/interface/assets/imagens/nuvem_jogos.png" id="5_5c5ps"]
+[ext_resource type="Texture2D" uid="uid://sco4e0cuo658" path="res://telas/interface/assets/imagens/nuvem.png" id="5_5uflm"]
+[ext_resource type="PackedScene" uid="uid://wd5o68bowdxn" path="res://telas/minigames/raio_x/raio_x_menu_transicao.tscn" id="6_pihxx"]
 
 [sub_resource type="Animation" id="Animation_bnnt2"]
 length = 0.001
@@ -252,6 +252,7 @@ _data = {
 
 [node name="TelaSelecaoMiniGame" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -385,6 +386,9 @@ anchor_right = 2.0
 [connection signal="pressed" from="MarginContainer/GridBotoes/BioX" to="." method="_on_bio_x_pressed"]
 [connection signal="pressed" from="MarginContainer/GridBotoes/BioVacina" to="." method="_on_bio_vacina_pressed"]
 [connection signal="pressed" from="MarginContainer/GridBotoes/Caca" to="." method="_on_caca_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/Missao" to="." method="_on_missao_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/BioEscudo" to="." method="_on_bio_escudo_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/BioGoods" to="." method="_on_bio_goods_pressed"]
 [connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="animation_finished" from="TexturaJogos/AnimacaoJogos" to="." method="_on_animacao_jogos_animation_finished"]
 [connection signal="animation_started" from="TexturaJogos/AnimacaoJogos" to="." method="_on_animacao_jogos_animation_started"]

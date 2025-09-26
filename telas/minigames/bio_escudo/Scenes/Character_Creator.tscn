@@ -1,30 +1,27 @@
-[gd_scene load_steps=18 format=3 uid="uid://dfr2pcw7l4goo"]
+[gd_scene load_steps=19 format=3 uid="uid://dfr2pcw7l4goo"]
 
-[ext_resource type="Script" uid="uid://cro5dfjqd54no" path="res://Scripts/fur.gd" id="2_m8jyd"]
-[ext_resource type="Script" uid="uid://extdbho38y4u" path="res://Scripts/pants.gd" id="4_yiodc"]
-[ext_resource type="Script" uid="uid://mm3i7cj4hp28" path="res://Scripts/outfit.gd" id="6_e0whd"]
-[ext_resource type="Script" uid="uid://cl5yc06quc1ml" path="res://Scripts/accessory.gd" id="8_f5n3g"]
-[ext_resource type="Texture2D" uid="uid://cinkbccw6rm7h" path="res://assets/UI/button_roupa_icon.png" id="9_m8jyd"]
-[ext_resource type="Texture2D" uid="uid://lch478hnhjor" path="res://bg.png" id="9_s36mj"]
-[ext_resource type="Texture2D" uid="uid://cq5ksinhb8sec" path="res://assets/UI/button_acces_icon.png" id="10_5xme0"]
-[ext_resource type="Texture2D" uid="uid://rdbagkgxn0fd" path="res://assets/UI/button_roupa_pressed.icon.png" id="10_bgq41"]
-[ext_resource type="Texture2D" uid="uid://3duidh7c3tjt" path="res://assets/UI/Next.png" id="10_yiodc"]
-[ext_resource type="Texture2D" uid="uid://dgsprdhhew871" path="res://assets/UI/button_acces_pressed.icon.png" id="11_bgq41"]
-[ext_resource type="Texture2D" uid="uid://dl4ddgtq52jcy" path="res://assets/UI/Nextpressed.png" id="11_yiodc"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_rl6uu"]
+[ext_resource type="Script" uid="uid://cro5dfjqd54no" path="res://telas/minigames/bio_escudo/Scripts/fur.gd" id="2_m8jyd"]
+[ext_resource type="Script" uid="uid://extdbho38y4u" path="res://telas/minigames/bio_escudo/Scripts/pants.gd" id="4_yiodc"]
+[ext_resource type="Script" uid="uid://mm3i7cj4hp28" path="res://telas/minigames/bio_escudo/Scripts/outfit.gd" id="6_e0whd"]
+[ext_resource type="Script" uid="uid://cl5yc06quc1ml" path="res://telas/minigames/bio_escudo/Scripts/accessory.gd" id="8_f5n3g"]
+[ext_resource type="Texture2D" uid="uid://cinkbccw6rm7h" path="res://telas/minigames/bio_escudo/assets/UI/button_roupa_icon.png" id="9_m8jyd"]
+[ext_resource type="Texture2D" uid="uid://lch478hnhjor" path="res://telas/minigames/bio_escudo/bg.png" id="9_s36mj"]
+[ext_resource type="Texture2D" uid="uid://cq5ksinhb8sec" path="res://telas/minigames/bio_escudo/assets/UI/button_acces_icon.png" id="10_5xme0"]
+[ext_resource type="Texture2D" uid="uid://rdbagkgxn0fd" path="res://telas/minigames/bio_escudo/assets/UI/button_roupa_pressed.icon.png" id="10_bgq41"]
+[ext_resource type="Texture2D" uid="uid://3duidh7c3tjt" path="res://telas/minigames/bio_escudo/assets/UI/Next.png" id="10_yiodc"]
+[ext_resource type="Texture2D" uid="uid://dgsprdhhew871" path="res://telas/minigames/bio_escudo/assets/UI/button_acces_pressed.icon.png" id="11_bgq41"]
+[ext_resource type="Texture2D" uid="uid://dl4ddgtq52jcy" path="res://telas/minigames/bio_escudo/assets/UI/Nextpressed.png" id="11_yiodc"]
 
 [sub_resource type="GDScript" id="GDScript_s36mj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s36mj"]
-load_path = "res://.godot/imported/urso.png-c66bac92987be4bb026a8759663454a5.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m8jyd"]
-load_path = "res://.godot/imported/camisa doc grey.png-9451a4a4e34175e338bfb6cec1dc9c19.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bgq41"]
-load_path = "res://.godot/imported/calça_doc.png-4bea49380e7268d3789f586d3b2ecca4.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yiodc"]
-load_path = "res://.godot/imported/icon.png-ec880de02d5dab0aa15458af9d6c53ed.ctex"
 
 [sub_resource type="GDScript" id="GDScript_m8jyd"]
 script/source = "extends TextureRect
@@ -52,6 +49,7 @@ func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 [node name="CharacterCreator" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("1_rl6uu")
 script = SubResource("GDScript_s36mj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -121,6 +119,7 @@ offset_top = 10.0
 offset_bottom = 1530.0
 grow_horizontal = 0
 scale = Vector2(1, 0.68)
+theme = ExtResource("1_rl6uu")
 color = Color(0.321569, 0.360784, 1, 0.345098)
 
 [node name="fur" type="ColorRect" parent="CreatorScreen/ColorRect"]
@@ -152,6 +151,7 @@ layout_mode = 0
 offset_top = 629.412
 offset_right = 200.0
 offset_bottom = 1349.41
+theme = ExtResource("1_rl6uu")
 color = Color(1, 1, 1, 0)
 
 [node name="Label" type="Label" parent="CreatorScreen/ColorRect/Calça"]

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://n5u4w3kj1q3c"
+path="res://.godot/imported/wall_column.obj-9a06b1f8aef6a748b853d21cdd5a84d4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_column.obj-9a06b1f8aef6a748b853d21cdd5a84d4.mesh"]
+
+source_file="res://telas/minigames/bio_goods/sprites/[AR] Hospital Assets - FREE/3. Models/obj/wall_column.obj"
+dest_files=["res://.godot/imported/wall_column.obj-9a06b1f8aef6a748b853d21cdd5a84d4.mesh", "res://.godot/imported/wall_column.obj-9a06b1f8aef6a748b853d21cdd5a84d4.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

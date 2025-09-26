@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://dod8gqpfd6n80"]
 
-[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_etvai"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_etvai"]
 [ext_resource type="Script" uid="uid://2uv5nt6t6m71" path="res://telas/interface/inicio/tela_inicial.gd" id="2_dubg5"]
-[ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://assets/imagens/interface/background_inicio.png" id="3_f1mra"]
-[ext_resource type="Texture2D" uid="uid://c07qq22oglaud" path="res://assets/imagens/interface/mascote_saudacoes.png" id="4_dyi0n"]
-[ext_resource type="Texture2D" uid="uid://6iedsdq1tpls" path="res://assets/imagens/interface/logo_biokids.png" id="5_f1mra"]
-[ext_resource type="Texture2D" uid="uid://sco4e0cuo658" path="res://assets/imagens/interface/nuvem.png" id="6_ximrx"]
+[ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://telas/interface/assets/imagens/background_inicio.png" id="3_f1mra"]
+[ext_resource type="Texture2D" uid="uid://c07qq22oglaud" path="res://telas/interface/assets/imagens/mascote_saudacoes.png" id="4_dyi0n"]
+[ext_resource type="Texture2D" uid="uid://6iedsdq1tpls" path="res://telas/interface/assets/imagens/logo_biokids.png" id="5_f1mra"]
+[ext_resource type="Texture2D" uid="uid://sco4e0cuo658" path="res://telas/interface/assets/imagens/nuvem.png" id="6_ximrx"]
 
 [sub_resource type="Animation" id="Animation_fqulh"]
 length = 0.001

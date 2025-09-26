@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://7b4avd24pbe4"]
 
-[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_isp5d"]
-[ext_resource type="Texture2D" uid="uid://bra1a0pqbka7" path="res://assets/imagens/interface/pop_up_creditos.png" id="2_jarm1"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_isp5d"]
+[ext_resource type="Texture2D" uid="uid://bra1a0pqbka7" path="res://telas/interface/assets/imagens/pop_up_creditos.png" id="2_jarm1"]
 [ext_resource type="Script" uid="uid://e7vh3l1j54jf" path="res://telas/interface/opcoes/creditos.gd" id="2_qkrkk"]
 
 [sub_resource type="Animation" id="Animation_qkrkk"]

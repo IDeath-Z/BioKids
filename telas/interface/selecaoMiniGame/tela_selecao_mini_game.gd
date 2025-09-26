@@ -19,7 +19,16 @@ func _on_bio_vacina_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/main.tscn")
 	
 func _on_caca_pressed() -> void:
-	get_tree().change_scene_to_file("res://telas/minigames/caca_bacterias/Cenas/main.tscn")
+	get_tree().change_scene_to_file("res://telas/minigames/caca_bacterias/scenes/main_menu.tscn")
+	
+func _on_missao_pressed() -> void:
+	get_tree().change_scene_to_file("res://telas/minigames/missao_vitaminas/Cenas/main.tscn")
+	
+func _on_bio_escudo_pressed() -> void:
+	get_tree().change_scene_to_file("res://telas/minigames/bio_escudo/Scenes/main.tscn")
+	
+func _on_bio_goods_pressed() -> void:
+	get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/home.tscn")
 	
 func _on_botao_voltar_pressed() -> void:
 	EstadoVariaveisGlobais.urso_saiu_tela_menu = true
@@ -39,4 +48,4 @@ func _on_animacao_tela_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "mover_cenario":
 		match botao_pressionado:
 			"raioX":
-				get_tree().change_scene_to_file("res://telas/minigames/raioX/raio_x_menu.tscn")
+				get_tree().change_scene_to_file("res://telas/minigames/raio_x/raio_x_menu.tscn")

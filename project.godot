@@ -19,6 +19,7 @@ config/icon="res://assets/imagens/icon.svg"
 
 EstadoVariaveisGlobais="*res://global/estado_variaveis_globais.gd"
 MusicPlayer="*res://telas/interface/reprodutorMusica/music_player.tscn"
+GlobalBioEscudo="*res://telas/minigames/bio_escudo/Scripts/Global.gd"
 
 [debug]
 

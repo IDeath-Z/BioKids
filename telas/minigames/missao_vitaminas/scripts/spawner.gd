@@ -1,9 +1,8 @@
-# spawner.gd
 extends Node2D
 
 @onready var spawn_timer = $SpawnTimer
-@onready var comida_saudavel = preload("res://telas/minigames/caca_bacterias/Cenas/comida_saudavel.tscn")
-@onready var comida_nao_saudavel = preload("res://telas/minigames/caca_bacterias/Cenas/comida_nao_saudavel.tscn")
+@onready var comida_saudavel = preload("res://telas/minigames/missao_vitaminas/Cenas/comida_saudavel.tscn")
+@onready var comida_nao_saudavel = preload("res://telas/minigames/missao_vitaminas/Cenas/comida_nao_saudavel.tscn")
 
 func _ready():
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)

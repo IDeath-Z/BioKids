@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnxbg8dkeslgx"]
 
-[ext_resource type="PackedScene" uid="uid://dfr2pcw7l4goo" path="res://Scenes/Character_Creator.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dfr2pcw7l4goo" path="res://telas/minigames/bio_escudo/Scenes/Character_Creator.tscn" id="2_8gbba"]
 
 [node name="Main" type="Control"]
 layout_mode = 3

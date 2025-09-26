@@ -14,7 +14,7 @@ func _ready():
 	
 # Set keys
 func set_sprite_keys():
-	pants_keys = Global.pants_collection.keys()
+	pants_keys = GlobalBioEscudo.pants_collection.keys()
 
 # Updates texture & modulate
 func update_sprite():
@@ -22,11 +22,11 @@ func update_sprite():
 	if current_sprite == "none":
 		pants_sprite.texture = null
 	else:
-		pants_sprite.texture = Global.pants_collection[current_sprite]
-		pants_sprite.modulate = Global.pants_color_options[current_color_index]
+		pants_sprite.texture = GlobalBioEscudo.pants_collection[current_sprite]
+		pants_sprite.modulate = GlobalBioEscudo.pants_color_options[current_color_index]
 	
-	Global.selected_pants = current_sprite
-	Global.selected_pants_color = Global.pants_color_options[current_color_index]	
+	GlobalBioEscudo.selected_pants = current_sprite
+	GlobalBioEscudo.selected_pants_color = GlobalBioEscudo.pants_color_options[current_color_index]	
 
 # Change hair
 func _on_collection_button_pressed():
@@ -35,5 +35,5 @@ func _on_collection_button_pressed():
 
 # Change hair color
 func _on_color_button_pressed():
-	current_color_index = (current_color_index + 1) % Global.pants_color_options.size()
+	current_color_index = (current_color_index + 1) % GlobalBioEscudo.pants_color_options.size()
 	update_sprite()

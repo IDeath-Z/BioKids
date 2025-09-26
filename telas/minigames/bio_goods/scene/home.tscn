@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://cte3ijiw2hxk7"]
+
+[ext_resource type="Texture2D" uid="uid://ck7h3lrfbbcbs" path="res://telas/minigames/bio_goods/sprites/[AR] Hospital Assets - FREE/4. Samples/Thumbnail.png" id="1_7dqlj"]
+[ext_resource type="Texture2D" uid="uid://cu3mt34cxr8g7" path="res://telas/minigames/bio_goods/sprites/Teste sprites Ursos/sprite idle.png" id="2_dpldj"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="3_2637g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dbls1"]
+font_size = 40
+shadow_size = 5
+
+[node name="Home" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="5-Background" type="Parallax2D" parent="Parallax2D"]
+
+[node name="BG" type="Sprite2D" parent="Parallax2D/5-Background"]
+position = Vector2(-615, -72)
+scale = Vector2(0.52359, 0.512953)
+texture = ExtResource("1_7dqlj")
+centered = false
+
+[node name="BEAR" type="Sprite2D" parent="Parallax2D/5-Background"]
+texture_filter = 2
+position = Vector2(180, 391)
+scale = Vector2(0.251953, 0.251953)
+texture = ExtResource("2_dpldj")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 89.0
+offset_top = 40.0
+offset_right = 313.0
+offset_bottom = 95.0
+grow_horizontal = 2
+theme = ExtResource("3_2637g")
+text = "BIO GOODS"
+label_settings = SubResource("LabelSettings_dbls1")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 103.0
+offset_top = 167.0
+offset_right = 306.0
+offset_bottom = 271.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_2637g")
+theme_override_constants/separation = 13
+
+[node name="iniciar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "INICIAR JOGO"
+
+[node name="sair" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SAIR"

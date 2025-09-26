@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://baldwa3a6r5vq"
-path="res://.godot/imported/camisa doc grey.png-0b73405a9e8aa9a09c7377a718732c52.ctex"
+path="res://.godot/imported/camisa doc grey.png-624e6b88962bbcba44102ec6132f8acb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/camisa/camisa doc grey.png"
-dest_files=["res://.godot/imported/camisa doc grey.png-0b73405a9e8aa9a09c7377a718732c52.ctex"]
+source_file="res://telas/minigames/bio_escudo/assets/camisa/camisa doc grey.png"
+dest_files=["res://.godot/imported/camisa doc grey.png-624e6b88962bbcba44102ec6132f8acb.ctex"]
 
 [params]
 

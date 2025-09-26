@@ -2,21 +2,21 @@ extends Node
 
 # Collection of body sprites
 var fur_collection = {
-	"01" : preload("res://assets/urso.png")
+	"01" : preload("res://telas/minigames/bio_escudo/assets/urso.png")
 }
 
 # Collection of hair sprites
 var pants_collection = {
 	"none" : null,
-	"01" : preload("res://assets/calça/calça_doc.png"),
-	"02" : preload("res://assets/calça/shorts seleça.png"),
+	"01" : preload("res://telas/minigames/bio_escudo/assets/calca/calca.png"),
+	"02" : preload("res://telas/minigames/bio_escudo/assets/calca/shorts.png"),
 }
 
 # Collection of outfit sprites
 var outfit_collection = {
-	"01" : preload("res://assets/camisa/camisa doc grey.png"),
-	"02" : preload("res://assets/camisa/camisa_seleça.png"),
-	"03" : preload("res://assets/camisa/jaleco_doc.png"),
+	"01" : preload("res://telas/minigames/bio_escudo/assets/camisa/camisa doc grey.png"),
+	"02" : preload("res://telas/minigames/bio_escudo/assets/camisa/camisa.png"),
+	"03" : preload("res://telas/minigames/bio_escudo/assets/camisa/jaleco_doc.png"),
 }
 # Collection of accessory sprites
 var accessory_collection = {

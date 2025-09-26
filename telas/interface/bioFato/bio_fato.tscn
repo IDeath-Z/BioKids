@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c0nkhbv8diqwc"]
 
-[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="1_vtkux"]
-[ext_resource type="Script" uid="uid://cnafhvdmfwf4j" path="res://telas/interface/biofato/bio_fato.gd" id="2_kpqb2"]
-[ext_resource type="Texture2D" uid="uid://hcb1edp5f80d" path="res://assets/imagens/interface/background_bio_fato.png" id="2_w15fc"]
-[ext_resource type="Texture2D" uid="uid://d4dgvw24ry6ec" path="res://assets/imagens/interface/biofato_card.png" id="3_kpqb2"]
-[ext_resource type="Theme" uid="uid://dv6ojfjvk877o" path="res://assets/temas/tema_botao_audio.tres" id="4_axa81"]
-[ext_resource type="Texture2D" uid="uid://jp1oykrsqgc" path="res://assets/imagens/interface/pop_up_audio.png" id="5_pr2ni"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_vtkux"]
+[ext_resource type="Script" uid="uid://cnafhvdmfwf4j" path="res://telas/interface/bioFato/bio_fato.gd" id="2_kpqb2"]
+[ext_resource type="Texture2D" uid="uid://hcb1edp5f80d" path="res://telas/interface/assets/imagens/background_bio_fato.png" id="2_w15fc"]
+[ext_resource type="Texture2D" uid="uid://d4dgvw24ry6ec" path="res://telas/interface/assets/imagens/biofato_card.png" id="3_kpqb2"]
+[ext_resource type="Theme" uid="uid://dv6ojfjvk877o" path="res://telas/interface/assets/temas/tema_botao_audio.tres" id="4_axa81"]
+[ext_resource type="Texture2D" uid="uid://jp1oykrsqgc" path="res://telas/interface/assets/imagens/pop_up_audio.png" id="5_pr2ni"]
 
 [node name="BioFato" type="Control"]
 layout_mode = 3

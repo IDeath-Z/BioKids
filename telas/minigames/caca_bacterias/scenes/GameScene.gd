@@ -50,7 +50,7 @@ func proxima_fase():
 
 func on_bacteria_spawn_timeout():
 	# Gera uma nova bactéria a cada timeout
-	var bact = preload("res://scenes/Bacteria.tscn").instantiate()
+	var bact = preload("res://telas/minigames/caca_bacterias/scenes/Bacteria.tscn").instantiate()
 	# Posição aleatória dentro da tela com margens maiores
 	var viewport_size = get_viewport_rect().size
 	var margem = 150  # Margem maior para evitar bordas
@@ -60,11 +60,11 @@ func on_bacteria_spawn_timeout():
 	)
 	bact.tipo = Tipo.values()[randi() % Tipo.size()]
 	var texturas = {
-		Tipo.AZUL: load("res://assets/images/BacteriaAZULFELIZ.png"),
-		Tipo.VERDE: load("res://assets/images/Bacteriaverdemaligna.png"),
-		Tipo.VERMELHA: load("res://assets/images/Bactéria vermelha.png"),
-		Tipo.ROSA: load("res://assets/images/BacteriaROSA.png"),
-		Tipo.VERDEMALIGNA: load("res://assets/images/BacteriaVERDEESCURO.png")
+		Tipo.AZUL: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaAZULFELIZ.png"),
+		Tipo.VERDE: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriaverdemaligna.png"),
+		Tipo.VERMELHA: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriavermelha.png"),
+		Tipo.ROSA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaROSA.png"),
+		Tipo.VERDEMALIGNA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaVERDEESCURO.png")
 	}
 	bact.get_node("SpriteBact").texture = texturas[bact.tipo]
 	container.add_child(bact)
@@ -91,7 +91,7 @@ func _on_bact_clicada(tipo: Tipo):
 		fato_label.text = fatos[randi() % fatos.size()]
 		$UI/JogarNovamente.visible = true
 		$UI/VoltarMenu.visible = true
-		ursinho.texture = load("res://assets/images/Ursinho normal.png")
+		ursinho.texture = load("res://telas/minigames/caca_bacterias/assets/images/Ursinho normal.png")
 		spawn_timer.stop()  # Para o timer ao completar a fase
 
 func limpar_tela():
@@ -104,12 +104,12 @@ func _on_jogar_novamente_pressed():
 	fato_label.text = ""
 	$UI/JogarNovamente.visible = false
 	$UI/VoltarMenu.visible = false
-	ursinho.texture = load("res://assets/images/Ursinho normal.png")
+	ursinho.texture = load("res://telas/minigames/caca_bacterias/assets/images/Ursinho normal.png")
 	contador_label.text = "Pontos: " + str(pontos)  # Atualiza o Label para 0
 	proxima_fase()
 
 func _on_voltar_menu_pressed():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://telas/minigames/caca_bacterias/scenes/main_menu.tscn")
 
 func completar_jogo():
 	instrucao_label.text = "Parabéns! Você limpou o laboratório!"

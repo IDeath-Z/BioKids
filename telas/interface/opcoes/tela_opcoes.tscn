@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://bsfehnuvqqial"]
 
 [ext_resource type="Script" uid="uid://cq2sihlxyr00n" path="res://telas/interface/opcoes/tela_opcoes.gd" id="1_brw4w"]
-[ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://assets/imagens/interface/background_inicio.png" id="2_brw4w"]
-[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://assets/temas/tema_padrao.tres" id="3_ondap"]
-[ext_resource type="Texture2D" uid="uid://8lgun1lam1b2" path="res://assets/imagens/interface/mascote_pensando.png" id="4_0cs76"]
-[ext_resource type="Texture2D" uid="uid://ctdxjry75j3np" path="res://assets/imagens/interface/nuvem_opcoes.png" id="5_ondap"]
-[ext_resource type="Texture2D" uid="uid://sco4e0cuo658" path="res://assets/imagens/interface/nuvem.png" id="6_eyhje"]
+[ext_resource type="Texture2D" uid="uid://c173aqpwceala" path="res://telas/interface/assets/imagens/background_inicio.png" id="2_brw4w"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="3_ondap"]
+[ext_resource type="Texture2D" uid="uid://8lgun1lam1b2" path="res://telas/interface/assets/imagens/mascote_pensando.png" id="4_0cs76"]
+[ext_resource type="Texture2D" uid="uid://ctdxjry75j3np" path="res://telas/interface/assets/imagens/nuvem_opcoes.png" id="5_ondap"]
+[ext_resource type="Texture2D" uid="uid://sco4e0cuo658" path="res://telas/interface/assets/imagens/nuvem.png" id="6_eyhje"]
 [ext_resource type="PackedScene" uid="uid://7b4avd24pbe4" path="res://telas/interface/opcoes/creditos.tscn" id="7_3xww5"]
 
 [sub_resource type="Animation" id="Animation_3xww5"]

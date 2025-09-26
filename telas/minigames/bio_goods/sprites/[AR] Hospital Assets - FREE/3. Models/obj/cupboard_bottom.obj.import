@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://be1hncmtmt5hr"
+path="res://.godot/imported/cupboard_bottom.obj-caa6c9337acca2517a3dcf44a1b065cf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cupboard_bottom.obj-caa6c9337acca2517a3dcf44a1b065cf.mesh"]
+
+source_file="res://telas/minigames/bio_goods/sprites/[AR] Hospital Assets - FREE/3. Models/obj/cupboard_bottom.obj"
+dest_files=["res://.godot/imported/cupboard_bottom.obj-caa6c9337acca2517a3dcf44a1b065cf.mesh", "res://.godot/imported/cupboard_bottom.obj-caa6c9337acca2517a3dcf44a1b065cf.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

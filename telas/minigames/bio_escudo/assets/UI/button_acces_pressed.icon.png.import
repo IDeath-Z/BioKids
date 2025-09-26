@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgsprdhhew871"
-path="res://.godot/imported/button_acces_pressed.icon.png-d0a758ac6c691d891e91a73f65b31399.ctex"
+path="res://.godot/imported/button_acces_pressed.icon.png-673163c08179129910d4a3c0ccf108dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/button_acces_pressed.icon.png"
-dest_files=["res://.godot/imported/button_acces_pressed.icon.png-d0a758ac6c691d891e91a73f65b31399.ctex"]
+source_file="res://telas/minigames/bio_escudo/assets/UI/button_acces_pressed.icon.png"
+dest_files=["res://.godot/imported/button_acces_pressed.icon.png-673163c08179129910d4a3c0ccf108dd.ctex"]
 
 [params]
 

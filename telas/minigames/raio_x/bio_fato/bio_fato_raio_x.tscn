@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5mwwdobedgwu"]
+
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_5yir5"]
+[ext_resource type="Script" uid="uid://cveqf6cpjlkha" path="res://telas/minigames/raio_x/bio_fato/bio_fato_raio_x.gd" id="2_2ra2j"]
+[ext_resource type="PackedScene" uid="uid://c0nkhbv8diqwc" path="res://telas/interface/bioFato/bio_fato.tscn" id="2_vkabe"]
+
+[node name="BioFatoRaioX" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5yir5")
+script = ExtResource("2_2ra2j")
+
+[node name="BioFato" parent="." instance=ExtResource("2_vkabe")]
+layout_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.158694
+anchor_top = 0.480463
+anchor_right = 0.830195
+anchor_bottom = 0.615463
+offset_left = -0.260002
+offset_top = 0.0999756
+offset_right = 0.259949
+offset_bottom = 15.3
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.380392, 0.231373, 0.0980392, 1)
+theme_override_font_sizes/font_size = 22
+text = "Você sabia que o nosso corpo tem 206 ossos?
+
+E no Raio-X podemos ver todos eles! Isso é muito legal!"
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[connection signal="botao_continuar_pressed" from="BioFato" to="." method="_on_bio_fato_botao_continuar_pressed"]

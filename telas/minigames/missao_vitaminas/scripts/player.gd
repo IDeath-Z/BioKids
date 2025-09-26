@@ -1,9 +1,8 @@
-# player.gd
 extends CharacterBody2D
 
 @export var velocidade: float = 240.0
 var anim_sprite: AnimatedSprite2D
-var screen_width: float = 600
+var screen_width: float
 var pontos: int = 0
 var vidas: int = 3
 @onready var pontos_label = get_node("/root/Main/UILayer/PontosLabel") if has_node("/root/Main/UILayer/PontosLabel") else null
@@ -12,12 +11,13 @@ var vidas: int = 3
 @onready var damage_sound = get_node("/root/Main/UILayer/DamageSound") if has_node("/root/Main/UILayer/DamageSound") else null
 @onready var game_over_sound = get_node("/root/Main/UILayer/GameOverSound") if has_node("/root/Main/UILayer/GameOverSound") else null
 
-@onready var main_node = get_node("/root/Main")  # Pra acessar as flags do main
+@onready var main_node = get_node("/root/Main")  # Para acessar as flags do main
 
 var last_multiple: int = 0
 
 func _ready():
 	anim_sprite = $AnimatedSprite2D
+	# Removido: anim_sprite.scale = Vector2(0.8, 0.8)  # Usa a escala definida no Inspetor
 	anim_sprite.play("idle")
 	screen_width = get_viewport_rect().size.x  # Usa tamanho real da tela
 	$Hitbox.area_entered.connect(_on_hitbox_area_entered)
@@ -35,7 +35,7 @@ func _ready():
 		print("Erro: GameOverSound não encontrado!")
 
 func _process(delta):
-	if not get_node("/root/Main").game_started:
+	if not main_node.game_started:
 		return
 	var direcao = Vector2.ZERO
 
@@ -45,7 +45,7 @@ func _process(delta):
 	if Input.is_action_pressed("ui_left"):
 		direcao.x -= 1
 
-	# Touch (TouchScreenButton)
+	# Toque (TouchScreenButton)
 	# As ações "ui_left" e "ui_right" serão ativadas pelos botões
 
 	if direcao != Vector2.ZERO:
@@ -62,7 +62,7 @@ func _process(delta):
 	position.x = clamp(position.x, 0, screen_width)
 
 func _on_hitbox_area_entered(area):
-	var main = get_node("/root/Main")
+	var main = main_node
 	if area.is_in_group("comida"):
 		if area.eh_saudavel:
 			pontos += 10

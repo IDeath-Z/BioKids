@@ -14,7 +14,7 @@ func _ready():
 	
 # Set keys
 func set_sprite_keys():
-	accessory_keys = Global.accessory_collection.keys()
+	accessory_keys = GlobalBioEscudo.accessory_collection.keys()
 
 # Updates texture & modulate
 func update_sprite():
@@ -22,11 +22,11 @@ func update_sprite():
 	if current_sprite == "none":
 		accessory_sprite.texture = null
 	else:
-		accessory_sprite.texture = Global.accessory_collection[current_sprite]
-		accessory_sprite.modulate = Global.color_options[current_color_index]
+		accessory_sprite.texture = GlobalBioEscudo.accessory_collection[current_sprite]
+		accessory_sprite.modulate = GlobalBioEscudo.color_options[current_color_index]
 	
-	Global.selected_accessory = current_sprite
-	Global.selected_accessory_color = Global.color_options[current_color_index]	
+	GlobalBioEscudo.selected_accessory = current_sprite
+	GlobalBioEscudo.selected_accessory_color = GlobalBioEscudo.color_options[current_color_index]	
 
 # Change accessory
 func _on_collection_button_pressed():
@@ -35,5 +35,5 @@ func _on_collection_button_pressed():
 
 # Change color
 func _on_color_button_pressed():
-	current_color_index = (current_color_index + 1) % Global.color_options.size()
+	current_color_index = (current_color_index + 1) % GlobalBioEscudo.color_options.size()
 	update_sprite()

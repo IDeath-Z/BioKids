@@ -1,0 +1,360 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmair4qiwak0x"]
+
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_g3n1a"]
+[ext_resource type="Texture2D" uid="uid://pvmrww6hcfqy" path="res://telas/minigames/raio_x/assets/images/chave_fechada.png" id="2_6jpus"]
+
+[node name="InfoMaoLadoDireito" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g3n1a")
+
+[node name="}" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.477778
+anchor_top = 0.330556
+anchor_right = 0.571778
+anchor_bottom = 0.456556
+offset_right = 0.320007
+offset_bottom = -0.0800171
+texture = ExtResource("2_6jpus")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectCabeca" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166722
+anchor_top = 0.355889
+anchor_right = 0.349
+anchor_bottom = 0.361111
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectCabeca"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRectCorpo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166722
+anchor_top = 0.390148
+anchor_right = 0.349
+anchor_bottom = 0.39537
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectCorpo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRectBase" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166722
+anchor_top = 0.424407
+anchor_right = 0.349
+anchor_bottom = 0.42963
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectBase"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="Cabeca" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3625
+anchor_top = 0.343519
+anchor_right = 0.4865
+anchor_bottom = 0.372704
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Cabeça"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Corpo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3625
+anchor_top = 0.377778
+anchor_right = 0.4865
+anchor_bottom = 0.406963
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Corpo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Base" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3625
+anchor_top = 0.412037
+anchor_right = 0.4865
+anchor_bottom = 0.441222
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Base"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Falange" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.569444
+anchor_top = 0.382407
+anchor_right = 0.811499
+anchor_bottom = 0.411592
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Falange média"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectOssos" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.354222
+anchor_top = 0.681815
+anchor_right = 0.622611
+anchor_bottom = 0.687037
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectOssos"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="Ossos" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6375
+anchor_top = 0.668519
+anchor_right = 0.9365
+anchor_bottom = 0.697704
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Ossos sesamóides"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectTrapezoide" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112222
+anchor_top = 0.779037
+anchor_right = 0.772222
+anchor_bottom = 0.784259
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectTrapezoide"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRectTrapezio" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.212556
+anchor_top = 0.805889
+anchor_right = 0.672222
+anchor_bottom = 0.811111
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectTrapezio"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRectCapitato" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0417221
+anchor_top = 0.833667
+anchor_right = 0.572222
+anchor_bottom = 0.838889
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectCapitato"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRectEscafoide" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1195
+anchor_top = 0.861444
+anchor_right = 0.472222
+anchor_bottom = 0.866667
+offset_left = -0.039978
+offset_top = -0.360001
+offset_right = -0.279999
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectInterno" type="ColorRect" parent="ColorRectEscafoide"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[node name="Trapezoide" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.765278
+anchor_top = 0.765741
+anchor_right = 0.982333
+anchor_bottom = 0.794926
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Trapezóide"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Trapezio" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.665278
+anchor_top = 0.792593
+anchor_right = 0.8365
+anchor_bottom = 0.821778
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Trapézio"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Capitato" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.569445
+anchor_top = 0.82037
+anchor_right = 0.740667
+anchor_bottom = 0.849555
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Capitato"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Escafoide" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47639
+anchor_top = 0.848148
+anchor_right = 0.647612
+anchor_bottom = 0.877333
+offset_right = -0.279999
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 25
+text = "Escafóide"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

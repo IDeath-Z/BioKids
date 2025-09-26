@@ -47,15 +47,15 @@ func _on_input_event(_viewport, event, _shape_idx):
 		queue_free()
 
 func _on_multiply():
-	var nova_bact = preload("res://scenes/Bacteria.tscn").instantiate()
+	var nova_bact = preload("res://telas/minigames/caca_bacterias/scenes/Bacteria.tscn").instantiate()
 	nova_bact.tipo = tipo
 	nova_bact.position = position + Vector2(randf_range(-30, 30), randf_range(-30, 30))
 	var texturas = {
-		Tipo.AZUL: load("res://assets/images/BacteriaAZULFELIZ.png"),
-		Tipo.VERDE: load("res://assets/images/Bacteriaverdemaligna.png"),
-		Tipo.VERMELHA: load("res://assets/images/Bactéria vermelha.png"),
-		Tipo.ROSA: load("res://assets/images/BacteriaROSA.png"),
-		Tipo.VERDEMALIGNA: load("res://assets/images/BacteriaVERDEESCURO.png")
+		Tipo.AZUL: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaAZULFELIZ.png"),
+		Tipo.VERDE: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriaverdemaligna.png"),
+		Tipo.VERMELHA: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriavermelha.png"),
+		Tipo.ROSA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaROSA.png"),
+		Tipo.VERDEMALIGNA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaVERDEESCURO.png")
 	}
 	if nova_bact.get_node_or_null("SpriteBact"):  # Verifica se o nó existe
 		nova_bact.get_node("SpriteBact").texture = texturas[nova_bact.tipo]

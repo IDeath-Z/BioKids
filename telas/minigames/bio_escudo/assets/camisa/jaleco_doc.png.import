@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8pspma7q0bqm"
-path="res://.godot/imported/jaleco_doc.png-d8d98fcb6282eb58f608c011954e7d14.ctex"
+path="res://.godot/imported/jaleco_doc.png-791782e7d9a4aaf0750506cf88600f1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/camisa/jaleco_doc.png"
-dest_files=["res://.godot/imported/jaleco_doc.png-d8d98fcb6282eb58f608c011954e7d14.ctex"]
+source_file="res://telas/minigames/bio_escudo/assets/camisa/jaleco_doc.png"
+dest_files=["res://.godot/imported/jaleco_doc.png-791782e7d9a4aaf0750506cf88600f1a.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5ewg8rfcg648"
-path="res://.godot/imported/bgg.jpg-85543f79e278668374795f7761134ade.ctex"
+path="res://.godot/imported/bgg.jpg-70341ae47c72b841bf95a818fef13855.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bgg.jpg"
-dest_files=["res://.godot/imported/bgg.jpg-85543f79e278668374795f7761134ade.ctex"]
+source_file="res://telas/minigames/bio_escudo/bgg.jpg"
+dest_files=["res://.godot/imported/bgg.jpg-70341ae47c72b841bf95a818fef13855.ctex"]
 
 [params]
 

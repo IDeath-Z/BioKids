@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rdbagkgxn0fd"
-path="res://.godot/imported/button_roupa_pressed.icon.png-cf8995311773e20f5713e9bdfb1b02ca.ctex"
+path="res://.godot/imported/button_roupa_pressed.icon.png-98c7d995ad2108dafc8426572d0ee5a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/button_roupa_pressed.icon.png"
-dest_files=["res://.godot/imported/button_roupa_pressed.icon.png-cf8995311773e20f5713e9bdfb1b02ca.ctex"]
+source_file="res://telas/minigames/bio_escudo/assets/UI/button_roupa_pressed.icon.png"
+dest_files=["res://.godot/imported/button_roupa_pressed.icon.png-98c7d995ad2108dafc8426572d0ee5a9.ctex"]
 
 [params]
 

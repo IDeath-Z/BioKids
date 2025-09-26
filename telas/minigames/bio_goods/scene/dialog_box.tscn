@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bospd7lnmaq7w"]
+
+[ext_resource type="Texture2D" uid="uid://bhppnjtxps6yk" path="res://telas/minigames/bio_goods/text box/Chocolate - Retro Textbox 01/Retro_Textbox_01-A_Transparent.png" id="1_5rs03"]
+
+[node name="dialog_box" type="MarginContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -81.0
+offset_right = 118.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bd_dialog_box" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_5rs03")
+region_rect = Rect2(0, 0, 1280, 285)
+
+[node name="text_container" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="text_label" type="Label" parent="text_container"]
+layout_mode = 2
+
+[node name="indicator" type="TextureRect" parent="."]
+layout_mode = 2
