@@ -205,7 +205,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 720.0]
+"values": [0.0, -720.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -229,7 +229,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 720.0]
+"values": [0.0, -720.0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -252,7 +252,6 @@ _data = {
 
 [node name="TelaSelecaoMiniGame" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -380,8 +379,8 @@ libraries = {
 [node name="MenuRaioX" parent="." instance=ExtResource("6_pihxx")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -1.0
-anchor_right = 0.0
+anchor_left = 1.0
+anchor_right = 2.0
 
 [connection signal="pressed" from="MarginContainer/GridBotoes/BioX" to="." method="_on_bio_x_pressed"]
 [connection signal="pressed" from="MarginContainer/GridBotoes/BioVacina" to="." method="_on_bio_vacina_pressed"]
