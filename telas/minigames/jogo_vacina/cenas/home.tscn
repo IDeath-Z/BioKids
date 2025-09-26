@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://buvd6u7dmxk21"]
+
+[ext_resource type="Script" uid="uid://c7eys841mf75t" path="res://home.gd" id="1_qknk6"]
+[ext_resource type="Texture2D" uid="uid://bcvr5b6tl14yq" path="res://telas/minigames/jogo_vacina/assets/laboratorio.png" id="2_00ial"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="3_cvtpp"]
+
+[node name="home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qknk6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_00ial")
+expand_mode = 1
+
+[node name="MarginContainerPrincipal" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.222
+anchor_top = 0.509
+anchor_right = 0.778
+anchor_bottom = 0.88
+offset_left = 0.159973
+offset_top = 0.279968
+offset_right = -0.160034
+offset_bottom = -0.400085
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridBotoes" type="VBoxContainer" parent="MarginContainerPrincipal"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+theme = ExtResource("3_cvtpp")
+theme_override_constants/separation = 40
+
+[node name="BotaoJogar" type="Button" parent="MarginContainerPrincipal/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 37
+text = "JOGAR"
+
+[node name="BotaoVoltar" type="Button" parent="MarginContainerPrincipal/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 33
+text = "VOLTAR"
+
+[connection signal="pressed" from="MarginContainerPrincipal/GridBotoes/BotaoJogar" to="." method="_on_botao_jogar_pressed"]
+[connection signal="pressed" from="MarginContainerPrincipal/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
