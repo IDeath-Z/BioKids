@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var original_width: float = 600
 var original_height: float = 900
@@ -52,6 +52,8 @@ func _ready():
 	current_player_speed = base_player_speed
 
 	current_spawn_wait = base_spawn_wait
+	
+	$Player.position = Vector2(screen_size.x / 2, screen_size.y - 100 * scale_factor)
 
 	# Seleciona o par inicial aleatoriamente
 	if max_saudaveis > 0 and max_nao_saudaveis > 0:

@@ -58,20 +58,34 @@ size = Vector2(78, 134)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_erht2"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_jjrtw")
 
-[node name="BackgroundBlurred" type="Sprite2D" parent="."]
-position = Vector2(360, 540)
-scale = Vector2(1.13208, 1.2)
+[node name="BackgroundBlurred" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_7yi6i")
+expand_mode = 1
 
-[node name="BackgroundNormal" type="Sprite2D" parent="."]
-visible = false
-z_index = -1
-position = Vector2(350, 540)
-scale = Vector2(1.3, 1.2)
+[node name="BackgroundNormal" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_x6di6")
+expand_mode = 1
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(360, 950)
@@ -232,6 +246,8 @@ scale = Vector2(0.033, 0.033)
 texture = ExtResource("18_wnyw5")
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
+offset = Vector2(1, 0)
+transform = Transform2D(1, 0, 0, 1, 1, 0)
 
 [node name="StartButton" type="Button" parent="MenuLayer"]
 offset_left = 180.0
