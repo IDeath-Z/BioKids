@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://risbb5cp7c12"]
+
+[ext_resource type="Script" uid="uid://sdlcq1o3vm1q" path="res://main_menu.gd" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://bvrlssneuq3d8" path="res://assets/fonts/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/connection_ii/ConnectionII.otf" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://s5akje3lly2l" path="res://assets/images/FundoMain.png" id="2_bqqt6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -510.0
+offset_top = -384.0
+offset_right = 512.0
+offset_bottom = 380.0
+texture = ExtResource("2_bqqt6")
+
+[node name="Label" type="Label" parent="."]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -365.0
+offset_top = -350.0
+offset_right = 378.0
+offset_bottom = -285.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 60
+text = "Caça Bactérias no Laboratório!"
+
+[node name="Iniciar" type="Button" parent="."]
+layout_mode = 1
+offset_left = -52.0
+offset_top = -82.0
+offset_right = 104.0
+offset_bottom = -40.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+text = "  ▶️ Iniciar  "
+
+[node name="Como Jogar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 25.550001
+anchor_bottom = 19.137001
+offset_left = -100.0
+offset_top = -26.0
+offset_right = 147.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
+text = "  📖 Como Jogar  "
+
+[node name="Som" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 25.547
+anchor_bottom = 19.167002
+offset_left = -157.0
+offset_top = 40.0
+offset_right = 189.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
+text = "  🔊 Som (Liga/Desliga)  "
+
+[connection signal="pressed" from="Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Como Jogar" to="." method="_on_como_jogar_pressed"]

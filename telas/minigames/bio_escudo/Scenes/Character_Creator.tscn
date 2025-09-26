@@ -1,0 +1,278 @@
+[gd_scene load_steps=18 format=3 uid="uid://dfr2pcw7l4goo"]
+
+[ext_resource type="Script" uid="uid://cro5dfjqd54no" path="res://Scripts/fur.gd" id="2_m8jyd"]
+[ext_resource type="Script" uid="uid://extdbho38y4u" path="res://Scripts/pants.gd" id="4_yiodc"]
+[ext_resource type="Script" uid="uid://mm3i7cj4hp28" path="res://Scripts/outfit.gd" id="6_e0whd"]
+[ext_resource type="Script" uid="uid://cl5yc06quc1ml" path="res://Scripts/accessory.gd" id="8_f5n3g"]
+[ext_resource type="Texture2D" uid="uid://cinkbccw6rm7h" path="res://assets/UI/button_roupa_icon.png" id="9_m8jyd"]
+[ext_resource type="Texture2D" uid="uid://lch478hnhjor" path="res://bg.png" id="9_s36mj"]
+[ext_resource type="Texture2D" uid="uid://cq5ksinhb8sec" path="res://assets/UI/button_acces_icon.png" id="10_5xme0"]
+[ext_resource type="Texture2D" uid="uid://rdbagkgxn0fd" path="res://assets/UI/button_roupa_pressed.icon.png" id="10_bgq41"]
+[ext_resource type="Texture2D" uid="uid://3duidh7c3tjt" path="res://assets/UI/Next.png" id="10_yiodc"]
+[ext_resource type="Texture2D" uid="uid://dgsprdhhew871" path="res://assets/UI/button_acces_pressed.icon.png" id="11_bgq41"]
+[ext_resource type="Texture2D" uid="uid://dl4ddgtq52jcy" path="res://assets/UI/Nextpressed.png" id="11_yiodc"]
+
+[sub_resource type="GDScript" id="GDScript_s36mj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s36mj"]
+load_path = "res://.godot/imported/urso.png-c66bac92987be4bb026a8759663454a5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m8jyd"]
+load_path = "res://.godot/imported/camisa doc grey.png-9451a4a4e34175e338bfb6cec1dc9c19.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bgq41"]
+load_path = "res://.godot/imported/calça_doc.png-4bea49380e7268d3789f586d3b2ecca4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yiodc"]
+load_path = "res://.godot/imported/icon.png-ec880de02d5dab0aa15458af9d6c53ed.ctex"
+
+[sub_resource type="GDScript" id="GDScript_m8jyd"]
+script/source = "extends TextureRect
+
+@export var category: String = \"\"  # Ex: \"hair\", \"outfit\", \"body\", \"accessory\"
+@export var key: String = \"\"  # Chave do item, ex: \"01\"
+
+func _get_drag_data(_at_position: Vector2) -> Variant:
+	if texture == null:
+		return null
+	
+	# Cria preview visual para seguir o dedo/mouse
+	var preview = TextureRect.new()
+	preview.texture = texture
+	preview.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	preview.size = size * 0.5  # Preview menor
+	set_drag_preview(preview)
+	
+	# Dados arrastados: categoria, key e textura
+	return {\"category\": category, \"key\": key, \"texture\": texture}
+
+func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
+	return false  # Este nó não aceita drops"
+
+[node name="CharacterCreator" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_s36mj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1212.0
+offset_top = -1547.0
+offset_right = 788.0
+offset_bottom = 453.0
+texture = ExtResource("9_s36mj")
+stretch_mode = 5
+
+[node name="skeleton" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -187.0
+offset_top = -141.0
+offset_right = -187.0
+offset_bottom = -141.0
+scale = Vector2(2.5, 2.5)
+
+[node name="Fur" type="Control" parent="skeleton"]
+anchors_preset = 0
+script = ExtResource("2_m8jyd")
+
+[node name="Sprite2D" type="Sprite2D" parent="skeleton/Fur"]
+texture = SubResource("CompressedTexture2D_s36mj")
+hframes = 3
+vframes = 2
+
+[node name="Camera2D" type="Camera2D" parent="skeleton/Fur"]
+position = Vector2(34.4, -102)
+zoom = Vector2(0.6, 0.6)
+
+[node name="Outfit2" type="Control" parent="skeleton"]
+anchors_preset = 0
+script = ExtResource("4_yiodc")
+
+[node name="Sprite2D" type="Sprite2D" parent="skeleton/Outfit2"]
+texture = SubResource("CompressedTexture2D_m8jyd")
+hframes = 3
+vframes = 2
+
+[node name="Pants" type="Control" parent="skeleton"]
+anchors_preset = 0
+script = ExtResource("6_e0whd")
+
+[node name="Sprite2D" type="Sprite2D" parent="skeleton/Pants"]
+texture = SubResource("CompressedTexture2D_bgq41")
+hframes = 3
+vframes = 2
+
+[node name="accessory" type="Control" parent="skeleton"]
+anchors_preset = 0
+script = ExtResource("8_f5n3g")
+
+[node name="Sprite2D" type="Sprite2D" parent="skeleton/accessory"]
+hframes = 8
+vframes = 8
+
+[node name="CreatorScreen" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CreatorScreen"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_top = 10.0
+offset_bottom = 1530.0
+grow_horizontal = 0
+scale = Vector2(1, 0.68)
+color = Color(0.321569, 0.360784, 1, 0.345098)
+
+[node name="fur" type="ColorRect" parent="CreatorScreen/ColorRect"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 720.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label2" type="Label" parent="CreatorScreen/ColorRect/fur"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 319.118
+offset_right = 143.0
+offset_bottom = 375.118
+scale = Vector2(3, 3)
+theme_override_font_sizes/font_size = 18
+text = "Pelo"
+
+[node name="ColorButton" type="Button" parent="CreatorScreen/ColorRect/fur"]
+layout_mode = 0
+offset_top = 412.0
+offset_right = 240.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 100
+text = "->"
+
+[node name="Calça" type="ColorRect" parent="CreatorScreen/ColorRect"]
+layout_mode = 0
+offset_top = 629.412
+offset_right = 200.0
+offset_bottom = 1349.41
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="CreatorScreen/ColorRect/Calça"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = -9.0
+offset_right = 91.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+theme_override_font_sizes/font_size = 18
+text = "Calça
+"
+
+[node name="Label2" type="Label" parent="CreatorScreen/ColorRect/Calça"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 305.882
+offset_right = 96.0
+offset_bottom = 392.882
+scale = Vector2(3, 3)
+theme_override_font_sizes/font_size = 25
+text = "Cor
+
+"
+
+[node name="CollectionButton" type="Button" parent="CreatorScreen/ColorRect/Calça"]
+layout_mode = 0
+offset_top = 91.0
+offset_right = 240.0
+offset_bottom = 313.0
+theme_override_font_sizes/font_size = 100
+text = "->"
+
+[node name="ColorButton" type="Button" parent="CreatorScreen/ColorRect/Calça"]
+layout_mode = 0
+offset_top = 412.0
+offset_right = 240.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 100
+text = "->"
+
+[node name="outfit" type="ColorRect" parent="CreatorScreen/ColorRect"]
+layout_mode = 0
+offset_left = -477.0
+offset_top = 1038.24
+offset_right = -277.0
+offset_bottom = 1758.24
+scale = Vector2(0.92, 0.823529)
+color = Color(1, 1, 1, 0)
+
+[node name="CollectionButton" type="TextureButton" parent="CreatorScreen/ColorRect/outfit"]
+layout_mode = 0
+offset_left = -67.3913
+offset_top = 3.56573
+offset_right = 560.609
+offset_bottom = 434.566
+scale = Vector2(0.624023, 1)
+texture_normal = ExtResource("9_m8jyd")
+texture_pressed = ExtResource("10_bgq41")
+
+[node name="ColorButton" type="TextureButton" parent="CreatorScreen/ColorRect/outfit"]
+layout_mode = 0
+offset_left = -55.4348
+offset_top = 358.923
+offset_right = 290.565
+offset_bottom = 772.923
+texture_normal = ExtResource("10_yiodc")
+texture_pressed = ExtResource("11_yiodc")
+stretch_mode = 5
+
+[node name="acces" type="ColorRect" parent="CreatorScreen/ColorRect"]
+layout_mode = 0
+offset_left = -240.0
+offset_top = 1039.71
+offset_right = -40.0
+offset_bottom = 1759.71
+scale = Vector2(0.92, 0.823529)
+color = Color(1, 1, 1, 0)
+
+[node name="CollectionButton" type="TextureButton" parent="CreatorScreen/ColorRect/acces"]
+layout_mode = 0
+offset_left = -46.0
+offset_top = -9.0
+offset_right = 478.0
+offset_bottom = 370.0
+texture_normal = ExtResource("10_5xme0")
+texture_pressed = ExtResource("11_bgq41")
+
+[node name="ColorButton" type="TextureButton" parent="CreatorScreen/ColorRect/acces"]
+layout_mode = 0
+offset_left = 42.3913
+offset_top = 339.281
+offset_right = 505.391
+offset_bottom = 733.281
+texture_normal = ExtResource("10_yiodc")
+texture_pressed = ExtResource("11_yiodc")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -760.0
+offset_top = -1072.0
+offset_right = 1240.0
+offset_bottom = 928.0
+texture = SubResource("CompressedTexture2D_yiodc")
+expand_mode = 1
+script = SubResource("GDScript_m8jyd")
+
+[node name="Panel" type="Panel" parent="TextureRect2"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 41.0
+offset_bottom = 38.0
+mouse_filter = 2
+
+[connection signal="pressed" from="CreatorScreen/ColorRect/fur/ColorButton" to="skeleton/Fur" method="_on_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Calça/CollectionButton" to="skeleton/Outfit2" method="_on_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Calça/ColorButton" to="skeleton/Outfit2" method="_on_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/outfit/CollectionButton" to="skeleton/Pants" method="_on_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/outfit/ColorButton" to="skeleton/Pants" method="_on_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/acces/CollectionButton" to="skeleton/accessory" method="_on_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/acces/ColorButton" to="skeleton/accessory" method="_on_color_button_pressed"]
