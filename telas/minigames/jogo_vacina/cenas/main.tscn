@@ -62,8 +62,6 @@ expand_mode = 1
 [node name="Main" type="Node2D" parent="."]
 script = ExtResource("2_dxvjg")
 
-[node name="Placeholder" type="Node2D" parent="Main"]
-
 [node name="pop_up" type="Sprite2D" parent="Main"]
 visible = false
 position = Vector2(350, 230)

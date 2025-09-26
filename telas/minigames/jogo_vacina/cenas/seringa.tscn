@@ -133,10 +133,11 @@ texture = ExtResource("3_mvbhp")
 [node name="Urso" parent="." instance=ExtResource("4_a7v8i")]
 
 [node name="MaoClick" type="AnimatedSprite2D" parent="."]
-position = Vector2(346, 518)
+position = Vector2(555, 436)
 scale = Vector2(0.433468, 0.547619)
 sprite_frames = SubResource("SpriteFrames_qahkn")
 animation = &"click"
+frame_progress = 0.237493
 
 [node name="TimerMao" type="Timer" parent="."]
 wait_time = 4.0
