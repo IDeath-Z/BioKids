@@ -121,9 +121,11 @@ scale = Vector2(0.101, 0.1)
 texture = ExtResource("2_a7v8i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="seringa"]
+visible = false
 position = Vector2(348, 499)
 rotation = -1.11177
 shape = SubResource("CapsuleShape2D_paeca")
+one_way_collision_margin = 0.0
 
 [node name="braco" type="Sprite2D" parent="seringa"]
 position = Vector2(266, 532)
@@ -133,7 +135,7 @@ texture = ExtResource("3_mvbhp")
 [node name="Urso" parent="." instance=ExtResource("4_a7v8i")]
 
 [node name="MaoClick" type="AnimatedSprite2D" parent="."]
-position = Vector2(555, 436)
+position = Vector2(459, 242)
 scale = Vector2(0.433468, 0.547619)
 sprite_frames = SubResource("SpriteFrames_qahkn")
 animation = &"click"

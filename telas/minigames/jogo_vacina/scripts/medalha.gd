@@ -4,7 +4,7 @@ func _ready() -> void:
 	position = Vector2(369,-359)
 	
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", Vector2(369,300), 1.5)
+	tween.tween_property(self, "position", Vector2(369,290), 1.5)
 	
 	await tween.finished
 	

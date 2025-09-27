@@ -8,12 +8,17 @@ var segurando = false
 var toque = Vector2.ZERO
 var toque_na_tela = false
 
+
 func _ready():
 	braco.visible = false
 	seringa.visible = false
 	connect("area_entered", Callable(self, "_on_area_entered"))
 	timer_mao.start()
 	mao_click.hide()
+	braco.z_index = 10
+	braco.z_as_relative = false
+	seringa.z_index = 10
+	seringa.z_as_relative = false
 
 func _on_touch_screen_pressed() -> void:
 	mao_click.hide()

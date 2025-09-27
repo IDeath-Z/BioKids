@@ -1,6 +1,6 @@
-[gd_scene load_steps=373 format=3 uid="uid://d11l5tmq68ypy"]
+[gd_scene load_steps=376 format=3 uid="uid://d11l5tmq68ypy"]
 
-[ext_resource type="Script" uid="uid://rxb5qlbidclw" path="res://conquista.gd" id="1_4mq2m"]
+[ext_resource type="Script" uid="uid://rxb5qlbidclw" path="res://telas/minigames/jogo_vacina/scripts/conquista.gd" id="1_4mq2m"]
 [ext_resource type="Texture2D" uid="uid://dvutt3d1y1wam" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00001.png" id="2_rnfbg"]
 [ext_resource type="Texture2D" uid="uid://drymh3x6p8rc0" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00002.png" id="3_f6ucy"]
 [ext_resource type="Texture2D" uid="uid://48g5aveiyg55" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00003.png" id="4_ysxhc"]
@@ -370,6 +370,22 @@
 [ext_resource type="Texture2D" uid="uid://dx7sgjxd24rnh" path="res://telas/minigames/jogo_vacina/assets/medalha/00233.png" id="368_747k6"]
 [ext_resource type="Texture2D" uid="uid://cekailfwlk7u6" path="res://telas/minigames/jogo_vacina/assets/medalha/00234.png" id="369_q4ih7"]
 [ext_resource type="Script" uid="uid://dpxpbjaw6qfke" path="res://telas/minigames/jogo_vacina/scripts/medalha.gd" id="370_eo67r"]
+[ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="371_rnfbg"]
+[ext_resource type="Script" uid="uid://cayjbf8ohjsdu" path="res://telas/minigames/jogo_vacina/scripts/label.gd" id="372_f6ucy"]
+
+[sub_resource type="GDScript" id="GDScript_ysxhc"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sjcsn"]
 animations = [{
@@ -1495,6 +1511,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_ysxhc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -1528,3 +1545,21 @@ sprite_frames = SubResource("SpriteFrames_r67v1")
 animation = &"medalha_conquista"
 speed_scale = 1.2
 script = ExtResource("370_eo67r")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.235
+anchor_top = 0.466
+anchor_right = 0.765
+anchor_bottom = 0.534
+offset_left = 0.799988
+offset_top = -0.280029
+offset_right = 0.199951
+offset_bottom = 0.279968
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("371_rnfbg")
+theme_override_font_sizes/font_size = 60
+text = " PARABÉNS!!!"
+script = ExtResource("372_f6ucy")
