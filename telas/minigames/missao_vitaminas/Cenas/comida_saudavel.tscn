@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vo1qxuotkfqx"]
 
-[ext_resource type="Texture2D" uid="uid://bwrnx1lan8xob" path="res://Imagens/Ali_Bons/Maca.png" id="1_jfbef"]
-[ext_resource type="Script" uid="uid://do3csw0jybixv" path="res://scripts/comida_s.gd" id="1_kysmt"]
+[ext_resource type="Texture2D" uid="uid://bwrnx1lan8xob" path="res://telas/minigames/missao_vitaminas/Imagens/Ali_Bons/Maca.png" id="1_jfbef"]
+[ext_resource type="Script" uid="uid://do3csw0jybixv" path="res://telas/minigames/missao_vitaminas/scripts/comida_s.gd" id="1_kysmt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kysmt"]
 size = Vector2(64, 76)

@@ -173,6 +173,8 @@ scale = Vector2(1.2, 1.2)
 theme = ExtResource("10_wvhv2")
 theme_override_font_sizes/font_size = 48
 text = "Fim de Jogo"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="FinalScoreLabel" type="Label" parent="UILayer"]
 visible = false

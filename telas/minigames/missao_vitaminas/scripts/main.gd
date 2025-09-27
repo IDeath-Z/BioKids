@@ -306,7 +306,7 @@ func change_food_pair():
 
 func _on_info_button_pressed():
 	print("InfoButton pressionado! Plataforma: ", OS.get_name())
-	var erro = get_tree().change_scene_to_file("res://Cenas/Info.tscn")
+	var erro = get_tree().change_scene_to_file("res://telas/minigames/missao_vitaminas/Cenas/Info.tscn")
 	if erro != OK:
 		print("Erro ao carregar Info.tscn: ", erro)
 	else:
