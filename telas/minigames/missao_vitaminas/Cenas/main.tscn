@@ -264,12 +264,22 @@ icon_alignment = 1
 
 [node name="InfoButton" type="Button" parent="MenuLayer"]
 offset_left = 180.0
-offset_top = 600.0
+offset_top = 570.0
 offset_right = 480.0
-offset_bottom = 700.0
+offset_bottom = 670.0
 scale = Vector2(1.2, 1.2)
 theme = ExtResource("10_wvhv2")
 theme_override_font_sizes/font_size = 50
 text = "Detalhes"
+
+[node name="VoltarButton" type="Button" parent="MenuLayer"]
+offset_left = 180.0
+offset_top = 740.0
+offset_right = 480.0
+offset_bottom = 840.0
+scale = Vector2(1.2, 1.2)
+theme = ExtResource("10_wvhv2")
+theme_override_font_sizes/font_size = 50
+text = "Voltar"
 
 [connection signal="pressed" from="UILayer/MenuButton" to="." method="_on_menu_button_pressed"]

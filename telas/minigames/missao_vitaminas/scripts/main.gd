@@ -11,6 +11,7 @@ var current_saudavel_index: int = 0
 var current_nao_saudavel_index: int = 0
 var prev_saudavel_index: int = -1
 var prev_nao_saudavel_index: int = -1
+var musica_ligada_original: bool = true
 
 # Variáveis @onready para inicialização segura
 @onready var max_saudaveis: int = load("res://telas/minigames/missao_vitaminas/Cenas/comida_saudavel.tscn").instantiate().sprites_saudaveis.size() if ResourceLoader.exists("res://Cenas/comida_saudavel.tscn") else 0
@@ -40,6 +41,36 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	scale_factor = screen_size.x / original_width  # 1.2, uniforme
 
+	# Salva o estado original da música e para a música da home
+	if EstadoVariaveisGlobais:
+		musica_ligada_original = EstadoVariaveisGlobais.musica_ligada
+		EstadoVariaveisGlobais.musica_ligada = false
+		print("Música da home desativada via EstadoVariaveisGlobais! Estado original: ", musica_ligada_original)
+	else:
+		print("Erro: EstadoVariaveisGlobais não encontrado! Tentando parar música diretamente...")
+		var music_player = get_node_or_null("/root/MusicPlayer/AudioStreamPlayer")
+		if music_player:
+			music_player.stop()
+			print("Música da home parada diretamente via MusicPlayer!")
+		else:
+			print("Erro: MusicPlayer/AudioStreamPlayer não encontrado!")
+
+	# ... (código existente para ajuste de velocidades, etc.)
+
+	# Inicia a música de fundo do jogo apenas se musica_ligada_original for true
+	if background_music and musica_ligada_original:
+		background_music.volume_db = -10.0
+		background_music.play()
+		background_music.finished.connect(func(): background_music.play())
+		print("Música de fundo iniciada com volume -10.0 dB")
+	else:
+		if not background_music:
+			print("Erro: BackgroundMusic não encontrado!")
+		else:
+			print("Música do jogo não iniciada porque musica_ligada_original é false")
+	# ... (restante do _ready)
+
+
 	# Ajusta velocidades base proporcionalmente
 	base_fall_speed = 200.0 * scale_factor
 	fall_speed_increment = 50.0 * scale_factor
@@ -61,15 +92,7 @@ func _ready():
 	else:
 		print("Erro: Cenas de comida não carregadas ou sem sprites!")
 
-	# Inicia a música de fundo
-	if background_music:
-		background_music.volume_db = -10.0
-		background_music.play()
-		background_music.finished.connect(func(): background_music.play())
-		print("Música de fundo iniciada com volume -10.0 dB")
-	else:
-		print("Erro: BackgroundMusic não encontrado!")
-
+	
 	# Conecta os sinais dos botões
 	var start_button = $MenuLayer/StartButton if $MenuLayer and $MenuLayer.has_node("StartButton") else null
 	if start_button:
@@ -91,7 +114,7 @@ func _ready():
 	else:
 		print("Erro: InfoButton não encontrado!")
 
-	# Conecta o botão de menu
+
 	var menu_button = $UILayer/MenuButton if $UILayer and $UILayer.has_node("MenuButton") else null
 	if menu_button:
 		if menu_button.pressed.is_connected(_on_menu_button_pressed):
@@ -103,8 +126,20 @@ func _ready():
 		print("MenuButton conectado: visible = ", menu_button.visible, ", disabled = ", menu_button.disabled)
 	else:
 		print("Erro: MenuButton não encontrado!")
+		
 
-	# Configura o SpawnTimer
+	var voltar_button = $MenuLayer/VoltarButton if $MenuLayer and $MenuLayer.has_node("VoltarButton") else null
+	if voltar_button:
+		voltar_button.pressed.connect(_on_voltar_button_pressed)
+		voltar_button.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
+		voltar_button.focus_mode = Control.FOCUS_ALL
+		voltar_button.mouse_filter = Control.MOUSE_FILTER_STOP
+		voltar_button.disabled = false
+		print("VoltarButton conectado: visible = ", voltar_button.visible, ", disabled = ", voltar_button.disabled)
+	else:
+		print("Erro: VoltarButton não encontrado!")
+
+
 	var spawn_timer = $SpawnerComida/SpawnTimer if $SpawnerComida and $SpawnerComida.has_node("SpawnTimer") else null
 	if spawn_timer:
 		spawn_timer.wait_time = current_spawn_wait
@@ -114,13 +149,13 @@ func _ready():
 	else:
 		print("Erro: SpawnTimer não encontrado!")
 
-	# Pausa o movimento do Player
+
 	if has_node("Player"):
 		$Player.set_process(false)
 	else:
 		print("Erro: Player não encontrado!")
 
-	# Define a visibilidade dos fundos
+
 	if $BackgroundBlurred:
 		$BackgroundBlurred.visible = true
 	else:
@@ -130,7 +165,7 @@ func _ready():
 	else:
 		print("Erro: BackgroundNormal não encontrado!")
 
-	# Inicializa o PontosLabel
+
 	var pontos_label = $UILayer/PontosLabel if $UILayer and $UILayer.has_node("PontosLabel") else null
 	if pontos_label:
 		pontos_label.text = "Pontos: 0"
@@ -138,7 +173,6 @@ func _ready():
 	else:
 		print("Erro: PontosLabel não encontrado!")
 
-	# Inicializa o VidasLabel
 	var vidas_label = $UILayer/VidasLabel if $UILayer and $UILayer.has_node("VidasLabel") else null
 	if vidas_label:
 		vidas_label.text = "Vidas: 3"
@@ -146,14 +180,14 @@ func _ready():
 	else:
 		print("Erro: VidasLabel não encontrado!")
 
-	# Esconde o CountdownLabel
+
 	var countdown_label = $UILayer/CountdownLabel if $UILayer and $UILayer.has_node("CountdownLabel") else null
 	if countdown_label:
 		countdown_label.visible = false
 	else:
 		print("Erro: CountdownLabel não encontrado!")
 
-	# Esconde o GameOverLabel e FinalScoreLabel
+
 	var game_over_label = $UILayer/GameOverLabel if $UILayer and $UILayer.has_node("GameOverLabel") else null
 	if game_over_label:
 		game_over_label.visible = false
@@ -174,7 +208,6 @@ func _ready():
 	else:
 		print("Erro: FinalScoreLabel não encontrado!")
 
-	# Verifica sons
 	if $UILayer/CountdownTickSound:
 		print("CountdownTickSound encontrado")
 	else:
@@ -184,10 +217,8 @@ func _ready():
 	else:
 		print("Erro: StartRaceSound não encontrado!")
 
-	# Centraliza botões
 	center_buttons()
 
-	# Configura botões de toque
 	if left_button and right_button:
 		left_button.visible = false
 		right_button.visible = false
@@ -371,20 +402,26 @@ func reset_game_state():
 		right_button.visible = false
 	if $MenuLayer:
 		$MenuLayer.visible = true
-	if background_music:
+	if background_music and musica_ligada_original:
 		background_music.volume_db = -10.0
 		background_music.play()
 		print("Música de fundo reiniciada")
+	else:
+		print("Música do jogo não reiniciada porque musica_ligada_original é false")
 
 func center_buttons():
 	var start_button = $MenuLayer/StartButton if $MenuLayer and $MenuLayer.has_node("StartButton") else null
 	var info_button = $MenuLayer/InfoButton if $MenuLayer and $MenuLayer.has_node("InfoButton") else null
+	var voltar_button = $MenuLayer/VoltarButton if $MenuLayer and $MenuLayer.has_node("VoltarButton") else null
 	if start_button:
 		start_button.position = Vector2(180, 400)
 		print("StartButton posição: ", start_button.position)
 	if info_button:
-		info_button.position = Vector2(180, 600)
+		info_button.position = Vector2(180, 570)
 		print("InfoButton posição: ", info_button.position)
+	if voltar_button:
+		voltar_button.position = Vector2(180, 740)
+		print("VoltarButton posição: ", voltar_button.position)
 
 func show_game_over():
 	print("Exibindo tela de Game Over")
@@ -409,7 +446,7 @@ func show_game_over():
 	var game_over_label = $UILayer/GameOverLabel if $UILayer and $UILayer.has_node("GameOverLabel") else null
 	if game_over_label:
 		await get_tree().process_frame
-		game_over_label.position = Vector2(138, 480)  # Alterado para 480y
+		game_over_label.position = Vector2(138, 480)
 		game_over_label.visible = true
 	
 	var final_score_label = $UILayer/FinalScoreLabel if $UILayer and $UILayer.has_node("FinalScoreLabel") else null
@@ -419,7 +456,7 @@ func show_game_over():
 		await get_tree().process_frame
 		var rect_texto = final_score_label.get_rect()
 		final_score_label.size = rect_texto.size
-		final_score_label.position = Vector2(336 - rect_texto.size.x / 2, 50)  # Ajuste para centro superior
+		final_score_label.position = Vector2(336 - rect_texto.size.x / 2, 50) 
 		final_score_label.visible = true
 	
 	var menu_button = $UILayer/MenuButton if $UILayer and $UILayer.has_node("MenuButton") else null
@@ -449,3 +486,37 @@ func _on_right_button_pressed():
 
 func _on_right_button_released():
 	Input.action_release("ui_right")
+
+func _on_voltar_button_pressed():
+	print("VoltarButton pressionado!")
+	
+	# Para a música do jogo
+	if background_music:
+		background_music.stop()
+		print("Música do jogo parada!")
+	else:
+		print("Erro: BackgroundMusic não encontrado!")
+	
+	# Restaura o estado original da música da home
+	if EstadoVariaveisGlobais:
+		EstadoVariaveisGlobais.musica_ligada = musica_ligada_original
+		print("Música da home restaurada para estado original: ", musica_ligada_original)
+	else:
+		print("Erro: EstadoVariaveisGlobais não encontrado! Tentando iniciar música diretamente...")
+		var music_player = get_node_or_null("/root/MusicPlayer")
+		if music_player and musica_ligada_original:
+			music_player.play_music()
+			print("Música da home iniciada diretamente via MusicPlayer!")
+		else:
+			if not music_player:
+				print("Erro: MusicPlayer não encontrado!")
+			else:
+				print("Música da home não iniciada porque musica_ligada_original é false")
+	
+	# Muda para a cena da home
+	var scene_path = "res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.tscn"
+	var erro = get_tree().change_scene_to_file(scene_path)
+	if erro != OK:
+		print("Erro ao carregar cena ", scene_path, ": ", erro)
+	else:
+		print("Cena ", scene_path, " carregada com sucesso!")
