@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dmcb7usur13uo"]
+[gd_scene load_steps=22 format=3 uid="uid://dmcb7usur13uo"]
 
 [ext_resource type="Script" uid="uid://bg2cvcv2ln1xw" path="res://telas/minigames/missao_vitaminas/scripts/player.gd" id="1_74bqr"]
 [ext_resource type="Script" uid="uid://ds8efov5xt1uw" path="res://telas/minigames/missao_vitaminas/scripts/main.gd" id="1_jjrtw"]
@@ -16,8 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://cy8jnaidp13aa" path="res://telas/minigames/missao_vitaminas/sounds/countdown_tick.wav" id="14_3ea3k"]
 [ext_resource type="AudioStream" uid="uid://b50baestxtdnu" path="res://telas/minigames/missao_vitaminas/sounds/start_race.wav" id="15_xaxpv"]
 [ext_resource type="AudioStream" uid="uid://dkjhygl1h1hi1" path="res://telas/minigames/missao_vitaminas/sounds/background_music.mp3" id="16_xaxpv"]
-[ext_resource type="Texture2D" uid="uid://bd5vg84lh3gf8" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/touchesq.png" id="17_neu2f"]
-[ext_resource type="Texture2D" uid="uid://cs6edlcltpv6p" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/touchdir.png" id="18_wnyw5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x6di6"]
 animations = [{
@@ -56,7 +54,9 @@ size = Vector2(78, 132)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ja1os"]
 size = Vector2(78, 134)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_erht2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5j5sm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2fu3"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -220,32 +220,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LeftButton" type="TouchScreenButton" parent="UILayer/TouchControls"]
-visible = false
-position = Vector2(60, 1008)
-scale = Vector2(10.8, 10.8)
-shape = SubResource("CircleShape2D_erht2")
+position = Vector2(170, 540)
+scale = Vector2(17.5, 60)
+shape = SubResource("RectangleShape2D_5j5sm")
 action = "ui_left"
 
-[node name="ButtonVisual" type="Sprite2D" parent="UILayer/TouchControls/LeftButton"]
-modulate = Color(1, 1, 1, 0.745098)
-self_modulate = Color(1, 1, 1, 0.745098)
-position = Vector2(0.22, -1)
-scale = Vector2(0.033, 0.033)
-texture = ExtResource("17_neu2f")
-
 [node name="RightButton" type="TouchScreenButton" parent="UILayer/TouchControls"]
-visible = false
-position = Vector2(612, 1008)
-scale = Vector2(10.8, 10.8)
-shape = SubResource("CircleShape2D_erht2")
+position = Vector2(545, 540)
+scale = Vector2(17.5, 60)
+shape = SubResource("RectangleShape2D_e2fu3")
 action = "ui_right"
-
-[node name="ButtonVisual" type="Sprite2D" parent="UILayer/TouchControls/RightButton"]
-modulate = Color(1, 1, 1, 0.745098)
-self_modulate = Color(1, 1, 1, 0.745098)
-position = Vector2(0.22, -1)
-scale = Vector2(0.033, 0.033)
-texture = ExtResource("18_wnyw5")
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 offset = Vector2(1, 0)

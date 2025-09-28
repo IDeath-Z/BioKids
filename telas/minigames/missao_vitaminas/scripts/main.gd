@@ -43,9 +43,15 @@ func _ready():
 
 	# Salva o estado original da música e para a música da home
 	if EstadoVariaveisGlobais:
-		musica_ligada_original = EstadoVariaveisGlobais.musica_ligada
-		EstadoVariaveisGlobais.musica_ligada = false
-		print("Música da home desativada via EstadoVariaveisGlobais! Estado original: ", musica_ligada_original)
+		if not EstadoVariaveisGlobais.in_minigame_vitaminas:
+			EstadoVariaveisGlobais.in_minigame_vitaminas = true
+			musica_ligada_original = EstadoVariaveisGlobais.musica_ligada
+			EstadoVariaveisGlobais.minigame_vitaminas_music_on = musica_ligada_original
+			EstadoVariaveisGlobais.musica_ligada = false
+			print("Primeira entrada no minigame: Música da home desativada via EstadoVariaveisGlobais! Estado original salvo: ", musica_ligada_original)
+		else:
+			musica_ligada_original = EstadoVariaveisGlobais.minigame_vitaminas_music_on
+			print("Retorno da info: Estado da música restaurado do global: ", musica_ligada_original)
 	else:
 		print("Erro: EstadoVariaveisGlobais não encontrado! Tentando parar música diretamente...")
 		var music_player = get_node_or_null("/root/MusicPlayer/AudioStreamPlayer")
@@ -54,8 +60,6 @@ func _ready():
 			print("Música da home parada diretamente via MusicPlayer!")
 		else:
 			print("Erro: MusicPlayer/AudioStreamPlayer não encontrado!")
-
-	# ... (código existente para ajuste de velocidades, etc.)
 
 	# Inicia a música de fundo do jogo apenas se musica_ligada_original for true
 	if background_music and musica_ligada_original:
@@ -68,7 +72,6 @@ func _ready():
 			print("Erro: BackgroundMusic não encontrado!")
 		else:
 			print("Música do jogo não iniciada porque musica_ligada_original é false")
-	# ... (restante do _ready)
 
 
 	# Ajusta velocidades base proporcionalmente
@@ -497,10 +500,12 @@ func _on_voltar_button_pressed():
 	else:
 		print("Erro: BackgroundMusic não encontrado!")
 	
-	# Restaura o estado original da música da home
+	# Restaura o estado original da música da home e reseta flags do minigame
 	if EstadoVariaveisGlobais:
-		EstadoVariaveisGlobais.musica_ligada = musica_ligada_original
-		print("Música da home restaurada para estado original: ", musica_ligada_original)
+		EstadoVariaveisGlobais.musica_ligada = EstadoVariaveisGlobais.minigame_vitaminas_music_on
+		EstadoVariaveisGlobais.in_minigame_vitaminas = false
+		EstadoVariaveisGlobais.minigame_vitaminas_music_on = false
+		print("Música da home restaurada para estado original: ", EstadoVariaveisGlobais.musica_ligada)
 	else:
 		print("Erro: EstadoVariaveisGlobais não encontrado! Tentando iniciar música diretamente...")
 		var music_player = get_node_or_null("/root/MusicPlayer")
