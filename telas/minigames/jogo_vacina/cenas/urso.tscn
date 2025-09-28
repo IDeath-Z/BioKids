@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://oxb2woyttjfv" path="res://telas/minigames/jogo_vacina/assets/mascote_sentado.png" id="3_xvadl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rby3a"]
-radius = 22.1349
-height = 44.2698
+radius = 16.6245
+height = 33.249
 
 [node name="Urso" type="Node2D"]
 
@@ -24,7 +24,8 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_xvadl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="local_vacina"]
-position = Vector2(325.2, -198.6)
+position = Vector2(322, -215)
 rotation = 0.331613
+scale = Vector2(0.8, 0.8)
 shape = SubResource("CapsuleShape2D_rby3a")
-debug_color = Color(0.933333, 0.231373, 0.294118, 0.847059)
+debug_color = Color(0.862745, 0.286275, 0.203922, 0.686275)

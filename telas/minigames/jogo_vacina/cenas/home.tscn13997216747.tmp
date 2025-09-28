@@ -71,24 +71,6 @@ text = "O ursinho precisa da vacina para ficar forte, você precisa ajudar a vac
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="BotaoIniciar2" type="Button" parent="Tela_02"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.101
-anchor_right = 0.717
-anchor_bottom = 0.194
-offset_left = 2.99998
-offset_top = -0.0800018
-offset_right = 2.76001
-offset_bottom = -0.520004
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme = ExtResource("3_cvtpp")
-theme_override_font_sizes/font_size = 40
-text = "▶ INICIAR"
-
 [node name="MarginContainerPrincipal2" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -131,7 +113,6 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 text = "VOLTAR"
 
-[connection signal="pressed" from="Tela_02/BotaoIniciar2" to="." method="_on_botao_jogar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoIniciar" to="." method="_on_botao_jogar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoComoJogar" to="." method="_on_botao_como_jogar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
