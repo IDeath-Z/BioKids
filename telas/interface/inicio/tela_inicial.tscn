@@ -295,19 +295,19 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "▶ Jogar"
+text = "▶ JOGAR"
 
 [node name="BotaoOpcoes" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "⚙️ Opções"
+text = "⚙️ OPÇÕES"
 
 [node name="BotaoSair" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "X Sair"
+text = "X SAIR"
 
 [node name="TexturaNuvem" type="TextureRect" parent="."]
 texture_filter = 2

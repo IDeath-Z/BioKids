@@ -86,16 +86,16 @@ func _on_animacao_mao_animation_finished(anim_name: StringName) -> void:
 			info_lado_direito.visible = true
 			animacao_info_lado_direito.play("fade") # Para aqui
 			botoes_s_n.visible = true
-			botao_sim.text = "Anterior"
-			botao_nao.text = "Sair"
+			botao_sim.text = "ANTERIOR"
+			botao_nao.text = "SAIR"
 			botoes_ant_prox.visible = false
 
 func _on_animacao_lado_esquerdo_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade":
 		if estado_atual == Estado.INICIAL:
 			animacao_mao.play_backwards("lado_esquerdo")
-			botao_sim.text = "Sim"
-			botao_nao.text = "Não"
+			botao_sim.text = "SIM"
+			botao_nao.text = "NÃO"
 
 func _on_animacao_lado_direito_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade":

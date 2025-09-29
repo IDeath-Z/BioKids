@@ -90,7 +90,7 @@ offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
-text = "Continuar"
+text = "CONTINUAR"
 
 [connection signal="pressed" from="AspectRatioContainer/BotaoAudio" to="." method="_on_botao_audio_pressed"]
 [connection signal="pressed" from="BotaoContinuar" to="." method="_on_botao_continuar_pressed"]

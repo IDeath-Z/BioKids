@@ -27,73 +27,6 @@ grow_vertical = 2
 texture = ExtResource("3_3p3ck")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.081
-anchor_top = 0.32037
-anchor_right = 0.919
-anchor_bottom = 0.759
-offset_left = -0.32
-offset_right = 0.320007
-offset_bottom = 34.2795
-
-[node name="GridBotoes" type="GridContainer" parent="MarginContainer"]
-custom_minimum_size = Vector2(400, 400)
-layout_mode = 2
-theme_override_constants/h_separation = 30
-theme_override_constants/v_separation = 30
-columns = 2
-
-[node name="BioX" type="Button" parent="MarginContainer/GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-text = "Bio-x"
-
-[node name="BioVacina" type="Button" parent="MarginContainer/GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-text = "BioVacina"
-
-[node name="Caca" type="Button" parent="MarginContainer/GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Caça Bactérias"
-
-[node name="Missao" type="Button" parent="MarginContainer/GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-theme_override_font_sizes/font_size = 34
-text = "Missão Vitaminas"
-
-[node name="BioEscudo" type="Button" parent="MarginContainer/GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-text = "BioEscudo"
-
-[node name="BioGoods" type="Button" parent="MarginContainer/GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-text = "BioGoods"
-
-[node name="BotaoVoltar" type="Button" parent="."]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -180.0
-offset_right = 150.0
-offset_bottom = -80.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-text = "Voltar"
-
 [node name="TexturaNuvem" type="TextureRect" parent="."]
 texture_filter = 2
 layout_mode = 1
@@ -119,3 +52,76 @@ offset_bottom = 0.279999
 grow_horizontal = 2
 texture = ExtResource("5_a8xpm")
 expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.315
+anchor_right = 0.937
+anchor_bottom = 0.685
+offset_left = 0.359997
+offset_top = -0.200043
+offset_right = 0.359985
+offset_bottom = 0.199951
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridBotoes" type="GridContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 2
+
+[node name="BioX" type="Button" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+text = "BIO - X"
+
+[node name="BioVacina" type="Button" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "BIO - VACINA"
+
+[node name="Caca" type="Button" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "CAÇA BACTÉRIAS"
+
+[node name="Missao" type="Button" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "MISSÃO VITAMINAS"
+
+[node name="BioEscudo" type="Button" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "BIO - ESCUDO"
+
+[node name="BioGoods" type="Button" parent="MarginContainer/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "BIO - GOODS"
+
+[node name="BotaoVoltar" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -180.0
+offset_right = 150.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "VOLTAR"
