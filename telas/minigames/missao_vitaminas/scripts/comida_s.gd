@@ -3,7 +3,6 @@ extends Area2D
 @export var velocidade_queda: float = 200.0
 @export var eh_saudavel: bool = true
 
-# Listas de texturas para os sprites
 var sprites_saudaveis: Array[Texture2D] = [
 	preload("res://telas/minigames/missao_vitaminas/Imagens/Ali_Bons/ArrozFeijaoSalada.png"),
 	preload("res://telas/minigames/missao_vitaminas/Imagens/Ali_Bons/Batata.png"),
@@ -40,13 +39,12 @@ func _ready() -> void:
 	add_to_group("comida")
 	var sprite: Sprite2D = $Sprite2D
 	if sprite:
-		# Removido: sprite.scale = Vector2(1.2, 1.2)  # Usa a escala definida no Inspetor
 		if eh_saudavel and sprite_index < sprites_saudaveis.size():
 			sprite.texture = sprites_saudaveis[sprite_index]
 		elif not eh_saudavel and sprite_index < sprites_nao_saudaveis.size():
 			sprite.texture = sprites_nao_saudaveis[sprite_index]
 		else:
-			push_error("Índice de sprite inválido ou lista vazia!")
+			push_error("Índice de sprite inválido: " + str(sprite_index) + ", Saudável: " + str(eh_saudavel))
 	else:
 		push_error("Sprite2D não encontrado em comida!")
 

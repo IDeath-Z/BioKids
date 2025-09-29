@@ -2,8 +2,9 @@ extends Control
 
 var original_width: float = 600
 var original_height: float = 900
-var scale_factor: float  # Uniforme pra X e Y
+var scale_factor: float
 var screen_size: Vector2
+var last_score_threshold: int = 0
 
 var countdown = 3
 var game_started = false
@@ -13,35 +14,37 @@ var prev_saudavel_index: int = -1
 var prev_nao_saudavel_index: int = -1
 var musica_ligada_original: bool = true
 
-# Variáveis @onready para inicialização segura
-@onready var max_saudaveis: int = load("res://telas/minigames/missao_vitaminas/Cenas/comida_saudavel.tscn").instantiate().sprites_saudaveis.size() if ResourceLoader.exists("res://Cenas/comida_saudavel.tscn") else 0
-@onready var max_nao_saudaveis: int = load("res://telas/minigames/missao_vitaminas/Cenas/comida_nao_saudavel.tscn").instantiate().sprites_nao_saudaveis.size() if ResourceLoader.exists("res://Cenas/comida_nao_saudavel.tscn") else 0
+@onready var max_saudaveis: int = preload("res://telas/minigames/missao_vitaminas/Cenas/comida_saudavel.tscn").instantiate().sprites_saudaveis.size()
+@onready var max_nao_saudaveis: int = preload("res://telas/minigames/missao_vitaminas/Cenas/comida_nao_saudavel.tscn").instantiate().sprites_nao_saudaveis.size()
 @onready var background_music = $UILayer/BackgroundMusic if has_node("UILayer/BackgroundMusic") else null
 @onready var left_button = $UILayer/TouchControls/LeftButton if has_node("UILayer/TouchControls/LeftButton") else null
 @onready var right_button = $UILayer/TouchControls/RightButton if has_node("UILayer/TouchControls/RightButton") else null
+@onready var bio_fato_scene = preload("res://telas/minigames/missao_vitaminas/Cenas/bio_fato_vitaminas.tscn")
 
-# Variáveis para controlar a velocidade de queda dos alimentos
 var base_fall_speed: float
 var fall_speed_increment: float
 var max_fall_speed: float
 var current_fall_speed: float
 
-# Variáveis para controlar a velocidade do player
 var base_player_speed: float
 var player_speed_increment: float
 var max_player_speed: float
 var current_player_speed: float
 
-# Variáveis para controlar o intervalo de spawn
 var base_spawn_wait: float = 1.0
 var min_spawn_wait: float = 0.3
 var current_spawn_wait: float
 
 func _ready():
+	randomize()
 	screen_size = get_viewport_rect().size
-	scale_factor = screen_size.x / original_width  # 1.2, uniforme
+	scale_factor = screen_size.x / original_width
 
-	# Salva o estado original da música e para a música da home
+	# Remove qualquer comida existente na inicialização
+	for comida in get_tree().get_nodes_in_group("comida"):
+		comida.queue_free()
+		print("Comida residual removida no _ready")
+
 	if EstadoVariaveisGlobais:
 		if not EstadoVariaveisGlobais.in_minigame_vitaminas:
 			EstadoVariaveisGlobais.in_minigame_vitaminas = true
@@ -61,7 +64,6 @@ func _ready():
 		else:
 			print("Erro: MusicPlayer/AudioStreamPlayer não encontrado!")
 
-	# Inicia a música de fundo do jogo apenas se musica_ligada_original for true
 	if background_music and musica_ligada_original:
 		background_music.volume_db = -10.0
 		background_music.play()
@@ -73,8 +75,6 @@ func _ready():
 		else:
 			print("Música do jogo não iniciada porque musica_ligada_original é false")
 
-
-	# Ajusta velocidades base proporcionalmente
 	base_fall_speed = 200.0 * scale_factor
 	fall_speed_increment = 50.0 * scale_factor
 	max_fall_speed = 1000.0 * scale_factor
@@ -89,14 +89,14 @@ func _ready():
 	
 	$Player.position = Vector2(screen_size.x / 2, screen_size.y - 100 * scale_factor)
 
-	# Seleciona o par inicial aleatoriamente
 	if max_saudaveis > 0 and max_nao_saudaveis > 0:
-		change_food_pair()
+		change_food_pair() # Define os índices iniciais, mas não spawna
 	else:
 		print("Erro: Cenas de comida não carregadas ou sem sprites!")
 
+	if has_node("Player"):
+		$Player.connect("score_changed", Callable(self, "update_food_pair_based_on_score"))
 	
-	# Conecta os sinais dos botões
 	var start_button = $MenuLayer/StartButton if $MenuLayer and $MenuLayer.has_node("StartButton") else null
 	if start_button:
 		start_button.pressed.connect(_on_start_button_pressed)
@@ -117,7 +117,6 @@ func _ready():
 	else:
 		print("Erro: InfoButton não encontrado!")
 
-
 	var menu_button = $UILayer/MenuButton if $UILayer and $UILayer.has_node("MenuButton") else null
 	if menu_button:
 		if menu_button.pressed.is_connected(_on_menu_button_pressed):
@@ -130,7 +129,6 @@ func _ready():
 	else:
 		print("Erro: MenuButton não encontrado!")
 		
-
 	var voltar_button = $MenuLayer/VoltarButton if $MenuLayer and $MenuLayer.has_node("VoltarButton") else null
 	if voltar_button:
 		voltar_button.pressed.connect(_on_voltar_button_pressed)
@@ -142,22 +140,17 @@ func _ready():
 	else:
 		print("Erro: VoltarButton não encontrado!")
 
-
 	var spawn_timer = $SpawnerComida/SpawnTimer if $SpawnerComida and $SpawnerComida.has_node("SpawnTimer") else null
 	if spawn_timer:
 		spawn_timer.wait_time = current_spawn_wait
 		spawn_timer.paused = true
-		if spawn_timer.is_stopped():
-			spawn_timer.start()
 	else:
 		print("Erro: SpawnTimer não encontrado!")
-
 
 	if has_node("Player"):
 		$Player.set_process(false)
 	else:
 		print("Erro: Player não encontrado!")
-
 
 	if $BackgroundBlurred:
 		$BackgroundBlurred.visible = true
@@ -168,28 +161,25 @@ func _ready():
 	else:
 		print("Erro: BackgroundNormal não encontrado!")
 
-
 	var pontos_label = $UILayer/PontosLabel if $UILayer and $UILayer.has_node("PontosLabel") else null
 	if pontos_label:
 		pontos_label.text = "Pontos: 0"
-		pontos_label.position = Vector2(20 * scale_factor, 20 * scale_factor)  # Canto superior esquerdo
+		pontos_label.position = Vector2(20 * scale_factor, 20 * scale_factor)
 	else:
 		print("Erro: PontosLabel não encontrado!")
 
 	var vidas_label = $UILayer/VidasLabel if $UILayer and $UILayer.has_node("VidasLabel") else null
 	if vidas_label:
 		vidas_label.text = "Vidas: 3"
-		vidas_label.position = Vector2(screen_size.x - 170 * scale_factor, 20 * scale_factor)  # Canto superior direito
+		vidas_label.position = Vector2(screen_size.x - 170 * scale_factor, 20 * scale_factor)
 	else:
 		print("Erro: VidasLabel não encontrado!")
-
 
 	var countdown_label = $UILayer/CountdownLabel if $UILayer and $UILayer.has_node("CountdownLabel") else null
 	if countdown_label:
 		countdown_label.visible = false
 	else:
 		print("Erro: CountdownLabel não encontrado!")
-
 
 	var game_over_label = $UILayer/GameOverLabel if $UILayer and $UILayer.has_node("GameOverLabel") else null
 	if game_over_label:
@@ -304,20 +294,49 @@ func start_countdown() -> void:
 	if has_node("Player"):
 		$Player.set_process(true)
 	if $SpawnerComida and $SpawnerComida.has_node("SpawnTimer"):
+		$SpawnerComida/SpawnTimer.paused = false
 		if $SpawnerComida/SpawnTimer.is_stopped():
 			$SpawnerComida/SpawnTimer.start()
-		$SpawnerComida/SpawnTimer.paused = false
+			print("SpawnTimer iniciado após contagem regressiva")
 	
 	if left_button and right_button:
 		left_button.visible = true
 		right_button.visible = true
 		left_button.position = Vector2(90 * scale_factor, screen_size.y - 80 * scale_factor)
 		right_button.position = Vector2((original_width - 90) * scale_factor, screen_size.y - 80 * scale_factor)
+	
+	# Spawna os dois alimentos iniciais após a contagem regressiva
+	spawn_initial_food_pair()
+
+func spawn_initial_food_pair():
+	if not game_started:
+		print("spawn_initial_food_pair bloqueado: game_started é false")
+		return
+	
+	var spawner = $SpawnerComida
+	if spawner:
+		# Remove qualquer comida existente para evitar duplicatas
+		for comida in get_tree().get_nodes_in_group("comida"):
+			comida.queue_free()
+		
+		var comida_saudavel = preload("res://telas/minigames/missao_vitaminas/Cenas/comida_saudavel.tscn").instantiate()
+		comida_saudavel.sprite_index = current_saudavel_index
+		comida_saudavel.velocidade_queda = current_fall_speed
+		comida_saudavel.position = Vector2(randf_range(10, screen_size.x / 2 - 10), 0)
+		spawner.add_child(comida_saudavel)
+		print("Comida saudável inicial spawnada com índice: ", current_saudavel_index)
+
+		var comida_nao_saudavel = preload("res://telas/minigames/missao_vitaminas/Cenas/comida_nao_saudavel.tscn").instantiate()
+		comida_nao_saudavel.sprite_index = current_nao_saudavel_index
+		comida_nao_saudavel.velocidade_queda = current_fall_speed
+		comida_nao_saudavel.position = Vector2(randf_range(screen_size.x / 2 + 10, screen_size.x - 10), 0)
+		spawner.add_child(comida_nao_saudavel)
+		print("Comida não saudável inicial spawnada com índice: ", current_nao_saudavel_index)
 
 func change_food_pair():
 	var new_saudavel_index: int
 	var new_nao_saudavel_index: int
-	
+
 	if max_saudaveis > 0:
 		new_saudavel_index = randi() % max_saudaveis
 		while new_saudavel_index == prev_saudavel_index and max_saudaveis > 1:
@@ -326,7 +345,7 @@ func change_food_pair():
 		prev_saudavel_index = new_saudavel_index
 	else:
 		print("Erro: Nenhuma comida saudável disponível!")
-	
+
 	if max_nao_saudaveis > 0:
 		new_nao_saudavel_index = randi() % max_nao_saudaveis
 		while new_nao_saudavel_index == prev_nao_saudavel_index and max_nao_saudaveis > 1:
@@ -335,8 +354,8 @@ func change_food_pair():
 		prev_nao_saudavel_index = new_nao_saudavel_index
 	else:
 		print("Erro: Nenhuma comida não saudável disponível!")
-	
-	print("Novo par: Saudável índice ", current_saudavel_index, ", Não Saudável índice ", current_nao_saudavel_index)
+
+	print("Novo par definido: Saudável índice ", current_saudavel_index, ", Não Saudável índice ", current_nao_saudavel_index)
 
 func _on_info_button_pressed():
 	print("InfoButton pressionado! Plataforma: ", OS.get_name())
@@ -347,9 +366,38 @@ func _on_info_button_pressed():
 		print("Cena Info.tscn carregada com sucesso!")
 
 func _on_menu_button_pressed():
-	print("MenuButton pressionado! Reiniciando jogo.")
+	print("MenuButton pressionado! Mostrando Bio Fato.")
 	get_tree().paused = false
-	reset_game_state()
+	
+	if $UILayer/GameOverLabel:
+		$UILayer/GameOverLabel.visible = false
+	if $UILayer/FinalScoreLabel:
+		$UILayer/FinalScoreLabel.visible = false
+	if $UILayer/MenuButton:
+		$UILayer/MenuButton.visible = false
+		$UILayer/MenuButton.set_process_input(false)
+	
+	var canvas_layer = CanvasLayer.new()
+	add_child(canvas_layer)
+	
+	var bio_fato = bio_fato_scene.instantiate()
+	canvas_layer.add_child(bio_fato)
+	
+	bio_fato.z_index = 100
+	
+	await get_tree().process_frame
+	
+	if bio_fato.has_node("BioFato/BotaoContinuar"):
+		var botao = bio_fato.get_node("BioFato/BotaoContinuar")
+		botao.grab_focus()
+		botao.mouse_filter = Control.MOUSE_FILTER_STOP
+		print("Foco dado ao BotaoContinuar! Mouse Filter: ", botao.mouse_filter)
+		if botao.mouse_filter != Control.MOUSE_FILTER_STOP:
+			print("Aviso: Mouse Filter não foi alterado para STOP!")
+	else:
+		print("Erro: BotaoContinuar não encontrado na hierarquia!")
+	
+	print("Bio fato instanciado e configurado!")
 
 func reset_game_state():
 	print("Reiniciando estado do jogo...")
@@ -382,8 +430,6 @@ func reset_game_state():
 		$SpawnerComida/SpawnTimer.stop()
 		$SpawnerComida/SpawnTimer.wait_time = base_spawn_wait
 		$SpawnerComida/SpawnTimer.paused = true
-		if $SpawnerComida/SpawnTimer.is_stopped():
-			$SpawnerComida/SpawnTimer.start()
 		print("SpawnTimer resetado: wait_time = ", base_spawn_wait, ", paused = ", $SpawnerComida/SpawnTimer.paused)
 	for comida in get_tree().get_nodes_in_group("comida"):
 		comida.queue_free()
@@ -465,7 +511,7 @@ func show_game_over():
 	var menu_button = $UILayer/MenuButton if $UILayer and $UILayer.has_node("MenuButton") else null
 	if menu_button:
 		await get_tree().process_frame
-		menu_button.position = Vector2(72, 630)  # Alterado para 630y
+		menu_button.position = Vector2(72, 630)
 		menu_button.visible = true
 		menu_button.disabled = false
 		print("MenuButton ativado: position = ", menu_button.position)
@@ -493,14 +539,12 @@ func _on_right_button_released():
 func _on_voltar_button_pressed():
 	print("VoltarButton pressionado!")
 	
-	# Para a música do jogo
 	if background_music:
 		background_music.stop()
 		print("Música do jogo parada!")
 	else:
 		print("Erro: BackgroundMusic não encontrado!")
 	
-	# Restaura o estado original da música da home e reseta flags do minigame
 	if EstadoVariaveisGlobais:
 		EstadoVariaveisGlobais.musica_ligada = EstadoVariaveisGlobais.minigame_vitaminas_music_on
 		EstadoVariaveisGlobais.in_minigame_vitaminas = false
@@ -518,10 +562,19 @@ func _on_voltar_button_pressed():
 			else:
 				print("Música da home não iniciada porque musica_ligada_original é false")
 	
-	# Muda para a cena da home
 	var scene_path = "res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.tscn"
 	var erro = get_tree().change_scene_to_file(scene_path)
 	if erro != OK:
 		print("Erro ao carregar cena ", scene_path, ": ", erro)
 	else:
 		print("Cena ", scene_path, " carregada com sucesso!")
+
+func update_food_pair_based_on_score(new_score: int) -> void:
+	var new_threshold = int(new_score / 100) * 100
+	if new_threshold > last_score_threshold:
+		change_food_pair()
+		last_score_threshold = new_threshold
+		increase_fall_speed()
+		increase_player_speed()
+		decrease_spawn_wait()
+		print("Novo par de alimentos gerado em ", new_score, " pontos!")
