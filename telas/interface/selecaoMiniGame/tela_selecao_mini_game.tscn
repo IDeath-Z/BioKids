@@ -281,7 +281,6 @@ anchor_bottom = 0.759
 offset_left = -0.32
 offset_right = 0.320007
 offset_bottom = 34.2795
-metadata/_edit_use_anchors_ = true
 
 [node name="GridBotoes" type="GridContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(400, 400)
@@ -293,34 +292,37 @@ columns = 2
 [node name="BioX" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-text = "Bio-x"
+text = "BIO - X"
 
 [node name="BioVacina" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-text = "BioVacina"
+theme_override_font_sizes/font_size = 45
+text = "BIO - VACINA"
 
 [node name="Caca" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Caça Bactérias"
+theme_override_font_sizes/font_size = 35
+text = "CAÇA BACTÉRIAS"
 
 [node name="Missao" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
-text = "Missão Vitaminas"
+theme_override_font_sizes/font_size = 30
+text = "MISSÃO VITAMINAS"
 
 [node name="BioEscudo" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-text = "BioEscudo"
+theme_override_font_sizes/font_size = 40
+text = "BIO - ESCUDO"
 
 [node name="BioGoods" type="Button" parent="MarginContainer/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-text = "BioGoods"
+theme_override_font_sizes/font_size = 40
+text = "BIO - GOODS"
 
 [node name="BotaoVoltar" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 100)
@@ -337,7 +339,7 @@ offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
-text = "Voltar"
+text = "VOLTAR"
 
 [node name="TexturaNuvem" type="TextureRect" parent="."]
 texture_filter = 2

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 # Garante que a cena principal seja incluída no APK
 @onready var cena_main = preload("res://telas/minigames/missao_vitaminas/Cenas/main.tscn")

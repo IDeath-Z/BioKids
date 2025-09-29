@@ -17,6 +17,11 @@ var botao_pressionado = ""
 var estado_atual = Estado.INICIAL
 
 func _ready() -> void:
+	if EstadoVariaveisGlobais.musica_ligada == true:
+		botao_musica.text = "MÚSICA : LIGADA"
+	elif EstadoVariaveisGlobais.musica_ligada == false:
+		botao_musica.text = "MÚSICA : DESLIGADA"
+		
 	textura_opcoes.visible = false
 	textura_urso.visible = false
 	animacao_opcoes.play("fade_out")
@@ -25,10 +30,10 @@ func _ready() -> void:
 func _on_botao_musica_pressed() -> void:
 	if EstadoVariaveisGlobais.musica_ligada == true:
 		EstadoVariaveisGlobais.musica_ligada = false
-		botao_musica.text = "Musica : Desligada"
+		botao_musica.text = "MÚSICA : DESLIGADA"
 	elif EstadoVariaveisGlobais.musica_ligada == false:
 		EstadoVariaveisGlobais.musica_ligada = true
-		botao_musica.text = "Musica : Ligada"
+		botao_musica.text = "MÚSICA : LIGADA"
 
 func _on_botao_creditos_pressed() -> void:
 	estado_atual = Estado.CREDITOS

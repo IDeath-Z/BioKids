@@ -513,7 +513,7 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.5
-text = "Sim"
+text = "SIM"
 
 [node name="BotaoNao" type="Button" parent="HBoxContainer"]
 layout_mode = 2
@@ -522,7 +522,7 @@ size_flags_stretch_ratio = 1.5
 theme_override_styles/hover = SubResource("StyleBoxFlat_fufn5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_82mj3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fufn5")
-text = "Não"
+text = "NÃO"
 
 [node name="AnimacaoBotoes" type="AnimationPlayer" parent="HBoxContainer"]
 libraries = {
@@ -548,13 +548,15 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.5
-text = "Anterior"
+theme_override_font_sizes/font_size = 35
+text = "ANTERIOR"
 
 [node name="BotaoProximo" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.5
-text = "Proximo"
+theme_override_font_sizes/font_size = 35
+text = "PRÓXIMO"
 
 [connection signal="animation_finished" from="AreaMao/AnimacaoMao" to="." method="_on_animacao_mao_animation_finished"]
 [connection signal="animation_started" from="AreaMao/AnimacaoMao" to="." method="_on_animacao_mao_animation_started"]

@@ -16,7 +16,7 @@ func _on_bio_x_pressed() -> void:
 	botao_pressionado = "raioX"
 
 func _on_bio_vacina_pressed() -> void:
-	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/main.tscn")
+	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/home.tscn")
 	
 func _on_caca_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/minigames/caca_bacterias/scenes/main_menu.tscn")
