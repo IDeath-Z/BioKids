@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn03hfc6pjnnb"
+uid="uid://cfdvbsc8uiktx"
 path.s3tc="res://.godot/imported/wall_window_hospital_gradient_uv.png-e737c0415490c6ccc2fc6d8df348582b.s3tc.ctex"
 path.etc2="res://.godot/imported/wall_window_hospital_gradient_uv.png-e737c0415490c6ccc2fc6d8df348582b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "edabcc1b011032a6843dbaceed33b0ec"
 }
 
 [deps]

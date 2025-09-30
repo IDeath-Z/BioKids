@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ynqdo6r00ra3"
+uid="uid://dg85dwf0h5vsj"
 path.s3tc="res://.godot/imported/cupboard_bottom_hospital_gradient_uv.png-47d2891e5f5b826cf0296aebee06b907.s3tc.ctex"
 path.etc2="res://.godot/imported/cupboard_bottom_hospital_gradient_uv.png-47d2891e5f5b826cf0296aebee06b907.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "edabcc1b011032a6843dbaceed33b0ec"
 }
 
 [deps]

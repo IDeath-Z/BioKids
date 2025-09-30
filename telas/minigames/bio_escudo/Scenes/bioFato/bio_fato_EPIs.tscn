@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvj7fk1718u2d"]
+
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_r6upu"]
+[ext_resource type="Script" uid="uid://cnafhvdmfwf4j" path="res://telas/interface/bioFato/bio_fato.gd" id="2_7nkdv"]
+[ext_resource type="Texture2D" uid="uid://hcb1edp5f80d" path="res://telas/interface/assets/imagens/background_bio_fato.png" id="3_t66jp"]
+[ext_resource type="Texture2D" uid="uid://d4dgvw24ry6ec" path="res://telas/interface/assets/imagens/biofato_card.png" id="4_lmxev"]
+[ext_resource type="Theme" uid="uid://dv6ojfjvk877o" path="res://telas/interface/assets/temas/tema_botao_audio.tres" id="5_6bjdv"]
+[ext_resource type="Texture2D" uid="uid://jp1oykrsqgc" path="res://telas/interface/assets/imagens/pop_up_audio.png" id="6_hmvuq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6upu"]
+bg_color = Color(0.86, 0.752787, 0.4816, 1)
+
+[node name="BioFato" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_r6upu")
+script = ExtResource("2_7nkdv")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_t66jp")
+expand_mode = 1
+
+[node name="Card" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lmxev")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -8.0
+offset_right = 262.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6upu")
+text = "Você sabia
+ que os médicos
+ usam jalecos
+ para se proteger
+ e para te protejer de bactérias malvadas e sujeira?
+ Usar jaleco é legal!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.626667
+anchor_top = 0.616666
+anchor_right = 0.936111
+anchor_bottom = 0.829537
+offset_left = -0.200012
+offset_right = 1.0
+offset_bottom = -0.900009
+grow_horizontal = 0
+rotation = -0.436332
+pivot_offset = Vector2(105, 90)
+metadata/_edit_use_anchors_ = true
+
+[node name="BotaoAudio" type="Button" parent="AspectRatioContainer"]
+layout_mode = 2
+theme = ExtResource("5_6bjdv")
+text = "
+"
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true
+text_direction = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/BotaoAudio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_hmvuq")
+expand_mode = 1
+
+[node name="BotaoContinuar" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -180.0
+offset_right = 150.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "CONTINUAR"
+
+[connection signal="pressed" from="AspectRatioContainer/BotaoAudio" to="." method="_on_botao_audio_pressed"]
+[connection signal="pressed" from="BotaoContinuar" to="." method="_on_botao_continuar_pressed"]
