@@ -1,24 +1,9 @@
 extends Control
 
-@onready var fact_label: Label = $BioFato/FactLabel
+@onready var fact_label: Label = $FactLabel
 @onready var bio_fato = $BioFato
 
 var facts: Array[String] = [
-	"Um prato colorido não é só bonito: quanto mais cores, mais tipos diferentes de vitaminas e minerais você consome.",
-	"Beber água ao longo do dia mantém o corpo hidratado, ajuda na concentração e até melhora a disposição.",
-	"Frutas, verduras e legumes fornecem nutrientes que o corpo não consegue produzir sozinho, por isso precisam estar sempre no cardápio.",
-	"Alimentos muito processados costumam esconder grandes quantidades de sal, açúcar e gordura, que em excesso fazem mal.",
-	"Mastigar devagar e com calma ajuda a sentir a saciedade, evita exageros e faz a digestão funcionar melhor.",
-	"Uma boa alimentação pode melhorar a memória, a concentração e até o humor no dia a dia.",
-	"As fibras presentes em frutas, verduras e cereais integrais ajudam o intestino a funcionar de forma saudável.",
-	"O açúcar dá energia rápida, mas logo depois pode causar cansaço e falta de disposição.",
-	"Ter uma alimentação equilibrada fortalece o sistema imunológico, ajudando o corpo a se defender de doenças.",
-	"Refrigerantes e sucos artificiais parecem refrescantes, mas na verdade têm muito açúcar e não matam a sede de verdade.",
-	"Comer em horários regulares mantém a energia estável durante o dia e evita exageros em uma única refeição.",
-	"Alimentos muito açucarados, como doces e refrigerantes, podem causar cáries e aumentar o risco de doenças no futuro.",
-	"Muitos salgadinhos, bolachas e fast-foods têm muito sódio escondido, o que em excesso faz mal para o coração.",
-	"Frituras deixam a comida crocante e saborosa, mas também aumentam bastante a quantidade de gordura ruim.",
-	"Comer fast-food de vez em quando não é problema, mas quando vira rotina o corpo perde nutrientes importantes.",
 	"Arroz é uma das maiores fontes de energia no mundo.",
 	"Feijão é rico em ferro, importante para o sangue.",
 	"Batata é cheia de carboidratos, que dão energia rápida.",

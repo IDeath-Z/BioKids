@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d383bmculclw0"]
+[gd_scene load_steps=6 format=3 uid="uid://d383bmculclw0"]
 
 [ext_resource type="Texture2D" uid="uid://cf3c123jfevlx" path="res://telas/minigames/bio_goods/sprites/[AR] Hospital Assets - FREE/4. Samples/backgorund_2.png" id="1_lb5je"]
 [ext_resource type="Texture2D" uid="uid://qhifus87cbnc" path="res://telas/minigames/bio_goods/sprites/Teste sprites Ursos/hello sprite.png" id="1_wphou"]
 [ext_resource type="Texture2D" uid="uid://c1j458w8m41af" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/a59c1b75-83a4-4948-bb76-db78dba4d575.png" id="3_e636p"]
+[ext_resource type="Texture2D" uid="uid://do2dvg12lyfdx" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_11-128x128.png" id="4_e636p"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="4_lb5je"]
 
 [node name="Node2D" type="Control"]
@@ -19,15 +20,9 @@ centered = false
 offset = Vector2(402, 720)
 
 [node name="BEAR" type="Sprite2D" parent="Parallax2D"]
-texture_filter = 2
-position = Vector2(356, 954)
-scale = Vector2(0.34907535, 0.35359564)
+position = Vector2(347.00003, 915.99994)
+scale = Vector2(0.35924152, 0.36389345)
 texture = ExtResource("1_wphou")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Parallax2D"]
-position = Vector2(25.000008, 55)
-scale = Vector2(0.238281, 0.238281)
-texture_normal = ExtResource("3_e636p")
 
 [node name="UIROOT" type="Control" parent="."]
 layout_mode = 1
@@ -51,9 +46,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -359.0
-offset_top = -74.999985
+offset_top = -132.99998
 offset_right = 341.0
-offset_bottom = 144.52
+offset_bottom = 86.520004
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/shadow_offset_x = 0
@@ -64,3 +59,56 @@ text = "Preciso de sua ajuda para decorar meu hospital!
 Poderia escolher por onde iremos iniciar?"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 95.0
+offset_right = 221.90475
+offset_bottom = 283.0
+texture = ExtResource("4_e636p")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="desenho1_consultorio" type="TouchScreenButton" parent="NinePatchRect"]
+position = Vector2(11, 11.000002)
+scale = Vector2(0.17968749, 0.16276623)
+texture_normal = ExtResource("3_e636p")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 95.0
+offset_right = 463.90475
+offset_bottom = 283.0
+texture = ExtResource("4_e636p")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="desenho2_" type="TouchScreenButton" parent="NinePatchRect2"]
+position = Vector2(11, 11.000002)
+scale = Vector2(0.17968749, 0.16276623)
+texture_normal = ExtResource("3_e636p")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="NinePatchRect2"]
+layout_mode = 0
+offset_left = 242.0
+offset_right = 447.90475
+offset_bottom = 188.0
+texture = ExtResource("4_e636p")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="NinePatchRect2/NinePatchRect2"]
+position = Vector2(11, 11.000002)
+scale = Vector2(0.17968749, 0.16276623)
+texture_normal = ExtResource("3_e636p")
