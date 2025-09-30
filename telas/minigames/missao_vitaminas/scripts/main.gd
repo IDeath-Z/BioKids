@@ -97,50 +97,83 @@ func _ready():
 	if has_node("Player"):
 		$Player.connect("score_changed", Callable(self, "update_food_pair_based_on_score"))
 	
-	var start_button = $MenuLayer/StartButton if $MenuLayer and $MenuLayer.has_node("StartButton") else null
+	# Configuração do MarginContainer e VBoxContainer
+	var margin_container = $MenuLayer/MarginContainer
+	if margin_container:
+		margin_container.set_anchors_preset(Control.PRESET_CENTER)
+		margin_container.add_theme_constant_override("margin_left", 20 * scale_factor)
+		margin_container.add_theme_constant_override("margin_right", 20 * scale_factor)
+		margin_container.add_theme_constant_override("margin_top", 20 * scale_factor)
+		margin_container.add_theme_constant_override("margin_bottom", 20 * scale_factor)
+		margin_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		margin_container.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		print("MarginContainer configurado: anchors = Center, margins = ", 20 * scale_factor)
+
+	var vbox = $MenuLayer/MarginContainer/VBoxContainer
+	if vbox:
+		vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+		print("VBoxContainer configurado: alignment = Center")
+
+	# Configuração dos botões
+	var start_button = $MenuLayer/MarginContainer/VBoxContainer/StartButton
 	if start_button:
 		start_button.pressed.connect(_on_start_button_pressed)
 		start_button.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
 		start_button.focus_mode = Control.FOCUS_ALL
 		start_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		start_button.disabled = false
+		start_button.size = Vector2(200 * scale_factor, 50 * scale_factor)
+		start_button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+		start_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		print("StartButton configurado: size = ", start_button.size)
 	else:
 		print("Erro: StartButton não encontrado!")
 
-	var info_button = $MenuLayer/InfoButton if $MenuLayer and $MenuLayer.has_node("InfoButton") else null
+	var info_button = $MenuLayer/MarginContainer/VBoxContainer/InfoButton
 	if info_button:
 		info_button.pressed.connect(_on_info_button_pressed)
 		info_button.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
 		info_button.focus_mode = Control.FOCUS_ALL
 		info_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		info_button.disabled = false
+		info_button.size = Vector2(200 * scale_factor, 50 * scale_factor)
+		info_button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+		info_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		print("InfoButton configurado: size = ", info_button.size)
 	else:
 		print("Erro: InfoButton não encontrado!")
 
-	var menu_button = $UILayer/MenuButton if $UILayer and $UILayer.has_node("MenuButton") else null
-	if menu_button:
-		if menu_button.pressed.is_connected(_on_menu_button_pressed):
-			menu_button.pressed.disconnect(_on_menu_button_pressed)
-		menu_button.pressed.connect(_on_menu_button_pressed)
-		menu_button.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
-		menu_button.visible = false
-		menu_button.disabled = false
-		print("MenuButton conectado: visible = ", menu_button.visible, ", disabled = ", menu_button.disabled)
-	else:
-		print("Erro: MenuButton não encontrado!")
-		
-	var voltar_button = $MenuLayer/VoltarButton if $MenuLayer and $MenuLayer.has_node("VoltarButton") else null
+	var voltar_button = $MenuLayer/MarginContainer/VBoxContainer/VoltarButton
 	if voltar_button:
 		voltar_button.pressed.connect(_on_voltar_button_pressed)
 		voltar_button.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
 		voltar_button.focus_mode = Control.FOCUS_ALL
 		voltar_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		voltar_button.disabled = false
-		print("VoltarButton conectado: visible = ", voltar_button.visible, ", disabled = ", voltar_button.disabled)
+		voltar_button.size = Vector2(200 * scale_factor, 50 * scale_factor)
+		voltar_button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+		voltar_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		print("VoltarButton configurado: size = ", voltar_button.size)
 	else:
 		print("Erro: VoltarButton não encontrado!")
 
-	var spawn_timer = $SpawnerComida/SpawnTimer if $SpawnerComida and $SpawnerComida.has_node("SpawnTimer") else null
+	var menu_button = $UILayer/MenuButton
+	if menu_button:
+		if menu_button.pressed.is_connected(_on_menu_button_pressed):
+			menu_button.pressed.disconnect(_on_menu_button_pressed)
+		menu_button.pressed.connect(_on_menu_button_pressed)
+		menu_button.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
+		menu_button.focus_mode = Control.FOCUS_ALL
+		menu_button.mouse_filter = Control.MOUSE_FILTER_STOP
+		menu_button.visible = false
+		menu_button.disabled = false
+		print("MenuButton conectado: visible = ", menu_button.visible, ", disabled = ", menu_button.disabled)
+	else:
+		print("Erro: MenuButton não encontrado!")
+
+	var spawn_timer = $SpawnerComida/SpawnTimer
 	if spawn_timer:
 		spawn_timer.wait_time = current_spawn_wait
 		spawn_timer.paused = true
@@ -161,33 +194,33 @@ func _ready():
 	else:
 		print("Erro: BackgroundNormal não encontrado!")
 
-	var pontos_label = $UILayer/PontosLabel if $UILayer and $UILayer.has_node("PontosLabel") else null
+	var pontos_label = $UILayer/PontosLabel
 	if pontos_label:
 		pontos_label.text = "Pontos: 0"
 		pontos_label.position = Vector2(20 * scale_factor, 20 * scale_factor)
 	else:
 		print("Erro: PontosLabel não encontrado!")
 
-	var vidas_label = $UILayer/VidasLabel if $UILayer and $UILayer.has_node("VidasLabel") else null
+	var vidas_label = $UILayer/VidasLabel
 	if vidas_label:
 		vidas_label.text = "Vidas: 3"
 		vidas_label.position = Vector2(screen_size.x - 170 * scale_factor, 20 * scale_factor)
 	else:
 		print("Erro: VidasLabel não encontrado!")
 
-	var countdown_label = $UILayer/CountdownLabel if $UILayer and $UILayer.has_node("CountdownLabel") else null
+	var countdown_label = $UILayer/CountdownLabel
 	if countdown_label:
 		countdown_label.visible = false
 	else:
 		print("Erro: CountdownLabel não encontrado!")
 
-	var game_over_label = $UILayer/GameOverLabel if $UILayer and $UILayer.has_node("GameOverLabel") else null
+	var game_over_label = $UILayer/GameOverLabel
 	if game_over_label:
 		game_over_label.visible = false
 	else:
 		print("Erro: GameOverLabel não encontrado!")
 
-	var final_score_label = $UILayer/FinalScoreLabel if $UILayer and $UILayer.has_node("FinalScoreLabel") else null
+	var final_score_label = $UILayer/FinalScoreLabel
 	if final_score_label:
 		final_score_label.visible = false
 		final_score_label.autowrap_mode = TextServer.AUTOWRAP_OFF
@@ -209,8 +242,6 @@ func _ready():
 		print("StartRaceSound encontrado")
 	else:
 		print("Erro: StartRaceSound não encontrado!")
-
-	center_buttons()
 
 	if left_button and right_button:
 		left_button.visible = false
@@ -246,7 +277,7 @@ func decrease_spawn_wait() -> void:
 		var k = log(base_spawn_wait / min_spawn_wait) * 1.2
 		current_spawn_wait = base_spawn_wait * exp(-progress * k)
 	
-	var spawn_timer = $SpawnerComida/SpawnTimer if $SpawnerComida and $SpawnerComida.has_node("SpawnTimer") else null
+	var spawn_timer = $SpawnerComida/SpawnTimer
 	if spawn_timer:
 		spawn_timer.wait_time = current_spawn_wait
 	print("Intervalo de spawn ajustado para: ", current_spawn_wait)
@@ -257,7 +288,7 @@ func _on_start_button_pressed():
 	start_countdown()
 
 func start_countdown() -> void:
-	var countdown_label = $UILayer/CountdownLabel if $UILayer and $UILayer.has_node("CountdownLabel") else null
+	var countdown_label = $UILayer/CountdownLabel
 	if not countdown_label:
 		print("Erro: CountdownLabel não encontrado!")
 		return
@@ -266,8 +297,8 @@ func start_countdown() -> void:
 		background_music.volume_db = -20.0
 		print("Volume da música reduzido para -20.0 dB")
 	
-	countdown_label.position = Vector2(120, 490)
 	countdown_label.visible = true
+	# countdown_label.position = Vector2(screen_size.x / 2 - 50, screen_size.y / 2 - 25)
 	
 	while countdown > 0:
 		countdown_label.text = str(countdown)
@@ -378,6 +409,7 @@ func _on_menu_button_pressed():
 		$UILayer/MenuButton.set_process_input(false)
 	
 	var canvas_layer = CanvasLayer.new()
+	canvas_layer.layer = 10 # Garantir que o bio_fato fique acima do MenuLayer
 	add_child(canvas_layer)
 	
 	var bio_fato = bio_fato_scene.instantiate()
@@ -459,18 +491,14 @@ func reset_game_state():
 		print("Música do jogo não reiniciada porque musica_ligada_original é false")
 
 func center_buttons():
-	var start_button = $MenuLayer/StartButton if $MenuLayer and $MenuLayer.has_node("StartButton") else null
-	var info_button = $MenuLayer/InfoButton if $MenuLayer and $MenuLayer.has_node("InfoButton") else null
-	var voltar_button = $MenuLayer/VoltarButton if $MenuLayer and $MenuLayer.has_node("VoltarButton") else null
-	if start_button:
-		start_button.position = Vector2(180, 400)
-		print("StartButton posição: ", start_button.position)
-	if info_button:
-		info_button.position = Vector2(180, 570)
-		print("InfoButton posição: ", info_button.position)
-	if voltar_button:
-		voltar_button.position = Vector2(180, 740)
-		print("VoltarButton posição: ", voltar_button.position)
+	var margin_container = $MenuLayer/MarginContainer
+	if margin_container:
+		margin_container.set_anchors_preset(Control.PRESET_CENTER)
+		margin_container.add_theme_constant_override("margin_left", 20 * scale_factor)
+		margin_container.add_theme_constant_override("margin_right", 20 * scale_factor)
+		margin_container.add_theme_constant_override("margin_top", 20 * scale_factor)
+		margin_container.add_theme_constant_override("margin_bottom", 20 * scale_factor)
+		print("MarginContainer recentralizado: margins = ", 20 * scale_factor)
 
 func show_game_over():
 	print("Exibindo tela de Game Over")
@@ -492,26 +520,26 @@ func show_game_over():
 	if $BackgroundNormal:
 		$BackgroundNormal.visible = false
 	
-	var game_over_label = $UILayer/GameOverLabel if $UILayer and $UILayer.has_node("GameOverLabel") else null
+	var game_over_label = $UILayer/GameOverLabel
 	if game_over_label:
 		await get_tree().process_frame
-		game_over_label.position = Vector2(138, 480)
+		game_over_label.position = Vector2(138 * scale_factor, 480 * scale_factor)
 		game_over_label.visible = true
 	
-	var final_score_label = $UILayer/FinalScoreLabel if $UILayer and $UILayer.has_node("FinalScoreLabel") else null
+	var final_score_label = $UILayer/FinalScoreLabel
 	if final_score_label:
 		var pontos = $Player.pontos if has_node("Player") else 0
 		final_score_label.text = "Pontos: " + str(pontos)
 		await get_tree().process_frame
 		var rect_texto = final_score_label.get_rect()
 		final_score_label.size = rect_texto.size
-		final_score_label.position = Vector2(336 - rect_texto.size.x / 2, 50) 
+		final_score_label.position = Vector2(screen_size.x / 2 - rect_texto.size.x / 2, 50 * scale_factor)
 		final_score_label.visible = true
 	
-	var menu_button = $UILayer/MenuButton if $UILayer and $UILayer.has_node("MenuButton") else null
+	var menu_button = $UILayer/MenuButton
 	if menu_button:
 		await get_tree().process_frame
-		menu_button.position = Vector2(72, 630)
+		#menu_button.position = Vector2(72 * scale_factor, 630 * scale_factor)
 		menu_button.visible = true
 		menu_button.disabled = false
 		print("MenuButton ativado: position = ", menu_button.position)
