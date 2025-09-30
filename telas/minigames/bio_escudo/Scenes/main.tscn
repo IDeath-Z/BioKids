@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnxbg8dkeslgx"]
+[gd_scene load_steps=4 format=3 uid="uid://dnxbg8dkeslgx"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_deqe1"]
 [ext_resource type="Script" uid="uid://dosvy2obx8re" path="res://telas/minigames/bio_escudo/Scripts/menu_layer.gd" id="1_erwet"]
+[ext_resource type="FontFile" uid="uid://p4f0nt1w5dr6" path="res://telas/minigames/bio_escudo/assets/fonts/Atop-R99O3.ttf" id="3_6vjea"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -16,53 +17,39 @@ script = ExtResource("1_erwet")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = -3.0
-offset_right = 3.0
-offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.6399, 0.79, 0.762482, 1)
 
 [node name="Label" type="Label" parent="MenuLayer/ColorRect"]
-custom_minimum_size = Vector2(20.7, 17.775)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -193.0
-offset_top = 44.0
-offset_right = -113.0
-offset_bottom = 67.0
+anchors_preset = -1
+anchor_left = 0.0208333
+anchor_top = 0.12037
+anchor_right = 0.980556
+anchor_bottom = 0.301852
 grow_horizontal = 2
-scale = Vector2(5, 5)
-text = "BioEscudo"
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6vjea")
+theme_override_font_sizes/font_size = 115
+text = "Bio-Escudo"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="MenuLayer/ColorRect"]
-custom_minimum_size = Vector2(20.7, 17.775)
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -193.0
-offset_top = 44.0
-offset_right = -113.0
-offset_bottom = 67.0
-grow_horizontal = 2
-scale = Vector2(5, 5)
-text = "BioEscudo"
-
-[node name="Label3" type="Label" parent="MenuLayer/ColorRect"]
-layout_mode = 1
-anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 96.0
-offset_top = -269.0
-offset_right = 362.0
-offset_bottom = -246.0
+offset_left = -157.5
+offset_top = -259.0
+offset_right = 157.5
+offset_bottom = -238.0
+grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_6vjea")
+theme_override_font_sizes/font_size = 30
 text = "Vista o Ursinho para o Laboratório"
 
 [node name="StartButton" type="Button" parent="MenuLayer"]
@@ -71,8 +58,11 @@ offset_top = 400.0
 offset_right = 480.0
 offset_bottom = 500.0
 scale = Vector2(1.2, 1.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("1_deqe1")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_6vjea")
+theme_override_font_sizes/font_size = 45
 text = "INCIAR"
 icon_alignment = 1
 
@@ -82,8 +72,11 @@ offset_top = 570.0
 offset_right = 480.0
 offset_bottom = 670.0
 scale = Vector2(1.2, 1.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("1_deqe1")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_6vjea")
+theme_override_font_sizes/font_size = 45
 text = "Como Jogar"
 
 [node name="VoltarButton" type="Button" parent="MenuLayer"]
@@ -92,8 +85,10 @@ offset_top = 740.0
 offset_right = 480.0
 offset_bottom = 840.0
 scale = Vector2(1.2, 1.2)
+size_flags_vertical = 4
 theme = ExtResource("1_deqe1")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_6vjea")
+theme_override_font_sizes/font_size = 45
 text = "Voltar"
 
 [connection signal="pressed" from="MenuLayer/StartButton" to="MenuLayer" method="_on_start_button_pressed"]

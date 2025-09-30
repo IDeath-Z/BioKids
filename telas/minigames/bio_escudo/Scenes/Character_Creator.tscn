@@ -64,11 +64,17 @@ script = SubResource("GDScript_s36mj")
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -780.0
-offset_top = -1104.0
+offset_top = -1075.0
 offset_right = 1673.0
-offset_bottom = 1055.0
+offset_bottom = 1084.0
 texture = ExtResource("9_s36mj")
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="TextureRect"]
+position = Vector2(1233, 1331)
+scale = Vector2(2.18749, 2.4596)
+zoom = Vector2(0.6, 0.65)
 
 [node name="skeleton" type="Control" parent="."]
 anchors_preset = 0
@@ -87,10 +93,6 @@ scale = Vector2(1.0086, 1.00483)
 texture = ExtResource("4_dvuka")
 hframes = 3
 vframes = 2
-
-[node name="Camera2D" type="Camera2D" parent="skeleton/Fur"]
-position = Vector2(34.4, -102)
-zoom = Vector2(0.6, 0.6)
 
 [node name="Outfit2" type="Control" parent="skeleton"]
 anchors_preset = 0
