@@ -56,7 +56,8 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_lb5je")
 theme_override_font_sizes/font_size = 40
 text = "Preciso de sua ajuda para decorar meu hospital!
-Poderia escolher por onde iremos iniciar?"
+
+Escolha por onde iniciar."
 horizontal_alignment = 1
 autowrap_mode = 2
 
