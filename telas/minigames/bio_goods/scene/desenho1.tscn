@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://cisnac45ahktu"]
+
+[ext_resource type="Script" uid="uid://biwy7sv1gssh4" path="res://telas/minigames/bio_goods/scripts/control_drawing1.gd" id="1_0gn57"]
+[ext_resource type="Texture2D" uid="uid://cf3c123jfevlx" path="res://telas/minigames/bio_goods/sprites/[AR] Hospital Assets - FREE/4. Samples/backgorund_2.png" id="1_0ko8k"]
+[ext_resource type="Texture2D" uid="uid://curf5p2uk8sww" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_25-128x128.png" id="2_jrq7g"]
+[ext_resource type="Texture2D" uid="uid://c1j458w8m41af" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/a59c1b75-83a4-4948-bb76-db78dba4d575.png" id="3_kaf3b"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0gn57")
+
+[node name="BG" type="Parallax2D" parent="."]
+
+[node name="BG_Fundo" type="TextureRect" parent="BG"]
+offset_left = 1.0000305
+offset_top = 1.0
+offset_right = 811.0
+offset_bottom = 1721.0
+scale = Vector2(0.882716, 0.63025403)
+texture = ExtResource("1_0ko8k")
+stretch_mode = 3
+
+[node name="BG_Moldura" type="Sprite2D" parent="BG"]
+position = Vector2(359, 489)
+scale = Vector2(5.4843745, 5.546874)
+texture = ExtResource("2_jrq7g")
+
+[node name="Desenho" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 1024.0
+texture = ExtResource("3_kaf3b")
+
+[node name="ColorLayer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 43.0
+offset_bottom = 40.0
+expand_mode = 1
+
+[node name="ColorButtons" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 893.0
+offset_top = 300.0
+offset_right = 1227.0
+offset_bottom = 907.0
+
+[node name="Pincel" type="Button" parent="ColorButtons"]
+layout_mode = 2
+
+[node name="Balde" type="Button" parent="ColorButtons"]
+layout_mode = 2
+
+[node name="Borracha" type="Button" parent="ColorButtons"]
+layout_mode = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="ColorButtons"]
+layout_mode = 2
+alignment = 1
+edit_alpha = false
+picker_shape = 2
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false
+
+[node name="ControlButtons" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Salvar_desenho" type="Button" parent="ControlButtons"]
+layout_mode = 2
+
+[node name="Voltar_selecao" type="Button" parent="ControlButtons"]
+layout_mode = 2
+
+[node name="Avancar_desenho" type="Button" parent="ControlButtons"]
+layout_mode = 2
+
+[node name="Apagar_tudo" type="Button" parent="ControlButtons"]
+layout_mode = 2
+
+[connection signal="pressed" from="ColorButtons/Pincel" to="." method="_on_pincel_pressed"]
+[connection signal="pressed" from="ColorButtons/Balde" to="." method="_on_balde_pressed"]
+[connection signal="pressed" from="ColorButtons/Borracha" to="." method="_on_borracha_pressed"]
