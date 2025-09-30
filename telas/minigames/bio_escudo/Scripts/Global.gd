@@ -1,4 +1,4 @@
-extends Node
+extends Control
 
 # Collection of body sprites
 var fur_collection = {
@@ -14,6 +14,7 @@ var pants_collection = {
 
 # Collection of outfit sprites
 var outfit_collection = {
+	"none" : null,
 	"01" : preload("res://telas/minigames/bio_escudo/assets/camisa/camisa doc grey.png"),
 	"02" : preload("res://telas/minigames/bio_escudo/assets/camisa/camisa.png"),
 	"03" : preload("res://telas/minigames/bio_escudo/assets/camisa/jaleco_doc.png"),
@@ -21,6 +22,10 @@ var outfit_collection = {
 # Collection of accessory sprites
 var accessory_collection = {
 	"none" : null,
+	"01" : preload("res://telas/minigames/bio_escudo/assets/acess/chapeu_cangac.aces.png"),
+	"02" : preload("res://telas/minigames/bio_escudo/assets/acess/vac.acess.png"),
+	"03" : preload("res://telas/minigames/bio_escudo/assets/acess/doctor_equip.acess.png"),
+	"04" : preload("res://telas/minigames/bio_escudo/assets/acess/mask01.acess.png"),
 }
 
 # Fur Colors
@@ -35,7 +40,6 @@ var fur_color_options = [
 var pants_color_options = [
 	Color(1, 1, 1), # Default
 	Color(1.05, 1.05, 1.05), 
-	Color(0.4, 0.2, 0.1), # Brown
 	Color(0.95, 0.95, 0.95), 
 	Color(0.9, 0.95, 1.0), 
 ]

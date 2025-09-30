@@ -1,25 +1,34 @@
-[gd_scene load_steps=19 format=3 uid="uid://dfr2pcw7l4goo"]
+[gd_scene load_steps=30 format=3 uid="uid://dfr2pcw7l4goo"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_rl6uu"]
 [ext_resource type="Script" uid="uid://cro5dfjqd54no" path="res://telas/minigames/bio_escudo/Scripts/fur.gd" id="2_m8jyd"]
+[ext_resource type="Texture2D" uid="uid://c7y2otcqpymp8" path="res://telas/minigames/bio_escudo/assets/urso.png" id="4_dvuka"]
 [ext_resource type="Script" uid="uid://extdbho38y4u" path="res://telas/minigames/bio_escudo/Scripts/pants.gd" id="4_yiodc"]
 [ext_resource type="Script" uid="uid://mm3i7cj4hp28" path="res://telas/minigames/bio_escudo/Scripts/outfit.gd" id="6_e0whd"]
+[ext_resource type="Texture2D" uid="uid://d1vkuuoersllj" path="res://telas/minigames/bio_escudo/assets/calca/calca.png" id="7_63ikp"]
+[ext_resource type="Texture2D" uid="uid://c166ftpe3ntvw" path="res://telas/minigames/bio_escudo/assets/acess/doctor_equip.acess.png" id="8_0wdj4"]
 [ext_resource type="Script" uid="uid://cl5yc06quc1ml" path="res://telas/minigames/bio_escudo/Scripts/accessory.gd" id="8_f5n3g"]
+[ext_resource type="Texture2D" uid="uid://j2830o1c62nf" path="res://telas/minigames/bio_escudo/assets/UI/button_changefur_icon.png" id="9_dvuka"]
 [ext_resource type="Texture2D" uid="uid://cinkbccw6rm7h" path="res://telas/minigames/bio_escudo/assets/UI/button_roupa_icon.png" id="9_m8jyd"]
 [ext_resource type="Texture2D" uid="uid://lch478hnhjor" path="res://telas/minigames/bio_escudo/bg.png" id="9_s36mj"]
+[ext_resource type="Texture2D" uid="uid://dkq4r5xxyrudc" path="res://telas/minigames/bio_escudo/assets/UI/button_changefur_pressed.icon.png" id="10_0wdj4"]
 [ext_resource type="Texture2D" uid="uid://cq5ksinhb8sec" path="res://telas/minigames/bio_escudo/assets/UI/button_acces_icon.png" id="10_5xme0"]
+[ext_resource type="Texture2D" uid="uid://cdu2sodbliher" path="res://telas/minigames/bio_escudo/assets/UI/button_pants_icon.png" id="10_08kba"]
 [ext_resource type="Texture2D" uid="uid://rdbagkgxn0fd" path="res://telas/minigames/bio_escudo/assets/UI/button_roupa_pressed.icon.png" id="10_bgq41"]
 [ext_resource type="Texture2D" uid="uid://3duidh7c3tjt" path="res://telas/minigames/bio_escudo/assets/UI/Next.png" id="10_yiodc"]
+[ext_resource type="Texture2D" uid="uid://cstrxk1jqpbk7" path="res://telas/minigames/bio_escudo/assets/UI/button_changefur_hover.icon.png" id="11_5ekef"]
 [ext_resource type="Texture2D" uid="uid://dgsprdhhew871" path="res://telas/minigames/bio_escudo/assets/UI/button_acces_pressed.icon.png" id="11_bgq41"]
+[ext_resource type="Texture2D" uid="uid://6notyhftw3or" path="res://telas/minigames/bio_escudo/assets/UI/button_pants_pressed.icon.png" id="11_rjla7"]
 [ext_resource type="Texture2D" uid="uid://dl4ddgtq52jcy" path="res://telas/minigames/bio_escudo/assets/UI/Nextpressed.png" id="11_yiodc"]
+[ext_resource type="Texture2D" uid="uid://tr3nu003qawl" path="res://telas/minigames/bio_escudo/assets/UI/button_pants_hover.icon.png" id="12_dvuka"]
+[ext_resource type="Texture2D" uid="uid://clsbe3nqk0ipn" path="res://telas/minigames/bio_escudo/assets/UI/button_finished_icon.png" id="21_guhsu"]
+[ext_resource type="Texture2D" uid="uid://b7fomj25bh55f" path="res://telas/minigames/bio_escudo/assets/UI/button_finished_pressed.icon.png" id="22_63ikp"]
+[ext_resource type="Texture2D" uid="uid://mftuwbcmkc23" path="res://telas/minigames/bio_escudo/assets/UI/button_finished_hover.icon.png" id="23_saf70"]
+[ext_resource type="Script" uid="uid://b07lra83yt6hi" path="res://telas/minigames/bio_escudo/Scenes/finished_button.gd" id="25_saf70"]
 
 [sub_resource type="GDScript" id="GDScript_s36mj"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s36mj"]
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m8jyd"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bgq41"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yiodc"]
 
@@ -54,27 +63,28 @@ script = SubResource("GDScript_s36mj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -1212.0
-offset_top = -1547.0
-offset_right = 788.0
-offset_bottom = 453.0
+offset_left = -780.0
+offset_top = -1104.0
+offset_right = 1673.0
+offset_bottom = 1055.0
 texture = ExtResource("9_s36mj")
 stretch_mode = 5
 
 [node name="skeleton" type="Control" parent="."]
 anchors_preset = 0
-offset_left = -187.0
-offset_top = -141.0
-offset_right = -187.0
-offset_bottom = -141.0
-scale = Vector2(2.5, 2.5)
+offset_left = 378.0
+offset_top = 507.0
+offset_right = 378.0
+offset_bottom = 507.0
+scale = Vector2(2.18749, 2.4596)
 
 [node name="Fur" type="Control" parent="skeleton"]
 anchors_preset = 0
 script = ExtResource("2_m8jyd")
 
 [node name="Sprite2D" type="Sprite2D" parent="skeleton/Fur"]
-texture = SubResource("CompressedTexture2D_s36mj")
+scale = Vector2(1.0086, 1.00483)
+texture = ExtResource("4_dvuka")
 hframes = 3
 vframes = 2
 
@@ -96,7 +106,8 @@ anchors_preset = 0
 script = ExtResource("6_e0whd")
 
 [node name="Sprite2D" type="Sprite2D" parent="skeleton/Pants"]
-texture = SubResource("CompressedTexture2D_bgq41")
+scale = Vector2(1.03657, 1)
+texture = ExtResource("7_63ikp")
 hframes = 3
 vframes = 2
 
@@ -105,152 +116,94 @@ anchors_preset = 0
 script = ExtResource("8_f5n3g")
 
 [node name="Sprite2D" type="Sprite2D" parent="skeleton/accessory"]
-hframes = 8
-vframes = 8
+position = Vector2(29.7144, -33.7453)
+scale = Vector2(0.529328, 0.518967)
+texture = ExtResource("8_0wdj4")
+region_rect = Rect2(10, 10, 10, 10)
 
 [node name="CreatorScreen" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CreatorScreen"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -240.0
-offset_top = 10.0
-offset_bottom = 1530.0
-grow_horizontal = 0
-scale = Vector2(1, 0.68)
-theme = ExtResource("1_rl6uu")
-color = Color(0.321569, 0.360784, 1, 0.345098)
+[node name="Fur_Color" type="TextureButton" parent="CreatorScreen"]
+offset_left = 554.0
+offset_top = 220.0
+offset_right = 1088.0
+offset_bottom = 772.0
+rotation = 0.404997
+scale = Vector2(0.277408, 0.275585)
+texture_normal = ExtResource("9_dvuka")
+texture_pressed = ExtResource("10_0wdj4")
+texture_hover = ExtResource("11_5ekef")
 
-[node name="fur" type="ColorRect" parent="CreatorScreen/ColorRect"]
+[node name="ChangePantsButton" type="TextureButton" parent="CreatorScreen"]
+offset_left = 7.0
+offset_top = 231.0
+offset_right = 665.0
+offset_bottom = 759.0
+scale = Vector2(0.279999, 0.319999)
+texture_normal = ExtResource("10_08kba")
+texture_pressed = ExtResource("11_rjla7")
+texture_hover = ExtResource("12_dvuka")
+
+[node name="PantsColorButton" type="TextureButton" parent="CreatorScreen/ChangePantsButton"]
 layout_mode = 0
-offset_right = 200.0
-offset_bottom = 720.0
-color = Color(1, 1, 1, 0)
+offset_left = 55.0
+offset_top = 361.0
+offset_right = 636.0
+offset_bottom = 763.0
+texture_normal = ExtResource("10_yiodc")
+texture_pressed = ExtResource("11_yiodc")
 
-[node name="Label2" type="Label" parent="CreatorScreen/ColorRect/fur"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 319.118
-offset_right = 143.0
-offset_bottom = 375.118
-scale = Vector2(3, 3)
-theme_override_font_sizes/font_size = 18
-text = "Pelo"
-
-[node name="ColorButton" type="Button" parent="CreatorScreen/ColorRect/fur"]
-layout_mode = 0
-offset_top = 412.0
-offset_right = 240.0
-offset_bottom = 634.0
-theme_override_font_sizes/font_size = 100
-text = "->"
-
-[node name="Calça" type="ColorRect" parent="CreatorScreen/ColorRect"]
-layout_mode = 0
-offset_top = 629.412
-offset_right = 200.0
-offset_bottom = 1349.41
-theme = ExtResource("1_rl6uu")
-color = Color(1, 1, 1, 0)
-
-[node name="Label" type="Label" parent="CreatorScreen/ColorRect/Calça"]
-layout_mode = 0
-offset_left = 38.0
-offset_top = -9.0
-offset_right = 91.0
-offset_bottom = 40.0
-scale = Vector2(4, 4)
-theme_override_font_sizes/font_size = 18
-text = "Calça
-"
-
-[node name="Label2" type="Label" parent="CreatorScreen/ColorRect/Calça"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 305.882
-offset_right = 96.0
-offset_bottom = 392.882
-scale = Vector2(3, 3)
-theme_override_font_sizes/font_size = 25
-text = "Cor
-
-"
-
-[node name="CollectionButton" type="Button" parent="CreatorScreen/ColorRect/Calça"]
-layout_mode = 0
-offset_top = 91.0
-offset_right = 240.0
-offset_bottom = 313.0
-theme_override_font_sizes/font_size = 100
-text = "->"
-
-[node name="ColorButton" type="Button" parent="CreatorScreen/ColorRect/Calça"]
-layout_mode = 0
-offset_top = 412.0
-offset_right = 240.0
-offset_bottom = 634.0
-theme_override_font_sizes/font_size = 100
-text = "->"
-
-[node name="outfit" type="ColorRect" parent="CreatorScreen/ColorRect"]
-layout_mode = 0
-offset_left = -477.0
-offset_top = 1038.24
-offset_right = -277.0
-offset_bottom = 1758.24
-scale = Vector2(0.92, 0.823529)
-color = Color(1, 1, 1, 0)
-
-[node name="CollectionButton" type="TextureButton" parent="CreatorScreen/ColorRect/outfit"]
-layout_mode = 0
-offset_left = -67.3913
-offset_top = 3.56573
-offset_right = 560.609
-offset_bottom = 434.566
-scale = Vector2(0.624023, 1)
+[node name="ChangeShirtButton" type="TextureButton" parent="CreatorScreen"]
+offset_left = 34.0
+offset_top = -2.0
+offset_right = 662.0
+offset_bottom = 429.0
+scale = Vector2(0.403152, 0.514285)
 texture_normal = ExtResource("9_m8jyd")
 texture_pressed = ExtResource("10_bgq41")
 
-[node name="ColorButton" type="TextureButton" parent="CreatorScreen/ColorRect/outfit"]
+[node name="ShirtColorButton" type="TextureButton" parent="CreatorScreen/ChangeShirtButton"]
 layout_mode = 0
-offset_left = -55.4348
-offset_top = 358.923
-offset_right = 290.565
-offset_bottom = 772.923
+offset_left = -68.8415
+offset_top = 206.111
+offset_right = 559.158
+offset_bottom = 870.111
+scale = Vector2(0.565216, 0.465714)
 texture_normal = ExtResource("10_yiodc")
 texture_pressed = ExtResource("11_yiodc")
 stretch_mode = 5
 
-[node name="acces" type="ColorRect" parent="CreatorScreen/ColorRect"]
-layout_mode = 0
-offset_left = -240.0
-offset_top = 1039.71
-offset_right = -40.0
-offset_bottom = 1759.71
-scale = Vector2(0.92, 0.823529)
-color = Color(1, 1, 1, 0)
-
-[node name="CollectionButton" type="TextureButton" parent="CreatorScreen/ColorRect/acces"]
-layout_mode = 0
-offset_left = -46.0
-offset_top = -9.0
-offset_right = 478.0
-offset_bottom = 370.0
+[node name="ChangeAccesButton" type="TextureButton" parent="CreatorScreen"]
+offset_left = 508.0
+offset_top = -12.9999
+offset_right = 988.0
+offset_bottom = 374.0
+scale = Vector2(0.465553, 0.596705)
 texture_normal = ExtResource("10_5xme0")
 texture_pressed = ExtResource("11_bgq41")
 
-[node name="ColorButton" type="TextureButton" parent="CreatorScreen/ColorRect/acces"]
+[node name="AccesColorButton" type="TextureButton" parent="CreatorScreen/ChangeAccesButton"]
 layout_mode = 0
-offset_left = 42.3913
-offset_top = 339.281
-offset_right = 505.391
-offset_bottom = 733.281
+offset_left = -51.5516
+offset_top = 239.649
+offset_right = 411.448
+offset_bottom = 633.649
+scale = Vector2(0.608695, 0.465714)
 texture_normal = ExtResource("10_yiodc")
 texture_pressed = ExtResource("11_yiodc")
 
+[node name="finishedButton" type="TextureButton" parent="CreatorScreen"]
+offset_left = 519.0
+offset_top = 795.0
+offset_right = 967.0
+offset_bottom = 1262.0
+scale = Vector2(0.44, 0.44)
+texture_normal = ExtResource("21_guhsu")
+texture_pressed = ExtResource("22_63ikp")
+texture_hover = ExtResource("23_saf70")
+script = ExtResource("25_saf70")
+
 [node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = -760.0
 offset_top = -1072.0
@@ -269,10 +222,11 @@ offset_right = 41.0
 offset_bottom = 38.0
 mouse_filter = 2
 
-[connection signal="pressed" from="CreatorScreen/ColorRect/fur/ColorButton" to="skeleton/Fur" method="_on_color_button_pressed"]
-[connection signal="pressed" from="CreatorScreen/ColorRect/Calça/CollectionButton" to="skeleton/Outfit2" method="_on_collection_button_pressed"]
-[connection signal="pressed" from="CreatorScreen/ColorRect/Calça/ColorButton" to="skeleton/Outfit2" method="_on_color_button_pressed"]
-[connection signal="pressed" from="CreatorScreen/ColorRect/outfit/CollectionButton" to="skeleton/Pants" method="_on_collection_button_pressed"]
-[connection signal="pressed" from="CreatorScreen/ColorRect/outfit/ColorButton" to="skeleton/Pants" method="_on_color_button_pressed"]
-[connection signal="pressed" from="CreatorScreen/ColorRect/acces/CollectionButton" to="skeleton/accessory" method="_on_collection_button_pressed"]
-[connection signal="pressed" from="CreatorScreen/ColorRect/acces/ColorButton" to="skeleton/accessory" method="_on_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/Fur_Color" to="skeleton/Fur" method="_on_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ChangePantsButton" to="skeleton/Outfit2" method="_on_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ChangePantsButton/PantsColorButton" to="skeleton/Outfit2" method="_on_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ChangeShirtButton" to="skeleton/Pants" method="_on_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ChangeShirtButton/ShirtColorButton" to="skeleton/Pants" method="_on_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ChangeAccesButton" to="skeleton/accessory" method="_on_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ChangeAccesButton/AccesColorButton" to="skeleton/accessory" method="_on_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/finishedButton" to="CreatorScreen/finishedButton" method="_on_pressed"]

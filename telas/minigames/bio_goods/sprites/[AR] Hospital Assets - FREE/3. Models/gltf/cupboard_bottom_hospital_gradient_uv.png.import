@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ynqdo6r00ra3"
+uid="uid://dg85dwf0h5vsj"
 path.s3tc="res://.godot/imported/cupboard_bottom_hospital_gradient_uv.png-47d2891e5f5b826cf0296aebee06b907.s3tc.ctex"
 path.etc2="res://.godot/imported/cupboard_bottom_hospital_gradient_uv.png-47d2891e5f5b826cf0296aebee06b907.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "edabcc1b011032a6843dbaceed33b0ec"
 }
 
 [deps]
@@ -23,8 +20,6 @@ dest_files=["res://.godot/imported/cupboard_bottom_hospital_gradient_uv.png-47d2
 compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
-compress/uastc_level=0
-compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -32,10 +27,6 @@ mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/channel_remap/red=0
-process/channel_remap/green=1
-process/channel_remap/blue=2
-process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
