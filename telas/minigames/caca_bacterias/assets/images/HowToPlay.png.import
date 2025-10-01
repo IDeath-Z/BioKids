@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csodxjd8vbhca"
-path="res://.godot/imported/Ursinho OclLupa.png-013f8cd92c3891a4e9800c1972033ee3.ctex"
+uid="uid://06v2vp1st8w6"
+path="res://.godot/imported/HowToPlay.png-67935e8a549850e6aadf57efa56e62ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/caca_bacterias/assets/images/Ursinho OclLupa.png"
-dest_files=["res://.godot/imported/Ursinho OclLupa.png-013f8cd92c3891a4e9800c1972033ee3.ctex"]
+source_file="res://telas/minigames/caca_bacterias/assets/images/HowToPlay.png"
+dest_files=["res://.godot/imported/HowToPlay.png-67935e8a549850e6aadf57efa56e62ea.ctex"]
 
 [params]
 

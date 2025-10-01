@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://jtoh7ea2cuxd"]
+[gd_scene load_steps=4 format=3 uid="uid://jtoh7ea2cuxd"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_gt11o"]
 [ext_resource type="Script" uid="uid://b0dilotbehkss" path="res://telas/minigames/caca_bacterias/how_to_play.gd" id="1_j20v8"]
+[ext_resource type="Texture2D" uid="uid://06v2vp1st8w6" path="res://telas/minigames/caca_bacterias/assets/images/HowToPlay.png" id="3_o17vk"]
 
 [node name="HowToPlay" type="Control"]
 layout_mode = 3
@@ -10,38 +11,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 1.0
 offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_gt11o")
 script = ExtResource("1_j20v8")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 768.0
-color = Color(0.658824, 0.658824, 0.941176, 1)
-
-[node name="Label" type="Label" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.9990001
 offset_right = -1.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Algumas bactérias escaparam no laboratório! Ajude o Ursinho a encontrar as bactérias certas. 
-Clique apenas nas que ele pedir!"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
+offset_bottom = 0.08093262
+texture = ExtResource("3_o17vk")
 
 [node name="Voltar" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -31.0
-offset_right = 147.0
+anchors_preset = -1
+anchor_left = 0.018030513
+anchor_top = 0.9110001
+anchor_right = 0.63000005
+anchor_bottom = 0.98057353
+offset_top = 0.20892334
+offset_right = -0.2300415
 grow_vertical = 0
 text = "⬅️ Voltar ao Menu"
 metadata/_edit_use_anchors_ = true

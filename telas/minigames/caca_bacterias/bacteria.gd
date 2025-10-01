@@ -1,7 +1,7 @@
 extends Area2D
 signal clicada(tipo: Tipo)
 
-enum Tipo {AZUL = 0, VERDE = 1, VERMELHA = 2, ROSA = 3, VERDEMALIGNA = 4}
+enum Tipo {LARANJA = 0, VERDE = 1, VERMELHA = 2, ROXA = 3, VERDEG = 4}
 var tipo: Tipo
 var velocidade: Vector2 = Vector2.ZERO
 var tempo_flutuacao: float = 0.0
@@ -12,6 +12,10 @@ func _ready():
 	velocidade = Vector2(randf_range(-30, 30), randf_range(-20, 20))
 	input_event.connect(_on_input_event)
 	intervalo_multiplicacao = randf_range(5.0, 12.0)
+	print("Bactéria pronta. Tipo: ", tipo)  # Depuração
+	# Garante que o tipo seja definido antes de conectar sinais
+	if tipo == null:
+		tipo = Tipo.values()[randi() % Tipo.size()]  # Define um tipo aleatório se não definido
 
 func _process(delta):
 	tempo_flutuacao += delta
@@ -42,8 +46,12 @@ func _process(delta):
 		tempo_multiplicacao = 0.0
 
 func _on_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton and event.pressed:
-		clicada.emit(tipo)
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if tipo != null:
+			print("Clique detectado. Tipo: ", tipo)
+			clicada.emit(tipo)
+		else:
+			print("Erro: Tipo não definido!")
 		queue_free()
 
 func _on_multiply():
@@ -51,13 +59,21 @@ func _on_multiply():
 	nova_bact.tipo = tipo
 	nova_bact.position = position + Vector2(randf_range(-30, 30), randf_range(-30, 30))
 	var texturas = {
-		Tipo.AZUL: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaAZULFELIZ.png"),
+		Tipo.LARANJA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaLaranja.png"),
 		Tipo.VERDE: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriaverdemaligna.png"),
 		Tipo.VERMELHA: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriavermelha.png"),
-		Tipo.ROSA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaROSA.png"),
-		Tipo.VERDEMALIGNA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaVERDEESCURO.png")
+		Tipo.ROXA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaROXA.png"),
+		Tipo.VERDEG: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaVERDE.png")
 	}
-	if nova_bact.get_node_or_null("SpriteBact"):  # Verifica se o nó existe
-		nova_bact.get_node("SpriteBact").texture = texturas[nova_bact.tipo]
+	var sprite = nova_bact.get_node_or_null("SpriteBact")
+	if sprite:
+		sprite.texture = texturas[nova_bact.tipo]
+		print("Textura aplicada a nova bactéria. Tipo: ", nova_bact.tipo)
+	else:
+		print("Erro: Nó SpriteBact não encontrado na nova bactéria!")
 	get_parent().add_child(nova_bact)
-	nova_bact.clicada.connect(func(t): get_parent().get_parent()._on_bact_clicada(t))
+	var error = nova_bact.clicada.connect(func(t): get_parent().get_parent()._on_bact_clicada(t))
+	if error == OK:
+		print("Sinal conectado na nova bactéria.")
+	else:
+		print("Erro ao conectar sinal na nova bactéria: ", error)
