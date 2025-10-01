@@ -1,7 +1,7 @@
 extends Control
 
-@onready var menu_botes_tela_principal = $MarginContainerPrincipal
-@onready var botao_iniciar = $MarginContainerPrincipal/GridBotoes/BotaoIniciar
+#@onready var menu_botes_tela_principal = $MarginContainerPrincipal
+@onready var botao_iniciar = $MarginContainerPrincipal2/GridBotoes/BotaoIniciar
 @onready var botao_como_jogar = $MarginContainerPrincipal2/GridBotoes/BotaoComoJogar
 @onready var botao_voltar = $MarginContainerPrincipal2/GridBotoes/BotaoVoltar
 @onready var tela_02 = $Tela_02
