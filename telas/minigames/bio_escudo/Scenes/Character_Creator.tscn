@@ -69,7 +69,6 @@ offset_right = 1673.0
 offset_bottom = 1084.0
 texture = ExtResource("9_s36mj")
 stretch_mode = 5
-metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="TextureRect"]
 position = Vector2(1233, 1331)
@@ -78,9 +77,9 @@ zoom = Vector2(0.6, 0.65)
 
 [node name="skeleton" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 378.0
+offset_left = 462.0
 offset_top = 507.0
-offset_right = 378.0
+offset_right = 462.0
 offset_bottom = 507.0
 scale = Vector2(2.18749, 2.4596)
 

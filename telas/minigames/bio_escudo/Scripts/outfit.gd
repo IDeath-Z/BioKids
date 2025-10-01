@@ -34,3 +34,4 @@ func _on_collection_button_pressed():
 func _on_color_button_pressed():
 	current_color_index = (current_color_index + 1) % GlobalBioEscudo.color_options.size()
 	update_sprite()
+	
