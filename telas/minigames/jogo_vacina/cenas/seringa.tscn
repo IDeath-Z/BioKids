@@ -29,8 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://d00q6q8blv36t" path="res://telas/interface/assets/animacoes/screen_click/00023.png" id="27_no0xi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_paeca"]
-radius = 64.7935
-height = 129.587
+radius = 21.0209
+height = 134.163
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qahkn"]
 animations = [{
@@ -121,7 +121,6 @@ scale = Vector2(0.101, 0.1)
 texture = ExtResource("2_a7v8i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="seringa"]
-visible = false
 position = Vector2(348, 499)
 rotation = -1.11177
 shape = SubResource("CapsuleShape2D_paeca")
