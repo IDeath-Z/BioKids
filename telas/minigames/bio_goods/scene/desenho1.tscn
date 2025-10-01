@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cisnac45ahktu"]
+[gd_scene load_steps=9 format=3 uid="uid://cisnac45ahktu"]
 
 [ext_resource type="Script" uid="uid://biwy7sv1gssh4" path="res://telas/minigames/bio_goods/scripts/control_drawing1.gd" id="1_0gn57"]
 [ext_resource type="Texture2D" uid="uid://cf3c123jfevlx" path="res://telas/minigames/bio_goods/sprites/[AR] Hospital Assets - FREE/4. Samples/backgorund_2.png" id="1_0ko8k"]
 [ext_resource type="Texture2D" uid="uid://curf5p2uk8sww" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_25-128x128.png" id="2_jrq7g"]
-[ext_resource type="Texture2D" uid="uid://c1j458w8m41af" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/a59c1b75-83a4-4948-bb76-db78dba4d575.png" id="3_kaf3b"]
+[ext_resource type="Texture2D" uid="uid://bfw41yihqn2sr" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/cenario2.png" id="4_g8e2o"]
 [ext_resource type="Shader" uid="uid://cb6x1yvv1uq26" path="res://telas/minigames/bio_goods/scene/desenho1.gdshader" id="5_g8e2o"]
+[ext_resource type="Texture2D" uid="uid://c4pjsrwfn2yde" path="res://telas/minigames/bio_goods/sprites/icones/pincel.png" id="6_mifr6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mifr6"]
 
@@ -49,7 +50,7 @@ offset_right = -19.0
 offset_bottom = -255.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_kaf3b")
+texture = ExtResource("4_g8e2o")
 expand_mode = 1
 
 [node name="ColorLayer" type="TextureRect" parent="."]
@@ -69,32 +70,34 @@ grow_vertical = 2
 expand_mode = 1
 
 [node name="ColorButtons" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 319.0
-offset_top = 450.0
-offset_right = 653.0
-offset_bottom = 1057.0
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -293.0
+offset_top = -483.0
+offset_right = 239.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 0
 
-[node name="Pincel" type="Button" parent="ColorButtons"]
+[node name="Pincel" type="TextureButton" parent="ColorButtons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("6_mifr6")
+
+[node name="Balde" type="TextureButton" parent="ColorButtons"]
 layout_mode = 2
 
-[node name="Balde" type="Button" parent="ColorButtons"]
+[node name="Borracha" type="TextureButton" parent="ColorButtons"]
 layout_mode = 2
 
-[node name="Borracha" type="Button" parent="ColorButtons"]
+[node name="ColorPicker" type="ColorPickerButton" parent="ColorButtons"]
 layout_mode = 2
-
-[node name="ColorPicker" type="ColorPicker" parent="ColorButtons"]
-layout_mode = 2
-alignment = 1
 edit_alpha = false
-picker_shape = 2
-can_add_swatches = false
-sampler_visible = false
-color_modes_visible = false
-sliders_visible = false
-hex_visible = false
-presets_visible = false
 
 [node name="ControlButtons" type="HBoxContainer" parent="."]
 visible = false
@@ -117,3 +120,4 @@ layout_mode = 2
 [connection signal="pressed" from="ColorButtons/Pincel" to="." method="_on_pincel_pressed"]
 [connection signal="pressed" from="ColorButtons/Balde" to="." method="_on_balde_pressed"]
 [connection signal="pressed" from="ColorButtons/Borracha" to="." method="_on_borracha_pressed"]
+[connection signal="color_changed" from="ColorButtons/ColorPicker" to="." method="_on_color_picker_color_changed"]
