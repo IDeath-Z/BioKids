@@ -35,11 +35,11 @@ func _on_botao_voltar_pressed() -> void:
 	saindo_tela = true
 	animacao_jogos.play_backwards("fade_out")
 
-func _on_animacao_jogos_animation_started(anim_name: StringName) -> void:
+func _on_animacao_jogos_animation_started() -> void:
 	await get_tree().create_timer(0.1).timeout
 	textura_jogos.visible = true
 	
-func _on_animacao_jogos_animation_finished(anim_name: StringName) -> void:
+func _on_animacao_jogos_animation_finished() -> void:
 	
 	if saindo_tela == true:
 		get_tree().change_scene_to_file("res://telas/interface/inicio/tela_inicial.tscn")

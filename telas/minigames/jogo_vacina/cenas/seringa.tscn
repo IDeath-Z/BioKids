@@ -121,6 +121,7 @@ scale = Vector2(0.101, 0.1)
 texture = ExtResource("2_a7v8i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="seringa"]
+visible = false
 position = Vector2(348, 499)
 rotation = -1.11177
 shape = SubResource("CapsuleShape2D_paeca")
