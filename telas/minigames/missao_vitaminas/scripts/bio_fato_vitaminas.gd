@@ -28,8 +28,6 @@ func _ready() -> void:
 	
 	# Configura o autowrap e define o tamanho e posição
 	fact_label.autowrap_mode = TextServer.AUTOWRAP_WORD  # Quebra por palavra
-	fact_label.size = Vector2(485, 130)  # Define o tamanho exato de 485x130
-	fact_label.position = Vector2(115, 525)  # Posição base
 	
 	# Alinha o texto ao centro horizontal e vertical dinâmico
 	fact_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER  # Centraliza horizontalmente

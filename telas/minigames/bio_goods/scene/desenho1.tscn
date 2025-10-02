@@ -26,15 +26,15 @@ scroll_offset = Vector2(-1, -1)
 [node name="BG_Fundo" type="TextureRect" parent="BG"]
 offset_left = -8.0
 offset_top = 1.0
-offset_right = 832.58746
+offset_right = 832.587
 offset_bottom = 1721.0
-scale = Vector2(0.882716, 0.63025403)
+scale = Vector2(0.882716, 0.630254)
 texture = ExtResource("1_0ko8k")
 stretch_mode = 3
 
 [node name="BG_Moldura" type="Sprite2D" parent="BG"]
-position = Vector2(362, 489.00003)
-scale = Vector2(5.4843745, 5.546874)
+position = Vector2(362, 489)
+scale = Vector2(5.48437, 5.54687)
 texture = ExtResource("2_jrq7g")
 
 [node name="Desenho" type="TextureRect" parent="."]
