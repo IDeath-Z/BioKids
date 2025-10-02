@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cisnac45ahktu"]
+[gd_scene load_steps=18 format=3 uid="uid://cisnac45ahktu"]
 
 [ext_resource type="Script" uid="uid://biwy7sv1gssh4" path="res://telas/minigames/bio_goods/scripts/control_drawing1.gd" id="1_0gn57"]
 [ext_resource type="Texture2D" uid="uid://cf3c123jfevlx" path="res://telas/minigames/bio_goods/sprites/[AR] Hospital Assets - FREE/4. Samples/backgorund_2.png" id="1_0ko8k"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bohb3c1d211d4" path="res://telas/minigames/bio_goods/sprites/icones/redo-arrow.png" id="8_s0y3f"]
 [ext_resource type="Texture2D" uid="uid://yve3l1t3iotm" path="res://telas/minigames/bio_goods/sprites/icones/bin.png" id="9_pg7lq"]
 [ext_resource type="Texture2D" uid="uid://cngkfn20ku15u" path="res://telas/minigames/bio_goods/sprites/icones/color picker icon.png" id="9_q5f0i"]
+[ext_resource type="Texture2D" uid="uid://4jo02rhgvuc1" path="res://telas/minigames/bio_goods/sprites/icones/pincel hover.png" id="11_pj7v1"]
+[ext_resource type="Texture2D" uid="uid://c7yjsas4e0aq8" path="res://telas/minigames/bio_goods/sprites/icones/pincel selected.png" id="11_s0y3f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mifr6"]
 
@@ -27,8 +29,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0gn57")
-picker_path = NodePath("ColorIcon (TxTButton)/ColorPicker (Base)")
-picker_icon_path = NodePath("ColorIcon (TxTButton)")
 
 [node name="BG" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-1, -1)
@@ -97,13 +97,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -296.0
+offset_left = -271.0
 offset_top = 19.0
-offset_right = 3552.0
+offset_right = 3277.0
 offset_bottom = 531.0
 grow_horizontal = 2
 scale = Vector2(0.15, 0.15)
-theme_override_constants/separation = 600
+theme_override_constants/separation = 500
 
 [node name="Voltar_selecao" type="TextureButton" parent="ControlButtons"]
 layout_mode = 2
@@ -136,6 +136,8 @@ offset_bottom = 530.0
 scale = Vector2(0.2, 0.2)
 size_flags_horizontal = 4
 texture_normal = ExtResource("6_mifr6")
+texture_pressed = ExtResource("11_s0y3f")
+texture_hover = ExtResource("11_pj7v1")
 stretch_mode = 0
 
 [node name="Balde" type="TextureButton" parent="."]
@@ -183,8 +185,6 @@ grow_vertical = 2
 icon_alignment = 1
 edit_alpha = false
 
-[connection signal="pressed" from="ControlButtons/Voltar_selecao" to="." method="_on_voltar_selecao_pressed"]
-[connection signal="pressed" from="ControlButtons/Apagar_tudo" to="." method="_on_apagar_tudo_pressed"]
 [connection signal="pressed" from="Pincel" to="." method="_on_pincel_pressed"]
 [connection signal="pressed" from="Balde" to="." method="_on_balde_pressed"]
 [connection signal="pressed" from="Borracha" to="." method="_on_borracha_pressed"]

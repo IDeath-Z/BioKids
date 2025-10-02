@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d383bmculclw0"]
+[gd_scene load_steps=9 format=3 uid="uid://d383bmculclw0"]
 
 [ext_resource type="Texture2D" uid="uid://cf3c123jfevlx" path="res://telas/minigames/bio_goods/sprites/[AR] Hospital Assets - FREE/4. Samples/backgorund_2.png" id="1_lb5je"]
+[ext_resource type="Script" uid="uid://c1slgi7yipkei" path="res://telas/minigames/bio_goods/scripts/selecionar_quadro.gd" id="1_oepp8"]
 [ext_resource type="Texture2D" uid="uid://qhifus87cbnc" path="res://telas/minigames/bio_goods/sprites/Teste sprites Ursos/hello sprite.png" id="1_wphou"]
 [ext_resource type="Texture2D" uid="uid://c1j458w8m41af" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/a59c1b75-83a4-4948-bb76-db78dba4d575.png" id="3_e636p"]
 [ext_resource type="Texture2D" uid="uid://do2dvg12lyfdx" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_11-128x128.png" id="4_e636p"]
@@ -11,6 +12,7 @@
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_oepp8")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 
@@ -63,7 +65,7 @@ Escolha por onde iniciar."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="MolduraQuadro1" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 95.0
@@ -76,10 +78,15 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="desenho1_consultorio" type="TouchScreenButton" parent="NinePatchRect"]
-position = Vector2(11, 11.000002)
+[node name="desenho1_consultorio" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 106.0
+offset_right = 1059.0
+offset_bottom = 1138.0
 scale = Vector2(0.17968749, 0.16276623)
-texture_normal = ExtResource("5_gjtai")
+action_mode = 0
+icon = ExtResource("5_gjtai")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -115,3 +122,5 @@ patch_margin_bottom = 8
 position = Vector2(11, 11.000002)
 scale = Vector2(0.17968749, 0.16276623)
 texture_normal = ExtResource("7_gjtai")
+
+[connection signal="pressed" from="desenho1_consultorio" to="." method="_on_desenho_1_consultorio_pressed"]

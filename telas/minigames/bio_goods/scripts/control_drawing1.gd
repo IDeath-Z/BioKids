@@ -174,3 +174,14 @@ func _on_texture_button_pressed():
 	if popup:
 		popup.popup_centered()
 		popup.grab_focus()
+
+
+func _on_voltar_selecao_pressed() -> void:
+	get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/selecionar_quadro.tscn")
+	
+	# ==== Apagar Tudo ====
+func _on_apagar_tudo_pressed():
+	# recria a imagem transparente
+	img.fill(Color(0, 0, 0, 0))
+	tex.update(img)
+	print("Tudo apagado!")

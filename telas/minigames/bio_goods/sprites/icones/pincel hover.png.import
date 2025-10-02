@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsrmqx2518s1j"
-path="res://.godot/imported/FundoInfooo.png-39f563cd5ccb3c32c2fe1df47e6fe3c4.ctex"
+uid="uid://4jo02rhgvuc1"
+path="res://.godot/imported/pincel hover.png-970b3fa75840a3699a56d61563cbac49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/missao_vitaminas/Imagens/backgrounds/FundoInfooo.png"
-dest_files=["res://.godot/imported/FundoInfooo.png-39f563cd5ccb3c32c2fe1df47e6fe3c4.ctex"]
+source_file="res://telas/minigames/bio_goods/sprites/icones/pincel hover.png"
+dest_files=["res://.godot/imported/pincel hover.png-970b3fa75840a3699a56d61563cbac49.ctex"]
 
 [params]
 
