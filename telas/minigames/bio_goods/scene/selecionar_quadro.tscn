@@ -17,15 +17,15 @@ script = ExtResource("1_oepp8")
 [node name="Parallax2D" type="Parallax2D" parent="."]
 
 [node name="BG" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(-355.83014, -445.32623)
-scale = Vector2(0.8901239, 0.62267464)
+position = Vector2(-355.83, -445.326)
+scale = Vector2(0.890124, 0.622675)
 texture = ExtResource("1_lb5je")
 centered = false
 offset = Vector2(402, 720)
 
 [node name="BEAR" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(347.00003, 915.99994)
-scale = Vector2(0.35924152, 0.36389345)
+position = Vector2(347, 916)
+scale = Vector2(0.359242, 0.363893)
 texture = ExtResource("1_wphou")
 
 [node name="UIROOT" type="Control" parent="."]
@@ -50,9 +50,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -359.0
-offset_top = -132.99998
+offset_top = -133.0
 offset_right = 341.0
-offset_bottom = 86.520004
+offset_bottom = 86.52
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/shadow_offset_x = 0
@@ -69,7 +69,7 @@ autowrap_mode = 2
 layout_mode = 0
 offset_left = 16.0
 offset_top = 95.0
-offset_right = 221.90475
+offset_right = 221.905
 offset_bottom = 283.0
 texture = ExtResource("4_e636p")
 region_rect = Rect2(0, 0, 128, 128)
@@ -84,7 +84,7 @@ offset_left = 27.0
 offset_top = 106.0
 offset_right = 1059.0
 offset_bottom = 1138.0
-scale = Vector2(0.17968749, 0.16276623)
+scale = Vector2(0.179687, 0.162766)
 action_mode = 0
 icon = ExtResource("5_gjtai")
 
@@ -92,7 +92,7 @@ icon = ExtResource("5_gjtai")
 layout_mode = 0
 offset_left = 258.0
 offset_top = 95.0
-offset_right = 463.90475
+offset_right = 463.905
 offset_bottom = 283.0
 texture = ExtResource("4_e636p")
 region_rect = Rect2(0, 0, 128, 128)
@@ -102,14 +102,14 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 
 [node name="desenho2_" type="TouchScreenButton" parent="NinePatchRect2"]
-position = Vector2(11, 11.000002)
-scale = Vector2(0.17968749, 0.16276623)
+position = Vector2(11, 11)
+scale = Vector2(0.179687, 0.162766)
 texture_normal = ExtResource("3_e636p")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="NinePatchRect2"]
 layout_mode = 0
 offset_left = 242.0
-offset_right = 447.90475
+offset_right = 447.905
 offset_bottom = 188.0
 texture = ExtResource("4_e636p")
 region_rect = Rect2(0, 0, 128, 128)
@@ -119,8 +119,8 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="NinePatchRect2/NinePatchRect2"]
-position = Vector2(11, 11.000002)
-scale = Vector2(0.17968749, 0.16276623)
+position = Vector2(11, 11)
+scale = Vector2(0.179687, 0.162766)
 texture_normal = ExtResource("7_gjtai")
 
 [connection signal="pressed" from="desenho1_consultorio" to="." method="_on_desenho_1_consultorio_pressed"]

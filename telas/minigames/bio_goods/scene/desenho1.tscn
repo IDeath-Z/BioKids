@@ -30,17 +30,25 @@ script = ExtResource("1_0gn57")
 picker_path = NodePath("ColorIcon (TxTButton)/ColorPicker (Base)")
 picker_icon_path = NodePath("ColorIcon (TxTButton)")
 
-[node name="BG" type="Parallax2D" parent="."]
-scroll_offset = Vector2(-1, -1)
-
-[node name="BG_Fundo" type="TextureRect" parent="BG"]
-offset_left = -8.0
-offset_top = 1.0
-offset_right = 832.587
-offset_bottom = 1721.0
+[node name="BG_Fundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0115
+anchor_top = -0.0111111
+anchor_right = 1.03039
+anchor_bottom = 1.02622
+offset_left = 0.28
+offset_right = 96.1199
+offset_bottom = 635.68
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.882716, 0.630254)
 texture = ExtResource("1_0ko8k")
-stretch_mode = 3
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BG" type="Parallax2D" parent="."]
+scroll_offset = Vector2(-1, -1)
 
 [node name="BG_Moldura" type="Sprite2D" parent="BG"]
 position = Vector2(362, 489)
@@ -50,13 +58,15 @@ texture = ExtResource("2_jrq7g")
 [node name="Desenho" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_mifr6")
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 153.0
-offset_right = -19.0
-offset_bottom = -255.0
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.142
+anchor_right = 0.974
+anchor_bottom = 0.764
+offset_left = 0.24
+offset_top = -0.360001
+offset_right = -0.280029
+offset_bottom = -0.120056
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_g8e2o")
@@ -65,32 +75,19 @@ expand_mode = 1
 [node name="ColorLayer" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_rco25")
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -336.0
-offset_top = -387.0
-offset_right = 341.0
-offset_bottom = 285.0
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.142
+anchor_right = 0.974
+anchor_bottom = 0.764
+offset_left = 0.24
+offset_top = -0.360001
+offset_right = -0.280029
+offset_bottom = -0.120056
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
-
-[node name="ColorButtons" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -185.0
-offset_right = -3.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="ControlButtons" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -125,14 +122,14 @@ texture_normal = ExtResource("9_pg7lq")
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.02638889
-anchor_top = 0.837037
-anchor_right = 0.02638889
-anchor_bottom = 0.837037
-offset_left = 18.0
-offset_top = 18.0
-offset_right = 530.0
-offset_bottom = 530.0
+anchor_left = 0.051
+anchor_top = 0.854
+anchor_right = 0.194
+anchor_bottom = 0.949
+offset_left = 0.279999
+offset_top = -0.320007
+offset_right = 409.32
+offset_bottom = 409.08
 scale = Vector2(0.2, 0.2)
 size_flags_horizontal = 4
 texture_normal = ExtResource("6_mifr6")
@@ -140,29 +137,43 @@ stretch_mode = 0
 
 [node name="Balde" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(1, 1)
-layout_mode = 0
-offset_left = 203.0
-offset_top = 915.0
-offset_right = 403.0
-offset_bottom = 1115.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.282
+anchor_top = 0.847
+anchor_right = 0.435
+anchor_bottom = 0.949
+offset_left = -0.0400085
+offset_top = 0.239929
+offset_right = 89.8
+offset_bottom = 90.08
 scale = Vector2(0.55, 0.55)
 texture_normal = ExtResource("7_rco25")
 
 [node name="Borracha" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 387.0
-offset_top = 918.0
-offset_right = 899.0
-offset_bottom = 1468.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.537
+anchor_top = 0.85
+anchor_right = 0.68
+anchor_bottom = 0.952
+offset_left = 0.359985
+offset_right = 409.4
+offset_bottom = 439.84
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("8_68jic")
 
 [node name="ColorIcon (TxTButton)" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 559.0
-offset_top = 923.0
-offset_right = 759.0
-offset_bottom = 1123.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.776
+anchor_top = 0.855
+anchor_right = 0.915
+anchor_bottom = 0.947
+offset_left = 0.279968
+offset_top = -0.400024
+offset_right = 100.2
+offset_bottom = 100.24
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("9_q5f0i")
 
