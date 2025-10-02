@@ -13,7 +13,7 @@ tracks/0/path = NodePath("../InfoButton:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -57,6 +57,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.68207, 0.760426, 0.853882, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_wf1ug"]
 resource_name = "StartButton_FadeIn_03"
@@ -67,7 +79,7 @@ tracks/0/path = NodePath("../StartButton:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -82,7 +94,7 @@ tracks/0/path = NodePath("../VoltarButton:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -90,6 +102,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_erwet"]
 resource_name = "new_animation"
+length = 3.2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -97,10 +111,10 @@ tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.71, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.1, 2.3, 2.5, 2.7, 2.9, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.287749, 0.565721, 0.677214, 1), Color(0.639216, 0.788235, 0.760784, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.287749, 0.565721, 0.677214, 1), Color(0.639216, 0.788235, 0.760784, 1), Color(0.68207, 0.760426, 0.853882, 1), Color(0.703837, 0.745568, 0.894991, 1), Color(0.752329, 0.719816, 0.930918, 1), Color(0.876765, 0.684359, 0.808799, 1), Color(0.933259, 0.673381, 0.68161, 1), Color(0.927128, 0.68892, 0.590441, 1), Color(0.930211, 0.706924, 0.368643, 1), Color(0.766731, 0.781736, 0.370623, 1), Color(0.592869, 0.832541, 0.433693, 1), Color(0.414474, 0.855767, 0.607313, 1), Color(0.247676, 0.861239, 0.747607, 1), Color(0.238561, 0.843553, 0.885025, 1), Color(0.286275, 0.564706, 0.678431, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -109,7 +123,7 @@ tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -126,7 +140,11 @@ _data = {
 
 [node name="Main" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 offset = Vector2(1, 0)
@@ -157,20 +175,21 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="MenuLayer/ColorRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -157.5
-offset_top = -259.0
-offset_right = 157.5
-offset_bottom = -238.0
+anchors_preset = -1
+anchor_left = 0.0916667
+anchor_top = 0.252315
+anchor_right = 0.908333
+anchor_bottom = 0.2875
+offset_left = 136.5
+offset_top = 8.5
+offset_right = -136.5
+offset_bottom = -8.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_6vjea")
 theme_override_font_sizes/font_size = 30
 text = "Vista o Ursinho para o Laboratório"
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="MenuLayer"]
 anchors_preset = 15
@@ -178,6 +197,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.68207, 0.760426, 0.853882, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MenuLayer/ColorRect2"]
 libraries = {
@@ -188,10 +208,13 @@ speed_scale = 0.302
 
 [node name="StartButton" type="Button" parent="MenuLayer"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 180.0
-offset_top = 400.0
-offset_right = 480.0
-offset_bottom = 500.0
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.37037
+anchor_right = 0.75
+anchor_bottom = 0.481481
+offset_right = -60.0
+offset_bottom = -20.0
 scale = Vector2(1.2, 1.2)
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -200,6 +223,7 @@ theme_override_fonts/font = ExtResource("3_6vjea")
 theme_override_font_sizes/font_size = 45
 text = "INCIAR"
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="MenuLayer/StartButton"]
 root_node = NodePath("../../ColorRect2")
@@ -211,16 +235,20 @@ speed_scale = 0.302
 
 [node name="VoltarButton" type="Button" parent="MenuLayer"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 180.0
-offset_top = 740.0
-offset_right = 480.0
-offset_bottom = 840.0
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.685185
+anchor_right = 0.75
+anchor_bottom = 0.796296
+offset_right = -60.0
+offset_bottom = -20.0
 scale = Vector2(1.2, 1.2)
 size_flags_vertical = 4
 theme = ExtResource("1_deqe1")
 theme_override_fonts/font = ExtResource("3_6vjea")
 theme_override_font_sizes/font_size = 45
 text = "Voltar"
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="MenuLayer/VoltarButton"]
 root_node = NodePath("../../ColorRect2")
@@ -232,10 +260,13 @@ speed_scale = 0.302
 
 [node name="InfoButton" type="Button" parent="MenuLayer"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 180.0
-offset_top = 570.0
-offset_right = 480.0
-offset_bottom = 670.0
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.527778
+anchor_right = 0.75
+anchor_bottom = 0.638889
+offset_right = -60.0
+offset_bottom = -20.0
 scale = Vector2(1.2, 1.2)
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -243,6 +274,7 @@ theme = ExtResource("1_deqe1")
 theme_override_fonts/font = ExtResource("3_6vjea")
 theme_override_font_sizes/font_size = 45
 text = "Como Jogar"
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer4" type="AnimationPlayer" parent="MenuLayer/InfoButton"]
 root_node = NodePath("../../ColorRect2")

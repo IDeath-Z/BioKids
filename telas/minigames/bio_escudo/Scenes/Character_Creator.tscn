@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dfr2pcw7l4goo"]
+[gd_scene load_steps=28 format=3 uid="uid://dfr2pcw7l4goo"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_rl6uu"]
 [ext_resource type="Script" uid="uid://cro5dfjqd54no" path="res://telas/minigames/bio_escudo/Scripts/fur.gd" id="2_m8jyd"]
@@ -30,62 +30,44 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m8jyd"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yiodc"]
-
-[sub_resource type="GDScript" id="GDScript_m8jyd"]
-script/source = "extends TextureRect
-
-@export var category: String = \"\"  # Ex: \"hair\", \"outfit\", \"body\", \"accessory\"
-@export var key: String = \"\"  # Chave do item, ex: \"01\"
-
-func _get_drag_data(_at_position: Vector2) -> Variant:
-	if texture == null:
-		return null
-	
-	# Cria preview visual para seguir o dedo/mouse
-	var preview = TextureRect.new()
-	preview.texture = texture
-	preview.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
-	preview.size = size * 0.5  # Preview menor
-	set_drag_preview(preview)
-	
-	# Dados arrastados: categoria, key e textura
-	return {\"category\": category, \"key\": key, \"texture\": texture}
-
-func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
-	return false  # Este nó não aceita drops"
-
 [node name="CharacterCreator" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_rl6uu")
 script = SubResource("GDScript_s36mj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -780.0
-offset_top = -1075.0
-offset_right = 1673.0
-offset_bottom = 1084.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("9_s36mj")
 stretch_mode = 5
 
-[node name="Camera2D" type="Camera2D" parent="TextureRect"]
-position = Vector2(1233, 1331)
-scale = Vector2(2.18749, 2.4596)
-zoom = Vector2(0.6, 0.65)
-
 [node name="skeleton" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 462.0
-offset_top = 507.0
-offset_right = 462.0
-offset_bottom = 507.0
-scale = Vector2(2.18749, 2.4596)
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.709259
+anchor_right = 0.5
+anchor_bottom = 0.709259
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.18749, 1.2996)
+metadata/_edit_use_anchors_ = true
 
 [node name="Fur" type="Control" parent="skeleton"]
+layout_mode = 1
 anchors_preset = 0
+grow_horizontal = 2
+grow_vertical = 0
 script = ExtResource("2_m8jyd")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="skeleton/Fur"]
 scale = Vector2(1.0086, 1.00483)
@@ -96,6 +78,7 @@ vframes = 2
 [node name="Outfit2" type="Control" parent="skeleton"]
 anchors_preset = 0
 script = ExtResource("4_yiodc")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="skeleton/Outfit2"]
 texture = SubResource("CompressedTexture2D_m8jyd")
@@ -105,6 +88,7 @@ vframes = 2
 [node name="Pants" type="Control" parent="skeleton"]
 anchors_preset = 0
 script = ExtResource("6_e0whd")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="skeleton/Pants"]
 scale = Vector2(1.03657, 1)
@@ -115,6 +99,7 @@ vframes = 2
 [node name="accessory" type="Control" parent="skeleton"]
 anchors_preset = 0
 script = ExtResource("8_f5n3g")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="skeleton/accessory"]
 position = Vector2(29.7144, -33.7453)
@@ -125,103 +110,111 @@ region_rect = Rect2(10, 10, 10, 10)
 [node name="CreatorScreen" type="CanvasLayer" parent="."]
 
 [node name="Fur_Color" type="TextureButton" parent="CreatorScreen"]
-offset_left = 554.0
-offset_top = 220.0
-offset_right = 1088.0
-offset_bottom = 772.0
+anchors_preset = -1
+anchor_left = 0.769444
+anchor_top = 0.203704
+anchor_right = 0.875296
+anchor_bottom = 0.387208
+offset_right = 457.787
+offset_bottom = 353.815
 rotation = 0.404997
 scale = Vector2(0.277408, 0.275585)
 texture_normal = ExtResource("9_dvuka")
 texture_pressed = ExtResource("10_0wdj4")
 texture_hover = ExtResource("11_5ekef")
+metadata/_edit_use_anchors_ = true
 
 [node name="ChangePantsButton" type="TextureButton" parent="CreatorScreen"]
-offset_left = 7.0
-offset_top = 231.0
-offset_right = 665.0
-offset_bottom = 759.0
+anchors_preset = -1
+anchor_left = 0.00972222
+anchor_top = 0.213889
+anchor_right = 0.26561
+anchor_bottom = 0.370333
+offset_right = 473.761
+offset_bottom = 359.041
 scale = Vector2(0.279999, 0.319999)
 texture_normal = ExtResource("10_08kba")
 texture_pressed = ExtResource("11_rjla7")
 texture_hover = ExtResource("12_dvuka")
+metadata/_edit_use_anchors_ = true
 
 [node name="PantsColorButton" type="TextureButton" parent="CreatorScreen/ChangePantsButton"]
 layout_mode = 0
-offset_left = 55.0
-offset_top = 361.0
-offset_right = 636.0
-offset_bottom = 763.0
+anchor_left = 0.0835866
+anchor_top = 0.683712
+anchor_right = 0.966565
+anchor_bottom = 1.44508
 texture_normal = ExtResource("10_yiodc")
 texture_pressed = ExtResource("11_yiodc")
+metadata/_edit_use_anchors_ = true
 
 [node name="ChangeShirtButton" type="TextureButton" parent="CreatorScreen"]
-offset_left = 34.0
-offset_top = -2.0
-offset_right = 662.0
-offset_bottom = 429.0
+anchors_preset = -1
+anchor_left = 0.0472222
+anchor_top = -0.00185185
+anchor_right = 0.39886
+anchor_bottom = 0.203386
+offset_right = 374.821
+offset_bottom = 209.343
 scale = Vector2(0.403152, 0.514285)
 texture_normal = ExtResource("9_m8jyd")
 texture_pressed = ExtResource("10_bgq41")
+metadata/_edit_use_anchors_ = true
 
 [node name="ShirtColorButton" type="TextureButton" parent="CreatorScreen/ChangeShirtButton"]
 layout_mode = 0
-offset_left = -68.8415
-offset_top = 206.111
-offset_right = 559.158
-offset_bottom = 870.111
+anchor_left = -0.10962
+anchor_top = 0.478216
+anchor_right = 0.455595
+anchor_bottom = 1.1957
+offset_right = 273.044
+offset_bottom = 354.766
 scale = Vector2(0.565216, 0.465714)
 texture_normal = ExtResource("10_yiodc")
 texture_pressed = ExtResource("11_yiodc")
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="ChangeAccesButton" type="TextureButton" parent="CreatorScreen"]
-offset_left = 508.0
-offset_top = -12.9999
-offset_right = 988.0
-offset_bottom = 374.0
+anchors_preset = -1
+anchor_left = 0.705556
+anchor_top = -0.0120369
+anchor_right = 1.01592
+anchor_bottom = 0.201782
+offset_right = 256.535
+offset_bottom = 156.075
 scale = Vector2(0.465553, 0.596705)
 texture_normal = ExtResource("10_5xme0")
 texture_pressed = ExtResource("11_bgq41")
+metadata/_edit_use_anchors_ = true
 
 [node name="AccesColorButton" type="TextureButton" parent="CreatorScreen/ChangeAccesButton"]
 layout_mode = 0
-offset_left = -51.5516
-offset_top = 239.649
-offset_right = 411.448
-offset_bottom = 633.649
+anchor_left = -0.107399
+anchor_top = 0.619248
+anchor_right = 0.479737
+anchor_bottom = 1.09339
+offset_right = 181.174
+offset_bottom = 210.509
 scale = Vector2(0.608695, 0.465714)
 texture_normal = ExtResource("10_yiodc")
 texture_pressed = ExtResource("11_yiodc")
+metadata/_edit_use_anchors_ = true
 
 [node name="finishedButton" type="TextureButton" parent="CreatorScreen"]
-offset_left = 519.0
-offset_top = 795.0
-offset_right = 967.0
-offset_bottom = 1262.0
+anchors_preset = -1
+anchor_left = 0.720833
+anchor_top = 0.736111
+anchor_right = 0.994611
+anchor_bottom = 0.92637
+offset_right = 250.88
+offset_bottom = 261.52
 scale = Vector2(0.44, 0.44)
 texture_normal = ExtResource("21_guhsu")
 texture_pressed = ExtResource("22_63ikp")
 texture_hover = ExtResource("23_saf70")
 script = ExtResource("25_saf70")
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -760.0
-offset_top = -1072.0
-offset_right = 1240.0
-offset_bottom = 928.0
-texture = SubResource("CompressedTexture2D_yiodc")
-expand_mode = 1
-script = SubResource("GDScript_m8jyd")
-
-[node name="Panel" type="Panel" parent="TextureRect2"]
-show_behind_parent = true
-layout_mode = 0
-offset_left = 1.0
-offset_top = -2.0
-offset_right = 41.0
-offset_bottom = 38.0
-mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="CreatorScreen/Fur_Color" to="skeleton/Fur" method="_on_color_button_pressed"]
 [connection signal="pressed" from="CreatorScreen/ChangePantsButton" to="skeleton/Outfit2" method="_on_collection_button_pressed"]

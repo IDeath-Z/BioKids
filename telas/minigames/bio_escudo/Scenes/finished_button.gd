@@ -21,4 +21,4 @@ func _on_pressed():
 			# Iniciar um timer para esconder o sprite após 2 segundos
 			await get_tree().create_timer(2.0).timeout
 			erro_sprite.visible = false
-		print("Combinação errada!")
+		print("Equipamentos errados!")
