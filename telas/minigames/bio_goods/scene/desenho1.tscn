@@ -1,11 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://cisnac45ahktu"]
+[gd_scene load_steps=16 format=3 uid="uid://cisnac45ahktu"]
 
 [ext_resource type="Script" uid="uid://biwy7sv1gssh4" path="res://telas/minigames/bio_goods/scripts/control_drawing1.gd" id="1_0gn57"]
 [ext_resource type="Texture2D" uid="uid://cf3c123jfevlx" path="res://telas/minigames/bio_goods/sprites/[AR] Hospital Assets - FREE/4. Samples/backgorund_2.png" id="1_0ko8k"]
 [ext_resource type="Texture2D" uid="uid://curf5p2uk8sww" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_25-128x128.png" id="2_jrq7g"]
 [ext_resource type="Texture2D" uid="uid://bfw41yihqn2sr" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/cenario2.png" id="4_g8e2o"]
 [ext_resource type="Shader" uid="uid://cb6x1yvv1uq26" path="res://telas/minigames/bio_goods/scene/desenho1.gdshader" id="5_g8e2o"]
+[ext_resource type="Texture2D" uid="uid://20qux7gs1gby" path="res://telas/minigames/bio_goods/sprites/icones/back arrown.png" id="6_chrmv"]
 [ext_resource type="Texture2D" uid="uid://c4pjsrwfn2yde" path="res://telas/minigames/bio_goods/sprites/icones/pincel.png" id="6_mifr6"]
+[ext_resource type="Texture2D" uid="uid://bk8b4wqf12v5r" path="res://telas/minigames/bio_goods/sprites/icones/save icon.png" id="7_pj7v1"]
+[ext_resource type="Texture2D" uid="uid://btvama1at1dhm" path="res://telas/minigames/bio_goods/sprites/icones/black-bucket-icon-download-1.png" id="7_rco25"]
+[ext_resource type="Texture2D" uid="uid://d3hk2csv76e28" path="res://telas/minigames/bio_goods/sprites/icones/eraser.png" id="8_68jic"]
+[ext_resource type="Texture2D" uid="uid://bohb3c1d211d4" path="res://telas/minigames/bio_goods/sprites/icones/redo-arrow.png" id="8_s0y3f"]
+[ext_resource type="Texture2D" uid="uid://yve3l1t3iotm" path="res://telas/minigames/bio_goods/sprites/icones/bin.png" id="9_pg7lq"]
+[ext_resource type="Texture2D" uid="uid://cngkfn20ku15u" path="res://telas/minigames/bio_goods/sprites/icones/color picker icon.png" id="9_q5f0i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mifr6"]
 
@@ -20,6 +27,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0gn57")
+picker_path = NodePath("ColorIcon (TxTButton)/ColorPicker (Base)")
+picker_icon_path = NodePath("ColorIcon (TxTButton)")
 
 [node name="BG" type="Parallax2D" parent="."]
 scroll_offset = Vector2(-1, -1)
@@ -70,54 +79,112 @@ grow_vertical = 2
 expand_mode = 1
 
 [node name="ColorButtons" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -293.0
-offset_top = -483.0
-offset_right = 239.0
-offset_bottom = 29.0
+offset_left = 5.0
+offset_top = -185.0
+offset_right = -3.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Pincel" type="TextureButton" parent="ColorButtons"]
-custom_minimum_size = Vector2(64, 64)
+[node name="ControlButtons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -271.0
+offset_top = 19.0
+offset_right = 3277.0
+offset_bottom = 531.0
+grow_horizontal = 2
+scale = Vector2(0.15, 0.15)
+theme_override_constants/separation = 500
+
+[node name="Voltar_selecao" type="TextureButton" parent="ControlButtons"]
 layout_mode = 2
+texture_normal = ExtResource("6_chrmv")
+
+[node name="Salvar_desenho" type="TextureButton" parent="ControlButtons"]
+layout_mode = 2
+texture_normal = ExtResource("7_pj7v1")
+
+[node name="Avancar_desenho" type="TextureButton" parent="ControlButtons"]
+layout_mode = 2
+texture_normal = ExtResource("8_s0y3f")
+
+[node name="Apagar_tudo" type="TextureButton" parent="ControlButtons"]
+layout_mode = 2
+texture_normal = ExtResource("9_pg7lq")
+
+[node name="Pincel" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02638889
+anchor_top = 0.837037
+anchor_right = 0.02638889
+anchor_bottom = 0.837037
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 530.0
+offset_bottom = 530.0
+scale = Vector2(0.2, 0.2)
+size_flags_horizontal = 4
 texture_normal = ExtResource("6_mifr6")
+stretch_mode = 0
 
-[node name="Balde" type="TextureButton" parent="ColorButtons"]
-layout_mode = 2
+[node name="Balde" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 203.0
+offset_top = 915.0
+offset_right = 403.0
+offset_bottom = 1115.0
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("7_rco25")
 
-[node name="Borracha" type="TextureButton" parent="ColorButtons"]
-layout_mode = 2
+[node name="Borracha" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 918.0
+offset_right = 899.0
+offset_bottom = 1468.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("8_68jic")
 
-[node name="ColorPicker" type="ColorPickerButton" parent="ColorButtons"]
-layout_mode = 2
+[node name="ColorIcon (TxTButton)" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 923.0
+offset_right = 759.0
+offset_bottom = 1123.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("9_q5f0i")
+
+[node name="ColorPicker (Base)" type="ColorPickerButton" parent="ColorIcon (TxTButton)"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -490.0
+offset_right = 4.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+icon_alignment = 1
 edit_alpha = false
 
-[node name="ControlButtons" type="HBoxContainer" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Salvar_desenho" type="Button" parent="ControlButtons"]
-layout_mode = 2
-
-[node name="Voltar_selecao" type="Button" parent="ControlButtons"]
-layout_mode = 2
-
-[node name="Avancar_desenho" type="Button" parent="ControlButtons"]
-layout_mode = 2
-
-[node name="Apagar_tudo" type="Button" parent="ControlButtons"]
-layout_mode = 2
-
-[connection signal="pressed" from="ColorButtons/Pincel" to="." method="_on_pincel_pressed"]
-[connection signal="pressed" from="ColorButtons/Balde" to="." method="_on_balde_pressed"]
-[connection signal="pressed" from="ColorButtons/Borracha" to="." method="_on_borracha_pressed"]
-[connection signal="color_changed" from="ColorButtons/ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="pressed" from="Pincel" to="." method="_on_pincel_pressed"]
+[connection signal="pressed" from="Balde" to="." method="_on_balde_pressed"]
+[connection signal="pressed" from="Borracha" to="." method="_on_borracha_pressed"]
+[connection signal="pressed" from="ColorIcon (TxTButton)" to="." method="_on_texture_button_pressed"]
+[connection signal="color_changed" from="ColorIcon (TxTButton)/ColorPicker (Base)" to="." method="_on_color_picker_color_changed"]

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://do2dvg12lyfdx" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_11-128x128.png" id="4_e636p"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="4_lb5je"]
 [ext_resource type="Texture2D" uid="uid://bfw41yihqn2sr" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/cenario2.png" id="5_gjtai"]
-[ext_resource type="Texture2D" uid="uid://cq0vuldnhtr8s" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/unnamed.png" id="7_oepp8"]
+[ext_resource type="Texture2D" uid="uid://dcflp5ducbitt" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/cenario3.png" id="7_gjtai"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -114,4 +114,4 @@ patch_margin_bottom = 8
 [node name="TouchScreenButton" type="TouchScreenButton" parent="NinePatchRect2/NinePatchRect2"]
 position = Vector2(11, 11.000002)
 scale = Vector2(0.17968749, 0.16276623)
-texture_normal = ExtResource("7_oepp8")
+texture_normal = ExtResource("7_gjtai")
