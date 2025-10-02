@@ -12,10 +12,7 @@ func _ready():
 	velocidade = Vector2(randf_range(-30, 30), randf_range(-20, 20))
 	input_event.connect(_on_input_event)
 	intervalo_multiplicacao = randf_range(5.0, 12.0)
-	print("Bactéria pronta. Tipo: ", tipo)  # Depuração
-	# Garante que o tipo seja definido antes de conectar sinais
-	if tipo == null:
-		tipo = Tipo.values()[randi() % Tipo.size()]  # Define um tipo aleatório se não definido
+	print("Bactéria pronta. Tipo: ", tipo)
 
 func _process(delta):
 	tempo_flutuacao += delta
@@ -42,17 +39,22 @@ func _process(delta):
 		velocidade.y = -abs(velocidade.y)
 
 	if tempo_multiplicacao >= intervalo_multiplicacao and not is_queued_for_deletion():
-		_on_multiply()
+		if get_parent().get_child_count() < 10:  # Limite de 10 bactérias
+			_on_multiply()
 		tempo_multiplicacao = 0.0
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if tipo != null:
 			print("Clique detectado. Tipo: ", tipo)
+			var anim = $AnimationPlayer  # Verifica o nó
+			if anim and is_instance_valid(anim):
+				anim.play("fade_out")
+				await anim.animation_finished
 			clicada.emit(tipo)
+			queue_free()  # Remove após a animação
 		else:
 			print("Erro: Tipo não definido!")
-		queue_free()
 
 func _on_multiply():
 	var nova_bact = preload("res://telas/minigames/caca_bacterias/scenes/Bacteria.tscn").instantiate()
@@ -72,7 +74,7 @@ func _on_multiply():
 	else:
 		print("Erro: Nó SpriteBact não encontrado na nova bactéria!")
 	get_parent().add_child(nova_bact)
-	var error = nova_bact.clicada.connect(func(t): get_parent().get_parent()._on_bact_clicada(t))
+	var error = nova_bact.clicada.connect(func(t): get_parent().get_parent()._on_bact_clicada(t, nova_bact))
 	if error == OK:
 		print("Sinal conectado na nova bactéria.")
 	else:
