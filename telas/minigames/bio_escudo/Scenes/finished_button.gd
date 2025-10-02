@@ -13,7 +13,7 @@ func _on_pressed():
 		GlobalBioEscudo.selected_pants == GlobalBioEscudo.calca_certa and 
 		GlobalBioEscudo.selected_accessory == GlobalBioEscudo.acessorio_certo):
 		# Combinação correta: redirecionar para a cena
-		get_tree().change_scene_to_file("res://telas/minigames/bio_escudo/Scenes/bioFato/bio_fato_EPIs.tscn")
+		get_tree().change_scene_to_file("res://telas/minigames/bio_escudo/Scenes/bioFato/bio_fato_bio_escudo.tscn")
 	else:
 		# Combinação errada: mostrar sprite de erro temporariamente
 		if erro_sprite:

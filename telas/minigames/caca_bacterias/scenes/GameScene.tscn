@@ -1,43 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnx04k2b4f22r"]
+[gd_scene load_steps=7 format=3 uid="uid://bnx04k2b4f22r"]
 
-[ext_resource type="Script" uid="uid://5pl4ull3trqv" path="res://telas/minigames/caca_bacterias/scenes/game_scene.gd" id="1_18ig4"]
-[ext_resource type="Texture2D" uid="uid://b4aneik8mfme3" path="res://telas/minigames/caca_bacterias/assets/images/Fundo LAB.png" id="1_xy3my"]
+[ext_resource type="Script" uid="uid://5pl4ull3trqv" path="res://telas/minigames/caca_bacterias/game_scene.gd" id="1_18ig4"]
+[ext_resource type="Texture2D" uid="uid://bhjgbmhvd8r0x" path="res://telas/minigames/caca_bacterias/assets/images/Fundo LABGame.png" id="2_4jdoc"]
 [ext_resource type="Texture2D" uid="uid://csmk84qrs0yqg" path="res://telas/minigames/caca_bacterias/assets/images/UrsoClique.png" id="3_4jdoc"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="4_4jdoc"]
+[ext_resource type="AudioStream" uid="uid://coq67k2ii0dh2" path="res://telas/minigames/caca_bacterias/assets/sounds/Walen - Gameboy (freetouse.com).mp3" id="4_6gxb4"]
+[ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="4_hc3ru"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_18ig4")
 
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6gxb4")
+volume_db = -10.097
+parameters/looping = true
+
 [node name="Sprite2D" type="TextureRect" parent="."]
-offset_left = -383.92004
-offset_top = -3.0517578e-05
-offset_right = 640.07996
-offset_bottom = 1013.09827
+offset_left = 1.9999962
+offset_top = 2.9999998
+offset_right = 722.0
+offset_bottom = 1083.0
 scale = Vector2(1.08, 1.0640625)
 size_flags_horizontal = 4
 size_flags_vertical = 3
-texture = ExtResource("1_xy3my")
+texture = ExtResource("2_4jdoc")
 
 [node name="Ursinho" type="Sprite2D" parent="."]
-position = Vector2(171, 934)
-scale = Vector2(0.36899585, 0.33101857)
+position = Vector2(175, 638)
+scale = Vector2(0.3386646, 0.29513893)
 texture = ExtResource("3_4jdoc")
 
 [node name="BacteriaContainer" type="Node2D" parent="."]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="GameOverPanel" type="Panel" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_left = 19.0
+offset_top = 148.0
+offset_right = 210.0
+offset_bottom = 187.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hc3ru")
+theme_override_font_sizes/font_size = 30
+text = "Pontuação: 0"
+
 [node name="InstrucaoLabel" type="Label" parent="UI"]
 anchors_preset = -1
 anchor_left = 0.029000001
 anchor_right = 0.96800005
 anchor_bottom = 0.119
-offset_left = 0.11999893
+offset_left = 5.119999
 offset_right = 0.039978027
 offset_bottom = -0.5200043
 grow_horizontal = 2
 theme = ExtResource("4_4jdoc")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hc3ru")
 theme_override_font_sizes/font_size = 40
 text = "\"\""
 horizontal_alignment = 1
@@ -56,6 +82,7 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_4jdoc")
+theme_override_fonts/font = ExtResource("4_hc3ru")
 text = "\"\""
 
 [node name="FatoLabel" type="Label" parent="UI"]
@@ -71,8 +98,40 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_4jdoc")
+theme_override_fonts/font = ExtResource("4_hc3ru")
 text = "\"\""
 vertical_alignment = 2
+
+[node name="JogarNovamente" type="Button" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.16700001
+anchor_top = 0.83100003
+anchor_right = 0.90000004
+anchor_bottom = 0.89400005
+offset_left = -0.2400055
+offset_top = -0.4800415
+offset_right = -11.0
+offset_bottom = 0.47991943
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_4jdoc")
+theme_override_fonts/font = ExtResource("4_hc3ru")
+text = "🔄 Jogar Novamente"
+
+[node name="VoltarMenu" type="Button" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.272
+anchor_top = 0.744
+anchor_right = 0.808
+anchor_bottom = 0.80700004
+offset_left = 0.1599884
+offset_top = -0.52001953
+offset_right = -6.76001
+offset_bottom = 0.4399414
+grow_vertical = 0
+theme = ExtResource("4_4jdoc")
+theme_override_fonts/font = ExtResource("4_hc3ru")
+text = "Voltar ao Menu"
 
 [node name="CheckIcon" type="TextureRect" parent="UI"]
 visible = false
@@ -115,35 +174,6 @@ theme = ExtResource("4_4jdoc")
 theme_override_font_sizes/font_size = 30
 text = "Ops! Bactéria Errada! ❌"
 horizontal_alignment = 3
-
-[node name="JogarNovamente" type="Button" parent="UI"]
-visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -212.0
-offset_top = -68.0
-offset_right = -43.0
-offset_bottom = -37.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("4_4jdoc")
-text = "🔄 Jogar Novamente"
-
-[node name="VoltarMenu" type="Button" parent="UI"]
-visible = false
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 700.0
-offset_top = -68.0
-offset_right = 827.0
-offset_bottom = -37.0
-grow_vertical = 0
-theme = ExtResource("4_4jdoc")
-text = "Voltar ao Menu"
 
 [node name="BacteriaSpawnTimer" type="Timer" parent="."]
 wait_time = 3.0
