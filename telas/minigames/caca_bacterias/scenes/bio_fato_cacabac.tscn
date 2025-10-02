@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b87x8w300blop"]
 
-[ext_resource type="Script" uid="uid://dhv5qhrqmghft" path="res://telas/minigames/jogo_vacina/cenas/bio_fato_vacina.gd" id="1_jcdq7"]
+[ext_resource type="Script" uid="uid://dhv5qhrqmghft" path="res://telas/minigames/jogo_vacina/scripts/bio_fato_vacina.gd" id="1_jcdq7"]
 [ext_resource type="PackedScene" uid="uid://c0nkhbv8diqwc" path="res://telas/interface/bioFato/bio_fato.tscn" id="2_g3xrj"]
 
 [node name="BioFato" type="Control"]
@@ -42,9 +42,9 @@ anchor_top = 0.526
 anchor_right = 0.801
 anchor_bottom = 0.695
 offset_left = 5.0
-offset_top = -18.080017
-offset_right = 8.279968
-offset_bottom = -17.600037
+offset_top = -18.08
+offset_right = 8.27997
+offset_bottom = -17.6
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.337255, 0.223529, 0.113725, 1)
