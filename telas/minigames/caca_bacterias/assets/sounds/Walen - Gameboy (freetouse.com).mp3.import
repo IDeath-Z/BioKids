@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://coq67k2ii0dh2"
+path="res://.godot/imported/Walen - Gameboy (freetouse.com).mp3-4ce214972f5af512ee9b95741a039e4d.mp3str"
+
+[deps]
+
+source_file="res://telas/minigames/caca_bacterias/assets/sounds/Walen - Gameboy (freetouse.com).mp3"
+dest_files=["res://.godot/imported/Walen - Gameboy (freetouse.com).mp3-4ce214972f5af512ee9b95741a039e4d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
