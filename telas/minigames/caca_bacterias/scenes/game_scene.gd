@@ -1,7 +1,7 @@
 extends Node2D
 
-enum Tipo {REDONDA = 0, BASTAO = 1, LISTRADA = 2, PINTINHAS = 3, VERDE = 4}
-var tipos_possiveis = ["redonda", "bastão", "listrada", "com pintinhas", "verde"]
+enum Tipo {LARANJA = 0, VERDE = 1, VERMELHA = 2, ROXA = 3, VERDEG = 4}
+var tipos_possiveis = ["laranja", "verde", "vermelha", "roxa", "maligna"]
 var missao_atual: Tipo
 var bacterias_restantes: int = 5  # Quantidade inicial por fase
 var acertos: int = 0
@@ -13,7 +13,6 @@ var fase: int = 0
 @onready var fato_label = $UI/FatoLabel
 @onready var check_icon = $UI/CheckIcon
 @onready var x_icon = $UI/XIcon
-@onready var ursinho = $Ursinho
 @onready var container = $BacteriaContainer
 @onready var spawn_timer = $BacteriaSpawnTimer  # Referência ao Timer
 
@@ -37,28 +36,33 @@ func proxima_fase():
 	spawn_timer.start()  # Inicia o timer para gerar bactérias
 
 func on_bacteria_spawn_timeout():
-	# Gera uma nova bactéria a cada timeout
 	var bact = preload("res://telas/minigames/caca_bacterias/scenes/Bacteria.tscn").instantiate()
-	# Posição aleatória dentro da tela com margens maiores
-	var viewport_size = get_viewport_rect().size
+	# Posição aleatória dentro de uma tela fixa de 720x1080 com margens maiores
+	var screen_width = 720
+	var screen_height = 1080
 	var margem = 150  # Margem maior para evitar bordas
 	bact.position = Vector2(
-		randf_range(margem, viewport_size.x - margem),
-		randf_range(margem, viewport_size.y - margem)
+		randf_range(margem, screen_width - margem),
+		randf_range(margem, screen_height - margem)
 	)
 	bact.tipo = Tipo.values()[randi() % Tipo.size()]
 	var texturas = {
-		Tipo.REDONDA: load("res://telas/minigames/caca_bacterias/assets/images/bacteriaazulfeliz.png"),
-		Tipo.BASTAO: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriaverdemaligna.png"),
-		Tipo.LISTRADA: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriavermelha.png"),
-		Tipo.PINTINHAS: load("res://telas/minigames/caca_bacterias/assets/images/bacteriaazulfeliz.png"),
-		Tipo.VERDE: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriaverdemaligna.png")
+		Tipo.LARANJA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaLaranja.png"),
+		Tipo.VERDE: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriaverdemaligna.png"),
+		Tipo.VERMELHA: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriavermelha.png"),
+		Tipo.ROXA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaROXA.png"),
+		Tipo.VERDEG: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaVERDE.png")
 	}
 	bact.get_node("SpriteBact").texture = texturas[bact.tipo]
 	container.add_child(bact)
-	bact.clicada.connect(_on_bact_clicada)
+	var error = bact.clicada.connect(_on_bact_clicada)
+	if error == OK:
+		print("Sinal 'clicada' conectado com sucesso para bactéria em: ", bact.position)
+	else:
+		print("Erro ao conectar sinal 'clicada': ", error)
 
 func _on_bact_clicada(tipo: Tipo):
+	print("Sinal recebido. Tipo: ", tipo, " | Missão: ", missao_atual)  # Depuração
 	if tipo == missao_atual:
 		acertos += 1
 		mensagem_label.text = mensagens_certas[randi() % mensagens_certas.size()]
@@ -77,7 +81,6 @@ func _on_bact_clicada(tipo: Tipo):
 		fato_label.text = fatos[randi() % fatos.size()]
 		$UI/JogarNovamente.visible = true
 		$UI/VoltarMenu.visible = true
-		ursinho.texture = load("res://telas/minigames/caca_bacterias/assets/images/Ursinho normal.png")
 		spawn_timer.stop()  # Para o timer ao completar a fase
 
 func limpar_tela():
@@ -89,7 +92,6 @@ func _on_jogar_novamente_pressed():
 	fato_label.text = ""
 	$UI/JogarNovamente.visible = false
 	$UI/VoltarMenu.visible = false
-	ursinho.texture = load("res://telas/minigames/caca_bacterias/assets/images/Ursinho normal.png")
 	proxima_fase()
 
 func _on_voltar_menu_pressed():

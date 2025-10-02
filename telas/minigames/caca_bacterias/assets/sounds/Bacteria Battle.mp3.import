@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c68yku4ulud0i"
+path="res://.godot/imported/Bacteria Battle.mp3-7382d7fe1c5f70a381702e46633f428c.mp3str"
+
+[deps]
+
+source_file="res://telas/minigames/caca_bacterias/assets/sounds/Bacteria Battle.mp3"
+dest_files=["res://.godot/imported/Bacteria Battle.mp3-7382d7fe1c5f70a381702e46633f428c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

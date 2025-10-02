@@ -6,7 +6,7 @@ var brush_size: int = 8
 
 @onready var color_layer: TextureRect = $ColorLayer
 @onready var desenho_node: TextureRect = $Desenho
-@onready var picker: ColorPicker = $ColorButtons/ColorPicker  # ajuste se o caminho for diferente
+@onready var picker: ColorPicker = $ColorButtons/ColorPicker
 var img: Image
 var tex: ImageTexture
 var desenho_img: Image
@@ -69,20 +69,35 @@ func _draw_brush(pos: Vector2, color: Color):
 					img.set_pixelv(p, color)
 
 
+# === Função auxiliar: compara cores com tolerância ===
+func _color_close(a: Color, b: Color, tol: float) -> bool:
+	var dr = abs(a.r - b.r)
+	var dg = abs(a.g - b.g)
+	var db = abs(a.b - b.b)
+	var da = abs(a.a - b.a)
+	return max(dr, dg, db, da) <= tol
+
+
 # === Balde com tolerância e respeitando linhas ===
 func _flood_fill(start: Vector2, new_color: Color):
-	if start.x < 0 or start.y < 0 or start.x >= img.get_width() or start.y >= img.get_height():
+	var s = Vector2i(start)
+	if s.x < 0 or s.y < 0 or s.x >= img.get_width() or s.y >= img.get_height():
 		return
 
-	var target = img.get_pixelv(start)
-	if target == new_color:
+	var target = img.get_pixelv(s)
+	var tolerance := 0.08
+	if _color_close(target, new_color, tolerance):
 		return
 
-	var tolerance := 0.55
-	var stack = [Vector2i(start)]
+	var stack: Array[Vector2i] = [s]
+	var visited := {}
 
 	while stack.size() > 0:
 		var p = stack.pop_back()
+		if p in visited:
+			continue
+		visited[p] = true
+
 		if p.x < 0 or p.y < 0 or p.x >= img.get_width() or p.y >= img.get_height():
 			continue
 
@@ -96,8 +111,9 @@ func _flood_fill(start: Vector2, new_color: Color):
 		if brightness < 0.25:
 			continue
 
-		# se já tem mesma cor → ignora
-		if img.get_pixelv(p) == new_color:
+		# compara cor com tolerância
+		var current = img.get_pixelv(p)
+		if not _color_close(current, target, tolerance):
 			continue
 
 		img.set_pixelv(p, new_color)
