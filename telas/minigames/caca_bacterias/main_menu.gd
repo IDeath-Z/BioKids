@@ -12,7 +12,6 @@ func _on_iniciar_pressed():
 func _on_como_jogar_pressed():
 	get_tree().change_scene_to_file("res://telas/minigames/caca_bacterias/scenes/HowToPlay.tscn")  # Muda para tela como jogar
 
-func _on_som_pressed():
-	var is_muted = AudioServer.is_bus_mute(0)
-	AudioServer.set_bus_mute(0, not is_muted)
-	som_button.text = "🔊 Som (" + ("Desligado" if not is_muted else "Ligado") + ")"
+func _on_sair_pressed():
+	# Transição direta para a tela de minigames
+	get_tree().change_scene_to_file("res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.tscn")  # Ajuste o caminho conforme necessário

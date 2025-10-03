@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ds2xprfib7a7o" path="res://telas/minigames/caca_bacterias/assets/images/Bacteriaverdemaligna.png" id="2_41rfg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uq6jy"]
-radius = 25.0
+radius = 33.06055
 
 [sub_resource type="Animation" id="Animation_vt6qt"]
 resource_name = "fade_out"
@@ -23,12 +23,12 @@ _data = {
 script = ExtResource("1_k4s03")
 
 [node name="SpriteBact" type="Sprite2D" parent="."]
-position = Vector2(278.00018, 249.62509)
-scale = Vector2(0.109953515, 0.109953515)
+position = Vector2(311.7224, 231.5)
+scale = Vector2(0.14508082, 0.1435185)
 texture = ExtResource("2_41rfg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(277, 250)
+position = Vector2(311, 233)
 shape = SubResource("CircleShape2D_uq6jy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -5,7 +5,7 @@ var tipos_possiveis = ["laranja", "verde", "vermelha", "roxa", "maligna"]
 var missao_atual: Tipo
 var bacterias_restantes: int = 5  # Quantidade inicial por fase
 var acertos: int = 0
-var total_por_fase: int = 3  # Ex: 3 tipos por fase
+var total_por_fase: int = 3  # Ex: 3 tipos por fase (pode ser removido se não for usado)
 var fase: int = 0
 var score: int = 0  # Nova variável para pontuação
 var erros: int = 0  # Nova variável para contar erros
@@ -22,7 +22,7 @@ var erros: int = 0  # Nova variável para contar erros
 @onready var score_label = $UI/ScoreLabel  # Novo Label para exibir pontuação
 @onready var jogar_novamente_button = $UI/JogarNovamente  # Referência ao botão existente
 @onready var voltar_menu_button = $UI/VoltarMenu  # Referência ao botão existente
-@onready var music_player = $MusicPlayer  # Player de música específica do jogo
+@onready var music_player = $MusicPlayer if has_node("MusicPlayer") else null  # Verificação do nó
 
 var mensagens_certas = ["Boa! Você capturou uma bactéria certa!", "Ótimo trabalho!"]
 var mensagens_erradas = ["Ops, essa não é a bactéria certa!", "Tente de novo!"]
@@ -33,8 +33,12 @@ func _ready():
 	spawn_timer.timeout.connect(on_bacteria_spawn_timeout)
 	score_label.text = "Pontuação: " + str(score)  # Inicializa o Label
 	game_over_panel.visible = false  # Garante que o painel de Game Over comece invisível
-	if music_player.stream:  # Verifica se há um arquivo de áudio configurado
+	# Silencia a música global ao entrar na cena
+	AudioServer.set_bus_mute(0, true)  # 0 é o barramento Master
+	if music_player and music_player.stream:  # Verifica se o nó existe e tem stream
 		music_player.play()  # Toca a música específica ao entrar na cena
+	elif not music_player:
+		print("Erro: Nó MusicPlayer não encontrado na cena!")
 
 func proxima_fase():
 	fase += 1
@@ -54,14 +58,19 @@ func on_bacteria_spawn_timeout():
 	if container.get_child_count() >= bacterias_restantes:
 		return  # Limita quantidade
 	var bact = preload("res://telas/minigames/caca_bacterias/scenes/Bacteria.tscn").instantiate()
-	var screen_width = 720
-	var screen_height = 1080
-	var margem = 150
+	# Posicionamento relativo à viewport com margem
+	var margem = 150  # Margem fixa em pixels, ajustável conforme necessário
 	bact.position = Vector2(
-		randf_range(margem, screen_width - margem),
-		randf_range(margem, screen_height - margem)
+		randf_range(margem, get_viewport_rect().size.x - margem),
+		randf_range(margem, get_viewport_rect().size.y - margem)
 	)
-	bact.tipo = Tipo.values()[randi() % Tipo.size()]
+	# Define o tipo da bactéria com 40% de chance para o objetivo
+	var chance = randf()  # Gera um valor entre 0.0 e 1.0
+	if chance < 0.4:  # 40% de chance de ser o tipo objetivo
+		bact.tipo = missao_atual
+	else:  # 60% de chance de ser outro tipo
+		var outros_tipos = Tipo.values().filter(func(t): return t != missao_atual)
+		bact.tipo = outros_tipos[randi() % outros_tipos.size()]
 	var texturas = {
 		Tipo.LARANJA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaLaranja.png"),
 		Tipo.VERDE: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriaverdemaligna.png"),
@@ -95,12 +104,7 @@ func _on_bact_clicada(tipo: Tipo, bact: Area2D):
 	add_child(local_timer)
 	local_timer.timeout.connect(func(): mensagem_label.text = ""; check_icon.visible = false; x_icon.visible = false)
 	local_timer.start(2)
-	if acertos >= total_por_fase:
-		await get_tree().create_timer(2).timeout
-		fato_label.text = fatos[randi() % fatos.size()]
-		jogar_novamente_button.visible = true
-		voltar_menu_button.visible = true
-		spawn_timer.stop()
+	# Removido o if acertos >= total_por_fase, pois não queremos finalizar por acertos
 
 func limpar_tela():
 	for child in container.get_children():
@@ -115,15 +119,15 @@ func _on_jogar_novamente_pressed():
 	erros = 0  # Reseta erros
 	score_label.text = "Pontuação: " + str(score)
 	game_over_panel.visible = false  # Esconde o painel de Game Over
-	if music_player.stream:
+	if music_player and music_player.stream:
 		music_player.stop()  # Para a música atual
 		music_player.play()  # Reinicia a música ao reiniciar
 	proxima_fase()
 
 func _on_voltar_menu_pressed():
-	get_tree().change_scene_to_file("res://telas/minigames/caca_bacterias/scenes/main_menu.tscn")
-	if music_player.stream:
-		music_player.stop()  # Para a música ao sair da cena
+	# Transição direta para biofacts.tscn via conexão de sinal
+	get_tree().change_scene_to_file("res://telas/minigames/caca_bacterias/scenes/biofacts.tscn")
+	game_over_panel.visible = false  # Esconde o painel de Game Over
 
 func completar_jogo():
 	instrucao_label.text = "Parabéns! Você limpou o laboratório!"

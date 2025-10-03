@@ -6,6 +6,7 @@
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 360.0
@@ -57,9 +58,10 @@ text = "  ▶️ Iniciar  "
 layout_mode = 2
 text = "  📖 Como Jogar  "
 
-[node name="Som" type="Button" parent="MarginContainer/GridBotoes"]
+[node name="Sair" type="Button" parent="MarginContainer/GridBotoes"]
 layout_mode = 2
 text = "Sair"
 
 [connection signal="pressed" from="MarginContainer/GridBotoes/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainer/GridBotoes/Como Jogar" to="." method="_on_como_jogar_pressed"]
+[connection signal="pressed" from="MarginContainer/GridBotoes/Sair" to="." method="_on_sair_pressed"]
