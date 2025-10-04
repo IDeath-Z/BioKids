@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cisnac45ahktu"]
+[gd_scene load_steps=17 format=3 uid="uid://cisnac45ahktu"]
 
 [ext_resource type="Script" uid="uid://biwy7sv1gssh4" path="res://telas/minigames/bio_goods/scripts/control_drawing1.gd" id="1_0gn57"]
-[ext_resource type="Texture2D" uid="uid://cf3c123jfevlx" path="res://telas/minigames/bio_goods/sprites/[AR] Hospital Assets - FREE/4. Samples/backgorund_2.png" id="1_0ko8k"]
-[ext_resource type="Texture2D" uid="uid://curf5p2uk8sww" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_25-128x128.png" id="2_jrq7g"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_pj7v1"]
+[ext_resource type="Texture2D" uid="uid://k0qmefotrqqi" path="res://telas/minigames/bio_goods/sprites/background_selecao_pintura.png" id="3_s0y3f"]
 [ext_resource type="Texture2D" uid="uid://bfw41yihqn2sr" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/cenario2.png" id="4_g8e2o"]
+[ext_resource type="Texture2D" uid="uid://cmcx6bhbn4vyf" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_02-128x128.png" id="4_pj7v1"]
 [ext_resource type="Shader" uid="uid://cb6x1yvv1uq26" path="res://telas/minigames/bio_goods/scene/desenho1.gdshader" id="5_g8e2o"]
 [ext_resource type="Texture2D" uid="uid://20qux7gs1gby" path="res://telas/minigames/bio_goods/sprites/icones/back arrown.png" id="6_chrmv"]
 [ext_resource type="Texture2D" uid="uid://c4pjsrwfn2yde" path="res://telas/minigames/bio_goods/sprites/icones/pincel.png" id="6_mifr6"]
@@ -26,43 +27,44 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_pj7v1")
 script = ExtResource("1_0gn57")
 picker_path = NodePath("ColorIcon (TxTButton)/ColorPicker (Base)")
 picker_icon_path = NodePath("ColorIcon (TxTButton)")
 
-[node name="BG_Fundo" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0115
-anchor_top = -0.0111111
-anchor_right = 1.03039
-anchor_bottom = 1.02622
-offset_left = 0.28
-offset_right = 96.1199
-offset_bottom = 635.68
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.882716, 0.630254)
-texture = ExtResource("1_0ko8k")
+texture = ExtResource("3_s0y3f")
+expand_mode = 1
+
+[node name="BG_Moldura" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00416667
+anchor_top = 0.168111
+anchor_right = 0.987056
+anchor_bottom = 0.818593
+offset_left = 12.0
+offset_top = 0.440002
+offset_right = 0.319992
+offset_bottom = -0.0800171
+texture = ExtResource("4_pj7v1")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="BG" type="Parallax2D" parent="."]
-scroll_offset = Vector2(-1, -1)
-
-[node name="BG_Moldura" type="Sprite2D" parent="BG"]
-position = Vector2(362, 489)
-scale = Vector2(5.48437, 5.54687)
-texture = ExtResource("2_jrq7g")
 
 [node name="Desenho" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_mifr6")
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.033
-anchor_top = 0.142
+anchor_left = 0.0260556
+anchor_top = 0.181815
 anchor_right = 0.974
-anchor_bottom = 0.764
+anchor_bottom = 0.803815
 offset_left = 0.24
 offset_top = -0.360001
 offset_right = -0.280029
@@ -71,15 +73,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_g8e2o")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorLayer" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_rco25")
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.033
-anchor_top = 0.142
+anchor_left = 0.0260556
+anchor_top = 0.181815
 anchor_right = 0.974
-anchor_bottom = 0.764
+anchor_bottom = 0.803815
 offset_left = 0.24
 offset_top = -0.360001
 offset_right = -0.280029
@@ -91,91 +94,178 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ControlButtons" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -296.0
-offset_top = 19.0
-offset_right = 3552.0
-offset_bottom = 531.0
+anchors_preset = -1
+anchor_left = 0.066
+anchor_top = 0.0314815
+anchor_right = 0.934
+anchor_bottom = 0.143
+offset_left = 37.48
+offset_top = 9.0
+offset_right = -37.48
+offset_bottom = -0.440002
 grow_horizontal = 2
-scale = Vector2(0.15, 0.15)
-theme_override_constants/separation = 600
+theme_override_constants/separation = 75
+metadata/_edit_use_anchors_ = true
 
-[node name="Voltar_selecao" type="TextureButton" parent="ControlButtons"]
+[node name="Voltar_selecao" type="Button" parent="ControlButtons"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-texture_normal = ExtResource("6_chrmv")
 
-[node name="Salvar_desenho" type="TextureButton" parent="ControlButtons"]
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/Voltar_selecao"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_chrmv")
+expand_mode = 1
+
+[node name="Salvar_desenho" type="Button" parent="ControlButtons"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-texture_normal = ExtResource("7_pj7v1")
 
-[node name="Avancar_desenho" type="TextureButton" parent="ControlButtons"]
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/Salvar_desenho"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555
+anchor_top = 0.0527344
+anchor_right = 0.9455
+anchor_bottom = 0.962891
+offset_left = -0.299995
+offset_right = -0.299988
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_pj7v1")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Avancar_desenho" type="Button" parent="ControlButtons"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-texture_normal = ExtResource("8_s0y3f")
 
-[node name="Apagar_tudo" type="TextureButton" parent="ControlButtons"]
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/Avancar_desenho"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555
+anchor_right = 0.9455
+anchor_bottom = 1.0
+offset_left = -0.299995
+offset_right = -0.299988
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_s0y3f")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Apagar_tudo" type="Button" parent="ControlButtons"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-texture_normal = ExtResource("9_pg7lq")
 
-[node name="Pincel" type="TextureButton" parent="."]
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/Apagar_tudo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555
+anchor_top = 0.0390625
+anchor_right = 0.9455
+anchor_bottom = 0.962891
+offset_left = -0.299995
+offset_right = -0.299988
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_pg7lq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pincel" type="Button" parent="."]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.051
-anchor_top = 0.854
-anchor_right = 0.194
-anchor_bottom = 0.949
+anchor_top = 0.847519
+anchor_right = 0.226
+anchor_bottom = 0.948
 offset_left = 0.279999
 offset_top = -0.320007
-offset_right = 409.32
-offset_bottom = 409.08
-scale = Vector2(0.2, 0.2)
+offset_right = 0.279999
+offset_bottom = 0.159912
 size_flags_horizontal = 4
-texture_normal = ExtResource("6_mifr6")
-stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
-[node name="Balde" type="TextureButton" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Pincel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_right = -22.0
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_mifr6")
+expand_mode = 1
+
+[node name="Balde" type="Button" parent="."]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.282
 anchor_top = 0.847
-anchor_right = 0.435
-anchor_bottom = 0.949
+anchor_right = 0.457222
+anchor_bottom = 0.947741
 offset_left = -0.0400085
 offset_top = 0.239929
-offset_right = 89.8
-offset_bottom = 90.08
-scale = Vector2(0.55, 0.55)
-texture_normal = ExtResource("7_rco25")
+offset_right = -0.200012
+offset_bottom = 0.439941
+metadata/_edit_use_anchors_ = true
 
-[node name="Borracha" type="TextureButton" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Balde"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_right = -7.0
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_rco25")
+expand_mode = 1
+
+[node name="Borracha" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.537
+anchor_left = 0.519
 anchor_top = 0.85
-anchor_right = 0.68
-anchor_bottom = 0.952
-offset_left = 0.359985
-offset_right = 409.4
-offset_bottom = 439.84
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("8_68jic")
+anchor_right = 0.699
+anchor_bottom = 0.951
+offset_left = 0.319946
+offset_right = -0.280029
+offset_bottom = -0.0800781
 
-[node name="ColorIcon (TxTButton)" type="TextureButton" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Borracha"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_68jic")
+expand_mode = 1
+
+[node name="ColorIcon (TxTButton)" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.776
+anchor_left = 0.767
 anchor_top = 0.855
-anchor_right = 0.915
-anchor_bottom = 0.947
-offset_left = 0.279968
-offset_top = -0.400024
-offset_right = 100.2
-offset_bottom = 100.24
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("9_q5f0i")
+anchor_right = 0.942
+anchor_bottom = 0.953
+offset_left = -0.23999
+offset_top = -3.40002
+offset_right = -0.240051
+offset_bottom = -0.240112
 
 [node name="ColorPicker (Base)" type="ColorPickerButton" parent="ColorIcon (TxTButton)"]
 visible = false
@@ -193,6 +283,16 @@ grow_horizontal = 2
 grow_vertical = 2
 icon_alignment = 1
 edit_alpha = false
+
+[node name="TextureRect" type="TextureRect" parent="ColorIcon (TxTButton)"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_q5f0i")
+expand_mode = 1
 
 [connection signal="pressed" from="ControlButtons/Voltar_selecao" to="." method="_on_voltar_selecao_pressed"]
 [connection signal="pressed" from="ControlButtons/Apagar_tudo" to="." method="_on_apagar_tudo_pressed"]

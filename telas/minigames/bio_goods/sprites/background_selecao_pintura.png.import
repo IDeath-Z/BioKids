@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6lccwy8uatnd"
-path="res://.godot/imported/urso_prancheta.png-6403dc7eb8481a4bce8f84eb74449fad.ctex"
+uid="uid://k0qmefotrqqi"
+path="res://.godot/imported/background_selecao_pintura.png-00a67b7ceb13f6fa914b10e076666b29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/bio_goods/sprites/urso_prancheta.png"
-dest_files=["res://.godot/imported/urso_prancheta.png-6403dc7eb8481a4bce8f84eb74449fad.ctex"]
+source_file="res://telas/minigames/bio_goods/sprites/background_selecao_pintura.png"
+dest_files=["res://.godot/imported/background_selecao_pintura.png-00a67b7ceb13f6fa914b10e076666b29.ctex"]
 
 [params]
 

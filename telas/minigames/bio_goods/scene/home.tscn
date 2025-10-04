@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bxmq03k35h3k6" path="res://telas/minigames/bio_goods/scripts/home.gd" id="1_or20d"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="3_2637g"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="4_o1joe"]
-[ext_resource type="Texture2D" uid="uid://bt3q4dij342bm" path="res://telas/minigames/bio_goods/sprites/urso_prancheta.png" id="5_or20d"]
+[ext_resource type="Texture2D" uid="uid://b6lccwy8uatnd" path="res://telas/minigames/bio_goods/sprites/urso_prancheta.png" id="5_or20d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dbls1"]
 font = ExtResource("4_o1joe")
@@ -55,10 +55,10 @@ metadata/_edit_use_anchors_ = true
 texture_filter = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3875
-anchor_top = 0.576926
-anchor_right = 1.0
-anchor_bottom = 1.00556
+anchor_left = 0.379167
+anchor_top = 0.583407
+anchor_right = 0.991667
+anchor_bottom = 1.01204
 offset_left = -8.0
 offset_top = -0.0799561
 grow_horizontal = 0
@@ -67,47 +67,13 @@ texture = ExtResource("5_or20d")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.325926
-anchor_right = 0.5
-anchor_bottom = 0.325926
-offset_left = -195.5
-offset_top = -106.5
-offset_right = 195.5
-offset_bottom = 106.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("3_2637g")
-theme_override_constants/separation = 13
-alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="iniciar" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_constants/outline_size = 2
-theme_override_constants/h_separation = 4
-theme_override_font_sizes/font_size = 30
-text = "INICIAR JOGO"
-
-[node name="sair" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "SAIR"
-
 [node name="MarginContainerSelecaoTipo" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.222
-anchor_top = 0.332
+anchor_top = 0.214407
 anchor_right = 0.777
-anchor_bottom = 0.703
+anchor_bottom = 0.585407
 offset_left = -0.300018
 offset_top = -0.200073
 offset_right = 0.0999756
@@ -142,5 +108,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "VOLTAR"
 
-[connection signal="pressed" from="VBoxContainer/iniciar" to="." method="_on_iniciar_pressed"]
-[connection signal="pressed" from="VBoxContainer/sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/ComoJogar" to="." method="_on_como_jogar_pressed"]
+[connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/Voltar" to="." method="_on_voltar_pressed"]
