@@ -23,12 +23,16 @@ var erros: int = 0  # Nova variável para contar erros
 @onready var jogar_novamente_button = $UI/JogarNovamente  # Referência ao botão existente
 @onready var voltar_menu_button = $UI/VoltarMenu  # Referência ao botão existente
 @onready var music_player = $MusicPlayer if has_node("MusicPlayer") else null  # Verificação do nó
+@onready var background = $Sprite2D
+@onready var urso = $UI/Urso
 
 var mensagens_certas = ["Boa! Você capturou uma bactéria certa!", "Ótimo trabalho!"]
 var mensagens_erradas = ["Ops, essa não é a bactéria certa!", "Tente de novo!"]
 var fatos = ["Tem bactérias boas que ajudam nosso corpo a ficar saudável, e tem bactérias ruins que podem deixar a gente doente. Por isso é importante lavar as mãos!"]
+var screen_size
 
 func _ready():
+	ajustar_tela()
 	proxima_fase()
 	spawn_timer.timeout.connect(on_bacteria_spawn_timeout)
 	score_label.text = "Pontuação: " + str(score)  # Inicializa o Label
@@ -53,6 +57,10 @@ func proxima_fase():
 	instrucao_label.text = "Clique apenas nas bactérias " + tipos_possiveis[missao_atual] + "!"
 	spawn_timer.wait_time = max(1.0, 3.0 - (fase * 0.5))  # Dificuldade: spawns mais rápidos
 	spawn_timer.start()
+	
+func ajustar_tela():
+	screen_size = get_viewport_rect().size
+	background.size = Vector2(screen_size.x, screen_size.y)
 
 func on_bacteria_spawn_timeout():
 	if container.get_child_count() >= bacterias_restantes:
@@ -138,6 +146,7 @@ func game_over():
 	limpar_tela()  # Remove todas as bactérias
 	instrucao_label.text = "Game Over!"
 	fato_label.text = "Você fez " + str(score) + " pontos!"
+	urso.visible = false
 	game_over_panel.visible = true  # Mostra o painel de Game Over
 	jogar_novamente_button.visible = true
 	voltar_menu_button.visible = true

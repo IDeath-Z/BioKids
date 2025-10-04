@@ -1,25 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://risbb5cp7c12"]
+[gd_scene load_steps=4 format=3 uid="uid://cwbj5l7jvxmm5"]
 
 [ext_resource type="Script" uid="uid://sdlcq1o3vm1q" path="res://telas/minigames/caca_bacterias/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_xtn15"]
 [ext_resource type="Texture2D" uid="uid://6a64q8ca1bq1" path="res://telas/minigames/caca_bacterias/assets/images/Fundo ImagemMain.png" id="3_xtn15"]
 
-[node name="MainMenu" type="Control"]
+[node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 360.0
-offset_top = 540.0
-offset_right = -360.0
-offset_bottom = -540.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xtn15")
 script = ExtResource("1_ekxnf")
-metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,41 +22,47 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_xtn15")
-metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
+[node name="MarginContainerSelecaoTipo" type="MarginContainer" parent="."]
+layout_mode = 2
 anchor_left = 0.222
-anchor_top = 0.315
-anchor_right = 0.778
-anchor_bottom = 0.685
-offset_left = 0.159988
-offset_top = -0.200043
-offset_right = -0.160034
-offset_bottom = 0.199951
+anchor_top = 0.332
+anchor_right = 0.777
+anchor_bottom = 0.703
+offset_left = -0.300018
+offset_top = -0.200073
+offset_right = 0.0999756
+offset_bottom = 0.119995
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="GridBotoes" type="VBoxContainer" parent="MarginContainer"]
+[node name="GridBotoes" type="VBoxContainer" parent="MarginContainerSelecaoTipo"]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
-size_flags_horizontal = 4
+theme = ExtResource("1_xtn15")
 theme_override_constants/separation = 40
 
-[node name="Iniciar" type="Button" parent="MarginContainer/GridBotoes"]
+[node name="Iniciar" type="Button" parent="MarginContainerSelecaoTipo/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-text = "  ▶️ Iniciar  "
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "  ▶️ INICIAR  "
 
-[node name="Como Jogar" type="Button" parent="MarginContainer/GridBotoes"]
+[node name="ComoJogar" type="Button" parent="MarginContainerSelecaoTipo/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-text = "  📖 Como Jogar  "
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "COMO JOGAR?"
 
-[node name="Sair" type="Button" parent="MarginContainer/GridBotoes"]
+[node name="Voltar" type="Button" parent="MarginContainerSelecaoTipo/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-text = "Sair"
+size_flags_horizontal = 4
+text = "VOLTAR"
 
-[connection signal="pressed" from="MarginContainer/GridBotoes/Iniciar" to="." method="_on_iniciar_pressed"]
-[connection signal="pressed" from="MarginContainer/GridBotoes/Como Jogar" to="." method="_on_como_jogar_pressed"]
-[connection signal="pressed" from="MarginContainer/GridBotoes/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/ComoJogar" to="." method="_on_como_jogar_pressed"]
+[connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/Voltar" to="." method="_on_voltar_pressed"]

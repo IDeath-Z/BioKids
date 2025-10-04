@@ -101,5 +101,46 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "SAIR"
 
+[node name="MarginContainerSelecaoTipo" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.222
+anchor_top = 0.332
+anchor_right = 0.777
+anchor_bottom = 0.703
+offset_left = -0.300018
+offset_top = -0.200073
+offset_right = 0.0999756
+offset_bottom = 0.119995
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GridBotoes" type="VBoxContainer" parent="MarginContainerSelecaoTipo"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+theme = ExtResource("3_2637g")
+theme_override_constants/separation = 40
+
+[node name="Iniciar" type="Button" parent="MarginContainerSelecaoTipo/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "  ▶️ INICIAR  "
+
+[node name="ComoJogar" type="Button" parent="MarginContainerSelecaoTipo/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "COMO JOGAR?"
+
+[node name="Voltar" type="Button" parent="MarginContainerSelecaoTipo/GridBotoes"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "VOLTAR"
+
 [connection signal="pressed" from="VBoxContainer/iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="VBoxContainer/sair" to="." method="_on_sair_pressed"]
