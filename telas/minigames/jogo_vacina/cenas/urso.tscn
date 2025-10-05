@@ -8,22 +8,31 @@
 radius = 16.6245
 height = 33.249
 
-[node name="Urso" type="Node2D"]
+[node name="Urso" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="local_vacina" type="Area2D" parent="."]
+[node name="Urso" type="Node2D" parent="."]
+
+[node name="local_vacina" type="Area2D" parent="Urso"]
 script = ExtResource("1_rby3a")
 
-[node name="banqueta" type="Sprite2D" parent="local_vacina"]
+[node name="banqueta" type="Sprite2D" parent="Urso/local_vacina"]
 position = Vector2(355, 834)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_bvhog")
 
-[node name="macoste" type="Sprite2D" parent="local_vacina"]
+[node name="macoste" type="Sprite2D" parent="Urso/local_vacina"]
 position = Vector2(371.2, -270.6)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_rby3a")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="local_vacina"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Urso/local_vacina"]
 position = Vector2(322, -215)
 rotation = 0.331613
 scale = Vector2(0.8, 0.8)
