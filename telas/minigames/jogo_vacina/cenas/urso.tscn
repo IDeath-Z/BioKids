@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b7gm220s6slnp" path="res://telas/minigames/jogo_vacina/assets/banqueta.png" id="1_bvhog"]
 [ext_resource type="Script" uid="uid://bgovj3kppvbt2" path="res://telas/minigames/jogo_vacina/scripts/urso.gd" id="1_rby3a"]
-[ext_resource type="Texture2D" uid="uid://oxb2woyttjfv" path="res://telas/minigames/jogo_vacina/assets/mascote_sentado.png" id="3_xvadl"]
+[ext_resource type="Texture2D" uid="uid://b36yqjg4nl6dj" path="res://telas/minigames/jogo_vacina/assets/urso_vacina_2.0.png" id="3_rby3a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rby3a"]
 radius = 16.6245
@@ -21,7 +21,7 @@ texture = ExtResource("1_bvhog")
 [node name="macoste" type="Sprite2D" parent="local_vacina"]
 position = Vector2(371.2, -270.6)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_xvadl")
+texture = ExtResource("3_rby3a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="local_vacina"]
 position = Vector2(322, -215)

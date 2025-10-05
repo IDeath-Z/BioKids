@@ -1,4 +1,4 @@
-[gd_scene load_steps=376 format=3 uid="uid://d11l5tmq68ypy"]
+[gd_scene load_steps=344 format=3 uid="uid://d11l5tmq68ypy"]
 
 [ext_resource type="Script" uid="uid://rxb5qlbidclw" path="res://telas/minigames/jogo_vacina/scripts/conquista.gd" id="1_4mq2m"]
 [ext_resource type="Texture2D" uid="uid://dvutt3d1y1wam" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00001.png" id="2_rnfbg"]
@@ -261,13 +261,6 @@
 [ext_resource type="Texture2D" uid="uid://cumtruitjki2g" path="res://telas/minigames/jogo_vacina/assets/medalha/00124.png" id="259_dcfvr"]
 [ext_resource type="Texture2D" uid="uid://2ta81noaf34i" path="res://telas/minigames/jogo_vacina/assets/medalha/00125.png" id="260_crodk"]
 [ext_resource type="Texture2D" uid="uid://c73t3wudpxpib" path="res://telas/minigames/jogo_vacina/assets/medalha/00126.png" id="261_egl15"]
-[ext_resource type="Texture2D" uid="uid://x1iowve2tm8p" path="res://telas/minigames/jogo_vacina/assets/medalha/00127.png" id="262_3p5l0"]
-[ext_resource type="Texture2D" uid="uid://b1fwjuyareht8" path="res://telas/minigames/jogo_vacina/assets/medalha/00128.png" id="263_srfwf"]
-[ext_resource type="Texture2D" uid="uid://b1ut0etm62gal" path="res://telas/minigames/jogo_vacina/assets/medalha/00129.png" id="264_xsg2m"]
-[ext_resource type="Texture2D" uid="uid://bxu7hns5teymj" path="res://telas/minigames/jogo_vacina/assets/medalha/00130.png" id="265_6f2mj"]
-[ext_resource type="Texture2D" uid="uid://cv4cp7ti1n1vc" path="res://telas/minigames/jogo_vacina/assets/medalha/00131.png" id="266_2wx7n"]
-[ext_resource type="Texture2D" uid="uid://qsjglec8d3o7" path="res://telas/minigames/jogo_vacina/assets/medalha/00132.png" id="267_y1n7y"]
-[ext_resource type="Texture2D" uid="uid://bbmdmwvgknjsk" path="res://telas/minigames/jogo_vacina/assets/medalha/00133.png" id="268_6vsun"]
 [ext_resource type="Texture2D" uid="uid://in67nscbl1js" path="res://telas/minigames/jogo_vacina/assets/medalha/00134.png" id="269_ivyde"]
 [ext_resource type="Texture2D" uid="uid://byqfnss6r34wo" path="res://telas/minigames/jogo_vacina/assets/medalha/00135.png" id="270_k78ho"]
 [ext_resource type="Texture2D" uid="uid://bn5vfk7xhklyj" path="res://telas/minigames/jogo_vacina/assets/medalha/00136.png" id="271_iu57i"]
@@ -345,47 +338,9 @@
 [ext_resource type="Texture2D" uid="uid://seab1ka6puv4" path="res://telas/minigames/jogo_vacina/assets/medalha/00208.png" id="343_fxrk8"]
 [ext_resource type="Texture2D" uid="uid://ceglydpvvfj0u" path="res://telas/minigames/jogo_vacina/assets/medalha/00209.png" id="344_4j3re"]
 [ext_resource type="Texture2D" uid="uid://cboktbua0gdud" path="res://telas/minigames/jogo_vacina/assets/medalha/00210.png" id="345_dc15c"]
-[ext_resource type="Texture2D" uid="uid://bc4jd546dgmpu" path="res://telas/minigames/jogo_vacina/assets/medalha/00211.png" id="346_fipmm"]
-[ext_resource type="Texture2D" uid="uid://dxo0v8wcym7vk" path="res://telas/minigames/jogo_vacina/assets/medalha/00212.png" id="347_dvc7l"]
-[ext_resource type="Texture2D" uid="uid://bj2anariiqc2d" path="res://telas/minigames/jogo_vacina/assets/medalha/00213.png" id="348_3ndem"]
-[ext_resource type="Texture2D" uid="uid://bx53b653hbwl4" path="res://telas/minigames/jogo_vacina/assets/medalha/00214.png" id="349_4brqt"]
-[ext_resource type="Texture2D" uid="uid://df5w74ktjgwsu" path="res://telas/minigames/jogo_vacina/assets/medalha/00215.png" id="350_3swn0"]
-[ext_resource type="Texture2D" uid="uid://c5dtrhlkcikyw" path="res://telas/minigames/jogo_vacina/assets/medalha/00216.png" id="351_3oppu"]
-[ext_resource type="Texture2D" uid="uid://m7khqwc6g1sa" path="res://telas/minigames/jogo_vacina/assets/medalha/00217.png" id="352_1ahv3"]
-[ext_resource type="Texture2D" uid="uid://djda8x6lsmgn" path="res://telas/minigames/jogo_vacina/assets/medalha/00218.png" id="353_c4itk"]
-[ext_resource type="Texture2D" uid="uid://o5j20vsuu3a8" path="res://telas/minigames/jogo_vacina/assets/medalha/00219.png" id="354_buijp"]
-[ext_resource type="Texture2D" uid="uid://dy5ectl6ablk6" path="res://telas/minigames/jogo_vacina/assets/medalha/00220.png" id="355_0vo13"]
-[ext_resource type="Texture2D" uid="uid://ru6y1woownin" path="res://telas/minigames/jogo_vacina/assets/medalha/00221.png" id="356_1jxwo"]
-[ext_resource type="Texture2D" uid="uid://bkfqyd17k0pbq" path="res://telas/minigames/jogo_vacina/assets/medalha/00222.png" id="357_exp1s"]
-[ext_resource type="Texture2D" uid="uid://dlu7350ftu2eu" path="res://telas/minigames/jogo_vacina/assets/medalha/00223.png" id="358_3brtd"]
-[ext_resource type="Texture2D" uid="uid://bdfn6trjpp2uq" path="res://telas/minigames/jogo_vacina/assets/medalha/00224.png" id="359_ji06u"]
-[ext_resource type="Texture2D" uid="uid://bnh6r73gmsyud" path="res://telas/minigames/jogo_vacina/assets/medalha/00225.png" id="360_ssv2q"]
-[ext_resource type="Texture2D" uid="uid://ccaxaanrelmwv" path="res://telas/minigames/jogo_vacina/assets/medalha/00226.png" id="361_ivj3u"]
-[ext_resource type="Texture2D" uid="uid://cgdwcwd7osgku" path="res://telas/minigames/jogo_vacina/assets/medalha/00227.png" id="362_lmhqw"]
-[ext_resource type="Texture2D" uid="uid://d3g1cuv46djo" path="res://telas/minigames/jogo_vacina/assets/medalha/00228.png" id="363_5pcnl"]
-[ext_resource type="Texture2D" uid="uid://3itpmvk2dhuv" path="res://telas/minigames/jogo_vacina/assets/medalha/00229.png" id="364_xiily"]
-[ext_resource type="Texture2D" uid="uid://cshxv7rhxr8yi" path="res://telas/minigames/jogo_vacina/assets/medalha/00230.png" id="365_apc8l"]
-[ext_resource type="Texture2D" uid="uid://dpa62cvjr1l1c" path="res://telas/minigames/jogo_vacina/assets/medalha/00231.png" id="366_huoxh"]
-[ext_resource type="Texture2D" uid="uid://snlnt8yndeu5" path="res://telas/minigames/jogo_vacina/assets/medalha/00232.png" id="367_sk522"]
-[ext_resource type="Texture2D" uid="uid://dx7sgjxd24rnh" path="res://telas/minigames/jogo_vacina/assets/medalha/00233.png" id="368_747k6"]
-[ext_resource type="Texture2D" uid="uid://cekailfwlk7u6" path="res://telas/minigames/jogo_vacina/assets/medalha/00234.png" id="369_q4ih7"]
 [ext_resource type="Script" uid="uid://dpxpbjaw6qfke" path="res://telas/minigames/jogo_vacina/scripts/medalha.gd" id="370_eo67r"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="371_rnfbg"]
 [ext_resource type="Script" uid="uid://cayjbf8ohjsdu" path="res://telas/minigames/jogo_vacina/scripts/label.gd" id="372_f6ucy"]
-
-[sub_resource type="GDScript" id="GDScript_ysxhc"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sjcsn"]
 animations = [{
@@ -788,6 +743,174 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_3mt55")
 }],
 "loop": false,
 "name": &"urso_heroi",
@@ -1176,27 +1299,6 @@ animations = [{
 "texture": ExtResource("261_egl15")
 }, {
 "duration": 1.0,
-"texture": ExtResource("262_3p5l0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("263_srfwf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("264_xsg2m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("265_6f2mj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("266_2wx7n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("267_y1n7y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("268_6vsun")
-}, {
-"duration": 1.0,
 "texture": ExtResource("269_ivyde")
 }, {
 "duration": 1.0,
@@ -1426,78 +1528,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("345_dc15c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("346_fipmm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("347_dvc7l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("348_3ndem")
-}, {
-"duration": 1.0,
-"texture": ExtResource("349_4brqt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("350_3swn0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("351_3oppu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("352_1ahv3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("353_c4itk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("354_buijp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("355_0vo13")
-}, {
-"duration": 1.0,
-"texture": ExtResource("356_1jxwo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("357_exp1s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("358_3brtd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("359_ji06u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("360_ssv2q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("361_ivj3u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("362_lmhqw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("363_5pcnl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("364_xiily")
-}, {
-"duration": 1.0,
-"texture": ExtResource("365_apc8l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("366_huoxh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("367_sk522")
-}, {
-"duration": 1.0,
-"texture": ExtResource("368_747k6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("369_q4ih7")
 }],
 "loop": false,
 "name": &"medalha_conquista",
@@ -1511,7 +1541,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_ysxhc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -1537,13 +1566,14 @@ script = ExtResource("1_4mq2m")
 position = Vector2(400, 1300)
 sprite_frames = SubResource("SpriteFrames_sjcsn")
 animation = &"urso_heroi"
+speed_scale = 1.1
 script = ExtResource("135_lrvcy")
 
 [node name="medalha" type="AnimatedSprite2D" parent="AspectRatioContainer/Conquista"]
 position = Vector2(369, -359)
 sprite_frames = SubResource("SpriteFrames_r67v1")
 animation = &"medalha_conquista"
-speed_scale = 1.2
+speed_scale = 1.5
 script = ExtResource("370_eo67r")
 
 [node name="Label" type="Label" parent="."]

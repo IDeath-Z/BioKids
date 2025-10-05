@@ -18,7 +18,7 @@ func _ready():
 	
 	# Tween para macoste
 	var tween1 = get_tree().create_tween()
-	tween1.tween_property(macoste, "position", Vector2(345, 565), 1.8)
+	tween1.tween_property(macoste, "position", Vector2(350, 590), 1.8)
 	
 	await tween1.finished
 	colision_mover = true   
