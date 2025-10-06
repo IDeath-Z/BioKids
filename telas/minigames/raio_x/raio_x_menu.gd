@@ -1,17 +1,21 @@
 extends Control
 
 @onready var menu_botes_tela_principal = $MarginContainerPrincipal
+@onready var botao_iniciar = $MarginContainerPrincipal/GridBotoes/BotaoIniciar
+@onready var botao_voltar = $MarginContainerPrincipal/GridBotoes/BotaoVoltar
 @onready var animacao_tela = $AnimacaoTela
 @onready var android_camera = AndroidCamera.new()
 @onready var menu_botoes_selecao = $MarginContainerSelecaoTipo
 @onready var textura_urso = $TexturaUrso
 @onready var animacao_urso = $TexturaUrso/AnimacaoUrso
-@onready var textura_balao_fala = $TexturaBalao
-@onready var animacao_balao = $TexturaBalao/AnimacaoBalao
+@onready var textura_balao_fala = $DicasBalaoFala
+@onready var animacao_balao = $DicasBalaoFala/AnimacaoBalao
 
 var animacao_reversa: bool
 
 func _ready() -> void:
+	botao_iniciar.disabled = true
+	botao_voltar.disabled = true
 	menu_botoes_selecao.visible = false
 	textura_urso.visible = false
 	textura_balao_fala.visible = false
@@ -62,6 +66,7 @@ func _on_animacao_urso_animation_started(anim_name: StringName) -> void:
 	if anim_name == "entrar_tela":
 		await get_tree().create_timer(0.1).timeout
 		textura_urso.visible = true
+		
 	if anim_name == "como_jogar":
 		if animacao_reversa:
 			animacao_balao.speed_scale = 4.0
@@ -73,3 +78,7 @@ func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:
 				animacao_balao.speed_scale = 1.0
 				textura_balao_fala.visible = true
 				animacao_balao.play("fade")
+				
+		if anim_name == "entrar_tela":
+			botao_iniciar.disabled = false
+			botao_voltar.disabled = false

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cjhwawpagnm2l" path="res://telas/minigames/raio_x/assets/images/logo_raioX.png" id="6_qrhgg"]
 [ext_resource type="PackedScene" uid="uid://h2q4jq2ghqsl" path="res://telas/interface/selecaoMiniGame/tela_selecao_mini_game_transicao.tscn" id="7_881kb"]
 [ext_resource type="Texture2D" uid="uid://c5jpsv4oqpnmx" path="res://telas/interface/assets/imagens/mascote_padrao.png" id="7_ptl2l"]
-[ext_resource type="Texture2D" uid="uid://b2dradge6et7m" path="res://telas/interface/assets/imagens/balao_fala.png" id="8_ptl2l"]
+[ext_resource type="PackedScene" uid="uid://cwl04wggpdy2d" path="res://telas/interface/dicas/dicas_balao_fala.tscn" id="8_d324e"]
 
 [sub_resource type="Animation" id="Animation_fv44s"]
 length = 0.001
@@ -278,7 +278,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.17, -0.0758333]
+"values": [0.252, 0.00616667]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -290,7 +290,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.651852, 0.651852]
+"values": [0.688, 0.688]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -302,7 +302,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.814, 0.568167]
+"values": [0.742, 0.496167]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -314,7 +314,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.08186, 1.08186]
+"values": [1.027, 1.027]
 }
 
 [sub_resource type="Animation" id="Animation_uhg2j"]
@@ -330,7 +330,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.17, 0.17]
+"values": [0.252278, 0.252278]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -342,7 +342,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.036, 0.652]
+"values": [1.03415, 0.687852]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -354,7 +354,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.814, 0.814]
+"values": [0.741778, 0.741778]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -366,7 +366,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.464, 1.082]
+"values": [1.37285, 1.02656]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ptl2l"]
@@ -376,22 +376,7 @@ _data = {
 &"entrar_tela": SubResource("Animation_uhg2j")
 }
 
-[sub_resource type="Animation" id="Animation_twwl0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_d13x4"]
+[sub_resource type="Animation" id="Animation_d324e"]
 resource_name = "fade"
 step = 0.0166667
 tracks/0/type = "value"
@@ -407,10 +392,25 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_uhg2j"]
+[sub_resource type="Animation" id="Animation_s6d2a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gthou"]
 _data = {
-&"RESET": SubResource("Animation_twwl0"),
-&"fade": SubResource("Animation_d13x4")
+&"RESET": SubResource("Animation_s6d2a"),
+&"fade": SubResource("Animation_d324e")
 }
 
 [node name="MenuPrincipal" type="Control"]
@@ -497,7 +497,6 @@ script = ExtResource("4_nmco0")
 metadata/_custom_type_script = "uid://b5dwsui2efrk"
 
 [node name="MarginContainerSelecaoTipo" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.222
@@ -545,8 +544,10 @@ anchor_left = 0.17
 anchor_top = 1.036
 anchor_right = 0.814
 anchor_bottom = 1.466
-offset_right = 0.319946
-offset_bottom = -0.400024
+offset_left = 0.359985
+offset_top = 0.119995
+offset_right = -0.0800171
+offset_bottom = 0.319946
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("7_ptl2l")
@@ -558,45 +559,40 @@ libraries = {
 &"": SubResource("AnimationLibrary_ptl2l")
 }
 
-[node name="TexturaBalao" type="TextureRect" parent="."]
+[node name="DicasBalaoFala" parent="." instance=ExtResource("8_d324e")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.492056
-anchor_top = 0.615074
-anchor_right = 1.074
-anchor_bottom = 0.97326
-offset_left = -0.280029
-offset_top = -0.280029
-offset_right = -0.280029
-offset_bottom = -0.120117
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 0.174533
-texture = ExtResource("8_ptl2l")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
+anchor_left = 0.469444
+anchor_top = 0.692815
+anchor_right = 1.026
+anchor_bottom = 1.0037
+offset_top = -0.240051
+offset_right = 0.280029
 
-[node name="TextoBalao" type="Label" parent="TexturaBalao"]
+[node name="TextoBalao" type="Label" parent="DicasBalaoFala"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.373693
-anchor_top = 0.371372
-anchor_right = 0.726693
-anchor_bottom = 0.655372
-offset_left = 19.332
-offset_top = -4.14714
-offset_right = 51.425
-offset_bottom = -33.0551
-rotation = 0.418879
+anchor_left = 0.408
+anchor_top = 0.263
+anchor_right = 0.408
+anchor_bottom = 0.263
+offset_left = -110.608
+offset_top = -31.368
+offset_right = 110.392
+offset_bottom = 31.632
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 0.87451)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "Escolha qual você 
 quer ver!"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="AnimacaoBalao" type="AnimationPlayer" parent="TexturaBalao"]
+[node name="AnimacaoBalao" type="AnimationPlayer" parent="DicasBalaoFala"]
 libraries = {
-&"": SubResource("AnimationLibrary_uhg2j")
+&"": SubResource("AnimationLibrary_gthou")
 }
 
 [connection signal="pressed" from="MarginContainerPrincipal/GridBotoes/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
