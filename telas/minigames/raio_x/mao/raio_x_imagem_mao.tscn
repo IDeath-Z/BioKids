@@ -459,12 +459,14 @@ libraries = {
 [node name="AspectRatioContainerDicas" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0555556
-anchor_top = 0.0101852
-anchor_right = 0.944556
-anchor_bottom = 0.223185
-offset_right = -0.0800171
-offset_bottom = -0.0400085
+anchor_left = 0.00999995
+anchor_top = -0.0112963
+anchor_right = 0.989
+anchor_bottom = 0.223
+offset_left = 64.8
+offset_top = 0.200015
+offset_right = -0.0797729
+offset_bottom = 0.15979
 ratio = 2.8
 metadata/_edit_use_anchors_ = true
 
@@ -474,13 +476,15 @@ layout_mode = 2
 [node name="Label" type="Label" parent="AspectRatioContainerDicas/PopUpDicas"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.308294
-anchor_top = 0.273128
-anchor_right = 0.749261
-anchor_bottom = 0.890185
-offset_right = 0.222015
-offset_bottom = -0.0720062
-theme_override_font_sizes/font_size = 20
+anchor_left = 0.395018
+anchor_top = 0.275185
+anchor_right = 0.734
+anchor_bottom = 0.879
+offset_left = 0.188248
+offset_top = 0.100578
+offset_right = 0.240021
+offset_bottom = 0.0857086
+theme_override_font_sizes/font_size = 15
 text = "Uau, sua mão em raio-x ficou demais!
 
 Quer conhecer um pouco mais sobre ela?"
@@ -498,16 +502,17 @@ speed_scale = 0.8
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.135
-anchor_right = 0.5
-anchor_bottom = 0.135
-offset_left = -234.0
-offset_top = 87.2
-offset_right = 234.0
-offset_bottom = 168.2
+anchor_left = 0.59
+anchor_top = 0.121
+anchor_right = 0.59
+anchor_bottom = 0.121
+offset_left = -245.0
+offset_top = 96.2
+offset_right = 223.0
+offset_bottom = 177.2
 grow_horizontal = 2
 theme_override_constants/separation = 30
+metadata/_edit_use_anchors_ = true
 
 [node name="BotaoSim" type="Button" parent="HBoxContainer"]
 layout_mode = 2
@@ -531,18 +536,20 @@ libraries = {
 speed_scale = 0.8
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.135185
-anchor_right = 0.5
-anchor_bottom = 0.135185
-offset_left = -234.0
-offset_top = 87.0
-offset_right = 234.0
-offset_bottom = 168.0
+anchor_left = 0.590277
+anchor_top = 0.121296
+anchor_right = 0.590277
+anchor_bottom = 0.121296
+offset_left = -245.0
+offset_top = 96.0
+offset_right = 223.0
+offset_bottom = 177.0
 grow_horizontal = 2
 theme_override_constants/separation = 30
+metadata/_edit_use_anchors_ = true
 
 [node name="BotaoAnterior" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
@@ -563,6 +570,7 @@ text = "PRÓXIMO"
 [connection signal="animation_finished" from="InfoMaoLadoEsquerdo/AnimacaoLadoEsquerdo" to="." method="_on_animacao_lado_esquerdo_animation_finished"]
 [connection signal="animation_finished" from="InfoMaoLadoDireito/AnimacaoLadoDireito" to="." method="_on_animacao_lado_direito_animation_finished"]
 [connection signal="botao_audio_pressed" from="AspectRatioContainerDicas/PopUpDicas" to="." method="_on_pop_up_dicas_botao_audio_pressed"]
+[connection signal="botao_voltar_pressed" from="AspectRatioContainerDicas/PopUpDicas" to="." method="_on_pop_up_dicas_botao_voltar_pressed"]
 [connection signal="pressed" from="HBoxContainer/BotaoSim" to="." method="_on_botao_sim_pressed"]
 [connection signal="pressed" from="HBoxContainer/BotaoNao" to="." method="_on_botao_nao_pressed"]
 [connection signal="pressed" from="HBoxContainer2/BotaoAnterior" to="." method="_on_botao_anterior_pressed"]

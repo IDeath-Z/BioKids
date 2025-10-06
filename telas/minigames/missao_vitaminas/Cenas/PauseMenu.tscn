@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbqq17qlfa7wk"]
 
-[ext_resource type="Script" uid="uid://dkh8co7i6l18g" path="res://PauseMenu.gd" id="1_t3gbq"]
+[ext_resource type="Script" uid="uid://dkh8co7i6l18g" path="res://telas/minigames/missao_vitaminas/scripts/PauseMenu.gd" id="1_t3gbq"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="2_3bmkj"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="3_hqfkd"]
 

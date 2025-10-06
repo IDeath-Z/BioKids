@@ -63,3 +63,6 @@ func _on_animacao_fundo_animation_finished(anim_name: StringName) -> void:
 func _on_pop_up_dicas_botao_audio_pressed() -> void:
 	# Colocar o audio aqui quando tiver
 	pass
+
+func _on_pop_up_dicas_botao_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://telas/minigames/raio_x/raio_x_menu.tscn")

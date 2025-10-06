@@ -462,10 +462,11 @@ libraries = {
 [node name="AspectRatioContainerDicas" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0555556
-anchor_top = 0.0101852
-anchor_right = 0.944556
+anchor_left = 0.01
+anchor_top = -0.011
+anchor_right = 0.989
 anchor_bottom = 0.223185
+offset_left = 65.0
 offset_right = -0.0800171
 offset_bottom = -0.0400085
 ratio = 2.8
@@ -477,13 +478,13 @@ layout_mode = 2
 [node name="Label" type="Label" parent="AspectRatioContainerDicas/PopUpDicas"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.307812
-anchor_top = 0.214375
-anchor_right = 0.74809
-anchor_bottom = 0.936565
+anchor_left = 0.393873
+anchor_top = 0.214442
+anchor_right = 0.726443
+anchor_bottom = 0.936858
 offset_right = 0.222015
 offset_bottom = -0.0720062
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 17
 text = "Uau, seu pé em raio-x ficou demais!
 
 Quer conhecer um pouco mais sobre ele?"
@@ -501,15 +502,14 @@ speed_scale = 0.8
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.135
-anchor_right = 0.5
-anchor_bottom = 0.135
-offset_left = -234.0
-offset_top = 87.2
-offset_right = 234.0
-offset_bottom = 168.2
-grow_horizontal = 2
+anchor_left = 0.59
+anchor_top = 0.121
+anchor_right = 0.59
+anchor_bottom = 0.121
+offset_left = -245.0
+offset_top = 96.0
+offset_right = 223.0
+offset_bottom = 177.0
 theme_override_constants/separation = 30
 metadata/_edit_lock_ = true
 
@@ -537,14 +537,14 @@ speed_scale = 0.8
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.135185
-anchor_right = 0.5
-anchor_bottom = 0.135185
-offset_left = -234.0
-offset_top = 87.0
-offset_right = 234.0
-offset_bottom = 168.0
+anchor_left = 0.59
+anchor_top = 0.121
+anchor_right = 0.59
+anchor_bottom = 0.121
+offset_left = -245.0
+offset_top = 96.0
+offset_right = 223.0
+offset_bottom = 177.0
 grow_horizontal = 2
 theme_override_constants/separation = 30
 metadata/_edit_lock_ = true
@@ -568,6 +568,7 @@ text = "PRÓXIMO"
 [connection signal="animation_finished" from="InfoPeLadoEsquerdo/AnimacaoLadoEsquerdo" to="." method="_on_animacao_lado_esquerdo_animation_finished"]
 [connection signal="animation_finished" from="InfoPeLadoDireito/AnimacaoLadoDireito" to="." method="_on_animacao_lado_direito_animation_finished"]
 [connection signal="botao_audio_pressed" from="AspectRatioContainerDicas/PopUpDicas" to="." method="_on_pop_up_dicas_botao_audio_pressed"]
+[connection signal="botao_voltar_pressed" from="AspectRatioContainerDicas/PopUpDicas" to="." method="_on_pop_up_dicas_botao_voltar_pressed"]
 [connection signal="pressed" from="HBoxContainer/BotaoSim" to="." method="_on_botao_sim_pressed"]
 [connection signal="pressed" from="HBoxContainer/BotaoNao" to="." method="_on_botao_nao_pressed"]
 [connection signal="pressed" from="HBoxContainer2/BotaoAnterior" to="." method="_on_botao_anterior_pressed"]

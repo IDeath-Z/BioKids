@@ -7,7 +7,6 @@ var saindo_tela = false
 var botao_pressionado = ""
 
 func _ready() -> void:
-	DisplayServer.screen_set_orientation(DisplayServer.SCREEN_PORTRAIT)
 	textura_jogos.visible = false
 	animacao_jogos.play("fade_out")
 

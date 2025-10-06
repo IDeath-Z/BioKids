@@ -461,13 +461,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "▶ INICIAR"
 
-[node name="BotaoComoJogar" type="Button" parent="MarginContainerPrincipal/GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 35
-text = "COMO JOGAR?"
-
 [node name="BotaoVoltar" type="Button" parent="MarginContainerPrincipal/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
@@ -504,6 +497,7 @@ script = ExtResource("4_nmco0")
 metadata/_custom_type_script = "uid://b5dwsui2efrk"
 
 [node name="MarginContainerSelecaoTipo" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.222
@@ -586,19 +580,19 @@ metadata/_edit_use_anchors_ = true
 [node name="TextoBalao" type="Label" parent="TexturaBalao"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.339634
-anchor_top = 0.433691
-anchor_right = 0.775763
-anchor_bottom = 0.624314
-offset_right = -2.738
-offset_bottom = 7.229
-rotation = -0.174533
+anchor_left = 0.373693
+anchor_top = 0.371372
+anchor_right = 0.726693
+anchor_bottom = 0.655372
+offset_left = 19.332
+offset_top = -4.14714
+offset_right = 51.425
+offset_bottom = -33.0551
+rotation = 0.418879
 theme_override_colors/font_color = Color(0, 0, 0, 0.87451)
 theme_override_font_sizes/font_size = 20
-text = "Clique em iniciar e 
-escolha qual você 
+text = "Escolha qual você 
 quer ver!"
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimacaoBalao" type="AnimationPlayer" parent="TexturaBalao"]
 libraries = {
@@ -606,7 +600,6 @@ libraries = {
 }
 
 [connection signal="pressed" from="MarginContainerPrincipal/GridBotoes/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
-[connection signal="pressed" from="MarginContainerPrincipal/GridBotoes/BotaoComoJogar" to="." method="_on_botao_como_jogar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="animation_finished" from="AnimacaoTela" to="." method="_on_animacao_tela_animation_finished"]
 [connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/BotaoMao" to="." method="_on_botao_mao_pressed"]

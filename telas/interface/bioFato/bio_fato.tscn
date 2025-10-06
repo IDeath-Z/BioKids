@@ -38,14 +38,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_kpqb2")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.626667
-anchor_top = 0.616666
-anchor_right = 0.936111
-anchor_bottom = 0.829537
+anchor_left = 0.587778
+anchor_top = 0.576851
+anchor_right = 0.897222
+anchor_bottom = 0.789722
 offset_left = -0.200012
 offset_right = 1.0
 offset_bottom = -0.900009
@@ -74,6 +75,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_pr2ni")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BotaoContinuar" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 100)

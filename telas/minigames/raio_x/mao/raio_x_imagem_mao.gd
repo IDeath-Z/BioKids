@@ -60,10 +60,6 @@ func _on_botao_proximo_pressed() -> void:
 	info_lado_esquerdo.visible = false
 	animacao_mao.play("lado_direito") # Cai na linha 83
 	
-func _on_pop_up_dicas_botao_audio_pressed() -> void:
-	# Colocar o audio aqui quando tiver
-	pass
-
 func _on_animacao_mao_animation_started(anim_name: StringName) -> void:
 	if anim_name == "fade":
 		await get_tree().create_timer(0.1).timeout
@@ -86,6 +82,7 @@ func _on_animacao_mao_animation_finished(anim_name: StringName) -> void:
 			info_lado_direito.visible = true
 			animacao_info_lado_direito.play("fade") # Para aqui
 			botoes_s_n.visible = true
+			botao_sim.add_theme_font_size_override("font_size", 35)
 			botao_sim.text = "ANTERIOR"
 			botao_nao.text = "SAIR"
 			botoes_ant_prox.visible = false
@@ -94,6 +91,7 @@ func _on_animacao_lado_esquerdo_animation_finished(anim_name: StringName) -> voi
 	if anim_name == "fade":
 		if estado_atual == Estado.INICIAL:
 			animacao_mao.play_backwards("lado_esquerdo")
+			botao_sim.add_theme_font_size_override("font_size", 50)
 			botao_sim.text = "SIM"
 			botao_nao.text = "NÃO"
 
@@ -101,3 +99,10 @@ func _on_animacao_lado_direito_animation_finished(anim_name: StringName) -> void
 	if anim_name == "fade":
 		if estado_atual == Estado.LADO_ESQUERDO:
 			animacao_mao.play_backwards("lado_direito") # Cai na linha 80
+
+func _on_pop_up_dicas_botao_audio_pressed() -> void:
+	# Colocar o audio aqui quando tiver
+	pass
+
+func _on_pop_up_dicas_botao_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://telas/minigames/raio_x/mao/raio_x_camera_mao.tscn")
