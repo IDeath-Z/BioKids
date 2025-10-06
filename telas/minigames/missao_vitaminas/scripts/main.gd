@@ -20,6 +20,11 @@ var musica_ligada_original: bool = true
 @onready var left_button = $UILayer/TouchControls/LeftButton if has_node("UILayer/TouchControls/LeftButton") else null
 @onready var right_button = $UILayer/TouchControls/RightButton if has_node("UILayer/TouchControls/RightButton") else null
 @onready var bio_fato_scene = preload("res://telas/minigames/missao_vitaminas/Cenas/bio_fato_vitaminas.tscn")
+@onready var pause_container = $UILayer/PauseMarginContainer if has_node("UILayer/PauseMarginContainer") else null
+@onready var pause_button = $UILayer/PauseMarginContainer/PauseButton if has_node("UILayer/PauseMarginContainer/PauseButton") else null
+@onready var pause_menu_node = $UILayer/PauseMenuNode if has_node("UILayer/PauseMenuNode") else null
+@onready var pause_menu = $UILayer/PauseMenuNode/PauseMenu if has_node("UILayer/PauseMenuNode/PauseMenu") else null
+@onready var menu_button = $UILayer/MenuButton if has_node("UILayer/MenuButton") else null
 
 var base_fall_speed: float
 var fall_speed_increment: float
@@ -90,14 +95,14 @@ func _ready():
 	$Player.position = Vector2(screen_size.x / 2, screen_size.y - 100 * scale_factor)
 
 	if max_saudaveis > 0 and max_nao_saudaveis > 0:
-		change_food_pair() # Define os índices iniciais, mas não spawna
+		change_food_pair()
 	else:
 		print("Erro: Cenas de comida não carregadas ou sem sprites!")
 
 	if has_node("Player"):
 		$Player.connect("score_changed", Callable(self, "update_food_pair_based_on_score"))
 	
-	# Configuração do MarginContainer e VBoxContainer
+	# Configuração do MarginContainer do MenuLayer
 	var margin_container = $MenuLayer/MarginContainer
 	if margin_container:
 		margin_container.set_anchors_preset(Control.PRESET_CENTER)
@@ -116,7 +121,7 @@ func _ready():
 		vbox.alignment = BoxContainer.ALIGNMENT_CENTER
 		print("VBoxContainer configurado: alignment = Center")
 
-	# Configuração dos botões
+	# Configuração dos botões do menu inicial
 	var start_button = $MenuLayer/MarginContainer/VBoxContainer/StartButton
 	if start_button:
 		start_button.pressed.connect(_on_start_button_pressed)
@@ -159,7 +164,6 @@ func _ready():
 	else:
 		print("Erro: VoltarButton não encontrado!")
 
-	var menu_button = $UILayer/MenuButton
 	if menu_button:
 		if menu_button.pressed.is_connected(_on_menu_button_pressed):
 			menu_button.pressed.disconnect(_on_menu_button_pressed)
@@ -197,14 +201,12 @@ func _ready():
 	var pontos_label = $UILayer/PontosLabel
 	if pontos_label:
 		pontos_label.text = "Pontos: 0"
-		pontos_label.position = Vector2(20 * scale_factor, 20 * scale_factor)
 	else:
 		print("Erro: PontosLabel não encontrado!")
 
 	var vidas_label = $UILayer/VidasLabel
 	if vidas_label:
 		vidas_label.text = "Vidas: 3"
-		vidas_label.position = Vector2(screen_size.x - 170 * scale_factor, 20 * scale_factor)
 	else:
 		print("Erro: VidasLabel não encontrado!")
 
@@ -252,11 +254,88 @@ func _ready():
 	else:
 		print("Erro: Botões touch não encontrados!")
 
+	if pause_container:
+		pause_container.visible = false
+		pause_container.set_anchors_preset(Control.PRESET_TOP_LEFT)
+		pause_container.z_index = 10
+		pause_container.add_theme_constant_override("margin_left", 10 * scale_factor)
+		pause_container.add_theme_constant_override("margin_top", 10 * scale_factor)
+		print("PauseMarginContainer inicializado: visible = ", pause_container.visible, ", z_index = ", pause_container.z_index)
+	else:
+		print("Erro: PauseMarginContainer não encontrado!")
+
+	if pause_button:
+		pause_button.process_mode = Node.PROCESS_MODE_ALWAYS  # Garante que processe eventos mesmo pausado
+		pause_button.modulate = Color(1.0, 1.0, 1.0)
+		pause_button.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
+		pause_button.focus_mode = Control.FOCUS_ALL
+		pause_button.mouse_filter = Control.MOUSE_FILTER_STOP
+		pause_button.disabled = false
+		pause_button.z_index = 11
+	if not pause_button.pressed.is_connected(_on_pause_button_pressed):
+		pause_button.pressed.connect(_on_pause_button_pressed)
+		print("Sinal pressed do PauseButton conectado!")
+	if not pause_button.mouse_entered.is_connected(_on_pause_button_mouse_entered):
+		pause_button.mouse_entered.connect(_on_pause_button_mouse_entered)
+		print("Sinal mouse_entered do PauseButton conectado!")
+	if not pause_button.mouse_exited.is_connected(_on_pause_button_mouse_exited):
+		pause_button.mouse_exited.connect(_on_pause_button_mouse_exited)
+		print("Sinal mouse_exited do PauseButton conectado!")
+	if not pause_button.button_down.is_connected(_on_pause_button_down):
+		pause_button.button_down.connect(_on_pause_button_down)
+		print("Sinal button_down do PauseButton conectado!")
+	if not pause_button.button_up.is_connected(_on_pause_button_up):
+		pause_button.button_up.connect(_on_pause_button_up)
+		print("Sinal button_up do PauseButton conectado!")
+		print("PauseButton configurado: visible = ", pause_button.visible, ", disabled = ", pause_button.disabled, ", z_index = ", pause_button.z_index, ", process_mode = ", pause_button.process_mode, ", global_rect = ", pause_button.get_global_rect())
+	else:
+		print("Erro: PauseButton não encontrado!")
+
+	if pause_menu_node:
+		if pause_menu_node is CanvasLayer:
+			pause_menu_node.layer = 10
+			pause_menu_node.process_mode = Node.PROCESS_MODE_ALWAYS
+			print("PauseMenuNode configurado como CanvasLayer: layer = ", pause_menu_node.layer, ", process_mode = ", pause_menu_node.process_mode)
+		else:
+			print("ERRO: PauseMenuNode não é CanvasLayer, é ", pause_menu_node.get_class(), ". Converta para CanvasLayer no editor!")
+	else:
+		print("ERRO CRÍTICO: PauseMenuNode não encontrado em $UILayer/PauseMenuNode!")
+
+	if pause_menu:
+		pause_menu.visible = false
+		pause_menu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+		if not pause_menu.continue_pressed.is_connected(_on_continue_button_pressed):
+			pause_menu.continue_pressed.connect(_on_continue_button_pressed)
+			print("Sinal continue_pressed conectado ao PauseMenu!")
+		# Removido a conexão ao exit_pressed
+		print("PauseMenu configurado: tipo = ", pause_menu.get_class(), ", visible = ", pause_menu.visible, ", process_mode = ", pause_menu.process_mode)
+	else:
+		print("ERRO CRÍTICO: PauseMenu não encontrado em $UILayer/PauseMenuNode/PauseMenu!")
+
+	var ui_layer = $UILayer
+	if ui_layer:
+		ui_layer.process_mode = Node.PROCESS_MODE_ALWAYS
+		ui_layer.layer = 0
+		print("UILayer configurado: process_mode = ", ui_layer.process_mode, ", layer = ", ui_layer.layer)
+	else:
+		print("Erro: UILayer não encontrado!")
+
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		var menu_button = $UILayer/MenuButton
-		if menu_button and menu_button.visible and menu_button.get_global_rect().has_point(event.global_position):
-			print("Clique direto detectado no MenuButton!")
+		print("Input detectado (mouse), paused = ", get_tree().paused, ", position = ", event.global_position)
+		if pause_button and pause_button.visible and not pause_button.disabled and pause_button.get_global_rect().has_point(event.global_position):
+			print("Clique detectado no PauseButton!")
+			_on_pause_button_pressed()
+		if menu_button and menu_button.visible and not menu_button.disabled and menu_button.get_global_rect().has_point(event.global_position):
+			print("Clique detectado no MenuButton!")
+			_on_menu_button_pressed()
+	if event is InputEventScreenTouch and event.pressed:
+		print("Input detectado (toque), paused = ", get_tree().paused, ", position = ", event.position, ", PauseButton rect = ", pause_button.get_global_rect() if pause_button else "null", ", MenuButton rect = ", menu_button.get_global_rect() if menu_button else "null")
+		if pause_button and pause_button.visible and not pause_button.disabled and pause_button.get_global_rect().has_point(event.position):
+			print("Toque detectado no PauseButton!")
+			_on_pause_button_pressed()
+		if menu_button and menu_button.visible and not menu_button.disabled and menu_button.get_global_rect().has_point(event.position):
+			print("Toque detectado no MenuButton!")
 			_on_menu_button_pressed()
 
 func increase_fall_speed() -> void:
@@ -298,7 +377,6 @@ func start_countdown() -> void:
 		print("Volume da música reduzido para -20.0 dB")
 	
 	countdown_label.visible = true
-	# countdown_label.position = Vector2(screen_size.x / 2 - 50, screen_size.y / 2 - 25)
 	
 	while countdown > 0:
 		countdown_label.text = str(countdown)
@@ -336,7 +414,12 @@ func start_countdown() -> void:
 		left_button.position = Vector2(90 * scale_factor, screen_size.y - 80 * scale_factor)
 		right_button.position = Vector2((original_width - 90) * scale_factor, screen_size.y - 80 * scale_factor)
 	
-	# Spawna os dois alimentos iniciais após a contagem regressiva
+	if pause_container:
+		pause_container.visible = true
+		print("PauseMarginContainer visível após VAI! visible = ", pause_container.visible)
+	else:
+		print("Erro: PauseMarginContainer não encontrado ao iniciar jogo!")
+	
 	spawn_initial_food_pair()
 
 func spawn_initial_food_pair():
@@ -346,7 +429,6 @@ func spawn_initial_food_pair():
 	
 	var spawner = $SpawnerComida
 	if spawner:
-		# Remove qualquer comida existente para evitar duplicatas
 		for comida in get_tree().get_nodes_in_group("comida"):
 			comida.queue_free()
 		
@@ -397,7 +479,7 @@ func _on_info_button_pressed():
 		print("Cena Info.tscn carregada com sucesso!")
 
 func _on_menu_button_pressed():
-	print("MenuButton pressionado! Mostrando Bio Fato.")
+	print("MenuButton pressionado! Mostrando Bio Fato. Posição do clique: ", get_global_mouse_position())
 	get_tree().paused = false
 	
 	if $UILayer/GameOverLabel:
@@ -409,27 +491,26 @@ func _on_menu_button_pressed():
 		$UILayer/MenuButton.set_process_input(false)
 	
 	var canvas_layer = CanvasLayer.new()
-	canvas_layer.layer = 10 # Garantir que o bio_fato fique acima do MenuLayer
+	canvas_layer.layer = 10
 	add_child(canvas_layer)
 	
 	var bio_fato = bio_fato_scene.instantiate()
-	canvas_layer.add_child(bio_fato)
-	
-	bio_fato.z_index = 100
+	if bio_fato:
+		print("BioFato instanciado com sucesso!")
+		canvas_layer.add_child(bio_fato)
+		bio_fato.z_index = 100
+	else:
+		print("Erro: Falha ao instanciar bio_fato_scene!")
 	
 	await get_tree().process_frame
 	
-	if bio_fato.has_node("BioFato/BotaoContinuar"):
+	if bio_fato and bio_fato.has_node("BioFato/BotaoContinuar"):
 		var botao = bio_fato.get_node("BioFato/BotaoContinuar")
 		botao.grab_focus()
 		botao.mouse_filter = Control.MOUSE_FILTER_STOP
 		print("Foco dado ao BotaoContinuar! Mouse Filter: ", botao.mouse_filter)
-		if botao.mouse_filter != Control.MOUSE_FILTER_STOP:
-			print("Aviso: Mouse Filter não foi alterado para STOP!")
 	else:
-		print("Erro: BotaoContinuar não encontrado na hierarquia!")
-	
-	print("Bio fato instanciado e configurado!")
+		print("Erro: BotaoContinuar não encontrado na hierarquia ou bio_fato é null!")
 
 func reset_game_state():
 	print("Reiniciando estado do jogo...")
@@ -483,6 +564,12 @@ func reset_game_state():
 		right_button.visible = false
 	if $MenuLayer:
 		$MenuLayer.visible = true
+	if pause_container:
+		pause_container.visible = false
+		print("PauseMarginContainer escondido no reset: visible = ", pause_container.visible)
+	if pause_menu:
+		pause_menu.hide_menu()
+		print("PauseMenu escondido no reset")
 	if background_music and musica_ligada_original:
 		background_music.volume_db = -10.0
 		background_music.play()
@@ -520,6 +607,14 @@ func show_game_over():
 	if $BackgroundNormal:
 		$BackgroundNormal.visible = false
 	
+	if pause_container:
+		pause_container.visible = false
+		print("PauseMarginContainer escondido no Game Over: visible = ", pause_container.visible)
+	
+	if pause_menu:
+		pause_menu.hide_menu()
+		print("PauseMenu escondido no Game Over")
+	
 	var game_over_label = $UILayer/GameOverLabel
 	if game_over_label:
 		await get_tree().process_frame
@@ -536,13 +631,13 @@ func show_game_over():
 		final_score_label.position = Vector2(screen_size.x / 2 - rect_texto.size.x / 2, 50 * scale_factor)
 		final_score_label.visible = true
 	
-	var menu_button = $UILayer/MenuButton
 	if menu_button:
 		await get_tree().process_frame
-		#menu_button.position = Vector2(72 * scale_factor, 630 * scale_factor)
 		menu_button.visible = true
 		menu_button.disabled = false
-		print("MenuButton ativado: position = ", menu_button.position)
+		print("MenuButton ativado: position = ", menu_button.position, ", global_rect = ", menu_button.get_global_rect())
+	else:
+		print("Erro: MenuButton não encontrado!")
 	
 	if $UILayer/PontosLabel:
 		$UILayer/PontosLabel.visible = false
@@ -598,6 +693,7 @@ func _on_voltar_button_pressed():
 		print("Cena ", scene_path, " carregada com sucesso!")
 
 func update_food_pair_based_on_score(new_score: int) -> void:
+	@warning_ignore("integer_division")
 	var new_threshold = int(new_score / 100) * 100
 	if new_threshold > last_score_threshold:
 		change_food_pair()
@@ -606,3 +702,123 @@ func update_food_pair_based_on_score(new_score: int) -> void:
 		increase_player_speed()
 		decrease_spawn_wait()
 		print("Novo par de alimentos gerado em ", new_score, " pontos!")
+
+func _on_pause_button_pressed():
+	if not game_started:
+		print("Pause bloqueado: game_started é false")
+		return
+	if not pause_button:
+		print("Erro: PauseButton não encontrado ao tentar pausar!")
+		return
+	if not pause_button.visible:
+		print("Erro: PauseButton está invisível!")
+		return
+	if pause_button.disabled:
+		print("Erro: PauseButton está desabilitado!")
+		return
+	print("PauseButton clicado! Estado do jogo: game_started = ", game_started, ", paused = ", get_tree().paused)
+	get_tree().paused = true
+	var spawn_timer = $SpawnerComida/SpawnTimer
+	if spawn_timer:
+		spawn_timer.paused = true
+		print("SpawnTimer pausado explicitamente")
+	else:
+		print("Erro: SpawnTimer não encontrado!")
+	if pause_container:
+		pause_container.visible = false
+		print("Jogo pausado: PauseMarginContainer escondido, visible = ", pause_container.visible)
+	else:
+		print("Erro: PauseMarginContainer não encontrado ao pausar!")
+	if pause_menu:
+		print("Tentando exibir PauseMenu: visibilidade atual = ", pause_menu.visible, ", process_mode = ", pause_menu.process_mode)
+		pause_menu.show_menu()
+		print("PauseMenu exibido, nova visibilidade = ", pause_menu.visible, ", process_mode = ", pause_menu.process_mode)
+	else:
+		print("ERRO CRÍTICO: PauseMenu não encontrado ao pausar!")
+	# Animação de clique após a pausa
+	if pause_button:
+		print("Iniciando animação de clique no PauseButton. Escala inicial: ", pause_button.scale)
+		var tween = create_tween()
+		if tween:
+			tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+			tween.tween_property(pause_button, "scale", Vector2(1.2, 1.2), 0.15)  # Aumenta para 20% maior
+			tween.tween_property(pause_button, "scale", Vector2(1.0, 1.0), 0.15)  # Volta ao normal
+			tween.parallel().tween_property(pause_button, "modulate", Color(0.8, 0.8, 0.8), 0.15)  # Escurece um pouco
+			tween.parallel().tween_property(pause_button, "modulate", Color(1.0, 1.0, 1.0), 0.15)  # Volta à cor original
+			print("Animação de clique configurada com sucesso.")
+
+func _on_pause_button_down():
+	if pause_button and pause_button.visible and not pause_button.disabled:
+		print("PauseButton pressionado! Iniciando efeito de pressionamento. Escala inicial: ", pause_button.scale)
+		var tween = create_tween()
+		if tween:
+			tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+			tween.tween_property(pause_button, "scale", Vector2(0.9, 0.9), 0.1)  # Reduz 10% para simular pressão
+			tween.parallel().tween_property(pause_button, "modulate", Color(0.7, 0.7, 0.7), 0.1)  # Escurece mais
+			print("Efeito de pressionamento aplicado.")
+	else:
+		print("Erro: PauseButton não encontrado, invisível ou desabilitado ao pressionar!")
+
+func _on_pause_button_up():
+	if pause_button and pause_button.visible and not pause_button.disabled:
+		print("PauseButton solto! Restaurando estado inicial. Escala atual: ", pause_button.scale)
+		var tween = create_tween()
+		if tween:
+			tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+			tween.tween_property(pause_button, "scale", Vector2(1.0, 1.0), 0.1)  # Volta ao normal
+			tween.parallel().tween_property(pause_button, "modulate", Color(1.0, 1.0, 1.0), 0.1)  # Volta à cor original
+			print("Efeito de soltura aplicado.")
+	else:
+		print("Erro: PauseButton não encontrado, invisível ou desabilitado ao soltar!")
+
+func _on_continue_button_pressed():
+	print("SINAL RECEBIDO: ContinueButton pressionado no Main! Despausando jogo...")
+	if not game_started:
+		print("Continue bloqueado: game_started é false")
+		return
+	get_tree().paused = false
+	if has_node("Player"):
+		$Player.set_process(true)
+		print("Player process ativado: ", $Player.is_processing())
+	if $SpawnerComida and $SpawnerComida.has_node("SpawnTimer"):
+		$SpawnerComida/SpawnTimer.paused = false
+		if $SpawnerComida/SpawnTimer.is_stopped():
+			$SpawnerComida/SpawnTimer.start()
+			print("SpawnTimer reiniciado após despausar")
+	if pause_container:
+		pause_container.visible = true
+		print("Jogo despausado: PauseMarginContainer visível, visible = ", pause_container.visible)
+	else:
+		print("Erro: PauseMarginContainer não encontrado ao despausar!")
+	if pause_menu:
+		pause_menu.hide_menu()
+		print("PauseMenu escondido")
+	else:
+		print("Erro: PauseMenu não encontrado ao despausar!")
+	if left_button and right_button:
+		left_button.visible = true
+		right_button.visible = true
+		print("Botões de toque visíveis após despausar: left = ", left_button.visible, ", right = ", right_button.visible)
+	if background_music and musica_ligada_original:
+		if not background_music.playing:
+			background_music.play()
+			print("Música de fundo reiniciada após despausar")
+	print("Jogo despausado com sucesso! paused = ", get_tree().paused)
+
+# Removido _on_exit_button_pressed, pois o sinal exit_pressed foi eliminado
+
+func _on_pause_button_mouse_entered():
+	if pause_button and pause_button.visible and not pause_button.disabled:
+		var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+		tween.tween_property(pause_button, "modulate", Color(1.5, 1.5, 1.5), 0.2)  # Aumenta o brilho
+		print("Mouse entrou no PauseButton: brilho aumentado para ", Color(1.5, 1.5, 1.5))
+	else:
+		print("Erro: PauseButton não encontrado, invisível ou desabilitado ao entrar mouse! visible = ", pause_button.visible if pause_button else "null", ", disabled = ", pause_button.disabled if pause_button else "null")
+
+func _on_pause_button_mouse_exited():
+	if pause_button and pause_button.visible and not pause_button.disabled:
+		var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+		tween.tween_property(pause_button, "modulate", Color(1.0, 1.0, 1.0), 0.2)  # Volta ao normal
+		print("Mouse saiu do PauseButton: brilho restaurado para ", Color(1.0, 1.0, 1.0))
+	else:
+		print("Erro: PauseButton não encontrado, invisível ou desabilitado ao sair mouse! visible = ", pause_button.visible if pause_button else "null", ", disabled = ", pause_button.disabled if pause_button else "null")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmcb7usur13uo"]
+[gd_scene load_steps=35 format=3 uid="uid://dmcb7usur13uo"]
 
 [ext_resource type="Script" uid="uid://bg2cvcv2ln1xw" path="res://telas/minigames/missao_vitaminas/scripts/player.gd" id="1_74bqr"]
 [ext_resource type="Script" uid="uid://ds8efov5xt1uw" path="res://telas/minigames/missao_vitaminas/scripts/main.gd" id="1_jjrtw"]
@@ -12,10 +12,12 @@
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="10_wvhv2"]
 [ext_resource type="AudioStream" uid="uid://ctxybxussh3mk" path="res://telas/minigames/missao_vitaminas/sounds/pickup_saudavel.wav" id="11_7yi6i"]
 [ext_resource type="AudioStream" uid="uid://capdibl6rxrcx" path="res://telas/minigames/missao_vitaminas/sounds/damage.wav" id="12_irhh0"]
+[ext_resource type="PackedScene" uid="uid://bbqq17qlfa7wk" path="res://telas/minigames/missao_vitaminas/Cenas/PauseMenu.tscn" id="12_wvhv2"]
 [ext_resource type="AudioStream" uid="uid://coxdfeo7ulfi1" path="res://telas/minigames/missao_vitaminas/sounds/game_over.wav" id="13_me8gh"]
 [ext_resource type="AudioStream" uid="uid://cy8jnaidp13aa" path="res://telas/minigames/missao_vitaminas/sounds/countdown_tick.wav" id="14_3ea3k"]
 [ext_resource type="AudioStream" uid="uid://b50baestxtdnu" path="res://telas/minigames/missao_vitaminas/sounds/start_race.wav" id="15_xaxpv"]
 [ext_resource type="AudioStream" uid="uid://dkjhygl1h1hi1" path="res://telas/minigames/missao_vitaminas/sounds/background_music.mp3" id="16_xaxpv"]
+[ext_resource type="Texture2D" uid="uid://dn55j1rq5t7gc" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/Setaa.png" id="17_e2fu3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x6di6"]
 animations = [{
@@ -53,6 +55,30 @@ size = Vector2(78, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ja1os"]
 size = Vector2(78, 134)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvhv2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ji2c5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6e4g7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1k05e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ta5ef"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pqtdy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pd4lw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4gqt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oba76"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2fu3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvhv2"]
+bg_color = Color(0.631373, 0.6, 0.6, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j5sm"]
 
@@ -132,21 +158,71 @@ pivot_offset = Vector2(220, -1400)
 theme = ExtResource("10_wvhv2")
 text = "Voltar Ao Menu"
 
+[node name="PauseMarginContainer" type="MarginContainer" parent="UILayer"]
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.005
+anchor_right = 0.148
+anchor_bottom = 0.098
+offset_left = 6.92
+offset_top = -0.400001
+offset_right = 151.44
+offset_bottom = 152.16
+scale = Vector2(0.4, 0.4)
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="PauseButton" type="Button" parent="UILayer/PauseMarginContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wvhv2")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ji2c5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6e4g7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_1k05e")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ta5ef")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pqtdy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pd4lw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_n4gqt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oba76")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_e2fu3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wvhv2")
+action_mode = 0
+icon = ExtResource("17_e2fu3")
+
+[node name="PauseMenuNode" type="CanvasLayer" parent="UILayer"]
+process_mode = 3
+layer = 10
+
+[node name="PauseMenu" parent="UILayer/PauseMenuNode" instance=ExtResource("12_wvhv2")]
+
 [node name="PontosLabel" type="Label" parent="UILayer"]
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 180.0
-offset_bottom = 55.0
+anchors_preset = -1
+anchor_left = 0.208
+anchor_top = 0.028
+anchor_right = 0.483
+anchor_bottom = 0.072
+offset_left = 0.23999
+offset_top = -0.240002
+offset_right = -32.76
+offset_bottom = -7.76
 scale = Vector2(1.2, 1.2)
 theme = ExtResource("10_wvhv2")
 theme_override_font_sizes/font_size = 26
 text = "Pontos: 0"
 
 [node name="VidasLabel" type="Label" parent="UILayer"]
-offset_left = 530.0
-offset_top = 15.0
-offset_right = 675.0
-offset_bottom = 55.0
+anchors_preset = -1
+anchor_left = 0.778
+anchor_top = 0.028
+anchor_right = 0.987
+anchor_bottom = 0.072
+offset_left = -0.160034
+offset_top = -0.240002
+offset_right = -23.64
+offset_bottom = -7.76
 scale = Vector2(1.2, 1.2)
 theme = ExtResource("10_wvhv2")
 theme_override_font_sizes/font_size = 26
@@ -229,8 +305,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_right = -1.0
+offset_right = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -296,3 +371,4 @@ theme_override_font_sizes/font_size = 50
 text = "Voltar"
 
 [connection signal="pressed" from="UILayer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="UILayer/PauseMarginContainer/PauseButton" to="." method="_on_pause_button_pressed"]
