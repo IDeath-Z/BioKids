@@ -1,24 +1,65 @@
-[gd_scene load_steps=17 format=3 uid="uid://cisnac45ahktu"]
+[gd_scene load_steps=22 format=3 uid="uid://cisnac45ahktu"]
 
 [ext_resource type="Script" uid="uid://biwy7sv1gssh4" path="res://telas/minigames/bio_goods/scripts/control_drawing1.gd" id="1_0gn57"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_pj7v1"]
 [ext_resource type="Texture2D" uid="uid://k0qmefotrqqi" path="res://telas/minigames/bio_goods/sprites/background_selecao_pintura.png" id="3_s0y3f"]
-[ext_resource type="Texture2D" uid="uid://bfw41yihqn2sr" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/cenario2.png" id="4_g8e2o"]
 [ext_resource type="Texture2D" uid="uid://cmcx6bhbn4vyf" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_02-128x128.png" id="4_pj7v1"]
 [ext_resource type="Shader" uid="uid://cb6x1yvv1uq26" path="res://telas/minigames/bio_goods/scene/desenho1.gdshader" id="5_g8e2o"]
+[ext_resource type="Texture2D" uid="uid://d1rc7hioghg02" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/desenho1.jpg" id="5_pj7v1"]
 [ext_resource type="Texture2D" uid="uid://20qux7gs1gby" path="res://telas/minigames/bio_goods/sprites/icones/back arrown.png" id="6_chrmv"]
-[ext_resource type="Texture2D" uid="uid://c4pjsrwfn2yde" path="res://telas/minigames/bio_goods/sprites/icones/pincel.png" id="6_mifr6"]
 [ext_resource type="Texture2D" uid="uid://bk8b4wqf12v5r" path="res://telas/minigames/bio_goods/sprites/icones/save icon.png" id="7_pj7v1"]
 [ext_resource type="Texture2D" uid="uid://btvama1at1dhm" path="res://telas/minigames/bio_goods/sprites/icones/black-bucket-icon-download-1.png" id="7_rco25"]
 [ext_resource type="Texture2D" uid="uid://d3hk2csv76e28" path="res://telas/minigames/bio_goods/sprites/icones/eraser.png" id="8_68jic"]
 [ext_resource type="Texture2D" uid="uid://bohb3c1d211d4" path="res://telas/minigames/bio_goods/sprites/icones/redo-arrow.png" id="8_s0y3f"]
 [ext_resource type="Texture2D" uid="uid://yve3l1t3iotm" path="res://telas/minigames/bio_goods/sprites/icones/bin.png" id="9_pg7lq"]
 [ext_resource type="Texture2D" uid="uid://cngkfn20ku15u" path="res://telas/minigames/bio_goods/sprites/icones/color picker icon.png" id="9_q5f0i"]
+[ext_resource type="Texture2D" uid="uid://u624a2en2y1h" path="res://telas/minigames/bio_goods/sprites/icones/undo-button.png" id="11_pj7v1"]
+[ext_resource type="Script" uid="uid://dc153w216kfj2" path="res://telas/minigames/bio_goods/scripts/color_popup.gd" id="15_s0y3f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mifr6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rco25"]
 shader = ExtResource("5_g8e2o")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0y3f"]
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pg7lq"]
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t77o8"]
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsuwu"]
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,8 +70,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_pj7v1")
 script = ExtResource("1_0gn57")
-picker_path = NodePath("ColorIcon (TxTButton)/ColorPicker (Base)")
-picker_icon_path = NodePath("ColorIcon (TxTButton)")
+color_popup_path = NodePath("ColorPopup")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -71,7 +111,7 @@ offset_right = -0.280029
 offset_bottom = -0.120056
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_g8e2o")
+texture = ExtResource("5_pj7v1")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -116,6 +156,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.5
+offset_top = 4.999981
+offset_right = -4.5
+offset_bottom = -5.0000153
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_chrmv")
@@ -148,8 +192,9 @@ layout_mode = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0555
+anchor_top = 0.04545437
 anchor_right = 0.9455
-anchor_bottom = 1.0
+anchor_bottom = 0.9545453
 offset_left = -0.299995
 offset_right = -0.299988
 grow_horizontal = 2
@@ -166,9 +211,9 @@ layout_mode = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0555
-anchor_top = 0.0390625
+anchor_top = 0.05454528
 anchor_right = 0.9455
-anchor_bottom = 0.962891
+anchor_bottom = 0.9454544
 offset_left = -0.299995
 offset_right = -0.299988
 grow_horizontal = 2
@@ -177,7 +222,7 @@ texture = ExtResource("9_pg7lq")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Pincel" type="Button" parent="."]
+[node name="Undo" type="Button" parent="."]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -192,17 +237,18 @@ offset_bottom = 0.159912
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Pincel"]
+[node name="TextureRect" type="TextureRect" parent="Undo"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_right = -22.0
-offset_bottom = -6.10352e-05
+offset_left = 4.0
+offset_top = 4.9995117
+offset_right = -5.0
+offset_bottom = -5.999939
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_mifr6")
+texture = ExtResource("11_pj7v1")
 expand_mode = 1
 
 [node name="Balde" type="Button" parent="."]
@@ -225,8 +271,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 9.0
+offset_top = 5.000061
 offset_right = -7.0
-offset_bottom = -6.10352e-05
+offset_bottom = -5.000122
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_rco25")
@@ -249,7 +296,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 10.0
+offset_top = 4.0
 offset_right = -17.0
+offset_bottom = -5.999878
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_68jic")
@@ -262,10 +311,10 @@ anchor_left = 0.767
 anchor_top = 0.855
 anchor_right = 0.942
 anchor_bottom = 0.953
-offset_left = -0.23999
-offset_top = -3.40002
-offset_right = -0.240051
-offset_bottom = -0.240112
+offset_left = 2.7600098
+offset_top = -13.400024
+offset_right = 2.7599487
+offset_bottom = -10.240112
 
 [node name="ColorPicker (Base)" type="ColorPickerButton" parent="ColorIcon (TxTButton)"]
 visible = false
@@ -289,15 +338,72 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = -4.999939
+offset_bottom = -2.999878
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_q5f0i")
 expand_mode = 1
 
+[node name="ColorPopup" type="PopupPanel" parent="."]
+handle_input_locally = false
+oversampling_override = 1.0
+position = Vector2i(200, 243)
+size = Vector2i(300, 300)
+visible = true
+borderless = false
+always_on_top = true
+sharp_corners = true
+max_size = Vector2i(300, 300)
+theme_type_variation = &"TooltipPanel"
+script = ExtResource("15_s0y3f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorPopup"]
+custom_minimum_size = Vector2(80, 80)
+anchors_preset = -1
+anchor_left = 0.006
+anchor_top = 0.0050000004
+anchor_right = 0.98700005
+anchor_bottom = 0.98700005
+offset_left = 6.2
+offset_top = 0.49999988
+offset_right = -4.100006
+offset_bottom = 1.8999939
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 29
+alignment = 1
+
+[node name="ColorButtonRed" type="Button" parent="ColorPopup/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_s0y3f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pg7lq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t77o8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vsuwu")
+
+[node name="ColorButtonOrange" type="Button" parent="ColorPopup/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorButtonYellow" type="Button" parent="ColorPopup/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorButtonGreen" type="Button" parent="ColorPopup/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorButtonBlue" type="Button" parent="ColorPopup/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorButtonPurple" type="Button" parent="ColorPopup/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorButtonPink" type="Button" parent="ColorPopup/VBoxContainer"]
+layout_mode = 2
+
 [connection signal="pressed" from="ControlButtons/Voltar_selecao" to="." method="_on_voltar_selecao_pressed"]
 [connection signal="pressed" from="ControlButtons/Apagar_tudo" to="." method="_on_apagar_tudo_pressed"]
-[connection signal="pressed" from="Pincel" to="." method="_on_pincel_pressed"]
+[connection signal="pressed" from="Undo" to="." method="_on_pincel_pressed"]
 [connection signal="pressed" from="Balde" to="." method="_on_balde_pressed"]
 [connection signal="pressed" from="Borracha" to="." method="_on_borracha_pressed"]
-[connection signal="pressed" from="ColorIcon (TxTButton)" to="." method="_on_texture_button_pressed"]
-[connection signal="color_changed" from="ColorIcon (TxTButton)/ColorPicker (Base)" to="." method="_on_color_picker_color_changed"]
+[connection signal="pressed" from="ColorIcon (TxTButton)" to="." method="_on_color_icon_tx_t_button_pressed"]

@@ -1,41 +1,33 @@
 extends Control
 
-var draw_mode: String = "pincel"
+# === HISTÓRICO DE AÇÕES (UNDO) ===
+var undo_stack: Array = []
+var max_history: int = 10  # máximo de passos que podem ser desfeitos
+
+# === VARIÁVEIS DE DESENHO ===
+var draw_mode: String = "balde"
 var draw_color: Color = Color(1, 0, 0)
 var brush_size: int = 8
+var erasing: bool = false
 
 @onready var color_layer: TextureRect = $ColorLayer
 @onready var desenho_node: TextureRect = $Desenho
 
-@export var picker_path: NodePath
-@export var picker_icon_path: NodePath
-
-var picker: ColorPickerButton
-var picker_icon: TextureButton
+@export var color_popup_path: NodePath  # Popup de tintas coloridas
+var color_popup: PopupPanel
 
 var img: Image
 var tex: ImageTexture
 var desenho_img: Image
 
 
+# === READY ===
 func _ready():
-	picker = get_node_or_null(picker_path) as ColorPickerButton
-	picker_icon = get_node_or_null(picker_icon_path) as TextureButton
+	color_popup = get_node_or_null(color_popup_path)
+	if color_popup:
+		color_popup.color_chosen.connect(_on_color_chosen)
 
-	if picker:
-		picker.color_changed.connect(_on_color_picker_color_changed)
-
-		# pega o ColorPicker interno do botão e simplifica
-		var cp: ColorPicker = picker.get_picker()
-		cp.edit_alpha = false       # sem transparência
-		cp.sliders_visible = false  # esconde sliders RGB
-		cp.presets_visible = false  # esconde cores recentes
-		cp.deferred_mode = true     # só aplica cor quando solta o mouse
-
-	if picker_icon:
-		picker_icon.pressed.connect(_on_texture_button_pressed)
-
-	# inicializa área de desenho
+	# Inicializa área de desenho
 	color_layer.size = desenho_node.size
 	var w = max(1, int(color_layer.size.x))
 	var h = max(1, int(color_layer.size.y))
@@ -49,54 +41,76 @@ func _ready():
 	desenho_img = desenho_tex.get_image()
 
 
+# === ENTRADAS DO USUÁRIO ===
 func _input(event):
-	if event is InputEventMouseButton and event.pressed:
-		var pos = event.position - color_layer.global_position
-		match draw_mode:
-			"pincel":
-				_draw_brush(pos, draw_color)
-			"borracha":
-				_draw_brush(pos, Color(0, 0, 0, 0))
-			"picker":
-				_pick_color(pos)
-			"balde":
-				_flood_fill(pos, draw_color)
+	if event is InputEventMouseButton:
+		var local := color_layer.get_local_mouse_position()
+		var inside := Rect2(Vector2.ZERO, color_layer.size).has_point(local)
+		if not inside:
+			return
+
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				match draw_mode:
+					"balde":
+						_save_undo_state()
+						_flood_fill(local, draw_color)
+						tex.update(img)
+
+					"borracha":
+						_save_undo_state()
+						erasing = true
+						_erase_point(local)
+						tex.update(img)
+			else:
+				erasing = false
+
+	elif event is InputEventMouseMotion and erasing:
+		var local := color_layer.get_local_mouse_position()
+		_erase_point(local)
 		tex.update(img)
 
-	elif event is InputEventMouseMotion and (event.button_mask & MOUSE_BUTTON_MASK_LEFT) != 0:
-		if draw_mode in ["pincel", "borracha"]:
-			var pos = color_layer.get_local_mouse_position()
-			_draw_brush(pos, draw_color if draw_mode == "pincel" else Color(0,0,0,0))
-			tex.update(img)
 
-
-# === Pincel ===
-func _draw_brush(pos: Vector2, color: Color):
-	for x in range(-brush_size, brush_size):
-		for y in range(-brush_size, brush_size):
-			var p = Vector2i(pos.x + x, pos.y + y)
+# === BORRACHA ===
+func _erase_point(pos: Vector2):
+	var radius := brush_size
+	for x in range(-radius, radius):
+		for y in range(-radius, radius):
+			var p := Vector2i(pos.x + x, pos.y + y)
 			if p.x >= 0 and p.y >= 0 and p.x < img.get_width() and p.y < img.get_height():
-				if Vector2(x,y).length() <= brush_size:
-					var desen_px = int(float(p.x) / img.get_width() * desenho_img.get_width())
-					var desen_py = int(float(p.y) / img.get_height() * desenho_img.get_height())
-					var base_color = desenho_img.get_pixel(desen_px, desen_py)
-					var brightness = (base_color.r + base_color.g + base_color.b) / 3.0
-					if brightness < 0.25:
-						continue
-					img.set_pixelv(p, color)
+				if Vector2(x, y).length() <= radius:
+					img.set_pixelv(p, Color(0, 0, 0, 0))
 
 
-# === Comparação de cores ===
-func _color_close(a: Color, b: Color, tol: float) -> bool:
-	var dr = abs(a.r - b.r)
-	var dg = abs(a.g - b.g)
-	var db = abs(a.b - b.b)
-	var da = abs(a.a - b.a)
-	return max(dr, dg, db, da) <= tol
+# === SALVAR ESTADO PARA UNDO ===
+func _save_undo_state():
+	var snapshot := tex.get_image()
+	if not undo_stack.is_empty():
+		var last: Image = undo_stack.back()
+		if snapshot.get_data() == last.get_data():
+			return
+	undo_stack.append(snapshot)
+	if undo_stack.size() > max_history:
+		undo_stack.pop_front()
+	print("Estado salvo! Total de passos:", undo_stack.size())
 
 
-# === Balde ===
+# === VOLTAR UM PASSO ===
+func _on_voltar_um_passo_pressed():
+	if undo_stack.is_empty():
+		print("Nada para desfazer.")
+		return
+	var snapshot: Image = undo_stack.pop_back()
+	img = snapshot.duplicate()
+	tex = ImageTexture.create_from_image(img)
+	color_layer.texture = tex
+	color_layer.queue_redraw()
+	print("(" + str(undo_stack.size()) + ") Passo desfeito!")
+
+
+# === BALDE (FILL) ===
 func _flood_fill(start: Vector2, new_color: Color):
+	_save_undo_state()
 	var s = Vector2i(start)
 	if s.x < 0 or s.y < 0 or s.x >= img.get_width() or s.y >= img.get_height():
 		return
@@ -108,7 +122,6 @@ func _flood_fill(start: Vector2, new_color: Color):
 
 	var stack: Array[Vector2i] = [s]
 	var visited := {}
-
 	while stack.size() > 0:
 		var p = stack.pop_back()
 		if p in visited:
@@ -130,58 +143,59 @@ func _flood_fill(start: Vector2, new_color: Color):
 			continue
 
 		img.set_pixelv(p, new_color)
-
 		stack.append(Vector2i(p.x+1, p.y))
 		stack.append(Vector2i(p.x-1, p.y))
 		stack.append(Vector2i(p.x, p.y+1))
 		stack.append(Vector2i(p.x, p.y-1))
 
-
-# === Picker ===
-func _pick_color(pos: Vector2):
-	var c = img.get_pixelv(Vector2i(pos))
-	if c.a > 0:
-		draw_color = c
-	elif picker:
-		draw_color = picker.color
-	print("Cor escolhida: ", draw_color)
+	tex.update(img)
+	img = tex.get_image()
 
 
-# ==== BOTÕES ====
+# === COMPARAÇÃO DE CORES ===
+func _color_close(a: Color, b: Color, tol: float) -> bool:
+	var dr = abs(a.r - b.r)
+	var dg = abs(a.g - b.g)
+	var db = abs(a.b - b.b)
+	var da = abs(a.a - b.a)
+	return max(dr, dg, db, da) <= tol
+
+
+# === BOTÕES ===
 func _on_pincel_pressed():
-	draw_mode = "pincel"
+	_on_voltar_um_passo_pressed()
 
 func _on_borracha_pressed():
 	draw_mode = "borracha"
+	print("Modo borracha ativado!")
 
 func _on_balde_pressed():
 	draw_mode = "balde"
 
 func _on_colorpicker_pressed():
-	draw_mode = "picker"
+	if color_popup:
+		color_popup.popup_centered()
+		print("Popup aberto!")  # debug opcional
 
 
-# ==== COLOR PICKER ====
-func _on_color_picker_color_changed(color: Color):
+func _on_color_chosen(color: Color):
 	draw_color = color
-	print("Cor alterada para: ", color)
-
-func _on_texture_button_pressed():
-	if not picker:
-		push_warning("Picker não definido; verifique Picker Path no Inspector.")
-		return
-	var popup := picker.get_popup()
-	if popup:
-		popup.popup_centered()
-		popup.grab_focus()
-
+	print("Cor escolhida:", color)
 
 func _on_voltar_selecao_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/selecionar_quadro.tscn")
-	
-	# ==== Apagar Tudo ====
+
 func _on_apagar_tudo_pressed():
-	# recria a imagem transparente
+	_save_undo_state()
 	img.fill(Color(0, 0, 0, 0))
 	tex.update(img)
 	print("Tudo apagado!")
+
+
+
+
+
+func _on_color_icon_tx_t_button_pressed() -> void:
+	if color_popup:
+		color_popup.popup_centered()
+		print("Popup aberto!")  # debug opcional

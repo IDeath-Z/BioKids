@@ -1,0 +1,316 @@
+[gd_scene load_steps=17 format=3 uid="uid://cisnac45ahktu"]
+
+[ext_resource type="Script" uid="uid://biwy7sv1gssh4" path="res://telas/minigames/bio_goods/scripts/control_drawing1.gd" id="1_0gn57"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_pj7v1"]
+[ext_resource type="Texture2D" uid="uid://k0qmefotrqqi" path="res://telas/minigames/bio_goods/sprites/background_selecao_pintura.png" id="3_s0y3f"]
+[ext_resource type="Texture2D" uid="uid://cmcx6bhbn4vyf" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_02-128x128.png" id="4_pj7v1"]
+[ext_resource type="Shader" uid="uid://cb6x1yvv1uq26" path="res://telas/minigames/bio_goods/scene/desenho1.gdshader" id="5_g8e2o"]
+[ext_resource type="Texture2D" uid="uid://d1rc7hioghg02" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/desenho1.jpg" id="5_pj7v1"]
+[ext_resource type="Texture2D" uid="uid://20qux7gs1gby" path="res://telas/minigames/bio_goods/sprites/icones/back arrown.png" id="6_chrmv"]
+[ext_resource type="Texture2D" uid="uid://bk8b4wqf12v5r" path="res://telas/minigames/bio_goods/sprites/icones/save icon.png" id="7_pj7v1"]
+[ext_resource type="Texture2D" uid="uid://btvama1at1dhm" path="res://telas/minigames/bio_goods/sprites/icones/black-bucket-icon-download-1.png" id="7_rco25"]
+[ext_resource type="Texture2D" uid="uid://d3hk2csv76e28" path="res://telas/minigames/bio_goods/sprites/icones/eraser.png" id="8_68jic"]
+[ext_resource type="Texture2D" uid="uid://bohb3c1d211d4" path="res://telas/minigames/bio_goods/sprites/icones/redo-arrow.png" id="8_s0y3f"]
+[ext_resource type="Texture2D" uid="uid://yve3l1t3iotm" path="res://telas/minigames/bio_goods/sprites/icones/bin.png" id="9_pg7lq"]
+[ext_resource type="Texture2D" uid="uid://cngkfn20ku15u" path="res://telas/minigames/bio_goods/sprites/icones/color picker icon.png" id="9_q5f0i"]
+[ext_resource type="Texture2D" uid="uid://u624a2en2y1h" path="res://telas/minigames/bio_goods/sprites/icones/undo-button.png" id="11_pj7v1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mifr6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rco25"]
+shader = ExtResource("5_g8e2o")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pj7v1")
+script = ExtResource("1_0gn57")
+picker_path = NodePath("ColorIcon (TxTButton)/ColorPicker (Base)")
+picker_icon_path = NodePath("ColorIcon (TxTButton)")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s0y3f")
+expand_mode = 1
+
+[node name="BG_Moldura" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00416667
+anchor_top = 0.168111
+anchor_right = 0.987056
+anchor_bottom = 0.818593
+offset_left = 12.0
+offset_top = 0.440002
+offset_right = 0.319992
+offset_bottom = -0.0800171
+texture = ExtResource("4_pj7v1")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Desenho" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_mifr6")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0260556
+anchor_top = 0.181815
+anchor_right = 0.974
+anchor_bottom = 0.803815
+offset_left = 0.24
+offset_top = -0.360001
+offset_right = -0.280029
+offset_bottom = -0.120056
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_pj7v1")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorLayer" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_rco25")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0260556
+anchor_top = 0.181815
+anchor_right = 0.974
+anchor_bottom = 0.803815
+offset_left = 0.24
+offset_top = -0.360001
+offset_right = -0.280029
+offset_bottom = -0.120056
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ControlButtons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.066
+anchor_top = 0.0314815
+anchor_right = 0.934
+anchor_bottom = 0.143
+offset_left = 37.48
+offset_top = 9.0
+offset_right = -37.48
+offset_bottom = -0.440002
+grow_horizontal = 2
+theme_override_constants/separation = 75
+metadata/_edit_use_anchors_ = true
+
+[node name="Voltar_selecao" type="Button" parent="ControlButtons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/Voltar_selecao"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.5
+offset_top = 4.999981
+offset_right = -4.5
+offset_bottom = -5.0000153
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_chrmv")
+expand_mode = 1
+
+[node name="Salvar_desenho" type="Button" parent="ControlButtons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/Salvar_desenho"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555
+anchor_top = 0.0527344
+anchor_right = 0.9455
+anchor_bottom = 0.962891
+offset_left = -0.299995
+offset_right = -0.299988
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_pj7v1")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Avancar_desenho" type="Button" parent="ControlButtons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/Avancar_desenho"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555
+anchor_top = 0.04545437
+anchor_right = 0.9455
+anchor_bottom = 0.9545453
+offset_left = -0.299995
+offset_right = -0.299988
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_s0y3f")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Apagar_tudo" type="Button" parent="ControlButtons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/Apagar_tudo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555
+anchor_top = 0.05454528
+anchor_right = 0.9455
+anchor_bottom = 0.9454544
+offset_left = -0.299995
+offset_right = -0.299988
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_pg7lq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Undo" type="Button" parent="."]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.051
+anchor_top = 0.847519
+anchor_right = 0.226
+anchor_bottom = 0.948
+offset_left = 0.279999
+offset_top = -0.320007
+offset_right = 0.279999
+offset_bottom = 0.159912
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Undo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.9995117
+offset_right = -5.0
+offset_bottom = -5.999939
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_pj7v1")
+expand_mode = 1
+
+[node name="Balde" type="Button" parent="."]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.282
+anchor_top = 0.847
+anchor_right = 0.457222
+anchor_bottom = 0.947741
+offset_left = -0.0400085
+offset_top = 0.239929
+offset_right = -0.200012
+offset_bottom = 0.439941
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Balde"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 5.000061
+offset_right = -7.0
+offset_bottom = -5.000122
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_rco25")
+expand_mode = 1
+
+[node name="Borracha" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.519
+anchor_top = 0.85
+anchor_right = 0.699
+anchor_bottom = 0.951
+offset_left = 0.319946
+offset_right = -0.280029
+offset_bottom = -0.0800781
+
+[node name="TextureRect" type="TextureRect" parent="Borracha"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = -17.0
+offset_bottom = -5.999878
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_68jic")
+expand_mode = 1
+
+[node name="ColorIcon (TxTButton)" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.767
+anchor_top = 0.855
+anchor_right = 0.942
+anchor_bottom = 0.953
+offset_left = -0.23999
+offset_top = -3.40002
+offset_right = -0.240051
+offset_bottom = -0.240112
+
+[node name="ColorPicker (Base)" type="ColorPickerButton" parent="ColorIcon (TxTButton)"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -490.0
+offset_right = 4.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+icon_alignment = 1
+edit_alpha = false
+
+[node name="TextureRect" type="TextureRect" parent="ColorIcon (TxTButton)"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = -4.999939
+offset_bottom = -2.999878
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_q5f0i")
+expand_mode = 1
+
+[connection signal="pressed" from="ControlButtons/Voltar_selecao" to="." method="_on_voltar_selecao_pressed"]
+[connection signal="pressed" from="ControlButtons/Apagar_tudo" to="." method="_on_apagar_tudo_pressed"]
+[connection signal="pressed" from="Undo" to="." method="_on_pincel_pressed"]
+[connection signal="pressed" from="Balde" to="." method="_on_balde_pressed"]
+[connection signal="pressed" from="Borracha" to="." method="_on_borracha_pressed"]
+[connection signal="pressed" from="ColorIcon (TxTButton)" to="." method="_on_texture_button_pressed"]
+[connection signal="color_changed" from="ColorIcon (TxTButton)/ColorPicker (Base)" to="." method="_on_color_picker_color_changed"]
