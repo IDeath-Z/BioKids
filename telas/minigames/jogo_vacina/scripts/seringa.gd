@@ -1,9 +1,11 @@
 extends Area2D
 
+
 @onready var braco = $braco
 @onready var seringa = $imagem_sering
 @onready var mao_click = $"../MaoClick"
 @onready var timer_mao = $"../TimerMao"
+
 var segurando = false
 var toque = Vector2.ZERO
 var toque_na_tela = false
@@ -33,15 +35,14 @@ func _on_timer_mao_timeout() -> void:
 func _input(event):
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		if event.pressed:
-			segurando = true
-			toque = global_position - event.position
-			braco.visible = true
-			seringa.visible = true
-			
-			mao_click.hide()
-			mao_click.stop()
-			toque_na_tela = true
-			
+				segurando = true
+				toque = global_position - event.position
+				braco.visible = true
+				seringa.visible = true
+				
+				mao_click.hide()
+				mao_click.stop()
+				toque_na_tela = true
 		else:
 			segurando = false
 			braco.visible = false
@@ -54,3 +55,6 @@ func _input(event):
 func _on_area_entered(area):
 	if area.name == "local_vacina":
 		get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/Conquista_01.tscn")
+
+
+	

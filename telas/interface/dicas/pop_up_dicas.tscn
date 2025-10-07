@@ -96,7 +96,6 @@ offset_left = -0.0433578
 offset_top = -0.0320969
 offset_right = -0.043396
 offset_bottom = -0.032135
-metadata/_edit_use_anchors_ = true
 
 [node name="BotaoVoltar" type="Button" parent="AspectRatioContainer2"]
 layout_mode = 2
