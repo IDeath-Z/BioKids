@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d383bmculclw0"]
+[gd_scene load_steps=10 format=3 uid="uid://d383bmculclw0"]
 
 [ext_resource type="Script" uid="uid://c1slgi7yipkei" path="res://telas/minigames/bio_goods/scripts/selecionar_quadro.gd" id="1_oepp8"]
 [ext_resource type="Texture2D" uid="uid://k0qmefotrqqi" path="res://telas/minigames/bio_goods/sprites/background_selecao_pintura.png" id="2_oepp8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d1rc7hioghg02" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/desenho1.jpg" id="5_oepp8"]
 [ext_resource type="Texture2D" uid="uid://dxrv5iw70pkm7" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/desenho2.jpg" id="6_oepp8"]
 [ext_resource type="Texture2D" uid="uid://5lup57i620km" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/desenho3.jpg" id="7_bdwv4"]
+[ext_resource type="Texture2D" uid="uid://dpbkx8ggdvpsn" path="res://telas/minigames/bio_goods/sprites/icones/back.png" id="9_bdwv4"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -131,4 +132,18 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 11.0
+offset_right = 537.0
+offset_bottom = 531.0
+scale = Vector2(0.08, 0.08)
+icon = ExtResource("9_bdwv4")
+flat = true
+
 [connection signal="pressed" from="desenho1_consultorio" to="." method="_on_desenho_1_consultorio_pressed"]
+[connection signal="pressed" from="NinePatchRect2/desenho2_" to="." method="_on_desenho_2__pressed"]
+[connection signal="pressed" from="NinePatchRect2/NinePatchRect2/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

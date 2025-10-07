@@ -1,0 +1,96 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcq0revtn3iec"]
+
+[ext_resource type="Script" uid="uid://bx1gdq2ua5pc0" path="res://telas/minigames/bio_goods/scripts/color_palette_popup.gd" id="1_t3w88"]
+
+[node name="ColorPalettePopup" type="PopupPanel"]
+oversampling_override = 1.0
+mode = 2
+size = Vector2i(508, 170)
+visible = true
+minimize_disabled = false
+maximize_disabled = false
+script = ExtResource("1_t3w88")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -81.0
+offset_right = 250.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 21
+theme_override_constants/v_separation = 24
+columns = 7
+
+[node name="RedButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.8801671, 0, 0.15549082, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="YellowButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.939444, 0.818496, 0.30325276, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="BlueButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.2080175, 0.6611844, 0.7893768, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="GreenButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.47509527, 0.78662926, 0.35395956, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="OrangeButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.8387042, 0.4369299, 0.12921754, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PinkButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.8102528, 0.19588137, 0.7534148, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="PurpleButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.5551525, 0.27750194, 0.90196246, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="WhiteButton" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="BlackButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+
+[node name="DarkBlueButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.23178002, 0.34922254, 0.9182507, 1)
+layout_mode = 2
+
+[node name="DarkRedButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.42963338, 0.088242225, 0.08825477, 1)
+layout_mode = 2
+
+[node name="GrayButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.641934, 0.641934, 0.641934, 1)
+layout_mode = 2
+
+[node name="DarkGreenButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.14717242, 0.34778, 6.016344e-06, 1)
+layout_mode = 2
+
+[node name="BrownButton" type="Button" parent="MarginContainer/GridContainer"]
+self_modulate = Color(0.25138637, 0.18316299, 1.2032687e-07, 1)
+layout_mode = 2

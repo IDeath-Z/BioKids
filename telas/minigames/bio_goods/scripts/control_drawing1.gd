@@ -12,7 +12,7 @@ var erasing: bool = false
 
 @onready var color_layer: TextureRect = $ColorLayer
 @onready var desenho_node: TextureRect = $Desenho
-
+@onready var save_button: Button = $ControlButtons/SaveButton
 @export var color_popup_path: NodePath  # Popup de tintas coloridas
 var color_popup: PopupPanel
 
@@ -20,12 +20,14 @@ var img: Image
 var tex: ImageTexture
 var desenho_img: Image
 
-
 # === READY ===
 func _ready():
 	color_popup = get_node_or_null(color_popup_path)
 	if color_popup:
 		color_popup.color_chosen.connect(_on_color_chosen)
+		print("Popup conectado com sucesso!")
+	else:
+		print("Erro: color_popup é null! Verifique color_popup_path.")
 
 	# Inicializa área de desenho
 	color_layer.size = desenho_node.size
@@ -39,7 +41,6 @@ func _ready():
 
 	var desenho_tex: Texture2D = desenho_node.texture
 	desenho_img = desenho_tex.get_image()
-
 
 # === ENTRADAS DO USUÁRIO ===
 func _input(event):
@@ -70,7 +71,6 @@ func _input(event):
 		_erase_point(local)
 		tex.update(img)
 
-
 # === BORRACHA ===
 func _erase_point(pos: Vector2):
 	var radius := brush_size
@@ -80,7 +80,6 @@ func _erase_point(pos: Vector2):
 			if p.x >= 0 and p.y >= 0 and p.x < img.get_width() and p.y < img.get_height():
 				if Vector2(x, y).length() <= radius:
 					img.set_pixelv(p, Color(0, 0, 0, 0))
-
 
 # === SALVAR ESTADO PARA UNDO ===
 func _save_undo_state():
@@ -94,7 +93,6 @@ func _save_undo_state():
 		undo_stack.pop_front()
 	print("Estado salvo! Total de passos:", undo_stack.size())
 
-
 # === VOLTAR UM PASSO ===
 func _on_voltar_um_passo_pressed():
 	if undo_stack.is_empty():
@@ -106,7 +104,6 @@ func _on_voltar_um_passo_pressed():
 	color_layer.texture = tex
 	color_layer.queue_redraw()
 	print("(" + str(undo_stack.size()) + ") Passo desfeito!")
-
 
 # === BALDE (FILL) ===
 func _flood_fill(start: Vector2, new_color: Color):
@@ -151,7 +148,6 @@ func _flood_fill(start: Vector2, new_color: Color):
 	tex.update(img)
 	img = tex.get_image()
 
-
 # === COMPARAÇÃO DE CORES ===
 func _color_close(a: Color, b: Color, tol: float) -> bool:
 	var dr = abs(a.r - b.r)
@@ -159,7 +155,6 @@ func _color_close(a: Color, b: Color, tol: float) -> bool:
 	var db = abs(a.b - b.b)
 	var da = abs(a.a - b.a)
 	return max(dr, dg, db, da) <= tol
-
 
 # === BOTÕES ===
 func _on_pincel_pressed():
@@ -177,7 +172,6 @@ func _on_colorpicker_pressed():
 		color_popup.popup_centered()
 		print("Popup aberto!")  # debug opcional
 
-
 func _on_color_chosen(color: Color):
 	draw_color = color
 	print("Cor escolhida:", color)
@@ -191,11 +185,64 @@ func _on_apagar_tudo_pressed():
 	tex.update(img)
 	print("Tudo apagado!")
 
-
-
-
-
 func _on_color_icon_tx_t_button_pressed() -> void:
 	if color_popup:
 		color_popup.popup_centered()
 		print("Popup aberto!")  # debug opcional
+
+func _on_save_button_pressed():
+	# Crie uma imagem combinada: outline + desenho colorido
+	var combined_img: Image = Image.create(img.get_width(), img.get_height(), false, Image.FORMAT_RGBA8)
+	
+	# Preencha com o outline
+	for x in range(desenho_img.get_width()):
+		for y in range(desenho_img.get_height()):
+			var px = desenho_img.get_pixel(x, y)
+			combined_img.set_pixel(x, y, px)
+	
+	# Sobreponha as cores
+	for x in range(img.get_width()):
+		for y in range(img.get_height()):
+			var color_px = img.get_pixel(x, y)
+			var outline_px = combined_img.get_pixel(x, y)
+			if outline_px.a > 0.1:  # Se há outline (não transparente), mantenha-o
+				continue
+			if color_px.a > 0.1:  # Se há cor aplicada, use-a
+				combined_img.set_pixel(x, y, color_px)
+
+	# Salve na galeria
+	var timestamp = Time.get_datetime_string_from_system()
+	var filename = "desenho_colorido_%s.png" % timestamp.replace(":", "-")  # Nome único
+	var save_path = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES) + "/" + filename
+
+	var error = combined_img.save_png(save_path)
+	if error == OK:
+		print("Imagem salva em: %s" % save_path)
+		var success_popup = AcceptDialog.new()
+		add_child(success_popup)
+		success_popup.dialog_text = "Desenho salvo na galeria!"
+		success_popup.popup_centered()
+	else:
+		print("Erro ao salvar: %s" % error)
+		var error_popup = AcceptDialog.new()
+		add_child(error_popup)
+		error_popup.dialog_text = "Erro ao salvar. Tente novamente."
+		error_popup.popup_centered()
+
+func _on_avancar_desenho_pressed() -> void:
+	var current_scene = get_tree().current_scene.scene_file_path
+	if current_scene == "res://telas/minigames/bio_goods/scene/desenho1.tscn":
+		get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/desenho2.tscn")
+	elif current_scene == "res://telas/minigames/bio_goods/scene/desenho2.tscn":
+		get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/desenho3.tscn")
+	else:
+		print("Último desenho alcançado! Use Voltar para navegar.")
+
+func _on_voltar_desenho_pressed() -> void:
+	var current_scene = get_tree().current_scene.scene_file_path
+	if current_scene == "res://telas/minigames/bio_goods/scene/desenho3.tscn":
+		get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/desenho2.tscn")
+	elif current_scene == "res://telas/minigames/bio_goods/scene/desenho2.tscn":
+		get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/desenho1.tscn")
+	else:
+		get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/selecionar_quadro.tscn")

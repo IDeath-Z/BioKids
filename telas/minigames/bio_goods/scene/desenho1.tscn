@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cisnac45ahktu"]
+[gd_scene load_steps=17 format=3 uid="uid://cisnac45ahktu"]
 
 [ext_resource type="Script" uid="uid://biwy7sv1gssh4" path="res://telas/minigames/bio_goods/scripts/control_drawing1.gd" id="1_0gn57"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_pj7v1"]
@@ -10,67 +10,27 @@
 [ext_resource type="Texture2D" uid="uid://bk8b4wqf12v5r" path="res://telas/minigames/bio_goods/sprites/icones/save icon.png" id="7_pj7v1"]
 [ext_resource type="Texture2D" uid="uid://btvama1at1dhm" path="res://telas/minigames/bio_goods/sprites/icones/black-bucket-icon-download-1.png" id="7_rco25"]
 [ext_resource type="Texture2D" uid="uid://d3hk2csv76e28" path="res://telas/minigames/bio_goods/sprites/icones/eraser.png" id="8_68jic"]
-[ext_resource type="Texture2D" uid="uid://bohb3c1d211d4" path="res://telas/minigames/bio_goods/sprites/icones/redo-arrow.png" id="8_s0y3f"]
 [ext_resource type="Texture2D" uid="uid://yve3l1t3iotm" path="res://telas/minigames/bio_goods/sprites/icones/bin.png" id="9_pg7lq"]
 [ext_resource type="Texture2D" uid="uid://cngkfn20ku15u" path="res://telas/minigames/bio_goods/sprites/icones/color picker icon.png" id="9_q5f0i"]
 [ext_resource type="Texture2D" uid="uid://u624a2en2y1h" path="res://telas/minigames/bio_goods/sprites/icones/undo-button.png" id="11_pj7v1"]
-[ext_resource type="Script" uid="uid://dc153w216kfj2" path="res://telas/minigames/bio_goods/scripts/color_popup.gd" id="15_s0y3f"]
+[ext_resource type="PackedScene" uid="uid://bcq0revtn3iec" path="res://telas/minigames/bio_goods/scene/color_palette_popup.tscn" id="15_s0y3f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mifr6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rco25"]
 shader = ExtResource("5_g8e2o")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0y3f"]
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pg7lq"]
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t77o8"]
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsuwu"]
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("shortcut_context")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+shortcut_context = NodePath("ColorPalettePopup")
 theme = ExtResource("1_pj7v1")
 script = ExtResource("1_0gn57")
-color_popup_path = NodePath("ColorPopup")
+color_popup_path = NodePath("ColorPalettePopup")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -119,10 +79,10 @@ metadata/_edit_use_anchors_ = true
 material = SubResource("ShaderMaterial_rco25")
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0260556
-anchor_top = 0.181815
-anchor_right = 0.974
-anchor_bottom = 0.803815
+anchor_left = 0.02188889
+anchor_top = 0.18922222
+anchor_right = 0.9698332
+anchor_bottom = 0.8112222
 offset_left = 0.24
 offset_top = -0.360001
 offset_right = -0.280029
@@ -147,11 +107,11 @@ grow_horizontal = 2
 theme_override_constants/separation = 75
 metadata/_edit_use_anchors_ = true
 
-[node name="Voltar_selecao" type="Button" parent="ControlButtons"]
+[node name="VoltarDesenho" type="Button" parent="ControlButtons"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ControlButtons/Voltar_selecao"]
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/VoltarDesenho"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -165,11 +125,11 @@ grow_vertical = 2
 texture = ExtResource("6_chrmv")
 expand_mode = 1
 
-[node name="Salvar_desenho" type="Button" parent="ControlButtons"]
+[node name="SaveButton" type="Button" parent="ControlButtons"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ControlButtons/Salvar_desenho"]
+[node name="TextureRect" type="TextureRect" parent="ControlButtons/SaveButton"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0555
@@ -199,8 +159,9 @@ offset_left = -0.299995
 offset_right = -0.299988
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_s0y3f")
+texture = ExtResource("6_chrmv")
 expand_mode = 1
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Apagar_tudo" type="Button" parent="ControlButtons"]
@@ -347,61 +308,12 @@ grow_vertical = 2
 texture = ExtResource("9_q5f0i")
 expand_mode = 1
 
-[node name="ColorPopup" type="PopupPanel" parent="."]
-handle_input_locally = false
-oversampling_override = 1.0
-position = Vector2i(200, 243)
-size = Vector2i(300, 300)
-visible = true
-borderless = false
-always_on_top = true
-sharp_corners = true
-max_size = Vector2i(300, 300)
-theme_type_variation = &"TooltipPanel"
-script = ExtResource("15_s0y3f")
+[node name="ColorPalettePopup" parent="." instance=ExtResource("15_s0y3f")]
+visible = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorPopup"]
-custom_minimum_size = Vector2(80, 80)
-anchors_preset = -1
-anchor_left = 0.006
-anchor_top = 0.0050000004
-anchor_right = 0.98700005
-anchor_bottom = 0.98700005
-offset_left = 6.2
-offset_top = 0.49999988
-offset_right = -4.100006
-offset_bottom = 1.8999939
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 29
-alignment = 1
-
-[node name="ColorButtonRed" type="Button" parent="ColorPopup/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_s0y3f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pg7lq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t77o8")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_vsuwu")
-
-[node name="ColorButtonOrange" type="Button" parent="ColorPopup/VBoxContainer"]
-layout_mode = 2
-
-[node name="ColorButtonYellow" type="Button" parent="ColorPopup/VBoxContainer"]
-layout_mode = 2
-
-[node name="ColorButtonGreen" type="Button" parent="ColorPopup/VBoxContainer"]
-layout_mode = 2
-
-[node name="ColorButtonBlue" type="Button" parent="ColorPopup/VBoxContainer"]
-layout_mode = 2
-
-[node name="ColorButtonPurple" type="Button" parent="ColorPopup/VBoxContainer"]
-layout_mode = 2
-
-[node name="ColorButtonPink" type="Button" parent="ColorPopup/VBoxContainer"]
-layout_mode = 2
-
-[connection signal="pressed" from="ControlButtons/Voltar_selecao" to="." method="_on_voltar_selecao_pressed"]
+[connection signal="pressed" from="ControlButtons/VoltarDesenho" to="." method="_on_voltar_desenho_pressed"]
+[connection signal="pressed" from="ControlButtons/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="ControlButtons/Avancar_desenho" to="." method="_on_avancar_desenho_pressed"]
 [connection signal="pressed" from="ControlButtons/Apagar_tudo" to="." method="_on_apagar_tudo_pressed"]
 [connection signal="pressed" from="Undo" to="." method="_on_pincel_pressed"]
 [connection signal="pressed" from="Balde" to="." method="_on_balde_pressed"]

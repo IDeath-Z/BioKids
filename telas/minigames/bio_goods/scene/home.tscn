@@ -95,13 +95,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "  ▶️ INICIAR  "
 
-[node name="ComoJogar" type="Button" parent="MarginContainerSelecaoTipo/GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 40
-text = "COMO JOGAR?"
-
 [node name="Voltar" type="Button" parent="MarginContainerSelecaoTipo/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
@@ -109,5 +102,4 @@ size_flags_horizontal = 4
 text = "VOLTAR"
 
 [connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/Iniciar" to="." method="_on_iniciar_pressed"]
-[connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/ComoJogar" to="." method="_on_como_jogar_pressed"]
 [connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/Voltar" to="." method="_on_voltar_pressed"]
