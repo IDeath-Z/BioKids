@@ -9,7 +9,8 @@ var scenes = {
 var current_scene: Node = null
 
 func _ready():
-	change_scene("Seringa")
+	ajustar_escala(get_viewport_rect().size)
+	change_scene("seringa")
 	
 	if get_viewport():
 		get_viewport().connect("size_changed", Callable(self, "_on_viewport_resized"))
@@ -34,3 +35,34 @@ func _on_conquista_feita():
 	
 func voltar_home():
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/home.tscn")
+
+
+# resolução base que você usou para montar o layout no editor
+const BASE_SIZE := Vector2(720, 1080)
+
+func ajustar_escala(screen_size: Vector2):
+	# calcula o fator de escala proporcional à altura
+	var scale_factor = screen_size.y / BASE_SIZE.y
+	scale = Vector2(scale_factor, scale_factor)
+	var parent = get_parent()
+	if parent is Control:
+		var parent_size = parent.get_rect().size
+		position = (parent_size - BASE_SIZE * scale_factor) / 2
+		for child in get_children():
+			ajustar_no(child, scale_factor)
+
+
+func ajustar_no(node, scale_factor):
+	if node is Node2D:
+		node.scale = Vector2(scale_factor, scale_factor)
+	elif node is Control:
+			node.scale = Vector2(scale_factor, scale_factor)
+			node.custom_minimum_size *= scale_factor
+			for child in node.get_children():
+				ajustar_no(child, scale_factor)
+
+
+# esse trecho faz o reajuste automático se a janela for redimensionada
+func _notification(what):
+	if what == Node.NOTIFICATION_WM_SIZE_CHANGED:
+		ajustar_escala(get_viewport_rect().size)
