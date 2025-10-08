@@ -41,12 +41,12 @@ func movimentar_local_vacina():
 		Vector2(430, 680),
 	]
 
-	var pausa := 0.5
+	var pausa := 0.09
 	while true:
 		# ida
 		for pos in locais:
 			var tween_move = get_tree().create_tween()
-			tween_move.tween_property(colisao, "position", pos, 1.5)
+			tween_move.tween_property(colisao, "position", pos, 1.0)
 			await tween_move.finished
 			await get_tree().create_timer(pausa).timeout
 
@@ -55,7 +55,7 @@ func movimentar_local_vacina():
 		while idx >= 0:
 			var pos = locais[idx]
 			var tween_move = get_tree().create_tween()
-			tween_move.tween_property(colisao, "position", pos, 1.5)
+			tween_move.tween_property(colisao, "position", pos, 1.0)
 			await tween_move.finished
 			await get_tree().create_timer(pausa).timeout
 			idx -= 1

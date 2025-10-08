@@ -6,8 +6,8 @@ extends Control
 @onready var botao_voltar = $MarginContainerPrincipal2/GridBotoes/BotaoVoltar
 @onready var tela_01 = $Tela_01
 @onready var box_botoes = $MarginContainerPrincipal2
-@onready var textura_balao = $TexturaBalao
-@onready var animacao_balao = $TexturaBalao/AnimacaoBalao
+@onready var textura_balao = $TexturaUrso/TexturaBalao
+@onready var animacao_balao = $TexturaUrso/TexturaBalao/AnimacaoBalao
 @onready var textura_urso = $TexturaUrso
 @onready var animacao_urso = $TexturaUrso/AnimacaoUrso
 
@@ -21,6 +21,7 @@ func _on_botao_voltar_pressed() -> void:
 func _on_botao_como_jogar_pressed() -> void:
 	textura_balao.visible = true
 	textura_urso.visible = true
+	box_botoes.visible = false
 	animacao_urso.play_backwards("sair_tela")
 	botao_como_jogar.disabled = true
 

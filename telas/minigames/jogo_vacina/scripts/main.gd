@@ -2,8 +2,8 @@ extends Node2D
 
 
 var scenes = {
-	"seringa": preload("res://telas/minigames/jogo_vacina/cenas/seringa.tscn"),
-	"conquista":preload("res://telas/minigames/jogo_vacina/cenas/Conquista_01.tscn")
+	"seringa": "res://telas/minigames/jogo_vacina/cenas/seringa.tscn",
+	"conquista": "res://telas/minigames/jogo_vacina/cenas/Conquista_01.tscn"
 }
 
 var current_scene: Node = null
@@ -21,7 +21,7 @@ func change_scene(scene_name: String):
 		current_scene.queue_free()
 		
 	if scenes.has(scene_name):
-		current_scene = scenes[scene_name].instantiate()
+		current_scene = load(scenes[scene_name]).instantiate()
 		add_child(current_scene)
 		if current_scene.has_signal("botao_voltar_pressed"):
 			current_scene.botao_voltar_pressed.connect(voltar_home)
