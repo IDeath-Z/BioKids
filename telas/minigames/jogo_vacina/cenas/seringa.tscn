@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://upbbd5wxd4u8"]
+[gd_scene load_steps=31 format=3 uid="uid://upbbd5wxd4u8"]
 
 [ext_resource type="Script" uid="uid://xe8b7a8qbymr" path="res://telas/minigames/jogo_vacina/scripts/seringa.gd" id="1_0pq5x"]
 [ext_resource type="Script" uid="uid://b0inwbs6guup1" path="res://telas/minigames/jogo_vacina/cenas/seringa_control.gd" id="1_j3wc3"]
@@ -28,12 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://dv7q0cpkk8w1n" path="res://telas/interface/assets/animacoes/screen_click/00021.png" id="25_ovoxh"]
 [ext_resource type="Texture2D" uid="uid://bkh7t4vppgbfs" path="res://telas/interface/assets/animacoes/screen_click/00022.png" id="26_t22lj"]
 [ext_resource type="Texture2D" uid="uid://d00q6q8blv36t" path="res://telas/interface/assets/animacoes/screen_click/00023.png" id="27_no0xi"]
-[ext_resource type="Theme" uid="uid://cy5rvrhoo14d8" path="res://telas/interface/assets/temas/tema_flecha_voltar.tres" id="28_g8p80"]
-[ext_resource type="Texture2D" uid="uid://bepd6haiepykj" path="res://telas/interface/assets/imagens/pop_up_flecha.png" id="29_j3wc3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_paeca"]
-radius = 21.0209
-height = 134.163
+radius = 4.47211
+height = 42.9485
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qahkn"]
 animations = [{
@@ -121,44 +119,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j3wc3")
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.145
-offset_left = 8.0
-offset_top = 10.0
-offset_right = -521.0
-offset_bottom = 10.4
-grow_horizontal = 2
-
-[node name="BotaoVoltar" type="Button" parent="AspectRatioContainer2"]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("28_g8p80")
-text = "
-"
-autowrap_mode = 1
-icon_alignment = 1
-expand_icon = true
-text_direction = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer2/BotaoVoltar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.130573
-anchor_top = 0.149682
-anchor_right = 0.869427
-anchor_bottom = 0.850318
-offset_left = 58.0
-offset_top = 54.996
-offset_right = -58.0
-offset_bottom = -54.996
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("29_j3wc3")
-
 [node name="Seringa" type="Node2D" parent="."]
 
 [node name="seringa" type="Area2D" parent="Seringa"]
@@ -172,7 +132,7 @@ texture = ExtResource("2_a7v8i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Seringa/seringa"]
 visible = false
-position = Vector2(348, 499)
+position = Vector2(383, 521)
 rotation = -1.11177
 shape = SubResource("CapsuleShape2D_paeca")
 one_way_collision_margin = 0.0
@@ -196,5 +156,4 @@ wait_time = 4.0
 one_shot = true
 autostart = true
 
-[connection signal="pressed" from="AspectRatioContainer2/BotaoVoltar" to="Seringa/seringa" method="_on_botao_voltar_pressed"]
 [connection signal="timeout" from="Seringa/TimerMao" to="Seringa/seringa" method="_on_timer_mao_timeout"]

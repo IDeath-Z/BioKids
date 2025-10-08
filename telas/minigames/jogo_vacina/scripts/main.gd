@@ -66,3 +66,7 @@ func ajustar_no(node, scale_factor):
 func _notification(what):
 	if what == Node.NOTIFICATION_WM_SIZE_CHANGED:
 		ajustar_escala(get_viewport_rect().size)
+
+
+func _on_botao_voltar_pressed():
+	get_tree().change_scene_to_file("res://telas/interface/inicio/tela_inicial.tscn")
