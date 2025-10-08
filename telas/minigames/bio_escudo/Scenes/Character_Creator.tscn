@@ -48,14 +48,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_s36mj")
-stretch_mode = 5
 
 [node name="skeleton" type="Control" parent="."]
 layout_mode = 1
 anchor_left = 0.5
-anchor_top = 0.709259
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.709259
+anchor_bottom = 1.0
+offset_top = -314.0
+offset_bottom = -314.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.18749, 1.2996)

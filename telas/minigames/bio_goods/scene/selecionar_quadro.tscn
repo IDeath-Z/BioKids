@@ -33,10 +33,10 @@ expand_mode = 1
 texture_filter = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.15694444
-anchor_top = 0.5426666
-anchor_right = 0.8444442
-anchor_bottom = 1.0228566
+anchor_left = 0.156944
+anchor_top = 0.542667
+anchor_right = 0.844444
+anchor_bottom = 1.02286
 offset_left = -8.0
 offset_top = -0.0799561
 grow_horizontal = 0
@@ -46,11 +46,16 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="MolduraQuadro1" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 95.0
-offset_right = 221.905
-offset_bottom = 283.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022
+anchor_top = 0.088
+anchor_right = 0.308
+anchor_bottom = 0.262
+offset_left = 0.159999
+offset_top = -0.0400085
+offset_right = 0.144974
+offset_bottom = 0.039978
 texture = ExtResource("4_e636p")
 region_rect = Rect2(0, 0, 128, 128)
 patch_margin_left = 8
@@ -62,11 +67,11 @@ patch_margin_bottom = 8
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.037
-anchor_top = 0.098000005
-anchor_right = 0.29500002
+anchor_top = 0.098
+anchor_right = 0.295
 anchor_bottom = 0.254
-offset_left = 0.3600006
-offset_top = 0.15999603
+offset_left = 0.360001
+offset_top = 0.159996
 offset_right = 846.6
 offset_bottom = 863.68
 scale = Vector2(0.179687, 0.162766)
@@ -74,11 +79,16 @@ action_mode = 0
 icon = ExtResource("5_oepp8")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 258.0
-offset_top = 95.0
-offset_right = 463.905
-offset_bottom = 283.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.358
+anchor_top = 0.088
+anchor_right = 0.644
+anchor_bottom = 0.262
+offset_left = 0.23999
+offset_top = -0.0400085
+offset_right = 0.224945
+offset_bottom = 0.039978
 texture = ExtResource("4_e636p")
 region_rect = Rect2(0, 0, 128, 128)
 patch_margin_left = 8
@@ -88,14 +98,20 @@ patch_margin_bottom = 8
 
 [node name="desenho2_" type="TouchScreenButton" parent="NinePatchRect2"]
 position = Vector2(11, 11)
-scale = Vector2(0.2337992, 0.1749508)
+scale = Vector2(0.233799, 0.174951)
 texture_normal = ExtResource("6_oepp8")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="NinePatchRect2"]
-layout_mode = 0
-offset_left = 242.0
-offset_right = 447.905
-offset_bottom = 188.0
+[node name="NinePatchRect3" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.694
+anchor_top = 0.088
+anchor_right = 0.98
+anchor_bottom = 0.262
+offset_left = 0.320007
+offset_top = -0.0400085
+offset_right = 0.304993
+offset_bottom = 0.039978
 texture = ExtResource("4_e636p")
 region_rect = Rect2(0, 0, 128, 128)
 patch_margin_left = 8
@@ -103,7 +119,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="NinePatchRect2/NinePatchRect2"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="NinePatchRect3"]
 position = Vector2(11, 11)
 scale = Vector2(0.179687, 0.162766)
 texture_normal = ExtResource("7_bdwv4")
@@ -112,9 +128,9 @@ texture_normal = ExtResource("7_bdwv4")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.39514816
+anchor_top = 0.395148
 anchor_right = 0.5
-anchor_bottom = 0.42985183
+anchor_bottom = 0.429852
 offset_left = -350.0
 offset_top = -109.76
 offset_right = 350.0
@@ -145,5 +161,5 @@ flat = true
 
 [connection signal="pressed" from="desenho1_consultorio" to="." method="_on_desenho_1_consultorio_pressed"]
 [connection signal="pressed" from="NinePatchRect2/desenho2_" to="." method="_on_desenho_2__pressed"]
-[connection signal="pressed" from="NinePatchRect2/NinePatchRect2/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="NinePatchRect3/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
