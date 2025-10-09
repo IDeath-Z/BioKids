@@ -35,4 +35,6 @@ text = "Curiosidades
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="botao_continuar_pressed" from="BioFato" to="." method="_on_botao_continuar_pressed"]

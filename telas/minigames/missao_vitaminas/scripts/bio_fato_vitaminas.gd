@@ -2,80 +2,98 @@ extends Control
 
 @onready var fact_label: Label = $FactLabel
 @onready var bio_fato = $BioFato
+@onready var audio_player: AudioStreamPlayer = $AudioPlayer
 
 var facts: Array[String] = [
-	"Arroz é uma das maiores fontes de energia no mundo.",
-	"Feijão é rico em ferro, importante para o sangue.",
-	"Batata é cheia de carboidratos, que dão energia rápida.",
-	"Brócolis tem mais vitamina C que muitas frutas.",
-	"Cenoura tem betacaroteno, que ajuda na visão.",
-	"Kiwi tem quase o dobro de vitamina C da laranja.",
-	"Laranja fortalece o sistema de defesa do corpo.",
-	"Maçã ajuda a limpar os dentes enquanto mastigamos.",
-	"Ovo cozido tem proteínas que fortalecem os músculos.",
-	"Pimentão é rico em vitamina A e C.",
-	"Suco natural tem nutrientes que os artificiais não têm.",
-	"Tomate tem licopeno, que protege o coração.",
-	"Uva tem antioxidantes que retardam o envelhecimento das células."
+	"O arroz é uma das maiores fontes de energia no mundo.",
+	"O feijão é rico em ferro, importante para o sangue.",
+	"A batata é cheia de carboidratos, que dão energia rápida.",
+	"O brócolis tem mais vitamina C que muitas frutas.",
+	"A cenoura tem betacaroteno, que ajuda na visão.",
+	"O kiwi tem quase o dobro de vitamina C da laranja.",
+	"A laranja fortalece o sistema de defesa do corpo.",
+	"A maçã ajuda a limpar os dentes enquanto mastigamos.",
+	"O ovo cozido tem proteínas que fortalecem os músculos.",
+	"O pimentão é rico em vitamina A e C.",
+	"O suco natural tem nutrientes que os artificiais não têm.",
+	"O tomate tem licopeno, que protege o coração.",
+	"A uva tem antioxidantes que retardam o envelhecimento das células."
 ]
+
+# Array de caminhos dos áudios (coloque os arquivos correspondentes)
+var fact_audios: Array[String] = [
+	"res://telas/minigames/missao_vitaminas/sounds/arroz.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/feijao.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/batata.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/brocolis.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/cenoura.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/kiwi.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/laranja.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/maca.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/ovo.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/pimentao.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/suco.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/tomate.ogg",
+	"res://telas/minigames/missao_vitaminas/sounds/uva.ogg"
+]
+
+var current_index: int = 0  # Índice da frase atual
 
 func _ready() -> void:
 	if fact_label == null:
 		print("Erro: Nó FactLabel não encontrado dentro de BioFato!")
 		return
-	var random_index = randi() % facts.size()
-	fact_label.text = facts[random_index]
-	
-	# Configura o autowrap e define o tamanho e posição
-	fact_label.autowrap_mode = TextServer.AUTOWRAP_WORD  # Quebra por palavra
-	
-	# Alinha o texto ao centro horizontal e vertical dinâmico
-	fact_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER  # Centraliza horizontalmente
-	
-	# Estima o número de linhas e centraliza verticalmente
+
+	# Escolhe uma frase aleatória
+	current_index = randi() % facts.size()
+	fact_label.text = facts[current_index]
+
+	# Ajusta visual
+	fact_label.autowrap_mode = TextServer.AUTOWRAP_WORD
+	fact_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	var font_height = fact_label.get_theme_font("normal_font").get_height(fact_label.get_theme_font_size("normal_font"))
-	var estimated_lines = ceil(130 / font_height)  # Estimativa de linhas com base na altura
-	var vertical_offset = (130 - (estimated_lines * font_height)) / 2  # Centraliza verticalmente
-	fact_label.position.y += vertical_offset  # Ajusta a posição vertical
-	
+	var estimated_lines = ceil(130 / font_height)
+	var vertical_offset = (130 - (estimated_lines * font_height)) / 2
+	fact_label.position.y += vertical_offset
+
+	# Conecta os sinais (somente aqui no vitaminas)
 	if not bio_fato.is_connected("botao_continuar_pressed", Callable(self, "_on_botao_continuar_pressed")):
-		print("Sinal não conectado automaticamente, conectando agora...")
-		var error = bio_fato.botao_continuar_pressed.connect(_on_botao_continuar_pressed)
-		if error != OK:
-			print("Erro ao conectar o sinal: ", error)
+		bio_fato.botao_continuar_pressed.connect(_on_botao_continuar_pressed)
+	if not bio_fato.is_connected("botao_audio_pressed", Callable(self, "_on_botao_audio_pressed")):
+		bio_fato.botao_audio_pressed.connect(_on_botao_audio_pressed)
+
+	print("Fato sorteado:", fact_label.text)
+
+func _on_botao_audio_pressed() -> void:
+	print("Botão de áudio pressionado! Índice:", current_index)
+	if current_index < fact_audios.size():
+		var audio_path = fact_audios[current_index]
+		var stream = load(audio_path)
+		if stream:
+			audio_player.stream = stream
+			audio_player.play()
+			print("Reproduzindo:", audio_path)
+		else:
+			print("Erro ao carregar o som:", audio_path)
 	else:
-		print("Sinal botao_continuar_pressed já conectado!")
+		print("Índice de áudio inválido!")
 
 func _on_botao_continuar_pressed() -> void:
 	print("Função _on_botao_continuar_pressed chamada!")
 	
-	# Para a música do jogo (se existir)
 	var background_music = get_parent().get_parent().background_music if get_parent().get_parent().has_node("UILayer/BackgroundMusic") else null
 	if background_music:
 		background_music.stop()
-		print("Música do jogo parada!")
-	else:
-		print("Erro: BackgroundMusic não encontrado!")
 	
-	# Restaura o estado original da música da home e reseta flags do minigame
 	if EstadoVariaveisGlobais:
 		EstadoVariaveisGlobais.musica_ligada = EstadoVariaveisGlobais.minigame_vitaminas_music_on
 		EstadoVariaveisGlobais.in_minigame_vitaminas = false
 		EstadoVariaveisGlobais.minigame_vitaminas_music_on = false
-		print("Música da home restaurada para estado original: ", EstadoVariaveisGlobais.musica_ligada)
 	else:
-		print("Erro: EstadoVariaveisGlobais não encontrado! Tentando iniciar música diretamente...")
 		var music_player = get_node_or_null("/root/MusicPlayer")
 		if music_player and get_parent().get_parent().musica_ligada_original:
 			music_player.play_music()
-			print("Música da home iniciada diretamente via MusicPlayer!")
-		else:
-			if not music_player:
-				print("Erro: MusicPlayer não encontrado!")
-			else:
-				print("Música da home não iniciada porque musica_ligada_original é false")
 	
-	# Muda para a cena main
 	var scene_path = "res://telas/minigames/missao_vitaminas/Cenas/main.tscn"
 	var erro = get_tree().change_scene_to_file(scene_path)
 	if erro != OK:
