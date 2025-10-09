@@ -8,8 +8,8 @@ extends Control
 @onready var menu_botoes_selecao = $MarginContainerSelecaoTipo
 @onready var textura_urso = $TexturaUrso
 @onready var animacao_urso = $TexturaUrso/AnimacaoUrso
-@onready var textura_balao_fala = $DicasBalaoFala
-@onready var animacao_balao = $DicasBalaoFala/AnimacaoBalao
+@onready var textura_balao_fala = $CanvasLayer/DicasBalaoFala
+@onready var animacao_balao = $CanvasLayer/AnimacaoBalao
 
 var animacao_reversa: bool
 

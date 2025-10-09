@@ -99,7 +99,8 @@ offset_top = -0.47998
 offset_right = 0.0799866
 offset_bottom = -0.0799866
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 40
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 27
 text = "DESENVOLVIMENTO:"
 vertical_alignment = 1
 autowrap_mode = 3
@@ -120,6 +121,7 @@ offset_bottom = -0.0400391
 [node name="Label2" type="Label" parent="MarginContainer"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Bruno Fortes - Caça bactérias;"
 vertical_alignment = 1
@@ -129,6 +131,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label3" type="Label" parent="MarginContainer"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Jean Cristian Hertz  - Missão vitaminas;"
 vertical_alignment = 1
@@ -138,6 +141,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label4" type="Label" parent="MarginContainer"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "José Antonio M. de Oliveira - Bio-x;"
 vertical_alignment = 1
@@ -147,6 +151,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label5" type="Label" parent="MarginContainer"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "José Naildo Silva Costa - BioEscudo;"
 vertical_alignment = 1
@@ -156,6 +161,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label6" type="Label" parent="MarginContainer"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Vitor Borges dos Santos - BioGoods;"
 vertical_alignment = 1
@@ -165,6 +171,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label7" type="Label" parent="MarginContainer"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Yosaf Marques Machado Silva - BioVacina."
 vertical_alignment = 1
@@ -174,37 +181,37 @@ metadata/_edit_use_anchors_ = true
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.101
-anchor_top = 0.054926
-anchor_right = 0.784611
-anchor_bottom = 0.0999259
-offset_left = 0.280075
-offset_top = -0.320007
-offset_right = 0.0799866
-offset_bottom = 0.0800476
+anchor_left = 0.168
+anchor_top = 0.055
+anchor_right = 0.832
+anchor_bottom = 0.1
+offset_left = 0.0399933
+offset_top = -0.400005
+offset_right = -0.0400391
 grow_horizontal = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 40
 text = "CONCEITO / IDEIA BASE:"
 vertical_alignment = 1
-autowrap_mode = 3
 uppercase = true
-metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="."]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.124
-anchor_top = 0.100926
+anchor_left = 0.12
+anchor_top = 0.101
 anchor_right = 0.88
 anchor_bottom = 0.13
-offset_right = -0.320007
+offset_left = 1.6
+offset_top = -0.0800018
+offset_right = -1.60004
 offset_bottom = -0.400009
+grow_horizontal = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 21
-text = "Baseado no projeto de TCC de Biomedicina \"BioKids\""
+text = "Desenvolvido a partir do TCC de Biomedicina \"BioKids\""
 vertical_alignment = 1
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="."]
 layout_mode = 1
@@ -218,8 +225,9 @@ offset_top = -0.0399933
 offset_right = -0.0399475
 offset_bottom = 0.0800018
 grow_horizontal = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 27
-text = "AUTORES DA IDEIA:"
+text = "IDEALIZADORES:"
 vertical_alignment = 1
 autowrap_mode = 3
 
@@ -238,6 +246,7 @@ offset_bottom = -0.0800171
 [node name="Label2" type="Label" parent="MarginContainer2"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Isabella Carolina Rodrigues Oliveira;"
 vertical_alignment = 1
@@ -247,6 +256,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label3" type="Label" parent="MarginContainer2"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "João Pedro Rodrigues Hingst Peres;"
 vertical_alignment = 1
@@ -256,6 +266,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label4" type="Label" parent="MarginContainer2"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Thaiany Siedler."
 vertical_alignment = 1
@@ -265,20 +276,20 @@ metadata/_edit_use_anchors_ = true
 [node name="Label5" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.101
-anchor_top = 0.517111
-anchor_right = 0.919333
-anchor_bottom = 0.562111
-offset_left = 0.280075
-offset_top = -0.47998
-offset_right = 0.0799866
-offset_bottom = -0.0799866
+anchor_left = 0.096
+anchor_top = 0.515
+anchor_right = 0.904
+anchor_bottom = 0.559
+offset_left = -0.120003
+offset_top = -0.200073
+offset_right = 0.119995
+offset_bottom = 0.279968
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 40
-text = "AGRADECIMENTOS ESPECIAIS"
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 39
+text = "AGRADECIMENTOS ESPECIAIS:"
 vertical_alignment = 1
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
 
 [node name="Label6" type="Label" parent="."]
 layout_mode = 1
@@ -292,6 +303,7 @@ offset_top = -0.0399933
 offset_right = 0.200043
 offset_bottom = 8.08005
 grow_horizontal = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 27
 text = "COORDENADORES DE CURSO:"
 vertical_alignment = 1
@@ -314,6 +326,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label2" type="Label" parent="MarginContainer3"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Prof. Me. Lourival Oliveira Filho;"
 vertical_alignment = 1
@@ -323,6 +336,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label3" type="Label" parent="MarginContainer3"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Prof. Me. Denicezar Angelo Baldo."
 vertical_alignment = 1
@@ -341,6 +355,7 @@ offset_top = 0.039978
 offset_right = -0.359955
 offset_bottom = 0.160095
 grow_horizontal = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 27
 text = "ORIENTADORES:"
 vertical_alignment = 1
@@ -361,6 +376,7 @@ offset_bottom = 0.279846
 [node name="Label2" type="Label" parent="MarginContainer4"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Profa. Ma. Patricia Lius Melo Alves;"
 vertical_alignment = 1
@@ -370,6 +386,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label3" type="Label" parent="MarginContainer4"]
 custom_minimum_size = Vector2(544, 31)
 layout_mode = 2
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Prof. Me. José Luiz da Silva."
 vertical_alignment = 1

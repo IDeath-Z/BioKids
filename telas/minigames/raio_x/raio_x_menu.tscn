@@ -390,6 +390,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TextoBalao:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_d324e"]
 resource_name = "fade"
@@ -401,6 +413,18 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TextoBalao:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -559,29 +583,31 @@ libraries = {
 &"": SubResource("AnimationLibrary_ptl2l")
 }
 
-[node name="DicasBalaoFala" parent="." instance=ExtResource("8_d324e")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DicasBalaoFala" parent="CanvasLayer" instance=ExtResource("8_d324e")]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
 anchor_left = 0.469444
 anchor_top = 0.692815
 anchor_right = 1.026
-anchor_bottom = 1.0037
+anchor_bottom = 0.887963
 offset_top = -0.240051
 offset_right = 0.280029
 
-[node name="TextoBalao" type="Label" parent="DicasBalaoFala"]
-layout_mode = 1
+[node name="TextoBalao" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
-anchor_left = 0.408
-anchor_top = 0.263
-anchor_right = 0.408
-anchor_bottom = 0.263
-offset_left = -110.608
-offset_top = -31.368
-offset_right = 110.392
-offset_bottom = 31.632
+anchor_left = 0.543
+anchor_top = 0.686
+anchor_right = 0.85
+anchor_bottom = 0.744
+offset_left = 0.0396729
+offset_top = -0.382874
+offset_right = -0.000305176
+offset_bottom = 7.97717
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_sipkm")
 theme_override_colors/font_color = Color(0, 0, 0, 0.87451)
 theme_override_font_sizes/font_size = 24
 text = "Escolha qual você 
@@ -590,7 +616,8 @@ horizontal_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimacaoBalao" type="AnimationPlayer" parent="DicasBalaoFala"]
+[node name="AnimacaoBalao" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../DicasBalaoFala")
 libraries = {
 &"": SubResource("AnimationLibrary_gthou")
 }

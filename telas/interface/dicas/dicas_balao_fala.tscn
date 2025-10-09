@@ -8,7 +8,7 @@
 [node name="DicasBalaoFala" type="Control"]
 layout_mode = 3
 anchor_right = 0.415278
-anchor_bottom = 0.228704
+anchor_bottom = 0.187037
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_34qum")
@@ -38,17 +38,15 @@ metadata/_edit_lock_ = true
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.586149
-anchor_top = 0.599246
-anchor_right = 0.586149
-anchor_bottom = 0.59955
-offset_left = -72.9378
-offset_top = -92.0727
-offset_right = 77.1048
-offset_bottom = 64.7953
+anchor_left = 0.582
+anchor_top = 0.545617
+anchor_right = 0.582
+anchor_bottom = 0.545617
+offset_left = -72.0181
+offset_top = -78.6152
+offset_right = 71.9819
+offset_bottom = 78.3848
 grow_horizontal = 0
-rotation = -0.436332
-pivot_offset = Vector2(105, 90)
 metadata/_edit_use_anchors_ = true
 
 [node name="BotaoAudio" type="Button" parent="AspectRatioContainer"]
@@ -61,7 +59,6 @@ icon_alignment = 1
 expand_icon = true
 text_direction = 3
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/BotaoAudio"]
 layout_mode = 1
@@ -73,6 +70,5 @@ grow_vertical = 2
 texture = ExtResource("3_6ngip")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="AspectRatioContainer/BotaoAudio" to="." method="_on_botao_audio_pressed"]
