@@ -23,5 +23,5 @@ func _on_touch_screen_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/desenho3.tscn")
 
 
-func _on_button_pressed() -> void:
+func _on_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/home.tscn")

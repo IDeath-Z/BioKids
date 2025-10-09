@@ -21,7 +21,7 @@ var musica_ligada_original: bool = true
 @onready var right_button = $UILayer/TouchControls/RightButton if has_node("UILayer/TouchControls/RightButton") else null
 @onready var bio_fato_scene = preload("res://telas/minigames/missao_vitaminas/Cenas/bio_fato_vitaminas.tscn")
 @onready var pause_container = $UILayer/PauseMarginContainer if has_node("UILayer/PauseMarginContainer") else null
-@onready var pause_button = $UILayer/PauseMarginContainer/PauseButton if has_node("UILayer/PauseMarginContainer/PauseButton") else null
+@onready var pause_button = $UILayer/PauseContainer/PauseButton if has_node("UILayer/PauseContainer/PauseButton") else null
 @onready var pause_menu_node = $UILayer/PauseMenuNode if has_node("UILayer/PauseMenuNode") else null
 @onready var pause_menu = $UILayer/PauseMenuNode/PauseMenu if has_node("UILayer/PauseMenuNode/PauseMenu") else null
 @onready var menu_button = $UILayer/MenuButton if has_node("UILayer/MenuButton") else null
@@ -48,6 +48,7 @@ func _ready():
 	randomize()
 	screen_size = get_viewport_rect().size
 	scale_factor = screen_size.x / original_width
+	pause_button.visible = false
 
 	# Remove qualquer comida existente na inicialização
 	for comida in get_tree().get_nodes_in_group("comida"):
@@ -269,28 +270,10 @@ func _ready():
 		print("Erro: PauseMarginContainer não encontrado!")
 
 	if pause_button:
-		pause_button.process_mode = Node.PROCESS_MODE_ALWAYS
-		pause_button.modulate = Color(1.0, 1.0, 1.0)
-		pause_button.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
-		pause_button.focus_mode = Control.FOCUS_ALL
-		pause_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		pause_button.disabled = false
-		pause_button.z_index = 11
 		if not pause_button.pressed.is_connected(_on_pause_button_pressed):
 			pause_button.pressed.connect(_on_pause_button_pressed)
 			print("Sinal pressed do PauseButton conectado!")
-		if not pause_button.mouse_entered.is_connected(_on_pause_button_mouse_entered):
-			pause_button.mouse_entered.connect(_on_pause_button_mouse_entered)
-			print("Sinal mouse_entered do PauseButton conectado!")
-		if not pause_button.mouse_exited.is_connected(_on_pause_button_mouse_exited):
-			pause_button.mouse_exited.connect(_on_pause_button_mouse_exited)
-			print("Sinal mouse_exited do PauseButton conectado!")
-		if not pause_button.button_down.is_connected(_on_pause_button_down):
-			pause_button.button_down.connect(_on_pause_button_down)
-			print("Sinal button_down do PauseButton conectado!")
-		if not pause_button.button_up.is_connected(_on_pause_button_up):
-			pause_button.button_up.connect(_on_pause_button_up)
-			print("Sinal button_up do PauseButton conectado!")
 		print("PauseButton configurado: visible = ", pause_button.visible, ", disabled = ", pause_button.disabled, ", z_index = ", pause_button.z_index, ", process_mode = ", pause_button.process_mode, ", global_rect = ", pause_button.get_global_rect())
 	else:
 		print("Erro: PauseButton não encontrado!")
@@ -430,6 +413,7 @@ func _on_skip_tutorial2_pressed():
 	if tutorial2:
 		tutorial2.visible = false
 		print("Tutorial2 escondido: visible = ", tutorial2.visible)
+	pause_button.visible = true
 	start_countdown()
 
 func start_countdown() -> void:

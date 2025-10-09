@@ -150,3 +150,6 @@ func game_over():
 	game_over_panel.visible = true  # Mostra o painel de Game Over
 	jogar_novamente_button.visible = true
 	voltar_menu_button.visible = true
+
+func _on_botao_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://telas/minigames/caca_bacterias/scenes/main_menu.tscn")

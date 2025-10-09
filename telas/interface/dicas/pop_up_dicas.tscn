@@ -107,6 +107,7 @@ icon_alignment = 1
 expand_icon = true
 text_direction = 3
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="AspectRatioContainer2/BotaoVoltar"]
 layout_mode = 1
@@ -122,6 +123,7 @@ offset_bottom = -49.137
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_ehml4")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="AspectRatioContainer/BotaoAudio" to="." method="_on_botao_audio_pressed"]
 [connection signal="pressed" from="AspectRatioContainer2/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]

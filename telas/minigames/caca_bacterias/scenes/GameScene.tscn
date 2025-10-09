@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnx04k2b4f22r"]
+[gd_scene load_steps=9 format=3 uid="uid://bnx04k2b4f22r"]
 
 [ext_resource type="Script" uid="uid://5pl4ull3trqv" path="res://telas/minigames/caca_bacterias/game_scene.gd" id="1_18ig4"]
 [ext_resource type="Texture2D" uid="uid://bhjgbmhvd8r0x" path="res://telas/minigames/caca_bacterias/assets/images/Fundo LABGame.png" id="2_4jdoc"]
@@ -6,6 +6,8 @@
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="4_4jdoc"]
 [ext_resource type="AudioStream" uid="uid://coq67k2ii0dh2" path="res://telas/minigames/caca_bacterias/assets/sounds/Walen - Gameboy (freetouse.com).mp3" id="4_6gxb4"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="4_hc3ru"]
+[ext_resource type="Theme" uid="uid://cy5rvrhoo14d8" path="res://telas/interface/assets/temas/tema_flecha_voltar.tres" id="7_pr1ea"]
+[ext_resource type="Texture2D" uid="uid://bepd6haiepykj" path="res://telas/interface/assets/imagens/pop_up_flecha.png" id="8_8misk"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_18ig4")
@@ -37,13 +39,14 @@ grow_vertical = 2
 
 [node name="ScoreLabel" type="Label" parent="UI"]
 anchors_preset = -1
-anchor_top = 0.137
+anchor_left = 0.026
+anchor_top = 0.194
 anchor_right = 0.292
-anchor_bottom = 0.173
-offset_left = 19.0
-offset_top = 0.0399933
-offset_right = -0.240021
-offset_bottom = 0.159988
+anchor_bottom = 0.231
+offset_left = 0.279999
+offset_top = 0.47998
+offset_right = -0.240051
+offset_bottom = -0.480026
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_hc3ru")
 theme_override_font_sizes/font_size = 30
@@ -51,12 +54,13 @@ text = "Pontuação: 0"
 
 [node name="InstrucaoLabel" type="Label" parent="UI"]
 anchors_preset = -1
-anchor_left = 0.072
-anchor_right = 0.911
-anchor_bottom = 0.119
-offset_left = 0.159996
-offset_right = 0.0799561
-offset_bottom = -0.520004
+anchor_left = 0.275
+anchor_top = 0.014
+anchor_right = 1.028
+anchor_bottom = 0.132
+offset_top = -0.120001
+offset_right = -0.159973
+offset_bottom = 0.440002
 grow_horizontal = 2
 theme = ExtResource("4_4jdoc")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -65,6 +69,7 @@ theme_override_font_sizes/font_size = 40
 text = "\"\""
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="MensagemLabel" type="Label" parent="UI"]
 visible = false
@@ -204,9 +209,48 @@ texture = ExtResource("3_4jdoc")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="UI"]
+anchors_preset = -1
+anchor_top = 0.018
+anchor_right = 0.253
+anchor_bottom = 0.163
+offset_left = 17.0
+offset_top = -0.440001
+offset_right = -0.160019
+offset_bottom = -0.0400085
+
+[node name="BotaoVoltar" type="Button" parent="UI/AspectRatioContainer2"]
+layout_mode = 2
+theme = ExtResource("7_pr1ea")
+text = "
+"
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true
+text_direction = 3
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UI/AspectRatioContainer2/BotaoVoltar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.131
+anchor_top = 0.15
+anchor_right = 0.869
+anchor_bottom = 0.813
+offset_left = 57.933
+offset_top = 54.946
+offset_right = -57.933
+offset_bottom = -49.137
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_8misk")
+metadata/_edit_lock_ = true
+
 [node name="BacteriaSpawnTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
 
 [connection signal="pressed" from="UI/JogarNovamente" to="." method="_on_jogar_novamente_pressed"]
 [connection signal="pressed" from="UI/VoltarMenu" to="." method="_on_voltar_menu_pressed"]
+[connection signal="pressed" from="UI/AspectRatioContainer2/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]

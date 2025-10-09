@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://dfr2pcw7l4goo"]
+[gd_scene load_steps=29 format=3 uid="uid://dfr2pcw7l4goo"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_rl6uu"]
 [ext_resource type="Script" uid="uid://cro5dfjqd54no" path="res://telas/minigames/bio_escudo/Scripts/fur.gd" id="2_m8jyd"]
+[ext_resource type="Script" uid="uid://cfxki2ber7m7l" path="res://telas/minigames/bio_escudo/Scripts/character_creator.gd" id="2_rq37i"]
 [ext_resource type="Texture2D" uid="uid://c7y2otcqpymp8" path="res://telas/minigames/bio_escudo/assets/urso.png" id="4_dvuka"]
 [ext_resource type="Script" uid="uid://extdbho38y4u" path="res://telas/minigames/bio_escudo/Scripts/pants.gd" id="4_yiodc"]
 [ext_resource type="Script" uid="uid://mm3i7cj4hp28" path="res://telas/minigames/bio_escudo/Scripts/outfit.gd" id="6_e0whd"]
@@ -24,9 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://clsbe3nqk0ipn" path="res://telas/minigames/bio_escudo/assets/UI/button_finished_icon.png" id="21_guhsu"]
 [ext_resource type="Texture2D" uid="uid://b7fomj25bh55f" path="res://telas/minigames/bio_escudo/assets/UI/button_finished_pressed.icon.png" id="22_63ikp"]
 [ext_resource type="Texture2D" uid="uid://mftuwbcmkc23" path="res://telas/minigames/bio_escudo/assets/UI/button_finished_hover.icon.png" id="23_saf70"]
-[ext_resource type="Script" uid="uid://b07lra83yt6hi" path="res://telas/minigames/bio_escudo/Scenes/finished_button.gd" id="25_saf70"]
-
-[sub_resource type="GDScript" id="GDScript_s36mj"]
+[ext_resource type="Script" uid="uid://b07lra83yt6hi" path="res://telas/minigames/bio_escudo/Scripts/finished_button.gd" id="25_saf70"]
+[ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="26_rd2jk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m8jyd"]
 
@@ -38,7 +38,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_rl6uu")
-script = SubResource("GDScript_s36mj")
+script = ExtResource("2_rq37i")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -51,6 +51,7 @@ texture = ExtResource("9_s36mj")
 
 [node name="skeleton" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -113,11 +114,12 @@ region_rect = Rect2(10, 10, 10, 10)
 [node name="Fur_Color" type="TextureButton" parent="CreatorScreen"]
 anchors_preset = -1
 anchor_left = 0.769444
-anchor_top = 0.203704
-anchor_right = 0.875296
-anchor_bottom = 0.387208
-offset_right = 457.787
-offset_bottom = 353.815
+anchor_top = 0.39
+anchor_right = 0.864
+anchor_bottom = 0.526
+offset_top = -29.1997
+offset_right = 465.92
+offset_bottom = 375.92
 rotation = 0.404997
 scale = Vector2(0.277408, 0.275585)
 texture_normal = ExtResource("9_dvuka")
@@ -128,11 +130,12 @@ metadata/_edit_use_anchors_ = true
 [node name="ChangePantsButton" type="TextureButton" parent="CreatorScreen"]
 anchors_preset = -1
 anchor_left = 0.00972222
-anchor_top = 0.213889
-anchor_right = 0.26561
-anchor_bottom = 0.370333
-offset_right = 473.761
-offset_bottom = 359.041
+anchor_top = 0.373
+anchor_right = 0.266
+anchor_bottom = 0.53
+offset_top = 0.160034
+offset_right = 473.48
+offset_bottom = 358.6
 scale = Vector2(0.279999, 0.319999)
 texture_normal = ExtResource("10_08kba")
 texture_pressed = ExtResource("11_rjla7")
@@ -151,12 +154,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ChangeShirtButton" type="TextureButton" parent="CreatorScreen"]
 anchors_preset = -1
-anchor_left = 0.0472222
-anchor_top = -0.00185185
-anchor_right = 0.39886
-anchor_bottom = 0.203386
-offset_right = 374.821
-offset_bottom = 209.343
+anchor_left = 0.047
+anchor_top = 0.157
+anchor_right = 0.399
+anchor_bottom = 0.363
+offset_left = 0.159985
+offset_top = 0.439987
+offset_right = 374.72
+offset_bottom = 208.96
 scale = Vector2(0.403152, 0.514285)
 texture_normal = ExtResource("9_m8jyd")
 texture_pressed = ExtResource("10_bgq41")
@@ -179,11 +184,12 @@ metadata/_edit_use_anchors_ = true
 [node name="ChangeAccesButton" type="TextureButton" parent="CreatorScreen"]
 anchors_preset = -1
 anchor_left = 0.705556
-anchor_top = -0.0120369
-anchor_right = 1.01592
-anchor_bottom = 0.201782
-offset_right = 256.535
-offset_bottom = 156.075
+anchor_top = 0.147
+anchor_right = 1.016
+anchor_bottom = 0.361
+offset_top = 0.240143
+offset_right = 256.48
+offset_bottom = 156.12
 scale = Vector2(0.465553, 0.596705)
 texture_normal = ExtResource("10_5xme0")
 texture_pressed = ExtResource("11_bgq41")
@@ -217,6 +223,24 @@ texture_hover = ExtResource("23_saf70")
 script = ExtResource("25_saf70")
 metadata/_edit_use_anchors_ = true
 
+[node name="PopUpDicas" parent="." instance=ExtResource("26_rd2jk")]
+layout_mode = 1
+anchor_left = 0.102778
+anchor_bottom = 0.194667
+
+[node name="Label" type="Label" parent="PopUpDicas"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.411765
+anchor_top = 0.280952
+anchor_right = 0.715251
+anchor_bottom = 0.866429
+offset_right = -0.052002
+offset_bottom = 0.0499992
+text = "Menssagem pra ajudar o amigo"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="CreatorScreen/Fur_Color" to="skeleton/Fur" method="_on_color_button_pressed"]
 [connection signal="pressed" from="CreatorScreen/ChangePantsButton" to="skeleton/Outfit2" method="_on_collection_button_pressed"]
 [connection signal="pressed" from="CreatorScreen/ChangePantsButton/PantsColorButton" to="skeleton/Outfit2" method="_on_color_button_pressed"]
@@ -225,3 +249,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="CreatorScreen/ChangeAccesButton" to="skeleton/accessory" method="_on_collection_button_pressed"]
 [connection signal="pressed" from="CreatorScreen/ChangeAccesButton/AccesColorButton" to="skeleton/accessory" method="_on_color_button_pressed"]
 [connection signal="pressed" from="CreatorScreen/finishedButton" to="CreatorScreen/finishedButton" method="_on_pressed"]
+[connection signal="botao_voltar_pressed" from="PopUpDicas" to="." method="_on_pop_up_dicas_botao_voltar_pressed"]

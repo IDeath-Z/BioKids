@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d383bmculclw0"]
+[gd_scene load_steps=11 format=3 uid="uid://d383bmculclw0"]
 
 [ext_resource type="Script" uid="uid://c1slgi7yipkei" path="res://telas/minigames/bio_goods/scripts/selecionar_quadro.gd" id="1_oepp8"]
 [ext_resource type="Texture2D" uid="uid://k0qmefotrqqi" path="res://telas/minigames/bio_goods/sprites/background_selecao_pintura.png" id="2_oepp8"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://d1rc7hioghg02" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/desenho1.jpg" id="5_oepp8"]
 [ext_resource type="Texture2D" uid="uid://dxrv5iw70pkm7" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/desenho2.jpg" id="6_oepp8"]
 [ext_resource type="Texture2D" uid="uid://5lup57i620km" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/desenho3.jpg" id="7_bdwv4"]
-[ext_resource type="Texture2D" uid="uid://dpbkx8ggdvpsn" path="res://telas/minigames/bio_goods/sprites/icones/back.png" id="9_bdwv4"]
+[ext_resource type="Theme" uid="uid://cy5rvrhoo14d8" path="res://telas/interface/assets/temas/tema_flecha_voltar.tres" id="9_6arlc"]
+[ext_resource type="Texture2D" uid="uid://bepd6haiepykj" path="res://telas/interface/assets/imagens/pop_up_flecha.png" id="10_oool0"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -49,12 +50,12 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.022
-anchor_top = 0.088
+anchor_top = 0.175037
 anchor_right = 0.308
-anchor_bottom = 0.262
+anchor_bottom = 0.349037
 offset_left = 0.159999
-offset_top = -0.0400085
-offset_right = 0.144974
+offset_top = -0.0400162
+offset_right = 0.144943
 offset_bottom = 0.039978
 texture = ExtResource("4_e636p")
 region_rect = Rect2(0, 0, 128, 128)
@@ -62,29 +63,20 @@ patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
+metadata/_edit_use_anchors_ = true
 
-[node name="desenho1_consultorio" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.037
-anchor_top = 0.098
-anchor_right = 0.295
-anchor_bottom = 0.254
-offset_left = 0.360001
-offset_top = 0.159996
-offset_right = 846.6
-offset_bottom = 863.68
-scale = Vector2(0.179687, 0.162766)
-action_mode = 0
-icon = ExtResource("5_oepp8")
+[node name="desenho1_consultorio" type="TouchScreenButton" parent="MolduraQuadro1"]
+position = Vector2(13, 11)
+scale = Vector2(0.177734, 0.164062)
+texture_normal = ExtResource("5_oepp8")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.358
-anchor_top = 0.088
+anchor_top = 0.175
 anchor_right = 0.644
-anchor_bottom = 0.262
+anchor_bottom = 0.349
 offset_left = 0.23999
 offset_top = -0.0400085
 offset_right = 0.224945
@@ -105,9 +97,9 @@ texture_normal = ExtResource("6_oepp8")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.694
-anchor_top = 0.088
+anchor_top = 0.175
 anchor_right = 0.98
-anchor_bottom = 0.262
+anchor_bottom = 0.349
 offset_left = 0.320007
 offset_top = -0.0400085
 offset_right = 0.304993
@@ -128,9 +120,9 @@ texture_normal = ExtResource("7_bdwv4")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.395148
+anchor_top = 0.450703
 anchor_right = 0.5
-anchor_bottom = 0.429852
+anchor_bottom = 0.485408
 offset_left = -350.0
 offset_top = -109.76
 offset_right = 350.0
@@ -140,7 +132,7 @@ grow_vertical = 2
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_lb5je")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 35
 text = "Preciso da sua ajuda para colorir esses itens que possuo no hospital! Poderia me ajudar?
 
 Escolha por onde vamos iniciar."
@@ -148,18 +140,48 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(30, 30)
-layout_mode = 0
-offset_left = 17.0
-offset_top = 11.0
-offset_right = 537.0
-offset_bottom = 531.0
-scale = Vector2(0.08, 0.08)
-icon = ExtResource("9_bdwv4")
-flat = true
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0250602
+anchor_top = 0.0176223
+anchor_right = 0.254227
+anchor_bottom = 0.162993
+offset_left = -0.0433578
+offset_top = -0.0320969
+offset_right = -0.043396
+offset_bottom = -0.032135
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="desenho1_consultorio" to="." method="_on_desenho_1_consultorio_pressed"]
+[node name="BotaoVoltar" type="Button" parent="AspectRatioContainer2"]
+layout_mode = 2
+theme = ExtResource("9_6arlc")
+text = "
+"
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true
+text_direction = 3
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer2/BotaoVoltar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.131
+anchor_top = 0.15
+anchor_right = 0.869
+anchor_bottom = 0.813
+offset_left = 57.933
+offset_top = 54.946
+offset_right = -57.933
+offset_bottom = -49.137
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_oool0")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="MolduraQuadro1/desenho1_consultorio" to="." method="_on_desenho_1_consultorio_pressed"]
 [connection signal="pressed" from="NinePatchRect2/desenho2_" to="." method="_on_desenho_2__pressed"]
 [connection signal="pressed" from="NinePatchRect3/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer2/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
