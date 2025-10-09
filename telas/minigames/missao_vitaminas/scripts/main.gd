@@ -25,6 +25,10 @@ var musica_ligada_original: bool = true
 @onready var pause_menu_node = $UILayer/PauseMenuNode if has_node("UILayer/PauseMenuNode") else null
 @onready var pause_menu = $UILayer/PauseMenuNode/PauseMenu if has_node("UILayer/PauseMenuNode/PauseMenu") else null
 @onready var menu_button = $UILayer/MenuButton if has_node("UILayer/MenuButton") else null
+@onready var tutorial1 = $TutorialLayer/Tutorial1 if has_node("TutorialLayer/Tutorial1") else null
+@onready var tutorial2 = $TutorialLayer/Tutorial2 if has_node("TutorialLayer/Tutorial2") else null
+@onready var tutorial1_button = $TutorialLayer/Tutorial1/Button if has_node("TutorialLayer/Tutorial1/Button") else null
+@onready var tutorial2_button = $TutorialLayer/Tutorial2/Button if has_node("TutorialLayer/Tutorial2/Button") else null
 
 var base_fall_speed: float
 var fall_speed_increment: float
@@ -265,28 +269,28 @@ func _ready():
 		print("Erro: PauseMarginContainer não encontrado!")
 
 	if pause_button:
-		pause_button.process_mode = Node.PROCESS_MODE_ALWAYS  # Garante que processe eventos mesmo pausado
+		pause_button.process_mode = Node.PROCESS_MODE_ALWAYS
 		pause_button.modulate = Color(1.0, 1.0, 1.0)
 		pause_button.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
 		pause_button.focus_mode = Control.FOCUS_ALL
 		pause_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		pause_button.disabled = false
 		pause_button.z_index = 11
-	if not pause_button.pressed.is_connected(_on_pause_button_pressed):
-		pause_button.pressed.connect(_on_pause_button_pressed)
-		print("Sinal pressed do PauseButton conectado!")
-	if not pause_button.mouse_entered.is_connected(_on_pause_button_mouse_entered):
-		pause_button.mouse_entered.connect(_on_pause_button_mouse_entered)
-		print("Sinal mouse_entered do PauseButton conectado!")
-	if not pause_button.mouse_exited.is_connected(_on_pause_button_mouse_exited):
-		pause_button.mouse_exited.connect(_on_pause_button_mouse_exited)
-		print("Sinal mouse_exited do PauseButton conectado!")
-	if not pause_button.button_down.is_connected(_on_pause_button_down):
-		pause_button.button_down.connect(_on_pause_button_down)
-		print("Sinal button_down do PauseButton conectado!")
-	if not pause_button.button_up.is_connected(_on_pause_button_up):
-		pause_button.button_up.connect(_on_pause_button_up)
-		print("Sinal button_up do PauseButton conectado!")
+		if not pause_button.pressed.is_connected(_on_pause_button_pressed):
+			pause_button.pressed.connect(_on_pause_button_pressed)
+			print("Sinal pressed do PauseButton conectado!")
+		if not pause_button.mouse_entered.is_connected(_on_pause_button_mouse_entered):
+			pause_button.mouse_entered.connect(_on_pause_button_mouse_entered)
+			print("Sinal mouse_entered do PauseButton conectado!")
+		if not pause_button.mouse_exited.is_connected(_on_pause_button_mouse_exited):
+			pause_button.mouse_exited.connect(_on_pause_button_mouse_exited)
+			print("Sinal mouse_exited do PauseButton conectado!")
+		if not pause_button.button_down.is_connected(_on_pause_button_down):
+			pause_button.button_down.connect(_on_pause_button_down)
+			print("Sinal button_down do PauseButton conectado!")
+		if not pause_button.button_up.is_connected(_on_pause_button_up):
+			pause_button.button_up.connect(_on_pause_button_up)
+			print("Sinal button_up do PauseButton conectado!")
 		print("PauseButton configurado: visible = ", pause_button.visible, ", disabled = ", pause_button.disabled, ", z_index = ", pause_button.z_index, ", process_mode = ", pause_button.process_mode, ", global_rect = ", pause_button.get_global_rect())
 	else:
 		print("Erro: PauseButton não encontrado!")
@@ -307,11 +311,39 @@ func _ready():
 		if not pause_menu.continue_pressed.is_connected(_on_continue_button_pressed):
 			pause_menu.continue_pressed.connect(_on_continue_button_pressed)
 			print("Sinal continue_pressed conectado ao PauseMenu!")
-		# Removido a conexão ao exit_pressed
 		print("PauseMenu configurado: tipo = ", pause_menu.get_class(), ", visible = ", pause_menu.visible, ", process_mode = ", pause_menu.process_mode)
 	else:
 		print("ERRO CRÍTICO: PauseMenu não encontrado em $UILayer/PauseMenuNode/PauseMenu!")
 
+	if tutorial1:
+		tutorial1.visible = false
+		if tutorial1_button:
+			if not tutorial1_button.pressed.is_connected(_on_skip_tutorial1_pressed):
+				tutorial1_button.pressed.connect(_on_skip_tutorial1_pressed)
+				print("Sinal pressed do Button do Tutorial1 conectado!")
+		else:
+			print("Erro: Button não encontrado em Tutorial1!")
+	else:
+		print("Erro: Tutorial1 não encontrado!")
+
+	if tutorial2:
+		tutorial2.visible = false
+		if tutorial2_button:
+			if not tutorial2_button.pressed.is_connected(_on_skip_tutorial2_pressed):
+				tutorial2_button.pressed.connect(_on_skip_tutorial2_pressed)
+				print("Sinal pressed do Button do Tutorial2 conectado!")
+				print("tutorial2_button encontrado em: ", tutorial2_button.get_path())
+		else:
+			print("Erro: Button não encontrado em Tutorial2!")
+	else:
+		print("Erro: Tutorial2 não encontrado!")
+	
+	if tutorial2_button:
+		print("✅ Botão do Tutorial2 encontrado:", tutorial2_button.name)
+	else:
+		print("❌ Botão do Tutorial2 NÃO encontrado!")
+
+	
 	var ui_layer = $UILayer
 	if ui_layer:
 		ui_layer.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -364,6 +396,40 @@ func decrease_spawn_wait() -> void:
 func _on_start_button_pressed():
 	if $MenuLayer:
 		$MenuLayer.visible = false
+	if $BackgroundBlurred:
+		$BackgroundBlurred.visible = false
+	if $BackgroundNormal:
+		$BackgroundNormal.visible = true
+	_show_tutorial1()
+
+func _show_tutorial1():
+	if tutorial1:
+		tutorial1.visible = true
+		print("Tutorial1 exibido: visible = ", tutorial1.visible)
+	else:
+		print("Erro: Tutorial1 não encontrado! Iniciando contagem regressiva diretamente...")
+		start_countdown()
+
+func _show_tutorial2():
+	if tutorial1:
+		tutorial1.visible = false
+		print("Tutorial1 escondido: visible = ", tutorial1.visible)
+	if tutorial2:
+		tutorial2.visible = true
+		print("Tutorial2 exibido: visible = ", tutorial2.visible)
+	else:
+		print("Erro: Tutorial2 não encontrado! Iniciando contagem regressiva...")
+		start_countdown()
+
+func _on_skip_tutorial1_pressed():
+	print("Button do Tutorial1 pressionado!")
+	_show_tutorial2()
+
+func _on_skip_tutorial2_pressed():
+	print("Button do Tutorial2 pressionado!")
+	if tutorial2:
+		tutorial2.visible = false
+		print("Tutorial2 escondido: visible = ", tutorial2.visible)
 	start_countdown()
 
 func start_countdown() -> void:
@@ -570,6 +636,12 @@ func reset_game_state():
 	if pause_menu:
 		pause_menu.hide_menu()
 		print("PauseMenu escondido no reset")
+	if tutorial1:
+		tutorial1.visible = false
+		print("Tutorial1 escondido no reset: visible = ", tutorial1.visible)
+	if tutorial2:
+		tutorial2.visible = false
+		print("Tutorial2 escondido no reset: visible = ", tutorial2.visible)
 	if background_music and musica_ligada_original:
 		background_music.volume_db = -10.0
 		background_music.play()
@@ -741,10 +813,10 @@ func _on_pause_button_pressed():
 		var tween = create_tween()
 		if tween:
 			tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
-			tween.tween_property(pause_button, "scale", Vector2(1.2, 1.2), 0.15)  # Aumenta para 20% maior
-			tween.tween_property(pause_button, "scale", Vector2(1.0, 1.0), 0.15)  # Volta ao normal
-			tween.parallel().tween_property(pause_button, "modulate", Color(0.8, 0.8, 0.8), 0.15)  # Escurece um pouco
-			tween.parallel().tween_property(pause_button, "modulate", Color(1.0, 1.0, 1.0), 0.15)  # Volta à cor original
+			tween.tween_property(pause_button, "scale", Vector2(1.2, 1.2), 0.15)
+			tween.tween_property(pause_button, "scale", Vector2(1.0, 1.0), 0.15)
+			tween.parallel().tween_property(pause_button, "modulate", Color(0.8, 0.8, 0.8), 0.15)
+			tween.parallel().tween_property(pause_button, "modulate", Color(1.0, 1.0, 1.0), 0.15)
 			print("Animação de clique configurada com sucesso.")
 
 func _on_pause_button_down():
@@ -753,8 +825,8 @@ func _on_pause_button_down():
 		var tween = create_tween()
 		if tween:
 			tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
-			tween.tween_property(pause_button, "scale", Vector2(0.9, 0.9), 0.1)  # Reduz 10% para simular pressão
-			tween.parallel().tween_property(pause_button, "modulate", Color(0.7, 0.7, 0.7), 0.1)  # Escurece mais
+			tween.tween_property(pause_button, "scale", Vector2(0.9, 0.9), 0.1)
+			tween.parallel().tween_property(pause_button, "modulate", Color(0.7, 0.7, 0.7), 0.1)
 			print("Efeito de pressionamento aplicado.")
 	else:
 		print("Erro: PauseButton não encontrado, invisível ou desabilitado ao pressionar!")
@@ -765,8 +837,8 @@ func _on_pause_button_up():
 		var tween = create_tween()
 		if tween:
 			tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
-			tween.tween_property(pause_button, "scale", Vector2(1.0, 1.0), 0.1)  # Volta ao normal
-			tween.parallel().tween_property(pause_button, "modulate", Color(1.0, 1.0, 1.0), 0.1)  # Volta à cor original
+			tween.tween_property(pause_button, "scale", Vector2(1.0, 1.0), 0.1)
+			tween.parallel().tween_property(pause_button, "modulate", Color(1.0, 1.0, 1.0), 0.1)
 			print("Efeito de soltura aplicado.")
 	else:
 		print("Erro: PauseButton não encontrado, invisível ou desabilitado ao soltar!")
@@ -805,12 +877,10 @@ func _on_continue_button_pressed():
 			print("Música de fundo reiniciada após despausar")
 	print("Jogo despausado com sucesso! paused = ", get_tree().paused)
 
-# Removido _on_exit_button_pressed, pois o sinal exit_pressed foi eliminado
-
 func _on_pause_button_mouse_entered():
 	if pause_button and pause_button.visible and not pause_button.disabled:
 		var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
-		tween.tween_property(pause_button, "modulate", Color(1.5, 1.5, 1.5), 0.2)  # Aumenta o brilho
+		tween.tween_property(pause_button, "modulate", Color(1.5, 1.5, 1.5), 0.2)
 		print("Mouse entrou no PauseButton: brilho aumentado para ", Color(1.5, 1.5, 1.5))
 	else:
 		print("Erro: PauseButton não encontrado, invisível ou desabilitado ao entrar mouse! visible = ", pause_button.visible if pause_button else "null", ", disabled = ", pause_button.disabled if pause_button else "null")
@@ -818,7 +888,10 @@ func _on_pause_button_mouse_entered():
 func _on_pause_button_mouse_exited():
 	if pause_button and pause_button.visible and not pause_button.disabled:
 		var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
-		tween.tween_property(pause_button, "modulate", Color(1.0, 1.0, 1.0), 0.2)  # Volta ao normal
+		tween.tween_property(pause_button, "modulate", Color(1.0, 1.0, 1.0), 0.2)
 		print("Mouse saiu do PauseButton: brilho restaurado para ", Color(1.0, 1.0, 1.0))
 	else:
 		print("Erro: PauseButton não encontrado, invisível ou desabilitado ao sair mouse! visible = ", pause_button.visible if pause_button else "null", ", disabled = ", pause_button.disabled if pause_button else "null")
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.

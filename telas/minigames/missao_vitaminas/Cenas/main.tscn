@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dmcb7usur13uo"]
+[gd_scene load_steps=47 format=3 uid="uid://dmcb7usur13uo"]
 
 [ext_resource type="Script" uid="uid://bg2cvcv2ln1xw" path="res://telas/minigames/missao_vitaminas/scripts/player.gd" id="1_74bqr"]
 [ext_resource type="Script" uid="uid://ds8efov5xt1uw" path="res://telas/minigames/missao_vitaminas/scripts/main.gd" id="1_jjrtw"]
@@ -18,6 +18,12 @@
 [ext_resource type="AudioStream" uid="uid://b50baestxtdnu" path="res://telas/minigames/missao_vitaminas/sounds/start_race.wav" id="15_xaxpv"]
 [ext_resource type="AudioStream" uid="uid://dkjhygl1h1hi1" path="res://telas/minigames/missao_vitaminas/sounds/background_music.mp3" id="16_xaxpv"]
 [ext_resource type="Texture2D" uid="uid://dn55j1rq5t7gc" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/Setaa.png" id="17_e2fu3"]
+[ext_resource type="Texture2D" uid="uid://ddhoinunmceg0" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/TirarFundoSeta-removebg-preview.png" id="19_ta5ef"]
+[ext_resource type="Script" uid="uid://bbck7uydl5l0c" path="res://telas/minigames/missao_vitaminas/scripts/Button1.gd" id="20_pd4lw"]
+[ext_resource type="Texture2D" uid="uid://dmegqsbsptgbb" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/UrsoSemFundo.png" id="20_pqtdy"]
+[ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="21_pd4lw"]
+[ext_resource type="Texture2D" uid="uid://b2y42w128h8d0" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/FundoTutorial (2).png" id="22_ta5ef"]
+[ext_resource type="Script" uid="uid://mffhdgw7vh02" path="res://telas/minigames/missao_vitaminas/scripts/Button2.gd" id="24_n4gqt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x6di6"]
 animations = [{
@@ -83,6 +89,23 @@ bg_color = Color(0.631373, 0.6, 0.6, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j5sm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2fu3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oba76"]
+bg_color = Color(0.02, 0.361, 0.424, 0.835)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6eic5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnh32"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iprmf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kki26"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2cmp"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -369,6 +392,147 @@ layout_mode = 2
 theme = ExtResource("10_wvhv2")
 theme_override_font_sizes/font_size = 50
 text = "Voltar"
+
+[node name="TutorialLayer" type="CanvasLayer" parent="."]
+
+[node name="Tutorial1" type="Control" parent="TutorialLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TutorialLayer/Tutorial1"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 190.0
+offset_right = 610.0
+offset_bottom = 890.0
+
+[node name="ColorRect" type="Panel" parent="TutorialLayer/Tutorial1/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oba76")
+
+[node name="Button" type="Button" parent="TutorialLayer/Tutorial1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.45
+anchor_top = 3.95
+anchor_right = 15.99
+anchor_bottom = 6.49
+offset_left = 6.10352e-05
+offset_right = 406.4
+offset_bottom = 406.4
+scale = Vector2(0.2, 0.2)
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6eic5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fnh32")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iprmf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kki26")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d2cmp")
+icon = ExtResource("19_ta5ef")
+script = ExtResource("20_pd4lw")
+
+[node name="TextureRect" type="TextureRect" parent="TutorialLayer/Tutorial1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.45
+anchor_top = 14.7
+anchor_right = 7.43
+anchor_bottom = 26.22
+offset_right = 708.8
+offset_bottom = 1075.2
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("20_pqtdy")
+
+[node name="Tutorial" type="Label" parent="TutorialLayer/Tutorial1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.375
+anchor_top = 7.5
+anchor_right = 14.625
+anchor_bottom = 16.25
+offset_left = -1.52588e-05
+offset_top = -3.05176e-05
+offset_right = -6.10352e-05
+theme_override_fonts/font = ExtResource("21_pd4lw")
+theme_override_font_sizes/font_size = 18
+text = "Como jogar:
+
+- Ande para a esquerda ou direita para pegar os alimentos.
+
+- Colete os saudáveis e desvie dos não saudáveis .
+
+
+
+Objetivo:
+Pegue o máximo de alimentos saudáveis e evite os não saudáveis para ganhar pontos e bater seu recorde! 🏆"
+autowrap_mode = 2
+
+[node name="Titulo" type="Label" parent="TutorialLayer/Tutorial1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.0
+anchor_top = 5.5
+anchor_right = 13.0
+anchor_bottom = 7.125
+offset_top = -1.52588e-05
+offset_right = -6.10352e-05
+offset_bottom = -3.05176e-05
+theme_override_fonts/font = ExtResource("21_pd4lw")
+theme_override_font_sizes/font_size = 25
+text = "Tutorial do Minigame        Missão Vitamina "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Exemplo" type="Label" parent="TutorialLayer/Tutorial1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.25
+anchor_top = 18.25
+anchor_right = 14.25
+anchor_bottom = 20.725
+offset_left = -1.52588e-05
+offset_right = -6.10352e-05
+theme_override_fonts/font = ExtResource("21_pd4lw")
+theme_override_font_sizes/font_size = 25
+text = "Exemplo:
+🍎   = ✅ 
+🍔   = ❌ "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial2" type="Control" parent="TutorialLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="TutorialLayer/Tutorial2"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 175.0
+offset_right = 1180.0
+offset_bottom = 2093.0
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("22_ta5ef")
+
+[node name="Button" type="Button" parent="TutorialLayer/Tutorial2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.45
+anchor_top = 3.95
+anchor_right = 15.99
+anchor_bottom = 6.49
+offset_left = 6.10352e-05
+offset_right = 406.4
+offset_bottom = 406.4
+scale = Vector2(0.2, 0.2)
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6eic5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fnh32")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iprmf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kki26")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d2cmp")
+icon = ExtResource("19_ta5ef")
+script = ExtResource("24_n4gqt")
 
 [connection signal="pressed" from="UILayer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="UILayer/PauseMarginContainer/PauseButton" to="." method="_on_pause_button_pressed"]
