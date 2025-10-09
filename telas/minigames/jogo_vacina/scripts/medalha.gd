@@ -7,5 +7,4 @@ func _ready() -> void:
 	tween.tween_property(self, "position", Vector2(369,80), 1.5)
 	
 	await tween.finished
-	
 	play("medalha_conquista")

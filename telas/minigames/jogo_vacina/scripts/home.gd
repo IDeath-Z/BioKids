@@ -2,7 +2,7 @@ extends Control
 
 #@onready var menu_botes_tela_principal = $MarginContainerPrincipal
 @onready var botao_iniciar = $MarginContainerPrincipal2/GridBotoes/BotaoIniciar
-@onready var botao_como_jogar = $MarginContainerPrincipal2/GridBotoes/BotaoComoJogar
+#@onready var botao_como_jogar = $MarginContainerPrincipal2/GridBotoes/BotaoComoJogar
 @onready var botao_voltar = $MarginContainerPrincipal2/GridBotoes/BotaoVoltar
 @onready var tela_01 = $Tela_01
 @onready var box_botoes = $MarginContainerPrincipal2
@@ -18,12 +18,12 @@ func _ready() -> void:
 func _on_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.tscn")
 	
-func _on_botao_como_jogar_pressed() -> void:
-	textura_balao.visible = true
-	textura_urso.visible = true
-	box_botoes.visible = false
-	animacao_urso.play_backwards("sair_tela")
-	botao_como_jogar.disabled = true
+#func _on_botao_como_jogar_pressed() -> void:
+	#textura_balao.visible = true
+	#textura_urso.visible = true
+	#box_botoes.visible = false
+	#animacao_urso.play_backwards("sair_tela")
+	#botao_como_jogar.disabled = true
 
 func _on_botao_jogar_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/main.tscn")

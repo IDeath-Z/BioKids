@@ -272,16 +272,15 @@ expand_mode = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.222
-anchor_top = 0.245556
+anchor_top = 0.315
 anchor_right = 0.778
-anchor_bottom = 0.615556
+anchor_bottom = 0.685
 offset_left = 0.159988
 offset_top = -0.200043
 offset_right = -0.160034
 offset_bottom = 0.199951
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="GridBotoes" type="VBoxContainer" parent="MarginContainerPrincipal2"]
 custom_minimum_size = Vector2(400, 400)
@@ -368,6 +367,16 @@ autowrap_mode = 3
 libraries = {
 &"": SubResource("AnimationLibrary_6ggtv")
 }
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.187
+offset_bottom = 0.0399933
+theme = ExtResource("3_cvtpp")
+theme_override_font_sizes/font_size = 80
+text = "BIO-VACINA"
 
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoIniciar" to="." method="_on_botao_jogar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]

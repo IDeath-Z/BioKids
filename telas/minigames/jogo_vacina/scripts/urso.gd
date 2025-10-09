@@ -4,7 +4,7 @@ extends Area2D
 @onready var banqueta = $banqueta
 @onready var colisao = $CollisionShape2D
 
-signal conquista_feita 
+
 
 var colision_mover := false
 
@@ -60,7 +60,3 @@ func movimentar_local_vacina():
 			await get_tree().create_timer(pausa).timeout
 			idx -= 1
 	
-
-func _on_area_entered(area):	
-	if area.name == "seringa":
-		emit_signal("conquista_feita")
