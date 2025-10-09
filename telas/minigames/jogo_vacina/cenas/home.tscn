@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://buvd6u7dmxk21"]
+[gd_scene load_steps=14 format=3 uid="uid://buvd6u7dmxk21"]
 
 [ext_resource type="Script" uid="uid://c7eys841mf75t" path="res://telas/minigames/jogo_vacina/scripts/home.gd" id="1_qknk6"]
 [ext_resource type="Texture2D" uid="uid://bcvr5b6tl14yq" path="res://telas/minigames/jogo_vacina/assets/laboratorio.png" id="2_00ial"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="3_cvtpp"]
 [ext_resource type="Texture2D" uid="uid://8lgun1lam1b2" path="res://telas/interface/assets/imagens/mascote_pensando.png" id="4_wr136"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="5_dg58q"]
+[ext_resource type="Texture2D" uid="uid://k5af6ci0rdbb" path="res://telas/minigames/jogo_vacina/assets/Bio_Vacina_logo.png" id="7_dg58q"]
 
 [sub_resource type="Animation" id="Animation_3g3ye"]
 length = 0.001
@@ -368,15 +369,18 @@ libraries = {
 &"": SubResource("AnimationLibrary_6ggtv")
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Logo_jogo_vacina" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.187
-offset_bottom = 0.0399933
+offset_right = 160.0
+offset_bottom = 51.04
+grow_horizontal = 2
+scale = Vector2(0.8, 0.8)
 theme = ExtResource("3_cvtpp")
-theme_override_font_sizes/font_size = 80
-text = "BIO-VACINA"
+texture = ExtResource("7_dg58q")
+stretch_mode = 5
 
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoIniciar" to="." method="_on_botao_jogar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]

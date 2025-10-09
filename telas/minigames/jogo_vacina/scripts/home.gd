@@ -10,6 +10,7 @@ extends Control
 @onready var animacao_balao = $TexturaUrso/TexturaBalao/AnimacaoBalao
 @onready var textura_urso = $TexturaUrso
 @onready var animacao_urso = $TexturaUrso/AnimacaoUrso
+@onready var logo = $Logo_jogo_vacina
 
 func _ready() -> void:
 	textura_balao.visible = false
@@ -26,8 +27,11 @@ func _on_botao_voltar_pressed() -> void:
 	#botao_como_jogar.disabled = true
 
 func _on_botao_jogar_pressed() -> void:
+	animacao_urso.play_backwards("sair_tela")
+	await animacao_balao.animation_finished
+	await animacao_urso.animation_finished
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/main.tscn")
-
+	
 func _on_tela01_anim_finished():
 	tela_01.visible = false
 
@@ -36,4 +40,3 @@ func _on_botao_iniciar2_pressed() -> void:
 
 func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:
 	animacao_balao.play("fade")
-	
