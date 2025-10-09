@@ -381,16 +381,18 @@ text = "Voltar"
 
 [node name="Tutorial1" type="Control" parent="TutorialLayer"]
 layout_mode = 3
-anchors_preset = 0
+anchor_bottom = 0.019
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 19.48
 
 [node name="MarginContainer" type="MarginContainer" parent="TutorialLayer/Tutorial1"]
-layout_mode = 0
-offset_left = 110.0
-offset_top = 190.0
-offset_right = 610.0
-offset_bottom = 890.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.75
+anchor_top = 4.75
+anchor_right = 15.25
+anchor_bottom = 18.2
+offset_right = -6.10352e-05
 
 [node name="ColorRect" type="Panel" parent="TutorialLayer/Tutorial1/MarginContainer"]
 layout_mode = 2
@@ -420,11 +422,13 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.45
 anchor_top = 14.7
-anchor_right = 7.43
-anchor_bottom = 26.22
-offset_right = 708.8
-offset_bottom = 1075.2
-scale = Vector2(0.3, 0.3)
+anchor_right = 6.2
+anchor_bottom = 24.225
+offset_left = 10.0
+offset_top = -3.0
+offset_right = 768.0
+offset_bottom = 1152.0
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("20_pqtdy")
 
 [node name="Tutorial" type="Label" parent="TutorialLayer/Tutorial1"]
@@ -467,23 +471,6 @@ text = "Tutorial do Minigame        Missão Vitamina "
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Exemplo" type="Label" parent="TutorialLayer/Tutorial1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 6.25
-anchor_top = 18.25
-anchor_right = 14.25
-anchor_bottom = 20.725
-offset_left = -1.52588e-05
-offset_right = -6.10352e-05
-theme_override_fonts/font = ExtResource("21_pd4lw")
-theme_override_font_sizes/font_size = 25
-text = "Exemplo:
-🍎   = ✅ 
-🍔   = ❌ "
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="Tutorial2" type="Control" parent="TutorialLayer"]
 layout_mode = 3
 anchors_preset = 0
@@ -491,24 +478,27 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="TutorialLayer/Tutorial2"]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 175.0
-offset_right = 1180.0
-offset_bottom = 2093.0
-scale = Vector2(0.48, 0.48)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.5
+anchor_top = 4.375
+anchor_right = 14.3
+anchor_bottom = 23.555
+offset_left = -1.52588e-05
+offset_right = 648.0
+offset_bottom = 1150.8
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("22_ta5ef")
 
 [node name="Button" type="Button" parent="TutorialLayer/Tutorial2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 13.45
-anchor_top = 3.95
-anchor_right = 15.99
+anchor_left = 12.425
+anchor_top = 3.925
+anchor_right = 14.965
 anchor_bottom = 6.49
-offset_left = 6.10352e-05
 offset_right = 406.4
-offset_bottom = 406.4
+offset_bottom = 405.4
 scale = Vector2(0.2, 0.2)
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_6eic5")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fnh32")
