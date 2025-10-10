@@ -1589,6 +1589,7 @@ offset_right = 0.199951
 offset_bottom = 0.279968
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.5, 1.5)
 theme_override_fonts/font = ExtResource("371_rnfbg")
 theme_override_font_sizes/font_size = 60
 text = " PARABÉNS!!!"

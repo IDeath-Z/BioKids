@@ -1,7 +1,7 @@
 extends Label
 
 @export var tempo_pulso: float = 1.2 # velocidade de cada pulso
-@export var duracao_total: float = 10.0 # quanto tempo a animação dura no total
+@export var duracao_total: float = 12.0 # quanto tempo a animação dura no total
 
 func _ready() -> void:
 	await _iniciar_pulsacao()

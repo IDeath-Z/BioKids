@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://buvd6u7dmxk21"]
+[gd_scene load_steps=18 format=3 uid="uid://buvd6u7dmxk21"]
 
 [ext_resource type="Script" uid="uid://c7eys841mf75t" path="res://telas/minigames/jogo_vacina/scripts/home.gd" id="1_qknk6"]
 [ext_resource type="Texture2D" uid="uid://bcvr5b6tl14yq" path="res://telas/minigames/jogo_vacina/assets/laboratorio.png" id="2_00ial"]
@@ -8,7 +8,43 @@
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="5_dg58q"]
 [ext_resource type="Texture2D" uid="uid://k5af6ci0rdbb" path="res://telas/minigames/jogo_vacina/assets/Bio_Vacina_logo.png" id="7_dg58q"]
 
-[sub_resource type="Animation" id="Animation_3g3ye"]
+[sub_resource type="Animation" id="Animation_6ggtv"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i5nx1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qwddr"]
+_data = {
+&"RESET": SubResource("Animation_i5nx1"),
+&"fade": SubResource("Animation_6ggtv")
+}
+
+[sub_resource type="Animation" id="Animation_7hp0o"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -17,10 +53,10 @@ tracks/0/path = NodePath(".:anchor_left")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.17, 0.17]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -29,10 +65,10 @@ tracks/1/path = NodePath(".:anchor_top")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.77]
+"values": [1.036, 1.036]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -41,10 +77,10 @@ tracks/2/path = NodePath(".:anchor_right")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.3]
+"values": [0.814, 0.814]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -53,62 +89,14 @@ tracks/3/path = NodePath(".:anchor_bottom")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:offset_left")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [31.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:offset_top")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-230.6]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".:offset_right")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [279.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath(".:offset_bottom")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-15.0]
+"values": [1.466, 1.466]
 }
 
-[sub_resource type="Animation" id="Animation_3kkkp"]
-resource_name = "sair_tela"
+[sub_resource type="Animation" id="Animation_881kb"]
+resource_name = "como_jogar"
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -117,10 +105,10 @@ tracks/0/path = NodePath(".:anchor_left")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.252, 0.00616667]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -129,10 +117,10 @@ tracks/1/path = NodePath(".:anchor_top")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.77]
+"values": [0.688, 0.688]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -141,10 +129,10 @@ tracks/2/path = NodePath(".:anchor_right")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.3]
+"values": [0.742, 0.496167]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -153,64 +141,69 @@ tracks/3/path = NodePath(".:anchor_bottom")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:offset_left")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [49.0, -201.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:offset_top")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-258.6, 171.4]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".:offset_right")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [297.0, 47.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath(".:offset_bottom")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-43.0, 387.0]
+"values": [1.027, 1.027]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k45ix"]
+[sub_resource type="Animation" id="Animation_uhg2j"]
+resource_name = "entrar_tela"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.252278, 0.252278]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.03415, 0.687852]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.741778, 0.741778]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.37285, 1.02656]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ptl2l"]
 _data = {
-&"RESET": SubResource("Animation_3g3ye"),
-&"sair_tela": SubResource("Animation_3kkkp")
+&"RESET": SubResource("Animation_7hp0o"),
+&"como_jogar": SubResource("Animation_881kb"),
+&"entrar_tela": SubResource("Animation_uhg2j")
 }
 
 [sub_resource type="Animation" id="Animation_dg58q"]
@@ -225,7 +218,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_wr136"]
@@ -244,7 +237,7 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ggtv"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_284dt"]
 _data = {
 &"RESET": SubResource("Animation_dg58q"),
 &"fade": SubResource("Animation_wr136")
@@ -304,69 +297,72 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 text = "VOLTAR"
 
+[node name="AnimacaoBotao" type="AnimationPlayer" parent="MarginContainerPrincipal2/GridBotoes"]
+libraries = {
+&"": SubResource("AnimationLibrary_qwddr")
+}
+autoplay = "RESET"
+
 [node name="TexturaUrso" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.77
-anchor_right = 0.3
-anchor_bottom = 1.0
-offset_left = 31.0
-offset_top = -230.6
-offset_right = 279.0
-offset_bottom = -15.0
+anchor_left = 0.17
+anchor_top = 1.036
+anchor_right = 0.814
+anchor_bottom = 1.466
+offset_left = -131.64
+offset_top = -92.8802
+offset_right = 242.845
+offset_bottom = 268.241
 grow_vertical = 0
-rotation = 0.523599
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_wr136")
 expand_mode = 2
 
 [node name="AnimacaoUrso" type="AnimationPlayer" parent="TexturaUrso"]
 libraries = {
-&"": SubResource("AnimationLibrary_k45ix")
+&"": SubResource("AnimationLibrary_ptl2l")
 }
-speed_scale = 2.5
 
 [node name="TexturaBalao" type="TextureRect" parent="TexturaUrso"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.405778
-anchor_top = 0.471148
-anchor_right = 1.011
-anchor_bottom = 0.908
-offset_left = 91.719
-offset_top = -408.613
-offset_right = 2010.9
-offset_bottom = 1414.59
-scale = Vector2(0.2, 0.2)
+anchor_left = 0.261135
+anchor_top = -0.806798
+anchor_right = 0.910135
+anchor_bottom = -0.216798
+offset_left = 0.1745
+offset_top = -0.184659
+offset_right = 1887.87
+offset_bottom = 1715.88
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_00ial")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="TextoBalao" type="Label" parent="TexturaUrso/TexturaBalao"]
-visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -612.532
-offset_top = -602.5
-offset_right = 687.468
-offset_bottom = 394.5
+anchors_preset = -1
+anchor_left = 0.103
+anchor_top = 0.166
+anchor_right = 0.882
+anchor_bottom = 0.631
+offset_left = 1.02704
+offset_top = -0.505432
+offset_right = -0.941406
+offset_bottom = -0.905518
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.0139626
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_dg58q")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 124
 text = "O ursinho precisa da vacina para ficar forte, você precisa ajudar a vacina-lo, para isso guie a vacina até o local da indicado. Mas seja rápido, o local irá mudar a todo momento"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="AnimacaoBalao" type="AnimationPlayer" parent="TexturaUrso/TexturaBalao"]
 libraries = {
-&"": SubResource("AnimationLibrary_6ggtv")
+&"": SubResource("AnimationLibrary_284dt")
 }
 
 [node name="Logo_jogo_vacina" type="TextureRect" parent="."]
@@ -382,6 +378,5 @@ theme = ExtResource("3_cvtpp")
 texture = ExtResource("7_dg58q")
 stretch_mode = 5
 
-[connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoIniciar" to="." method="_on_botao_jogar_pressed"]
+[connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
-[connection signal="animation_finished" from="TexturaUrso/AnimacaoUrso" to="." method="_on_animacao_urso_animation_finished"]
