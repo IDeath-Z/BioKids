@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5mwwdobedgwu"]
+[gd_scene load_steps=5 format=3 uid="uid://c5mwwdobedgwu"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_5yir5"]
 [ext_resource type="Script" uid="uid://cveqf6cpjlkha" path="res://telas/minigames/raio_x/bio_fato/bio_fato_raio_x.gd" id="2_2ra2j"]
 [ext_resource type="PackedScene" uid="uid://c0nkhbv8diqwc" path="res://telas/interface/bioFato/bio_fato.tscn" id="2_vkabe"]
+[ext_resource type="AudioStream" uid="uid://cpuooewcyfq72" path="res://telas/minigames/raio_x/assets/audios/fala_urso_bio_fato.mp3" id="4_guam8"]
 
 [node name="BioFatoRaioX" type="Control"]
 layout_mode = 3
@@ -40,4 +41,9 @@ vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="FalaUrso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_guam8")
+
+[connection signal="botao_audio_pressed" from="BioFato" to="." method="_on_bio_fato_botao_audio_pressed"]
 [connection signal="botao_continuar_pressed" from="BioFato" to="." method="_on_bio_fato_botao_continuar_pressed"]
+[connection signal="finished" from="FalaUrso" to="." method="_on_fala_urso_finished"]
