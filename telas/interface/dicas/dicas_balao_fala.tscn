@@ -8,7 +8,7 @@
 [node name="DicasBalaoFala" type="Control"]
 layout_mode = 3
 anchor_right = 0.415278
-anchor_bottom = 0.187037
+anchor_bottom = 0.382407
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_34qum")

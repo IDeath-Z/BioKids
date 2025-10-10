@@ -8,8 +8,9 @@ extends Control
 @onready var menu_botoes_selecao = $MarginContainerSelecaoTipo
 @onready var textura_urso = $TexturaUrso
 @onready var animacao_urso = $TexturaUrso/AnimacaoUrso
-@onready var textura_balao_fala = $CanvasLayer/DicasBalaoFala
-@onready var animacao_balao = $CanvasLayer/AnimacaoBalao
+@onready var textura_balao_fala = $DicasBalaoFala
+@onready var animacao_balao = $DicasBalaoFala/AnimacaoBalao
+@onready var fala_urso = $FalaUrso
 
 var animacao_reversa: bool
 
@@ -82,3 +83,10 @@ func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:
 		if anim_name == "entrar_tela":
 			botao_iniciar.disabled = false
 			botao_voltar.disabled = false
+
+func _on_dicas_balao_fala_botao_audio_pressed() -> void:
+	MusicPlayer.set_musica_volume(0.5)
+	fala_urso.play()
+
+func _on_fala_urso_finished() -> void:
+	MusicPlayer.set_musica_volume(1.0)

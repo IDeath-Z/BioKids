@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://owwcejoga1xw"]
+[gd_scene load_steps=20 format=3 uid="uid://owwcejoga1xw"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_sipkm"]
 [ext_resource type="Script" uid="uid://jo5kkhuk3aqb" path="res://telas/minigames/raio_x/raio_x_menu.gd" id="2_54yyf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://h2q4jq2ghqsl" path="res://telas/interface/selecaoMiniGame/tela_selecao_mini_game_transicao.tscn" id="7_881kb"]
 [ext_resource type="Texture2D" uid="uid://c5jpsv4oqpnmx" path="res://telas/interface/assets/imagens/mascote_padrao.png" id="7_ptl2l"]
 [ext_resource type="PackedScene" uid="uid://cwl04wggpdy2d" path="res://telas/interface/dicas/dicas_balao_fala.tscn" id="8_d324e"]
+[ext_resource type="AudioStream" uid="uid://m6d6b8e8nxle" path="res://telas/minigames/raio_x/assets/audios/audio_menu.mp3" id="9_s6d2a"]
 
 [sub_resource type="Animation" id="Animation_fv44s"]
 length = 0.001
@@ -390,18 +391,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../TextoBalao:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_d324e"]
 resource_name = "fade"
@@ -413,18 +402,6 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../TextoBalao:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -583,28 +560,27 @@ libraries = {
 &"": SubResource("AnimationLibrary_ptl2l")
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="DicasBalaoFala" parent="CanvasLayer" instance=ExtResource("8_d324e")]
+[node name="DicasBalaoFala" parent="." instance=ExtResource("8_d324e")]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 1
 anchor_left = 0.469444
-anchor_top = 0.692815
+anchor_top = 0.68263
 anchor_right = 1.026
-anchor_bottom = 0.887963
+anchor_bottom = 0.970371
 offset_top = -0.240051
 offset_right = 0.280029
 
-[node name="TextoBalao" type="Label" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = -1
-anchor_left = 0.543
-anchor_top = 0.686
-anchor_right = 0.85
-anchor_bottom = 0.744
-offset_left = 0.0396729
-offset_top = -0.382874
-offset_right = -0.000305176
-offset_bottom = 7.97717
+[node name="TextoBalao" type="Label" parent="DicasBalaoFala"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -123.5
+offset_right = 70.4998
+offset_bottom = -52.4999
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_sipkm")
@@ -613,14 +589,14 @@ theme_override_font_sizes/font_size = 24
 text = "Escolha qual você 
 quer ver!"
 horizontal_alignment = 1
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
 
-[node name="AnimacaoBalao" type="AnimationPlayer" parent="CanvasLayer"]
-root_node = NodePath("../DicasBalaoFala")
+[node name="AnimacaoBalao" type="AnimationPlayer" parent="DicasBalaoFala"]
 libraries = {
 &"": SubResource("AnimationLibrary_gthou")
 }
+
+[node name="FalaUrso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_s6d2a")
 
 [connection signal="pressed" from="MarginContainerPrincipal/GridBotoes/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
@@ -630,3 +606,5 @@ libraries = {
 [connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/BotaoVoltarMenuBioX" to="." method="_on_botao_voltar_menu_bio_x_pressed"]
 [connection signal="animation_finished" from="TexturaUrso/AnimacaoUrso" to="." method="_on_animacao_urso_animation_finished"]
 [connection signal="animation_started" from="TexturaUrso/AnimacaoUrso" to="." method="_on_animacao_urso_animation_started"]
+[connection signal="botao_audio_pressed" from="DicasBalaoFala" to="." method="_on_dicas_balao_fala_botao_audio_pressed"]
+[connection signal="finished" from="FalaUrso" to="." method="_on_fala_urso_finished"]
