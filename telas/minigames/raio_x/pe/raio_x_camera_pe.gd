@@ -8,7 +8,9 @@ extends Control
 @onready var animacao_scanner = $Scanner/AnimacaoScanner
 @onready var mao_click = $MaoClick
 @onready var timer_mao = $TimerMao
+@onready var fala_urso = $FalaUrso
 
+var audio_pos_clique_tela = preload("res://telas/minigames/raio_x/assets/audios/fala_urso_raio_x_camera_pe_2.mp3")
 var android_camera: AndroidCamera
 var toque_na_tela = false
 
@@ -42,6 +44,7 @@ func _on_touch_screen_pressed() -> void:
 	animacao_fundo.play("fade")
 	animacao_scanner.play("mover")
 	animacar_texto.play("remover_linha")
+	fala_urso.stream = audio_pos_clique_tela
 	touch_button.disabled = true
 	mao_click.hide()
 	mao_click.stop()
@@ -61,7 +64,11 @@ func _on_animacao_fundo_animation_finished(anim_name: StringName) -> void:
 		get_tree().change_scene_to_file("res://telas/minigames/raio_x/pe/raio_x_imagem_pe.tscn")
 
 func _on_pop_up_dicas_botao_audio_pressed() -> void:
-	pass # Replace with function body.
+	MusicPlayer.mudar_volume(0.4)
+	fala_urso.play()
 
 func _on_pop_up_dicas_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/minigames/raio_x/raio_x_menu.tscn")
+
+func _on_fala_urso_finished() -> void:
+	MusicPlayer.mudar_volume(1.0)

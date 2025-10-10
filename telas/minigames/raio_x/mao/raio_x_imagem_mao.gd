@@ -19,7 +19,10 @@ enum Estado {
 @onready var botao_nao = $HBoxContainer/BotaoNao
 @onready var animacao_botoes = $HBoxContainer/AnimacaoBotoes
 @onready var botoes_ant_prox = $HBoxContainer2
+@onready var fala_urso = $FalaUrso
 
+var audio_pre_clique_sim = preload("res://telas/minigames/raio_x/assets/audios/fala_urso_raio_x_imagem_mao_1.mp3")
+var audio_pos_clique_sim = preload("res://telas/minigames/raio_x/assets/audios/fala_urso_raio_x_imagem_mao_2.mp3")
 var estado_atual = Estado.INICIAL
 
 func _ready() -> void:
@@ -37,6 +40,7 @@ func _on_botao_sim_pressed() -> void:
 	if estado_atual == Estado.INICIAL:
 		estado_atual = Estado.LADO_ESQUERDO
 		texto.text = "Estes são os ossos que formam a sua mão! Com eles, você consegue segurar um lápis, montar brinquedos e dar um 'tchauzinho'!"
+		fala_urso.stream = audio_pos_clique_sim
 		animacao_mao.play("lado_esquerdo") # Cai na linha 73
 	elif estado_atual == Estado.LADO_DIREITO:
 		# Vira o botão "Anterior" pra reaproveitar
@@ -53,6 +57,7 @@ func _on_botao_anterior_pressed() -> void:
 	botoes_s_n.visible = true
 	botoes_ant_prox.visible = false
 	texto.text = "Uau, sua mão em raio-x ficou demais! \n \nQuer conhecer um pouco mais sobre ela?"
+	fala_urso.stream = audio_pre_clique_sim
 	animacao_info_lado_esquerdo.play_backwards("fade") # Cai na 92
 		
 func _on_botao_proximo_pressed() -> void:
@@ -101,8 +106,11 @@ func _on_animacao_lado_direito_animation_finished(anim_name: StringName) -> void
 			animacao_mao.play_backwards("lado_direito") # Cai na linha 80
 
 func _on_pop_up_dicas_botao_audio_pressed() -> void:
-	# Colocar o audio aqui quando tiver
-	pass
+	MusicPlayer.mudar_volume(0.4)
+	fala_urso.play()
 
 func _on_pop_up_dicas_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/minigames/raio_x/mao/raio_x_camera_mao.tscn")
+
+func _on_fala_urso_finished() -> void:
+	MusicPlayer.mudar_volume(1.0)

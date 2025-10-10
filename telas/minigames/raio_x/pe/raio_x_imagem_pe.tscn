@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b7yvdss3tx5rd"]
+[gd_scene load_steps=27 format=3 uid="uid://b7yvdss3tx5rd"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_1l3ub"]
 [ext_resource type="Script" uid="uid://ufurtqvrxtvf" path="res://telas/minigames/raio_x/pe/raio_x_imagem_pe.gd" id="2_s7yp3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://00dibchsr46i" path="res://telas/minigames/raio_x/assets/images/x_ray_pe.jpg" id="3_s7yp3"]
 [ext_resource type="PackedScene" uid="uid://bplc11akfp1vl" path="res://telas/minigames/raio_x/pe/info_pe_lado_direito.tscn" id="4_bkhod"]
 [ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="6_6eblv"]
+[ext_resource type="AudioStream" uid="uid://670ndtljccbt" path="res://telas/minigames/raio_x/assets/audios/fala_urso_raio_x_imagem_pe_1.mp3" id="7_7i3sd"]
 
 [sub_resource type="Animation" id="Animation_fufn5"]
 length = 0.001
@@ -563,6 +564,9 @@ size_flags_stretch_ratio = 1.5
 theme_override_font_sizes/font_size = 35
 text = "PRÓXIMO"
 
+[node name="FalaUrso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7i3sd")
+
 [connection signal="animation_finished" from="AreaPe/AnimacaoPe" to="." method="_on_animacao_pe_animation_finished"]
 [connection signal="animation_started" from="AreaPe/AnimacaoPe" to="." method="_on_animacao_pe_animation_started"]
 [connection signal="animation_finished" from="InfoPeLadoEsquerdo/AnimacaoLadoEsquerdo" to="." method="_on_animacao_lado_esquerdo_animation_finished"]
@@ -573,3 +577,4 @@ text = "PRÓXIMO"
 [connection signal="pressed" from="HBoxContainer/BotaoNao" to="." method="_on_botao_nao_pressed"]
 [connection signal="pressed" from="HBoxContainer2/BotaoAnterior" to="." method="_on_botao_anterior_pressed"]
 [connection signal="pressed" from="HBoxContainer2/BotaoProximo" to="." method="_on_botao_proximo_pressed"]
+[connection signal="finished" from="FalaUrso" to="." method="_on_fala_urso_finished"]

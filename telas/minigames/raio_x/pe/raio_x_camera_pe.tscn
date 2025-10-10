@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dca80dfj3mhgj"]
+[gd_scene load_steps=45 format=3 uid="uid://dca80dfj3mhgj"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_vt5o5"]
 [ext_resource type="Script" uid="uid://bt1feuav35lb3" path="res://telas/minigames/raio_x/pe/raio_x_camera_pe.gd" id="2_vt5o5"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://dv7q0cpkk8w1n" path="res://telas/interface/assets/animacoes/screen_click/00021.png" id="28_r460s"]
 [ext_resource type="Texture2D" uid="uid://bkh7t4vppgbfs" path="res://telas/interface/assets/animacoes/screen_click/00022.png" id="29_gn313"]
 [ext_resource type="Texture2D" uid="uid://d00q6q8blv36t" path="res://telas/interface/assets/animacoes/screen_click/00023.png" id="30_xxcv1"]
+[ext_resource type="AudioStream" uid="uid://bg13irffqjrvs" path="res://telas/minigames/raio_x/assets/audios/fala_urso_raio_x_camera_pe_1.mp3" id="31_ai8lt"]
 
 [sub_resource type="Animation" id="Animation_v5e34"]
 length = 0.001
@@ -632,9 +633,13 @@ animation = &"click"
 wait_time = 5.0
 one_shot = true
 
+[node name="FalaUrso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_ai8lt")
+
 [connection signal="animation_finished" from="Fundo/AnimacaoFundo" to="." method="_on_animacao_fundo_animation_finished"]
 [connection signal="botao_audio_pressed" from="AspectRatioContainerDicas/PopUpDicas" to="." method="_on_pop_up_dicas_botao_audio_pressed"]
 [connection signal="botao_voltar_pressed" from="AspectRatioContainerDicas/PopUpDicas" to="." method="_on_pop_up_dicas_botao_voltar_pressed"]
 [connection signal="pressed" from="TouchScreen" to="." method="_on_touch_screen_pressed"]
 [connection signal="animation_finished" from="Scanner/AnimacaoScanner" to="." method="_on_animacao_scanner_animation_finished"]
 [connection signal="timeout" from="TimerMao" to="." method="_on_timer_mao_timeout"]
+[connection signal="finished" from="FalaUrso" to="." method="_on_fala_urso_finished"]

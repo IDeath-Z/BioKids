@@ -85,7 +85,7 @@ func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:
 			botao_voltar.disabled = false
 
 func _on_dicas_balao_fala_botao_audio_pressed() -> void:
-	MusicPlayer.mudar_volume(0.5)
+	MusicPlayer.mudar_volume(0.4)
 	fala_urso.play()
 
 func _on_fala_urso_finished() -> void:
