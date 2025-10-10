@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dfr2pcw7l4goo"]
+[gd_scene load_steps=30 format=3 uid="uid://dfr2pcw7l4goo"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_rl6uu"]
 [ext_resource type="Script" uid="uid://cro5dfjqd54no" path="res://telas/minigames/bio_escudo/Scripts/fur.gd" id="2_m8jyd"]
@@ -26,7 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://b7fomj25bh55f" path="res://telas/minigames/bio_escudo/assets/UI/button_finished_pressed.icon.png" id="22_63ikp"]
 [ext_resource type="Texture2D" uid="uid://mftuwbcmkc23" path="res://telas/minigames/bio_escudo/assets/UI/button_finished_hover.icon.png" id="23_saf70"]
 [ext_resource type="Script" uid="uid://b07lra83yt6hi" path="res://telas/minigames/bio_escudo/Scripts/finished_button.gd" id="25_saf70"]
-[ext_resource type="PackedScene" uid="uid://1r5etmqb4pgg" path="res://telas/interface/dicas/pop_up_dicas.tscn" id="26_rd2jk"]
+[ext_resource type="Theme" uid="uid://cy5rvrhoo14d8" path="res://telas/interface/assets/temas/tema_flecha_voltar.tres" id="27_k2tda"]
+[ext_resource type="Texture2D" uid="uid://bepd6haiepykj" path="res://telas/interface/assets/imagens/pop_up_flecha.png" id="28_boh2v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m8jyd"]
 
@@ -223,23 +224,46 @@ texture_hover = ExtResource("23_saf70")
 script = ExtResource("25_saf70")
 metadata/_edit_use_anchors_ = true
 
-[node name="PopUpDicas" parent="." instance=ExtResource("26_rd2jk")]
-layout_mode = 1
-anchor_left = 0.102778
-anchor_bottom = 0.194667
-
-[node name="Label" type="Label" parent="PopUpDicas"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.411765
-anchor_top = 0.280952
-anchor_right = 0.715251
-anchor_bottom = 0.866429
-offset_right = -0.052002
-offset_bottom = 0.0499992
-text = "Menssagem pra ajudar o amigo"
-autowrap_mode = 2
+anchor_left = 0.0250602
+anchor_top = 0.0176223
+anchor_right = 0.254227
+anchor_bottom = 0.162993
+offset_left = -0.0433578
+offset_top = -0.0320969
+offset_right = -0.043396
+offset_bottom = -0.032135
 metadata/_edit_use_anchors_ = true
+
+[node name="BotaoVoltar" type="Button" parent="AspectRatioContainer"]
+layout_mode = 2
+theme = ExtResource("27_k2tda")
+text = "
+"
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true
+text_direction = 3
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/BotaoVoltar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.131
+anchor_top = 0.15
+anchor_right = 0.869
+anchor_bottom = 0.813
+offset_left = 57.933
+offset_top = 54.946
+offset_right = -57.933
+offset_bottom = -49.137
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_boh2v")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="CreatorScreen/Fur_Color" to="skeleton/Fur" method="_on_color_button_pressed"]
 [connection signal="pressed" from="CreatorScreen/ChangePantsButton" to="skeleton/Outfit2" method="_on_collection_button_pressed"]
@@ -249,4 +273,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="CreatorScreen/ChangeAccesButton" to="skeleton/accessory" method="_on_collection_button_pressed"]
 [connection signal="pressed" from="CreatorScreen/ChangeAccesButton/AccesColorButton" to="skeleton/accessory" method="_on_color_button_pressed"]
 [connection signal="pressed" from="CreatorScreen/finishedButton" to="CreatorScreen/finishedButton" method="_on_pressed"]
-[connection signal="botao_voltar_pressed" from="PopUpDicas" to="." method="_on_pop_up_dicas_botao_voltar_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
