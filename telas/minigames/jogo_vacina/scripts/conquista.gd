@@ -15,9 +15,7 @@ func _ready():
 	player_de_audio.play()
 
 	var tween = create_tween()
-	# Sintaxe: tween_property(objeto, "propriedade", valor_final, duração_em_segundos)
-	tween.tween_property(player_de_audio, "volume_db", -1, 0.5)
-	# O volume irá de -80.0dB para -10dB em 2.0 segundos. Você pode ajustar esse tempo!
+	tween.tween_property(player_de_audio, "volume_db", -1, 0.5) #O volume irá de -80.0dB para -10dB em 2.0 segundos. Você pode ajustar esse tempo!
 	
 	await get_tree().create_timer(1.5).timeout
 	animacao_urso.play("urso_heroi")

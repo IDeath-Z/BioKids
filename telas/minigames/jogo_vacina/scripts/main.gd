@@ -12,6 +12,19 @@ func _ready():
 	ajustar_escala(get_viewport_rect().size)
 	change_scene("seringa")
 	
+	MusicPlayer.parar_para_evento_especial()
+	var player_de_audio = MusicPlayer.music_player
+	
+	player_de_audio.stream = preload("res://telas/minigames/jogo_vacina/sounds/music-for-game-fun-kid-game-163649.wav")
+	
+	player_de_audio.volume_db = -80.0
+	player_de_audio.play()
+
+	var tween = create_tween()
+	# Sintaxe: tween_property(objeto, "propriedade", valor_final, duração_em_segundos)
+	tween.tween_property(player_de_audio, "volume_db", -1, 0.5)
+	# O volume irá de -80.0dB para -10dB em 2.0 segundos. Você pode ajustar esse tempo!
+	
 	if get_viewport():
 		get_viewport().connect("size_changed", Callable(self, "_on_viewport_resized"))
 		connect("child_entered_tree", Callable(self, "_on_child_entered_tree"))
