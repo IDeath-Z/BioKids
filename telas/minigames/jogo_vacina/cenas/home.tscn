@@ -8,21 +8,6 @@
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="5_dg58q"]
 [ext_resource type="Texture2D" uid="uid://k5af6ci0rdbb" path="res://telas/minigames/jogo_vacina/assets/Bio_Vacina_logo.png" id="7_dg58q"]
 
-[sub_resource type="Animation" id="Animation_6ggtv"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_i5nx1"]
 length = 0.001
 tracks/0/type = "value"
@@ -36,6 +21,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6ggtv"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qwddr"]
@@ -56,7 +56,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.17, 0.17]
+"values": [0.252, 0.17]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -68,7 +68,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.036, 1.036]
+"values": [1.034, 1.036]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -80,7 +80,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.814, 0.814]
+"values": [0.742, 0.814]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -92,7 +92,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.466, 1.466]
+"values": [1.373, 1.466]
 }
 
 [sub_resource type="Animation" id="Animation_881kb"]
@@ -262,6 +262,19 @@ grow_vertical = 2
 texture = ExtResource("2_00ial")
 expand_mode = 1
 
+[node name="BotaoPular" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+offset_left = 210.0
+offset_top = 260.0
+offset_right = 510.0
+offset_bottom = 360.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("3_cvtpp")
+theme_override_font_sizes/font_size = 40
+text = "▶ PULAR"
+
 [node name="MarginContainerPrincipal2" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -306,14 +319,14 @@ autoplay = "RESET"
 [node name="TexturaUrso" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.17
-anchor_top = 1.036
-anchor_right = 0.814
-anchor_bottom = 1.466
-offset_left = -131.64
-offset_top = -92.8802
+anchor_left = 0.252
+anchor_top = 1.034
+anchor_right = 0.742
+anchor_bottom = 1.373
+offset_left = 0.320164
+offset_top = -0.160034
 offset_right = 242.845
-offset_bottom = 268.241
+offset_bottom = 296.926
 grow_vertical = 0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_wr136")
@@ -378,5 +391,6 @@ theme = ExtResource("3_cvtpp")
 texture = ExtResource("7_dg58q")
 stretch_mode = 5
 
+[connection signal="pressed" from="BotaoPular" to="." method="_on_botao_pular_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]

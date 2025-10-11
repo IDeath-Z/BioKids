@@ -2,7 +2,7 @@ extends Control
 
 #@onready var menu_botes_tela_principal = $MarginContainerPrincipal
 @onready var botao_iniciar = $MarginContainerPrincipal2/GridBotoes/BotaoIniciar
-#@onready var botao_como_jogar = $MarginContainerPrincipal2/GridBotoes/BotaoComoJogar
+@onready var botao_pular = $BotaoPular
 @onready var botao_voltar = $MarginContainerPrincipal2/GridBotoes/BotaoVoltar
 @onready var tela_01 = $Tela_01
 @onready var box_botoes = $MarginContainerPrincipal2
@@ -18,6 +18,7 @@ var animacao_reversa: bool
 func _ready() -> void:
 	textura_balao.visible = false
 	textura_urso.visible = false
+	botao_pular.visible = false
 	
 
 func _on_botao_voltar_pressed() -> void:
@@ -30,11 +31,10 @@ func _on_botao_iniciar_pressed() -> void:
 	textura_urso.visible = true
 	animacao_urso.play("entrar_tela")
 	animacao_balao.play("fade")
+	await animacao_botao.animation_finished
 	
-	await get_tree().create_timer(8.0).timeout
-	
+	botao_pular.visible = true
+
+func _on_botao_pular_pressed():
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/main.tscn")
 	
-
-#func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:
-	#animacao_balao.play("fade")
