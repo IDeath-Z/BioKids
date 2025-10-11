@@ -485,6 +485,7 @@ anchor_right = 0.726443
 anchor_bottom = 0.936858
 offset_right = 0.222015
 offset_bottom = -0.0720062
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 17
 text = "Uau, seu pé em raio-x ficou demais!
 

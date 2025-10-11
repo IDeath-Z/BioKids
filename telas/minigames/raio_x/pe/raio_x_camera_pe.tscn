@@ -566,6 +566,7 @@ anchor_right = 0.748
 anchor_bottom = 0.89225
 offset_right = 0.279816
 offset_bottom = 0.0570679
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 14
 text = "Posicione a seu pé direitinho aqui, tente deixar o pé firme para eu conseguir ver os ossos!
 

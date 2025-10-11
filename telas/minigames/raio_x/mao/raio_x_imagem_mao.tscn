@@ -485,6 +485,7 @@ offset_left = 0.188248
 offset_top = 0.100578
 offset_right = 0.240021
 offset_bottom = 0.0857086
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 15
 text = "Uau, sua mão em raio-x ficou demais!
 
