@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpbqml2qyxoqr"]
+[gd_scene load_steps=6 format=3 uid="uid://cpbqml2qyxoqr"]
 
 [ext_resource type="Texture2D" uid="uid://bcvr5b6tl14yq" path="res://telas/minigames/jogo_vacina/assets/laboratorio.png" id="1_vis02"]
 [ext_resource type="Script" uid="uid://be307mnn060vv" path="res://telas/minigames/jogo_vacina/scripts/main.gd" id="2_dxvjg"]
 [ext_resource type="Theme" uid="uid://cy5rvrhoo14d8" path="res://telas/interface/assets/temas/tema_flecha_voltar.tres" id="3_85va6"]
 [ext_resource type="Texture2D" uid="uid://bepd6haiepykj" path="res://telas/interface/assets/imagens/pop_up_flecha.png" id="4_g0nrj"]
+[ext_resource type="AudioStream" uid="uid://dfs8ov7ptu6i5" path="res://telas/minigames/jogo_vacina/sounds/music-for-game-fun-kid-game-163649.wav" id="5_g0nrj"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -63,5 +64,10 @@ offset_bottom = -54.996
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_g0nrj")
+
+[node name="Main_music" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Main_music"]
+stream = ExtResource("5_g0nrj")
 
 [connection signal="pressed" from="AspectRatioContainer2/BotaoVoltar" to="Main" method="_on_botao_voltar_pressed"]

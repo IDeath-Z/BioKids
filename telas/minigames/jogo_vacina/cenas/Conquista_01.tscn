@@ -1,4 +1,4 @@
-[gd_scene load_steps=344 format=3 uid="uid://d11l5tmq68ypy"]
+[gd_scene load_steps=345 format=3 uid="uid://d11l5tmq68ypy"]
 
 [ext_resource type="Script" uid="uid://rxb5qlbidclw" path="res://telas/minigames/jogo_vacina/scripts/conquista.gd" id="1_4mq2m"]
 [ext_resource type="Texture2D" uid="uid://dvutt3d1y1wam" path="res://telas/minigames/jogo_vacina/assets/animacao_urso/00001.png" id="2_rnfbg"]
@@ -335,6 +335,7 @@
 [ext_resource type="Texture2D" uid="uid://b2exm6r6fnb7o" path="res://telas/minigames/jogo_vacina/assets/medalha/00205.png" id="340_4plav"]
 [ext_resource type="Texture2D" uid="uid://bcau25dlvrpwc" path="res://telas/minigames/jogo_vacina/assets/medalha/00206.png" id="341_muuad"]
 [ext_resource type="Texture2D" uid="uid://ds5kk8epvtyyp" path="res://telas/minigames/jogo_vacina/assets/medalha/00207.png" id="342_gbm6x"]
+[ext_resource type="AudioStream" uid="uid://b6b1wx8dc31xr" path="res://telas/minigames/jogo_vacina/sounds/you-win-sequence-2-183949.wav" id="342_oegpj"]
 [ext_resource type="Texture2D" uid="uid://seab1ka6puv4" path="res://telas/minigames/jogo_vacina/assets/medalha/00208.png" id="343_fxrk8"]
 [ext_resource type="Texture2D" uid="uid://ceglydpvvfj0u" path="res://telas/minigames/jogo_vacina/assets/medalha/00209.png" id="344_4j3re"]
 [ext_resource type="Texture2D" uid="uid://cboktbua0gdud" path="res://telas/minigames/jogo_vacina/assets/medalha/00210.png" id="345_dc15c"]
@@ -1594,3 +1595,8 @@ theme_override_fonts/font = ExtResource("371_rnfbg")
 theme_override_font_sizes/font_size = 60
 text = " PARABÉNS!!!"
 script = ExtResource("372_f6ucy")
+
+[node name="music_player" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="music_player"]
+stream = ExtResource("342_oegpj")
