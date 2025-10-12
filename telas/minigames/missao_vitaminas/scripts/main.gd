@@ -321,10 +321,6 @@ func _ready():
 	else:
 		print("Erro: Tutorial2 não encontrado!")
 	
-	if tutorial2_button:
-		print("✅ Botão do Tutorial2 encontrado:", tutorial2_button.name)
-	else:
-		print("❌ Botão do Tutorial2 NÃO encontrado!")
 
 	
 	var ui_layer = $UILayer
@@ -791,7 +787,7 @@ func _on_pause_button_pressed():
 		print("PauseMenu exibido, nova visibilidade = ", pause_menu.visible, ", process_mode = ", pause_menu.process_mode)
 	else:
 		print("ERRO CRÍTICO: PauseMenu não encontrado ao pausar!")
-	# Animação de clique após a pausa
+	
 	if pause_button:
 		print("Iniciando animação de clique no PauseButton. Escala inicial: ", pause_button.scale)
 		var tween = create_tween()
@@ -878,4 +874,4 @@ func _on_pause_button_mouse_exited():
 		print("Erro: PauseButton não encontrado, invisível ou desabilitado ao sair mouse! visible = ", pause_button.visible if pause_button else "null", ", disabled = ", pause_button.disabled if pause_button else "null")
 
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	pass 

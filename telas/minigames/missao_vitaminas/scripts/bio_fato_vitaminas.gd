@@ -20,7 +20,6 @@ var facts: Array[String] = [
 	"A uva tem antioxidantes que retardam o envelhecimento das células."
 ]
 
-# Array de caminhos dos áudios (coloque os arquivos correspondentes)
 var fact_audios: Array[String] = [
 	"res://telas/minigames/missao_vitaminas/sounds/arroz.ogg",
 	"res://telas/minigames/missao_vitaminas/sounds/feijao.ogg",
@@ -37,18 +36,18 @@ var fact_audios: Array[String] = [
 	"res://telas/minigames/missao_vitaminas/sounds/uva.ogg"
 ]
 
-var current_index: int = 0  # Índice da frase atual
+var current_index: int = 0  
 
 func _ready() -> void:
 	if fact_label == null:
 		print("Erro: Nó FactLabel não encontrado dentro de BioFato!")
 		return
 
-	# Escolhe uma frase aleatória
+	
 	current_index = randi() % facts.size()
 	fact_label.text = facts[current_index]
 
-	# Ajusta visual
+	
 	fact_label.autowrap_mode = TextServer.AUTOWRAP_WORD
 	fact_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	var font_height = fact_label.get_theme_font("normal_font").get_height(fact_label.get_theme_font_size("normal_font"))
@@ -56,7 +55,7 @@ func _ready() -> void:
 	var vertical_offset = (130 - (estimated_lines * font_height)) / 2
 	fact_label.position.y += vertical_offset
 
-	# Conecta os sinais (somente aqui no vitaminas)
+	
 	if not bio_fato.is_connected("botao_continuar_pressed", Callable(self, "_on_botao_continuar_pressed")):
 		bio_fato.botao_continuar_pressed.connect(_on_botao_continuar_pressed)
 	if not bio_fato.is_connected("botao_audio_pressed", Callable(self, "_on_botao_audio_pressed")):
