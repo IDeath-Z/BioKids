@@ -31,6 +31,10 @@ var mensagens_erradas = ["Ops, essa não é a bactéria certa!", "Tente de novo!
 var fatos = ["Tem bactérias boas que ajudam nosso corpo a ficar saudável, e tem bactérias ruins que podem deixar a gente doente. Por isso é importante lavar as mãos!"]
 var screen_size
 
+# Nova variável para controlar a velocidade base das bactérias
+const BASE_SPEED = 100.0  # Velocidade base em pixels por segundo
+var speed_increase_per_acert = 10.0  # Aumento de velocidade por acerto
+
 func _ready():
 	ajustar_tela()
 	proxima_fase()
@@ -54,10 +58,10 @@ func proxima_fase():
 	erros = 0  # Reseta erros ao começar uma nova fase
 	limpar_tela()
 	missao_atual = Tipo.values()[randi() % Tipo.size()]
-	instrucao_label.text = "Clique apenas nas bactérias " + tipos_possiveis[missao_atual] + "!"
+	instrucao_label.text = "Clique apenas nos germes " + tipos_possiveis[missao_atual] + "!"
 	spawn_timer.wait_time = max(1.0, 3.0 - (fase * 0.5))  # Dificuldade: spawns mais rápidos
 	spawn_timer.start()
-	
+
 func ajustar_tela():
 	screen_size = get_viewport_rect().size
 	background.size = Vector2(screen_size.x, screen_size.y)
@@ -66,19 +70,34 @@ func on_bacteria_spawn_timeout():
 	if container.get_child_count() >= bacterias_restantes:
 		return  # Limita quantidade
 	var bact = preload("res://telas/minigames/caca_bacterias/scenes/Bacteria.tscn").instantiate()
-	# Posicionamento relativo à viewport com margem
-	var margem = 150  # Margem fixa em pixels, ajustável conforme necessário
+
+	# Garante que screen_size seja calculado (caso ainda não tenha sido)
+	if not screen_size:
+		ajustar_tela()
+
+	# Posicionamento dentro da área 720x1080 com margens maiores para evitar bordas
+	var margem_x = 100  # Margem maior nas laterais
+	var margem_y = 150  # Margem maior no topo/baixo
+	var area_width = 720
+	var area_height = 1080
+
+	# Centraliza a área de spawn na viewport se ela for maior
+	var offset_x = max(0, (screen_size.x - area_width) / 2)
+	var offset_y = max(0, (screen_size.y - area_height) / 2)
+
 	bact.position = Vector2(
-		randf_range(margem, get_viewport_rect().size.x - margem),
-		randf_range(margem, get_viewport_rect().size.y - margem)
+		randf_range(offset_x + margem_x, offset_x + area_width - margem_x),
+		randf_range(offset_y + margem_y, offset_y + area_height - margem_y)
 	)
-	# Define o tipo da bactéria com 40% de chance para o objetivo
+
+	# Define o tipo da bactéria com 50% de chance para o objetivo e 50% para outros
 	var chance = randf()  # Gera um valor entre 0.0 e 1.0
-	if chance < 0.4:  # 40% de chance de ser o tipo objetivo
+	if chance < 0.5:  # 50% de chance de ser o tipo objetivo
 		bact.tipo = missao_atual
-	else:  # 60% de chance de ser outro tipo
+	else:  # 50% de chance de ser outro tipo
 		var outros_tipos = Tipo.values().filter(func(t): return t != missao_atual)
 		bact.tipo = outros_tipos[randi() % outros_tipos.size()]
+
 	var texturas = {
 		Tipo.LARANJA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaLaranja.png"),
 		Tipo.VERDE: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriaverdemaligna.png"),
@@ -87,11 +106,28 @@ func on_bacteria_spawn_timeout():
 		Tipo.VERDEG: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaVERDE.png")
 	}
 	bact.get_node("SpriteBact").texture = texturas[bact.tipo]
+
+	# Define a velocidade inicial com base nos acertos
+	bact.speed = BASE_SPEED + (acertos * speed_increase_per_acert)
+
+	# Adiciona um timer para remover a bactéria após 10 segundos se não for clicada
+	var removal_timer = Timer.new()
+	removal_timer.wait_time = 10.0  # 10 segundos
+	removal_timer.one_shot = true  # Executa apenas uma vez
+	removal_timer.timeout.connect(func(): if is_instance_valid(bact): bact.queue_free())
+	bact.add_child(removal_timer)
+	removal_timer.start()
+
 	container.add_child(bact)
 	bact.clicada.connect(_on_bact_clicada.bind(bact))  # Passa a bactéria como bind
 
 func _on_bact_clicada(tipo: Tipo, bact: Area2D):
 	print("Sinal recebido. Tipo: ", tipo, " | Missão: ", missao_atual)
+	# Remove todos os timers existentes antes de criar um novo
+	for child in get_children():
+		if child is Timer and child.is_connected("timeout", func(): mensagem_label.text = ""; check_icon.visible = false; x_icon.visible = false):
+			child.queue_free()
+
 	if tipo == missao_atual:
 		acertos += 1
 		score += 10  # Adiciona 10 pontos por acerto
@@ -111,7 +147,7 @@ func _on_bact_clicada(tipo: Tipo, bact: Area2D):
 	var local_timer = Timer.new()
 	add_child(local_timer)
 	local_timer.timeout.connect(func(): mensagem_label.text = ""; check_icon.visible = false; x_icon.visible = false)
-	local_timer.start(2)
+	local_timer.start(1.5)  # Ajustado para 1,5 segundos
 	# Removido o if acertos >= total_por_fase, pois não queremos finalizar por acertos
 
 func limpar_tela():
