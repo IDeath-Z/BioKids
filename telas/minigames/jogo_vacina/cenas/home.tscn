@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://buvd6u7dmxk21"]
+[gd_scene load_steps=21 format=3 uid="uid://buvd6u7dmxk21"]
 
 [ext_resource type="Script" uid="uid://c7eys841mf75t" path="res://telas/minigames/jogo_vacina/scripts/home.gd" id="1_qknk6"]
 [ext_resource type="Texture2D" uid="uid://bcvr5b6tl14yq" path="res://telas/minigames/jogo_vacina/assets/laboratorio.png" id="2_00ial"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://8lgun1lam1b2" path="res://telas/interface/assets/imagens/mascote_pensando.png" id="4_wr136"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="5_dg58q"]
 [ext_resource type="Texture2D" uid="uid://k5af6ci0rdbb" path="res://telas/minigames/jogo_vacina/assets/Bio_Vacina_logo.png" id="7_dg58q"]
+[ext_resource type="Theme" uid="uid://dv6ojfjvk877o" path="res://telas/interface/assets/temas/tema_botao_audio.tres" id="7_qwddr"]
+[ext_resource type="Texture2D" uid="uid://jp1oykrsqgc" path="res://telas/interface/assets/imagens/pop_up_audio.png" id="8_284dt"]
+[ext_resource type="AudioStream" uid="uid://0caj32l5375k" path="res://telas/minigames/jogo_vacina/sounds/como_jogar_audio.wav" id="9_bfm4o"]
 
 [sub_resource type="Animation" id="Animation_i5nx1"]
 length = 0.001
@@ -378,6 +381,44 @@ libraries = {
 &"": SubResource("AnimationLibrary_284dt")
 }
 
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="TexturaUrso/TexturaBalao"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.776
+anchor_top = 0.508
+anchor_right = 0.992
+anchor_bottom = 0.746
+offset_left = 1.12378
+offset_top = 0.656982
+offset_right = 0.405518
+offset_bottom = -0.893921
+grow_horizontal = 0
+
+[node name="BotaoAudio" type="Button" parent="TexturaUrso/TexturaBalao/AspectRatioContainer"]
+layout_mode = 2
+theme = ExtResource("7_qwddr")
+text = "
+"
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true
+text_direction = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="TexturaUrso/TexturaBalao/AspectRatioContainer/BotaoAudio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_284dt")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TexturaUrso/TexturaBalao/AspectRatioContainer"]
+stream = ExtResource("9_bfm4o")
+
 [node name="Logo_jogo_vacina" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -394,3 +435,4 @@ stretch_mode = 5
 [connection signal="pressed" from="BotaoPular" to="." method="_on_botao_pular_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
+[connection signal="pressed" from="TexturaUrso/TexturaBalao/AspectRatioContainer/BotaoAudio" to="." method="_on_botao_audio_pressed"]
