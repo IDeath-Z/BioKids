@@ -37,4 +37,5 @@ vertical_alignment = 1
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 
-[connection signal="botao_continuar_pressed" from="BioFato" to="." method="_on_botao_continuar_pressed"]
+[connection signal="botao_audio_pressed" from="BioFato" to="." method="_on_bio_fato_botao_audio_pressed"]
+[connection signal="botao_continuar_pressed" from="BioFato" to="." method="_on_bio_fato_botao_continuar_pressed"]

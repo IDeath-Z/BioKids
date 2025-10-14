@@ -18,10 +18,10 @@ layout_mode = 1
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.23647222
-anchor_top = 0.48879632
-anchor_right = 0.7913056
-anchor_bottom = 0.66083336
+anchor_left = 0.236472
+anchor_top = 0.488796
+anchor_right = 0.791306
+anchor_bottom = 0.660833
 offset_left = -0.260002
 offset_top = 0.0999756
 offset_right = 0.259949

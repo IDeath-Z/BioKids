@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4qxshiy8plok"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_slkbr"]
-[ext_resource type="Script" uid="uid://cnafhvdmfwf4j" path="res://telas/interface/bioFato/bio_fato.gd" id="2_ngrrq"]
+[ext_resource type="Script" uid="uid://cnafhvdmfwf4j" path="res://telas/minigames/bio_goods/scripts/bio_fato_bio_goods.gd" id="2_ngrrq"]
 [ext_resource type="Texture2D" uid="uid://hcb1edp5f80d" path="res://telas/interface/assets/imagens/background_bio_fato.png" id="3_0wtk4"]
 [ext_resource type="Texture2D" uid="uid://d4dgvw24ry6ec" path="res://telas/interface/assets/imagens/biofato_card.png" id="4_yofcu"]
 [ext_resource type="Theme" uid="uid://dv6ojfjvk877o" path="res://telas/interface/assets/temas/tema_botao_audio.tres" id="5_ob6sd"]
@@ -44,15 +44,15 @@ stretch_mode = 5
 [node name="Texto2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.22600001
-anchor_top = 0.53000003
+anchor_left = 0.226
+anchor_top = 0.53
 anchor_right = 0.776
-anchor_bottom = 0.70500004
-offset_left = -5.720001
-offset_top = 41.599976
-offset_right = -115.72003
-offset_bottom = -3.4000244
-theme_override_colors/font_color = Color(0.6313726, 0.34117648, 0.18039216, 1)
+anchor_bottom = 0.705
+offset_left = -5.72
+offset_top = 41.6
+offset_right = -115.72
+offset_bottom = -3.40002
+theme_override_colors/font_color = Color(0.631373, 0.341176, 0.180392, 1)
 theme_override_font_sizes/font_size = 18
 text = "Fazer desenhos é superlegal! Isso melhora sua imaginação, te deixa mais calmo e ainda é uma ótima forma de aprender enquanto se diverte. "
 autowrap_mode = 3
@@ -61,15 +61,15 @@ text_overrun_behavior = 2
 [node name="Texto" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.22600001
-anchor_top = 0.53000003
+anchor_left = 0.226
+anchor_top = 0.53
 anchor_right = 0.776
-anchor_bottom = 0.70500004
-offset_left = -6.720001
-offset_top = -21.400024
-offset_right = 7.2799683
-offset_bottom = -155.40002
-theme_override_colors/font_color = Color(0.6313726, 0.34117648, 0.18039216, 1)
+anchor_bottom = 0.705
+offset_left = -6.72
+offset_top = -21.4
+offset_right = 7.27997
+offset_bottom = -155.4
+theme_override_colors/font_color = Color(0.631373, 0.341176, 0.180392, 1)
 theme_override_font_sizes/font_size = 18
 text = "Você sabia que desenhar e colorir ajudam seu cérebro a crescer forte e criativo?
 
@@ -115,7 +115,7 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(0, -6.1035156e-05)
+position = Vector2(0, -6.10352e-05)
 stream = ExtResource("7_ngrrq")
 
 [node name="BotaoContinuar" type="Button" parent="."]

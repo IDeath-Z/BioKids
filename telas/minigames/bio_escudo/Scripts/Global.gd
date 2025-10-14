@@ -27,6 +27,7 @@ var accessory_collection = {
 	"02" : preload("res://telas/minigames/bio_escudo/assets/acess/vac.acess.png"),
 	"03" : preload("res://telas/minigames/bio_escudo/assets/acess/doctor_equip.acess.png"),
 	"04" : preload("res://telas/minigames/bio_escudo/assets/acess/mask01.acess.png"),
+	"05" : preload("res://telas/minigames/bio_escudo/assets/acess/mask01.acess.png"),
 }
 
 # Fur Colors
