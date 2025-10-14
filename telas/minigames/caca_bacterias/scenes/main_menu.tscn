@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://sdlcq1o3vm1q" path="res://telas/minigames/caca_bacterias/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_xtn15"]
-[ext_resource type="Texture2D" uid="uid://6a64q8ca1bq1" path="res://telas/minigames/caca_bacterias/assets/images/Fundo ImagemMain.png" id="3_xtn15"]
+[ext_resource type="Texture2D" uid="uid://nji0c7f4oyco" path="res://telas/minigames/caca_bacterias/assets/images/NewNewMainScreen.png" id="3_xtn15"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -24,7 +24,7 @@ grow_vertical = 2
 texture = ExtResource("3_xtn15")
 
 [node name="MarginContainerSelecaoTipo" type="MarginContainer" parent="."]
-layout_mode = 2
+layout_mode = 0
 anchor_left = 0.222
 anchor_top = 0.332
 anchor_right = 0.777
@@ -50,13 +50,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "  ▶️ INICIAR  "
 
-[node name="ComoJogar" type="Button" parent="MarginContainerSelecaoTipo/GridBotoes"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 40
-text = "COMO JOGAR?"
-
 [node name="Voltar" type="Button" parent="MarginContainerSelecaoTipo/GridBotoes"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
@@ -64,5 +57,4 @@ size_flags_horizontal = 4
 text = "VOLTAR"
 
 [connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/Iniciar" to="." method="_on_iniciar_pressed"]
-[connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/ComoJogar" to="." method="_on_como_jogar_pressed"]
 [connection signal="pressed" from="MarginContainerSelecaoTipo/GridBotoes/Voltar" to="." method="_on_voltar_pressed"]

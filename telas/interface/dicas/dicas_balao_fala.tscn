@@ -47,7 +47,6 @@ offset_top = -78.6152
 offset_right = 71.9819
 offset_bottom = 78.3848
 grow_horizontal = 0
-metadata/_edit_use_anchors_ = true
 
 [node name="BotaoAudio" type="Button" parent="AspectRatioContainer"]
 layout_mode = 2

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://5pl4ull3trqv" path="res://telas/minigames/caca_bacterias/game_scene.gd" id="1_18ig4"]
 [ext_resource type="Texture2D" uid="uid://bhjgbmhvd8r0x" path="res://telas/minigames/caca_bacterias/assets/images/Fundo LABGame.png" id="2_4jdoc"]
-[ext_resource type="Texture2D" uid="uid://csmk84qrs0yqg" path="res://telas/minigames/caca_bacterias/assets/images/UrsoClique.png" id="3_4jdoc"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="4_4jdoc"]
 [ext_resource type="AudioStream" uid="uid://coq67k2ii0dh2" path="res://telas/minigames/caca_bacterias/assets/sounds/Walen - Gameboy (freetouse.com).mp3" id="4_6gxb4"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="4_hc3ru"]
+[ext_resource type="Texture2D" uid="uid://chhq2rgbo7jii" path="res://telas/minigames/caca_bacterias/assets/images/NewUrsoClique.png" id="6_pr1ea"]
 [ext_resource type="Theme" uid="uid://cy5rvrhoo14d8" path="res://telas/interface/assets/temas/tema_flecha_voltar.tres" id="7_pr1ea"]
 [ext_resource type="Texture2D" uid="uid://bepd6haiepykj" path="res://telas/interface/assets/imagens/pop_up_flecha.png" id="8_8misk"]
 
@@ -199,13 +199,15 @@ horizontal_alignment = 3
 
 [node name="Urso" type="TextureRect" parent="UI"]
 anchors_preset = -1
-anchor_top = 0.680074
-anchor_right = 0.553
-anchor_bottom = 1.0
-offset_top = -0.480011
-offset_right = -0.159973
+anchor_top = 0.60877776
+anchor_right = 1.1905
+anchor_bottom = 1.0157408
+offset_left = -240.0
+offset_top = 39.52002
+offset_right = -240.15997
+offset_bottom = 40.0
 grow_vertical = 0
-texture = ExtResource("3_4jdoc")
+texture = ExtResource("6_pr1ea")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 

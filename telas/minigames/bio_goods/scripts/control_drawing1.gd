@@ -29,6 +29,11 @@ func _ready():
 	else:
 		print("Erro: color_popup é null! Verifique color_popup_path.")
 
+	# Verifica se os nós foram carregados corretamente
+	if not color_layer or not desenho_node:
+		print("Erro: color_layer ou desenho_node não encontrados na cena!")
+		return
+
 	# Inicializa área de desenho
 	color_layer.size = desenho_node.size
 	var w = max(1, int(color_layer.size.x))
@@ -44,6 +49,9 @@ func _ready():
 
 # === ENTRADAS DO USUÁRIO ===
 func _input(event):
+	if not color_layer:  # Verifica se color_layer é null antes de usar
+		print("Erro: color_layer é null no _input!")
+		return
 	if event is InputEventMouseButton:
 		var local := color_layer.get_local_mouse_position()
 		var inside := Rect2(Vector2.ZERO, color_layer.size).has_point(local)
@@ -210,24 +218,42 @@ func _on_save_button_pressed():
 			if color_px.a > 0.1:  # Se há cor aplicada, use-a
 				combined_img.set_pixel(x, y, color_px)
 
-	# Salve na galeria
+	# Salve em user:// (interno do app, sempre funciona)
 	var timestamp = Time.get_datetime_string_from_system()
-	var filename = "desenho_colorido_%s.png" % timestamp.replace(":", "-")  # Nome único
-	var save_path = OS.get_system_dir(OS.SYSTEM_DIR_PICTURES) + "/" + filename
+	var filename = "desenho_colorido_%s.png" % timestamp.replace(":", "-")
+	var save_path = "user://" + filename
 
 	var error = combined_img.save_png(save_path)
-	if error == OK:
+	if error != OK:
+		print("Erro ao salvar em user://: %s" % error)
+		var error_popup = AcceptDialog.new()
+		add_child(error_popup)
+		error_popup.dialog_text = "Erro ao preparar o desenho. Tente novamente."
+		error_popup.connect("confirmed", Callable(self, "_on_save_dialog_confirmed"))
+		error_popup.popup_centered()
+		return
+
+	# Compartilhe via Android Intent para a galeria (se Android)
+	if OS.get_name() == "Android":
+		var output = []
+		OS.execute("am", ["start", "-a", "android.intent.action.SEND", "-t", "image/*", "-e", "android.intent.extra.STREAM", "file://" + save_path], output, false)
+		print("Intent enviado para compartilhar: %s" % filename)
+		var success_popup = AcceptDialog.new()
+		add_child(success_popup)
+		success_popup.dialog_text = "Desenho salvo e pronto para compartilhar na galeria!"
+		success_popup.connect("confirmed", Callable(self, "_on_save_dialog_confirmed"))
+		success_popup.popup_centered()
+	else:
 		print("Imagem salva em: %s" % save_path)
 		var success_popup = AcceptDialog.new()
 		add_child(success_popup)
-		success_popup.dialog_text = "Desenho salvo na galeria!"
+		success_popup.dialog_text = "Desenho salvo localmente: %s" % filename
+		success_popup.connect("confirmed", Callable(self, "_on_save_dialog_confirmed"))
 		success_popup.popup_centered()
-	else:
-		print("Erro ao salvar: %s" % error)
-		var error_popup = AcceptDialog.new()
-		add_child(error_popup)
-		error_popup.dialog_text = "Erro ao salvar. Tente novamente."
-		error_popup.popup_centered()
+
+# Função chamada ao confirmar o dialog de save
+func _on_save_dialog_confirmed():
+	get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/bio_fato_bio_goods.tscn")
 
 func _on_avancar_desenho_pressed() -> void:
 	var current_scene = get_tree().current_scene.scene_file_path

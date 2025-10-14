@@ -1,4 +1,5 @@
 extends Area2D
+
 signal clicada(tipo: Tipo)
 
 enum Tipo {LARANJA = 0, VERDE = 1, VERMELHA = 2, ROXA = 3, VERDEG = 4}
@@ -7,9 +8,11 @@ var velocidade: Vector2 = Vector2.ZERO
 var tempo_flutuacao: float = 0.0
 var tempo_multiplicacao: float = 0.0
 var intervalo_multiplicacao: float
+var speed: float = 100.0  # Mantém a variável de velocidade
 
 func _ready():
-	velocidade = Vector2(randf_range(-30, 30), randf_range(-20, 20))
+	# Inicializa a direção aleatória baseada na speed
+	velocidade = Vector2(randf_range(-speed, speed), randf_range(-20, 20)).normalized() * speed
 	input_event.connect(_on_input_event)
 	intervalo_multiplicacao = randf_range(5.0, 12.0)
 	print("Bactéria pronta. Tipo: ", tipo)
@@ -18,6 +21,7 @@ func _process(delta):
 	tempo_flutuacao += delta
 	tempo_multiplicacao += delta
 
+	# Move a bactéria usando a velocidade
 	position += velocidade * delta
 	position.y += sin(tempo_flutuacao * 2.0) * 20 * delta
 
@@ -47,12 +51,13 @@ func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if tipo != null:
 			print("Clique detectado. Tipo: ", tipo)
-			var anim = $AnimationPlayer  # Verifica o nó
+			# Emite o sinal imediatamente
+			clicada.emit(tipo)
+			# Toca a animação em segundo plano, sem esperar
+			var anim = $AnimationPlayer
 			if anim and is_instance_valid(anim):
 				anim.play("fade_out")
-				await anim.animation_finished
-			clicada.emit(tipo)
-			queue_free()  # Remove após a animação
+			queue_free()  # Remove a bactéria imediatamente
 		else:
 			print("Erro: Tipo não definido!")
 
@@ -60,6 +65,7 @@ func _on_multiply():
 	var nova_bact = preload("res://telas/minigames/caca_bacterias/scenes/Bacteria.tscn").instantiate()
 	nova_bact.tipo = tipo
 	nova_bact.position = position + Vector2(randf_range(-30, 30), randf_range(-30, 30))
+	nova_bact.speed = speed  # Passa a velocidade atual para a nova bactéria
 	var texturas = {
 		Tipo.LARANJA: load("res://telas/minigames/caca_bacterias/assets/images/BacteriaLaranja.png"),
 		Tipo.VERDE: load("res://telas/minigames/caca_bacterias/assets/images/Bacteriaverdemaligna.png"),

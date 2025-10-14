@@ -141,20 +141,6 @@ func _ready():
 	else:
 		print("Erro: StartButton não encontrado!")
 
-	var info_button = $MenuLayer/MarginContainer/VBoxContainer/InfoButton
-	if info_button:
-		info_button.pressed.connect(_on_info_button_pressed)
-		info_button.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
-		info_button.focus_mode = Control.FOCUS_ALL
-		info_button.mouse_filter = Control.MOUSE_FILTER_STOP
-		info_button.disabled = false
-		info_button.size = Vector2(200 * scale_factor, 50 * scale_factor)
-		info_button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-		info_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		print("InfoButton configurado: size = ", info_button.size)
-	else:
-		print("Erro: InfoButton não encontrado!")
-
 	var voltar_button = $MenuLayer/MarginContainer/VBoxContainer/VoltarButton
 	if voltar_button:
 		voltar_button.pressed.connect(_on_voltar_button_pressed)
@@ -321,10 +307,6 @@ func _ready():
 	else:
 		print("Erro: Tutorial2 não encontrado!")
 	
-	if tutorial2_button:
-		print("✅ Botão do Tutorial2 encontrado:", tutorial2_button.name)
-	else:
-		print("❌ Botão do Tutorial2 NÃO encontrado!")
 
 	
 	var ui_layer = $UILayer
@@ -520,13 +502,7 @@ func change_food_pair():
 
 	print("Novo par definido: Saudável índice ", current_saudavel_index, ", Não Saudável índice ", current_nao_saudavel_index)
 
-func _on_info_button_pressed():
-	print("InfoButton pressionado! Plataforma: ", OS.get_name())
-	var erro = get_tree().change_scene_to_file("res://telas/minigames/missao_vitaminas/Cenas/Info.tscn")
-	if erro != OK:
-		print("Erro ao carregar Info.tscn: ", erro)
-	else:
-		print("Cena Info.tscn carregada com sucesso!")
+
 
 func _on_menu_button_pressed():
 	print("MenuButton pressionado! Mostrando Bio Fato. Posição do clique: ", get_global_mouse_position())
@@ -791,7 +767,7 @@ func _on_pause_button_pressed():
 		print("PauseMenu exibido, nova visibilidade = ", pause_menu.visible, ", process_mode = ", pause_menu.process_mode)
 	else:
 		print("ERRO CRÍTICO: PauseMenu não encontrado ao pausar!")
-	# Animação de clique após a pausa
+	
 	if pause_button:
 		print("Iniciando animação de clique no PauseButton. Escala inicial: ", pause_button.scale)
 		var tween = create_tween()
@@ -878,4 +854,4 @@ func _on_pause_button_mouse_exited():
 		print("Erro: PauseButton não encontrado, invisível ou desabilitado ao sair mouse! visible = ", pause_button.visible if pause_button else "null", ", disabled = ", pause_button.disabled if pause_button else "null")
 
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	pass 

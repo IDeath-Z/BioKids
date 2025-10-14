@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_5yir5"]
 [ext_resource type="Script" uid="uid://cveqf6cpjlkha" path="res://telas/minigames/raio_x/bio_fato/bio_fato_raio_x.gd" id="2_2ra2j"]
 [ext_resource type="PackedScene" uid="uid://c0nkhbv8diqwc" path="res://telas/interface/bioFato/bio_fato.tscn" id="2_vkabe"]
-[ext_resource type="AudioStream" uid="uid://cpuooewcyfq72" path="res://telas/minigames/raio_x/assets/audios/fala_urso_bio_fato.mp3" id="4_guam8"]
+[ext_resource type="AudioStream" uid="uid://sedujtgeis06" path="res://telas/minigames/raio_x/assets/audios/fala_urso_bio_fato.mp3" id="4_guam8"]
 
 [node name="BioFatoRaioX" type="Control"]
 layout_mode = 3

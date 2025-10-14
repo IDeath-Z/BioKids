@@ -1,0 +1,140 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4qxshiy8plok"]
+
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_slkbr"]
+[ext_resource type="Script" uid="uid://cnafhvdmfwf4j" path="res://telas/interface/bioFato/bio_fato.gd" id="2_ngrrq"]
+[ext_resource type="Texture2D" uid="uid://hcb1edp5f80d" path="res://telas/interface/assets/imagens/background_bio_fato.png" id="3_0wtk4"]
+[ext_resource type="Texture2D" uid="uid://d4dgvw24ry6ec" path="res://telas/interface/assets/imagens/biofato_card.png" id="4_yofcu"]
+[ext_resource type="Theme" uid="uid://dv6ojfjvk877o" path="res://telas/interface/assets/temas/tema_botao_audio.tres" id="5_ob6sd"]
+[ext_resource type="Texture2D" uid="uid://jp1oykrsqgc" path="res://telas/interface/assets/imagens/pop_up_audio.png" id="6_ljqan"]
+[ext_resource type="AudioStream" uid="uid://bsjvty4xku1qa" path="res://telas/minigames/bio_goods/scene/bio_fato_audio.mp3" id="7_ngrrq"]
+
+[node name="BioFato" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_slkbr")
+script = ExtResource("2_ngrrq")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0wtk4")
+expand_mode = 1
+
+[node name="Card" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_yofcu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texto2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22600001
+anchor_top = 0.53000003
+anchor_right = 0.776
+anchor_bottom = 0.70500004
+offset_left = -5.720001
+offset_top = 41.599976
+offset_right = -115.72003
+offset_bottom = -3.4000244
+theme_override_colors/font_color = Color(0.6313726, 0.34117648, 0.18039216, 1)
+theme_override_font_sizes/font_size = 18
+text = "Fazer desenhos é superlegal! Isso melhora sua imaginação, te deixa mais calmo e ainda é uma ótima forma de aprender enquanto se diverte. "
+autowrap_mode = 3
+text_overrun_behavior = 2
+
+[node name="Texto" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22600001
+anchor_top = 0.53000003
+anchor_right = 0.776
+anchor_bottom = 0.70500004
+offset_left = -6.720001
+offset_top = -21.400024
+offset_right = 7.2799683
+offset_bottom = -155.40002
+theme_override_colors/font_color = Color(0.6313726, 0.34117648, 0.18039216, 1)
+theme_override_font_sizes/font_size = 18
+text = "Você sabia que desenhar e colorir ajudam seu cérebro a crescer forte e criativo?
+
+"
+autowrap_mode = 3
+text_overrun_behavior = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.587778
+anchor_top = 0.576851
+anchor_right = 0.897222
+anchor_bottom = 0.789722
+offset_left = -0.200012
+offset_right = 1.0
+offset_bottom = -0.900009
+grow_horizontal = 0
+rotation = -0.436332
+pivot_offset = Vector2(105, 90)
+metadata/_edit_use_anchors_ = true
+
+[node name="BotaoAudio" type="Button" parent="AspectRatioContainer"]
+layout_mode = 2
+theme = ExtResource("5_ob6sd")
+text = "
+"
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true
+text_direction = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/BotaoAudio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ljqan")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -6.1035156e-05)
+stream = ExtResource("7_ngrrq")
+
+[node name="BotaoContinuar" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -180.0
+offset_right = 150.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "CONTINUAR"
+
+[connection signal="pressed" from="AspectRatioContainer/BotaoAudio" to="." method="_on_botao_audio_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="BotaoContinuar" to="." method="_on_botao_continuar_pressed"]

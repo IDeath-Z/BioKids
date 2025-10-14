@@ -21,8 +21,8 @@
 [ext_resource type="AudioStream" uid="uid://dkjhygl1h1hi1" path="res://telas/minigames/missao_vitaminas/sounds/background_music.mp3" id="16_xaxpv"]
 [ext_resource type="Texture2D" uid="uid://ddhoinunmceg0" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/TirarFundoSeta-removebg-preview.png" id="19_ta5ef"]
 [ext_resource type="Script" uid="uid://bbck7uydl5l0c" path="res://telas/minigames/missao_vitaminas/scripts/Button1.gd" id="20_pd4lw"]
-[ext_resource type="Texture2D" uid="uid://dmegqsbsptgbb" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/UrsoSemFundo.png" id="20_pqtdy"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="21_pd4lw"]
+[ext_resource type="Texture2D" uid="uid://c2m1ym2cxhxvk" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/Gemini_Generated_Image_af7odjaf7odjaf7o-removebg-preview.png" id="22_n4gqt"]
 [ext_resource type="Texture2D" uid="uid://b2y42w128h8d0" path="res://telas/minigames/missao_vitaminas/Imagens/Outros/FundoTutorial (2).png" id="22_ta5ef"]
 [ext_resource type="Script" uid="uid://mffhdgw7vh02" path="res://telas/minigames/missao_vitaminas/scripts/Button2.gd" id="24_n4gqt"]
 
@@ -318,13 +318,13 @@ grow_vertical = 2
 
 [node name="LeftButton" type="TouchScreenButton" parent="UILayer/TouchControls"]
 position = Vector2(170, 540)
-scale = Vector2(17.5, 60)
+scale = Vector2(17.5, 200)
 shape = SubResource("RectangleShape2D_5j5sm")
 action = "ui_left"
 
 [node name="RightButton" type="TouchScreenButton" parent="UILayer/TouchControls"]
 position = Vector2(545, 540)
-scale = Vector2(17.5, 60)
+scale = Vector2(17.5, 200)
 shape = SubResource("RectangleShape2D_e2fu3")
 action = "ui_right"
 
@@ -337,11 +337,11 @@ anchors_preset = -1
 anchor_left = 0.222
 anchor_top = 0.332
 anchor_right = 0.778
-anchor_bottom = 0.703
+anchor_bottom = 0.747
 offset_left = 0.160004
 offset_top = 1.44
-offset_right = 0.159973
-offset_bottom = 47.76
+offset_right = 0.159912
+offset_bottom = 0.239929
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -363,13 +363,6 @@ theme_override_font_sizes/font_size = 50
 text = "INCIAR"
 icon_alignment = 1
 
-[node name="InfoButton" type="Button" parent="MenuLayer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 150)
-layout_mode = 2
-theme = ExtResource("10_wvhv2")
-theme_override_font_sizes/font_size = 50
-text = "Detalhes"
-
 [node name="VoltarButton" type="Button" parent="MenuLayer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
@@ -380,6 +373,7 @@ text = "Voltar"
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
 
 [node name="Tutorial1" type="Control" parent="TutorialLayer"]
+visible = false
 layout_mode = 3
 anchor_bottom = 0.019
 offset_right = 40.0
@@ -420,16 +414,15 @@ script = ExtResource("20_pd4lw")
 [node name="TextureRect" type="TextureRect" parent="TutorialLayer/Tutorial1"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.45
-anchor_top = 14.7
-anchor_right = 6.2
-anchor_bottom = 24.225
-offset_left = 10.0
-offset_top = -3.0
-offset_right = 768.0
-offset_bottom = 1152.0
+anchor_left = -1.225
+anchor_top = 15.75
+anchor_right = 7.55
+anchor_bottom = 25.05
+offset_top = -6.10352e-05
+offset_right = 1053.0
+offset_bottom = 1200.0
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("20_pqtdy")
+texture = ExtResource("22_n4gqt")
 
 [node name="Tutorial" type="Label" parent="TutorialLayer/Tutorial1"]
 layout_mode = 1
@@ -437,19 +430,16 @@ anchors_preset = -1
 anchor_left = 3.375
 anchor_top = 7.5
 anchor_right = 14.625
-anchor_bottom = 16.25
+anchor_bottom = 16.85
 offset_left = -1.52588e-05
 offset_top = -3.05176e-05
 offset_right = -6.10352e-05
 theme_override_fonts/font = ExtResource("21_pd4lw")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 23
 text = "Como jogar:
 
-- Ande para a esquerda ou direita para pegar os alimentos.
-
-- Colete os saudáveis e desvie dos não saudáveis .
-
-
+-  Ande para a esquerda ou direita para pegar os alimentos.
+-  Colete os saudáveis e desvie dos não saudáveis .
 
 Objetivo:
 Pegue o máximo de alimentos saudáveis e evite os não saudáveis para ganhar pontos e bater seu recorde! 🏆"
@@ -458,20 +448,20 @@ autowrap_mode = 2
 [node name="Titulo" type="Label" parent="TutorialLayer/Tutorial1"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 5.0
+anchor_left = 4.125
 anchor_top = 5.5
-anchor_right = 13.0
-anchor_bottom = 7.125
-offset_top = -1.52588e-05
+anchor_right = 13.875
+anchor_bottom = 7.175
+offset_top = -13.0
 offset_right = -6.10352e-05
-offset_bottom = -3.05176e-05
 theme_override_fonts/font = ExtResource("21_pd4lw")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "Tutorial do Minigame        Missão Vitamina "
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Tutorial2" type="Control" parent="TutorialLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -480,25 +470,26 @@ offset_bottom = 40.0
 [node name="TextureRect" type="TextureRect" parent="TutorialLayer/Tutorial2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 3.5
-anchor_top = 4.375
-anchor_right = 14.3
-anchor_bottom = 23.555
-offset_left = -1.52588e-05
-offset_right = 648.0
-offset_bottom = 1150.8
-scale = Vector2(0.4, 0.4)
+anchor_left = 2.25
+anchor_top = 4.25
+anchor_right = 15.75
+anchor_bottom = 23.526
+offset_left = -43.2
+offset_top = -10.0
+offset_right = 496.8
+offset_bottom = 1136.96
+scale = Vector2(0.58, 0.58)
 texture = ExtResource("22_ta5ef")
 
 [node name="Button" type="Button" parent="TutorialLayer/Tutorial2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 12.425
-anchor_top = 3.925
-anchor_right = 14.965
+anchor_left = 14.525
+anchor_top = 3.65
+anchor_right = 17.065
 anchor_bottom = 6.49
 offset_right = 406.4
-offset_bottom = 405.4
+offset_bottom = 404.4
 scale = Vector2(0.2, 0.2)
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_6eic5")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fnh32")

@@ -1577,26 +1577,27 @@ animation = &"medalha_conquista"
 speed_scale = 1.5
 script = ExtResource("370_eo67r")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.235
-anchor_top = 0.466
-anchor_right = 0.765
-anchor_bottom = 0.534
-offset_left = 0.799988
-offset_top = -0.280029
-offset_right = 0.199951
-offset_bottom = 0.279968
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-theme_override_fonts/font = ExtResource("371_rnfbg")
-theme_override_font_sizes/font_size = 60
-text = " PARABÉNS!!!"
-script = ExtResource("372_f6ucy")
-
 [node name="music_player" type="Node" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="music_player"]
 stream = ExtResource("342_oegpj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.236
+anchor_top = 0.37
+anchor_right = 1.03
+anchor_bottom = 0.473
+offset_left = 0.0799866
+offset_top = 0.399994
+offset_right = -190.6
+offset_bottom = -36.84
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("371_rnfbg")
+theme_override_font_sizes/font_size = 60
+text = " PARABÉNS!!!"
+script = ExtResource("372_f6ucy")

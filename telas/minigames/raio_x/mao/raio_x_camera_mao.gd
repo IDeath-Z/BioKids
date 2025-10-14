@@ -17,7 +17,7 @@ var toque_na_tela = false
 func _ready() -> void:
 	timer_mao.start()
 	mao_click.hide()
-	
+
 	if OS.get_name() == "Android":
 		android_camera = AndroidCamera.new()
 
@@ -34,7 +34,7 @@ func _on_camera_frame(_timestamp: int, data: PackedByteArray, width: int, height
 func _on_start_capturing_pressed() -> void:
 	if android_camera:
 		android_camera.start_camera(camera_view.get_size().x, camera_view.get_size().y, false)
-		
+
 func _on_stop_capturing_pressed() -> void:
 	if android_camera:
 		android_camera.stop_camera()
@@ -48,7 +48,7 @@ func _on_touch_screen_pressed() -> void:
 	touch_button.disabled = true
 	mao_click.hide()
 	mao_click.stop()
-	
+
 func _on_timer_mao_timeout() -> void:
 	if !toque_na_tela:
 		mao_click.show()
@@ -58,7 +58,7 @@ func _on_animacao_scanner_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "mover":
 		animacar_texto.play("fade")
 		animacao_fundo.play("cobrir")
-		
+
 func _on_animacao_fundo_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "cobrir":
 		get_tree().change_scene_to_file("res://telas/minigames/raio_x/mao/raio_x_imagem_mao.tscn")

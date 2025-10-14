@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dki71vwu87lly" path="res://telas/minigames/raio_x/assets/images/x-ray.jpg" id="3_vwx6e"]
 [ext_resource type="PackedScene" uid="uid://6vfxq1q61ycr" path="res://telas/minigames/raio_x/mao/info_mao_lado_esquerdo.tscn" id="5_doiuc"]
 [ext_resource type="PackedScene" uid="uid://dmair4qiwak0x" path="res://telas/minigames/raio_x/mao/info_mao_lado_direito.tscn" id="5_vwx6e"]
-[ext_resource type="AudioStream" uid="uid://dtrn2pm8wanis" path="res://telas/minigames/raio_x/assets/audios/fala_urso_raio_x_imagem_mao_1.mp3" id="7_ocqf5"]
+[ext_resource type="AudioStream" uid="uid://d2wb74cw7dlyf" path="res://telas/minigames/raio_x/assets/audios/fala_urso_raio_x_imagem_mao_1.mp3" id="7_ocqf5"]
 
 [sub_resource type="Animation" id="Animation_fufn5"]
 length = 0.001

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://h2q4jq2ghqsl" path="res://telas/interface/selecaoMiniGame/tela_selecao_mini_game_transicao.tscn" id="7_881kb"]
 [ext_resource type="Texture2D" uid="uid://c5jpsv4oqpnmx" path="res://telas/interface/assets/imagens/mascote_padrao.png" id="7_ptl2l"]
 [ext_resource type="PackedScene" uid="uid://cwl04wggpdy2d" path="res://telas/interface/dicas/dicas_balao_fala.tscn" id="8_d324e"]
-[ext_resource type="AudioStream" uid="uid://m6d6b8e8nxle" path="res://telas/minigames/raio_x/assets/audios/fala_urso_menu.mp3" id="9_s6d2a"]
+[ext_resource type="AudioStream" uid="uid://d3txfr323iulv" path="res://telas/minigames/raio_x/assets/audios/fala_urso_menu.mp3" id="9_s6d2a"]
 
 [sub_resource type="Animation" id="Animation_fv44s"]
 length = 0.001
