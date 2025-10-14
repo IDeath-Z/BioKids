@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d383bmculclw0"]
+[gd_scene load_steps=13 format=3 uid="uid://d383bmculclw0"]
 
 [ext_resource type="Script" uid="uid://c1slgi7yipkei" path="res://telas/minigames/bio_goods/scripts/selecionar_quadro.gd" id="1_oepp8"]
 [ext_resource type="Texture2D" uid="uid://k0qmefotrqqi" path="res://telas/minigames/bio_goods/sprites/background_selecao_pintura.png" id="2_oepp8"]
@@ -10,6 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://5lup57i620km" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/desenho3.jpg" id="7_bdwv4"]
 [ext_resource type="Theme" uid="uid://cy5rvrhoo14d8" path="res://telas/interface/assets/temas/tema_flecha_voltar.tres" id="9_6arlc"]
 [ext_resource type="Texture2D" uid="uid://bepd6haiepykj" path="res://telas/interface/assets/imagens/pop_up_flecha.png" id="10_oool0"]
+[ext_resource type="AudioStream" uid="uid://stl73his1v4t" path="res://telas/minigames/bio_goods/scene/selecionar_quadro_audio.mp3" id="11_oool0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oool0"]
+bg_color = Color(0.9098039, 0.7019608, 0.3529412, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8235294, 0.5882353, 0.21176471, 1)
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -35,9 +44,9 @@ texture_filter = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.156944
-anchor_top = 0.542667
-anchor_right = 0.844444
-anchor_bottom = 1.02286
+anchor_top = 0.55470365
+anchor_right = 0.8444439
+anchor_bottom = 1.0348967
 offset_left = -8.0
 offset_top = -0.0799561
 grow_horizontal = 0
@@ -49,10 +58,10 @@ metadata/_edit_use_anchors_ = true
 [node name="MolduraQuadro1" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.022
-anchor_top = 0.175037
+anchor_left = 0.022000002
+anchor_top = 0.110222235
 anchor_right = 0.308
-anchor_bottom = 0.349037
+anchor_bottom = 0.28422225
 offset_left = 0.159999
 offset_top = -0.0400162
 offset_right = 0.144943
@@ -77,10 +86,10 @@ anchor_left = 0.358
 anchor_top = 0.175
 anchor_right = 0.644
 anchor_bottom = 0.349
-offset_left = 0.23999
-offset_top = -0.0400085
-offset_right = 0.224945
-offset_bottom = 0.039978
+offset_left = 0.23999023
+offset_top = -70.0
+offset_right = 0.22494507
+offset_bottom = -69.92001
 texture = ExtResource("4_e636p")
 region_rect = Rect2(0, 0, 128, 128)
 patch_margin_left = 8
@@ -100,10 +109,10 @@ anchor_left = 0.694
 anchor_top = 0.175
 anchor_right = 0.98
 anchor_bottom = 0.349
-offset_left = 0.320007
-offset_top = -0.0400085
-offset_right = 0.304993
-offset_bottom = 0.039978
+offset_left = 0.32000732
+offset_top = -70.0
+offset_right = 0.30499268
+offset_bottom = -69.92001
 texture = ExtResource("4_e636p")
 region_rect = Rect2(0, 0, 128, 128)
 patch_margin_left = 8
@@ -119,10 +128,10 @@ texture_normal = ExtResource("7_bdwv4")
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.450703
-anchor_right = 0.5
-anchor_bottom = 0.485408
+anchor_left = 0.50277776
+anchor_top = 0.41551852
+anchor_right = 0.50277776
+anchor_bottom = 0.45022357
 offset_left = -350.0
 offset_top = -109.76
 offset_right = 350.0
@@ -134,23 +143,24 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_lb5je")
 theme_override_font_sizes/font_size = 35
 text = "Preciso da sua ajuda para colorir esses itens que possuo no hospital! Poderia me ajudar?
-
-Escolha por onde vamos iniciar."
+Escolha onde quer começar!"
 horizontal_alignment = 1
 autowrap_mode = 2
+autowrap_trim_flags = 64
 metadata/_edit_use_anchors_ = true
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0250602
-anchor_top = 0.0176223
-anchor_right = 0.254227
-anchor_bottom = 0.162993
+anchor_left = 0.025060197
+anchor_top = 0.013918608
+anchor_right = 0.25422654
+anchor_bottom = 0.15928902
 offset_left = -0.0433578
 offset_top = -0.0320969
 offset_right = -0.043396
 offset_bottom = -0.032135
+scale = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 
 [node name="BotaoVoltar" type="Button" parent="AspectRatioContainer"]
@@ -181,7 +191,30 @@ grow_vertical = 2
 texture = ExtResource("10_oool0")
 metadata/_edit_lock_ = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_oool0")
+
+[node name="BotaoAudio" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 3.0
+offset_right = 115.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_lb5je")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_oool0")
+text = "Escutar 🔊"
+
 [connection signal="pressed" from="MolduraQuadro1/desenho1_consultorio" to="." method="_on_desenho_1_consultorio_pressed"]
 [connection signal="pressed" from="NinePatchRect2/desenho2_" to="." method="_on_desenho_2__pressed"]
 [connection signal="pressed" from="NinePatchRect3/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="AspectRatioContainer/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="BotaoAudio" to="." method="_on_botao_audio_pressed"]
