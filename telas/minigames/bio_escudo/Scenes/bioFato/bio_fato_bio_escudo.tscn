@@ -36,6 +36,3 @@ Usar jaleco é legal!"
 autowrap_mode = 3
 
 [node name="Biofato_01" type="AudioStreamPlayer" parent="BioFato"]
-
-[connection signal="botao_audio_pressed" from="BioFato" to="." method="_on_bio_fato_botao_audio_pressed"]
-[connection signal="botao_continuar_pressed" from="BioFato" to="." method="_on_bio_fato_botao_continuar_pressed"]
