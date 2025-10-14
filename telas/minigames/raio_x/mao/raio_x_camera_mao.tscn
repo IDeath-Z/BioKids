@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bkh7t4vppgbfs" path="res://telas/interface/assets/animacoes/screen_click/00022.png" id="27_5tsgg"]
 [ext_resource type="Texture2D" uid="uid://d00q6q8blv36t" path="res://telas/interface/assets/animacoes/screen_click/00023.png" id="28_eundc"]
 [ext_resource type="Texture2D" uid="uid://b731ngi2ftjqu" path="res://telas/minigames/raio_x/assets/images/scanner.png" id="29_ua4ka"]
-[ext_resource type="AudioStream" uid="uid://b15vv1qsx4lex" path="res://telas/minigames/raio_x/assets/audios/fala_urso_raio_x_camera_mao_1.mp3" id="31_vc60c"]
+[ext_resource type="AudioStream" uid="uid://dbr3p8q0acrj2" path="res://telas/minigames/raio_x/assets/audios/fala_urso_raio_x_camera_mao_1.mp3" id="31_vc60c"]
 
 [sub_resource type="Animation" id="Animation_v5e34"]
 length = 0.001
