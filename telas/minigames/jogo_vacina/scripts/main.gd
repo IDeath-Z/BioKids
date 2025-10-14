@@ -7,8 +7,10 @@ var scenes = {
 }
 
 var current_scene: Node = null
+var cena_conquista_packed: PackedScene = null
 
 func _ready():
+	cena_conquista_packed = preload("res://telas/minigames/jogo_vacina/cenas/Conquista_01.tscn")
 	ajustar_escala(get_viewport_rect().size)
 	change_scene("seringa")
 	
@@ -44,7 +46,7 @@ func change_scene(scene_name: String):
 		push_error("Cena '%s' não encontrada!" % scene_name)
 		
 func _on_conquista_feita():
-	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/Conquista_01.tscn")
+	get_tree().change_scene_to_packed(cena_conquista_packed)
 	
 func voltar_home():
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/home.tscn")

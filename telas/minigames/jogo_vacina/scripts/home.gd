@@ -21,8 +21,11 @@ func _ready() -> void:
 	textura_balao.visible = false
 	textura_urso.visible = false
 	botao_pular.visible = false
+	botao_pular.z_index = 10
 	
-
+	fala_urso.stream = preload("res://telas/minigames/jogo_vacina/sounds/como_jogar_audio.wav")
+	fala_urso.connect("finished", Callable(self, "_on_fala_urso_audio_finished"))
+	
 func _on_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.tscn")
 	
@@ -41,4 +44,8 @@ func _on_botao_pular_pressed():
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/main.tscn")
 	
 func _on_botao_audio_pressed() -> void:
+	MusicPlayer.parar_para_evento_especial()
 	fala_urso.play()
+	
+func _on_fala_urso_audio_finished() -> void:
+	MusicPlayer.restaurar_gerenciamento_automatico()
