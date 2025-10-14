@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgj30g0ps2drp"
+path="res://.godot/imported/Dress-Up Delight.mp3-8801c792381b7f09f22dbf48c16c63eb.mp3str"
+
+[deps]
+
+source_file="res://telas/minigames/bio_escudo/assets/sounds/Dress-Up Delight.mp3"
+dest_files=["res://.godot/imported/Dress-Up Delight.mp3-8801c792381b7f09f22dbf48c16c63eb.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

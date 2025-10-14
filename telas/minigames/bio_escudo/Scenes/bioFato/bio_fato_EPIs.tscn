@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2h77bswfw2bs"]
+[gd_scene load_steps=7 format=3 uid="uid://dvj7fk1718u2d"]
 
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_r6upu"]
 [ext_resource type="Texture2D" uid="uid://hcb1edp5f80d" path="res://telas/interface/assets/imagens/background_bio_fato.png" id="3_t66jp"]

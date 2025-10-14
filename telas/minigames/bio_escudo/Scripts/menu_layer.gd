@@ -1,13 +1,11 @@
 extends CanvasLayer
 
+func parar_para_evento_especial():
+	MusicPlayer.parar_para_evento_especial()
 
-func _on_start_button_pressed() -> void:
+func _on_botao_iniciar_pressed() -> void:
+	MusicPlayer.parar_para_evento_especial()
 	get_tree().change_scene_to_file("res://telas/minigames/bio_escudo/Scenes/Character_Creator.tscn")
-
-
-func _on_info_button_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_voltar_button_pressed() -> void:
+	
+func _on_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.tscn")

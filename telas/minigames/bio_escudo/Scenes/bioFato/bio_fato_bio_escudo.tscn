@@ -30,10 +30,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.337255, 0.223529, 0.113725, 1)
 theme_override_font_sizes/font_size = 20
-text = "Você sabia que os médicos usam jalecos para se proteger e para te protejer de bactérias malvadas e sujeira?
+text = "Você sabia que os médicos usam jalecos para se proteger e para te proteger de bactérias malvadas e sujeira?
 
 Usar jaleco é legal!"
 autowrap_mode = 3
+
+[node name="Biofato_01" type="AudioStreamPlayer" parent="BioFato"]
 
 [connection signal="botao_audio_pressed" from="BioFato" to="." method="_on_bio_fato_botao_audio_pressed"]
 [connection signal="botao_continuar_pressed" from="BioFato" to="." method="_on_bio_fato_botao_continuar_pressed"]
