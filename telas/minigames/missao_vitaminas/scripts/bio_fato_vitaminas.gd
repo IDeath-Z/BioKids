@@ -21,19 +21,19 @@ var facts: Array[String] = [
 ]
 
 var fact_audios: Array[String] = [
-	"res://telas/minigames/missao_vitaminas/sounds/arroz.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/feijao.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/batata.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/brocolis.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/cenoura.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/kiwi.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/laranja.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/maca.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/ovo.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/pimentao.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/suco.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/tomate.ogg",
-	"res://telas/minigames/missao_vitaminas/sounds/uva.ogg"
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Arrozz.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Feijaoo.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Batataa.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Brocoliss.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Cenouraa.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Kiwii.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Laranjaa.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Macaa.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Ovoo.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Pimentaoo.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Sucoo.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Tomatee.mp3",
+	"res://telas/minigames/missao_vitaminas/sounds/BioSom/Uvaa.mp3"
 ]
 
 var current_index: int = 0  
