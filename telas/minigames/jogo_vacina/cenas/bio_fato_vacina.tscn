@@ -71,3 +71,4 @@ autowrap_mode = 3
 stream = ExtResource("4_4nfbc")
 
 [connection signal="botao_audio_pressed" from="BioFato" to="." method="_on_bio_fato_botao_audio_pressed"]
+[connection signal="botao_continuar_pressed" from="BioFato" to="." method="_on_bio_fato_botao_continuar_pressed"]

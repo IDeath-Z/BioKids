@@ -101,3 +101,6 @@ func _on_botao_continuar_pressed() -> void:
 		print("Cena ", scene_path, " carregada com sucesso!")
 	
 	queue_free()
+
+func _on_bio_fato_botao_audio_pressed() -> void:
+	pass # Replace with function body.
