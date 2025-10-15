@@ -23,7 +23,7 @@ func _ready() -> void:
 	botao_pular.visible = false
 	botao_pular.z_index = 10
 	
-	fala_urso.stream = preload("res://telas/minigames/jogo_vacina/sounds/como_jogar_audio.wav")
+	fala_urso.stream = preload("res://telas/minigames/jogo_vacina/sounds/como_jogar_vacina.mp3")
 	fala_urso.connect("finished", Callable(self, "_on_fala_urso_audio_finished"))
 	
 func _on_botao_voltar_pressed() -> void:

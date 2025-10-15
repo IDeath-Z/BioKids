@@ -199,12 +199,12 @@ horizontal_alignment = 3
 
 [node name="Urso" type="TextureRect" parent="UI"]
 anchors_preset = -1
-anchor_top = 0.60877776
+anchor_top = 0.608778
 anchor_right = 1.1905
-anchor_bottom = 1.0157408
+anchor_bottom = 1.01574
 offset_left = -240.0
-offset_top = 39.52002
-offset_right = -240.15997
+offset_top = 39.52
+offset_right = -240.16
 offset_bottom = 40.0
 grow_vertical = 0
 texture = ExtResource("6_pr1ea")
