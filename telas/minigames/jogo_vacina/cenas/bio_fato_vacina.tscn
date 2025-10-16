@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cse432ygis1bf"]
+[gd_scene load_steps=6 format=3 uid="uid://cse432ygis1bf"]
 
 [ext_resource type="Script" uid="uid://dhv5qhrqmghft" path="res://telas/minigames/jogo_vacina/scripts/bio_fato_vacina.gd" id="1_3215y"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_ujyjc"]
 [ext_resource type="Texture2D" uid="uid://hcb1edp5f80d" path="res://telas/interface/assets/imagens/background_bio_fato.png" id="2_ajh58"]
 [ext_resource type="PackedScene" uid="uid://c0nkhbv8diqwc" path="res://telas/interface/bioFato/bio_fato.tscn" id="3_4nibg"]
 [ext_resource type="AudioStream" uid="uid://bkogoy0hfy2pk" path="res://telas/minigames/jogo_vacina/sounds/bio_fato_audio.wav" id="4_4nfbc"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ujyjc")
 script = ExtResource("1_3215y")
 
 [node name="Background2" type="TextureRect" parent="."]
