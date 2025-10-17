@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://c54b3wvhi88m6"]
 
-[ext_resource type="Script" uid="uid://b67nssmhsan85" path="res://telas/minigames/bio_goods/scripts/tutorial_popup.gd" id="1_w6kmf"]
+[ext_resource type="Script" uid="uid://b67nssmhsan85" path="res://telas/minigames/bio_escudo/Scripts/tutorial_popup.gd" id="1_w6kmf"]
 [ext_resource type="Texture2D" uid="uid://camw6mfh0etks" path="res://telas/minigames/bio_escudo/Tutorial_Popup_assets/ursinho box clean.png" id="2_hhnqi"]
 [ext_resource type="FontFile" uid="uid://cmajfe8761ay" path="res://telas/minigames/bio_escudo/assets/fonts/JungleAdventurer.ttf" id="3_6mhsh"]
 [ext_resource type="Texture2D" uid="uid://w7kbigjb50nr" path="res://telas/minigames/bio_escudo/Tutorial_Popup_assets/ursinho closedeyes box clean.png" id="3_kyeog"]

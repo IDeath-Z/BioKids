@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://biwy7sv1gssh4" path="res://telas/minigames/bio_goods/scripts/control_drawing1.gd" id="1_0gn57"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_pj7v1"]
 [ext_resource type="Texture2D" uid="uid://k0qmefotrqqi" path="res://telas/minigames/bio_goods/sprites/background_selecao_pintura.png" id="3_s0y3f"]
-[ext_resource type="Texture2D" uid="uid://cmcx6bhbn4vyf" path="res://telas/minigames/bio_goods/textures/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_02-128x128.png" id="4_pj7v1"]
+[ext_resource type="Texture2D" uid="uid://cmcx6bhbn4vyf" path="res://lixeira/Wood_02-128x128.png" id="4_pj7v1"]
 [ext_resource type="Shader" uid="uid://cb6x1yvv1uq26" path="res://telas/minigames/bio_goods/scene/desenho1.gdshader" id="5_g8e2o"]
 [ext_resource type="Texture2D" uid="uid://d1rc7hioghg02" path="res://telas/minigames/bio_goods/sprites/cenarios colorir/desenho1.jpg" id="5_pj7v1"]
 [ext_resource type="Texture2D" uid="uid://20qux7gs1gby" path="res://telas/minigames/bio_goods/sprites/icones/back arrown.png" id="6_chrmv"]

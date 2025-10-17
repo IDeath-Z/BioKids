@@ -211,7 +211,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_lb5je")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_oool0")
-text = "Escutar 🔊"
+text = "Escutar"
 
 [connection signal="pressed" from="MolduraQuadro1/desenho1_consultorio" to="." method="_on_desenho_1_consultorio_pressed"]
 [connection signal="pressed" from="NinePatchRect2/desenho2_" to="." method="_on_desenho_2__pressed"]
