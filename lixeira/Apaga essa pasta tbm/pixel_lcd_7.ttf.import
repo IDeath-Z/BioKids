@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://r2jpja4hkslp"
-path="res://.godot/imported/pixel_lcd_7.ttf-622c411142c685bfbdbc53ecca454101.fontdata"
+path="res://.godot/imported/pixel_lcd_7.ttf-aa8a114ca5044276f1865ff23a2dfc4c.fontdata"
 
 [deps]
 
-source_file="res://telas/minigames/missao_vitaminas/Fontes/pixel_lcd_7.ttf"
-dest_files=["res://.godot/imported/pixel_lcd_7.ttf-622c411142c685bfbdbc53ecca454101.fontdata"]
+source_file="res://lixeira/Apaga essa pasta tbm/pixel_lcd_7.ttf"
+dest_files=["res://.godot/imported/pixel_lcd_7.ttf-aa8a114ca5044276f1865ff23a2dfc4c.fontdata"]
 
 [params]
 

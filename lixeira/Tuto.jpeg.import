@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djkqpfm3f57gc"
-path="res://.godot/imported/FundoTutorial.png-a04226e1b683c06775dc54912cc990fd.ctex"
+uid="uid://beus0mdul7dcw"
+path="res://.godot/imported/Tuto.jpeg-a996a64a0cc8a5c1f33cb3ac9daa2af4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/missao_vitaminas/Imagens/Outros/FundoTutorial.png"
-dest_files=["res://.godot/imported/FundoTutorial.png-a04226e1b683c06775dc54912cc990fd.ctex"]
+source_file="res://lixeira/Tuto.jpeg"
+dest_files=["res://.godot/imported/Tuto.jpeg-a996a64a0cc8a5c1f33cb3ac9daa2af4.ctex"]
 
 [params]
 
