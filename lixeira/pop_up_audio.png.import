@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjd123jak8fkf"
-path="res://.godot/imported/capa01.png-433834746c5e593dd6398371463abfbd.ctex"
+uid="uid://ck50di15teitg"
+path="res://.godot/imported/pop_up_audio.png-553e1786e41f082f2b6f73c0b40aa97a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/jogo_vacina/assets/capa01.png"
-dest_files=["res://.godot/imported/capa01.png-433834746c5e593dd6398371463abfbd.ctex"]
+source_file="res://lixeira/pop_up_audio.png"
+dest_files=["res://.godot/imported/pop_up_audio.png-553e1786e41f082f2b6f73c0b40aa97a.ctex"]
 
 [params]
 

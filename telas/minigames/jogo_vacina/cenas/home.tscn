@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://k5af6ci0rdbb" path="res://telas/minigames/jogo_vacina/assets/Bio_Vacina_logo.png" id="7_dg58q"]
 [ext_resource type="Theme" uid="uid://dv6ojfjvk877o" path="res://telas/interface/assets/temas/tema_botao_audio.tres" id="7_qwddr"]
 [ext_resource type="Texture2D" uid="uid://jp1oykrsqgc" path="res://telas/interface/assets/imagens/pop_up_audio.png" id="8_284dt"]
-[ext_resource type="AudioStream" uid="uid://0caj32l5375k" path="res://telas/minigames/jogo_vacina/sounds/como_jogar_audio.wav" id="9_bfm4o"]
+[ext_resource type="AudioStream" uid="uid://0caj32l5375k" path="res://lixeira/como_jogar_audio.wav" id="9_bfm4o"]
 
 [sub_resource type="Animation" id="Animation_i5nx1"]
 length = 0.001

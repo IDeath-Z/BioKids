@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bkogoy0hfy2pk"
-path="res://.godot/imported/bio_fato_audio.wav-a6aae3b14de1a18c3335800e272bbc92.sample"
+path="res://.godot/imported/bio_fato_audio.wav-0d6297e1c583f57709448e662cd72c28.sample"
 
 [deps]
 
-source_file="res://telas/minigames/jogo_vacina/sounds/bio_fato_audio.wav"
-dest_files=["res://.godot/imported/bio_fato_audio.wav-a6aae3b14de1a18c3335800e272bbc92.sample"]
+source_file="res://lixeira/bio_fato_audio.wav"
+dest_files=["res://.godot/imported/bio_fato_audio.wav-0d6297e1c583f57709448e662cd72c28.sample"]
 
 [params]
 

@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_ujyjc"]
 [ext_resource type="Texture2D" uid="uid://hcb1edp5f80d" path="res://telas/interface/assets/imagens/background_bio_fato.png" id="2_ajh58"]
 [ext_resource type="PackedScene" uid="uid://c0nkhbv8diqwc" path="res://telas/interface/bioFato/bio_fato.tscn" id="3_4nibg"]
-[ext_resource type="AudioStream" uid="uid://bkogoy0hfy2pk" path="res://telas/minigames/jogo_vacina/sounds/bio_fato_audio.wav" id="4_4nfbc"]
+[ext_resource type="AudioStream" uid="uid://bkogoy0hfy2pk" path="res://lixeira/bio_fato_audio.wav" id="4_4nfbc"]
 
 [node name="BioFato" type="Control"]
 layout_mode = 3

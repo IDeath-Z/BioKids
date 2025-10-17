@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://0caj32l5375k"
-path="res://.godot/imported/como_jogar_audio.wav-20cad7d50e7ff856c7b3ca814020f83d.sample"
+path="res://.godot/imported/como_jogar_audio.wav-b484fe51cdeca919941e0f5f13b7aad9.sample"
 
 [deps]
 
-source_file="res://telas/minigames/jogo_vacina/sounds/como_jogar_audio.wav"
-dest_files=["res://.godot/imported/como_jogar_audio.wav-20cad7d50e7ff856c7b3ca814020f83d.sample"]
+source_file="res://lixeira/como_jogar_audio.wav"
+dest_files=["res://.godot/imported/como_jogar_audio.wav-b484fe51cdeca919941e0f5f13b7aad9.sample"]
 
 [params]
 

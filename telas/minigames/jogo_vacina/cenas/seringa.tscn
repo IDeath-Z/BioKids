@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://upbbd5wxd4u8"]
 
 [ext_resource type="Script" uid="uid://xe8b7a8qbymr" path="res://telas/minigames/jogo_vacina/scripts/seringa.gd" id="1_0pq5x"]
-[ext_resource type="Script" uid="uid://b0inwbs6guup1" path="res://telas/minigames/jogo_vacina/cenas/seringa_control.gd" id="1_j3wc3"]
+[ext_resource type="Script" uid="uid://b0inwbs6guup1" path="res://lixeira/seringa_control.gd" id="1_j3wc3"]
 [ext_resource type="Texture2D" uid="uid://bkbh0v6sfsp21" path="res://telas/minigames/jogo_vacina/assets/seringa.png" id="2_a7v8i"]
 [ext_resource type="Texture2D" uid="uid://bidtse2weowph" path="res://telas/minigames/jogo_vacina/assets/braco.png" id="3_mvbhp"]
 [ext_resource type="PackedScene" uid="uid://bpunx4t38irt0" path="res://telas/minigames/jogo_vacina/cenas/urso.tscn" id="4_a7v8i"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cskg4ipsi6y5p"
-path="res://.godot/imported/mascote_heroi.png-6772175dbde8de88b84a7cb741ad5f96.ctex"
+uid="uid://cdam4mhchbkd3"
+path="res://.godot/imported/medalha.png-cd93d375d701364d62f37a692f7d7440.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/jogo_vacina/assets/mascote_heroi.png"
-dest_files=["res://.godot/imported/mascote_heroi.png-6772175dbde8de88b84a7cb741ad5f96.ctex"]
+source_file="res://lixeira/medalha.png"
+dest_files=["res://.godot/imported/medalha.png-cd93d375d701364d62f37a692f7d7440.ctex"]
 
 [params]
 
