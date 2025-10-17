@@ -3,7 +3,7 @@ extends Control
 #@onready var menu_botes_tela_principal = $MarginContainerPrincipal
 @onready var botao_audio = $TexturaUrso/TexturaBalao/AspectRatioContainer/BotaoAudio
 @onready var botao_iniciar = $MarginContainerPrincipal2/GridBotoes/BotaoIniciar
-@onready var botao_pular = $BotaoPular
+@onready var botao_pular = $MarginContainer/BotaoPular
 @onready var botao_voltar = $MarginContainerPrincipal2/GridBotoes/BotaoVoltar
 @onready var tela_01 = $Tela_01
 @onready var box_botoes = $MarginContainerPrincipal2
@@ -16,6 +16,7 @@ extends Control
 @onready var fala_urso = $TexturaUrso/TexturaBalao/AspectRatioContainer/AudioStreamPlayer
 
 var animacao_reversa: bool
+#var base_resolution = Vector2(720, 1080)
 
 func _ready() -> void:
 	textura_balao.visible = false
@@ -26,6 +27,9 @@ func _ready() -> void:
 	fala_urso.stream = preload("res://telas/minigames/jogo_vacina/sounds/como_jogar_vacina.mp3")
 	fala_urso.connect("finished", Callable(self, "_on_fala_urso_audio_finished"))
 	
+	#get_viewport().size_changed.connect(_on_viewport_size_changed)
+	#_on_viewport_size_changed()
+	#
 func _on_botao_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://telas/interface/selecaoMiniGame/tela_selecao_mini_game.tscn")
 	
@@ -49,3 +53,8 @@ func _on_botao_audio_pressed() -> void:
 	
 func _on_fala_urso_audio_finished() -> void:
 	MusicPlayer.restaurar_gerenciamento_automatico()
+	
+#func _on_viewport_size_changed():
+	#var current_resolution = get_viewport().size
+	#var scale_factor = current_resolution.y / base_resolution.y
+	#textura_balao.scale = Vector2(scale_factor, scale_factor)

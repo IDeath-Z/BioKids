@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmegqsbsptgbb"
-path="res://.godot/imported/UrsoSemFundo.png-7a17b3268c1974f0eab06b7e185d14b2.ctex"
+uid="uid://cor3y1s5x06vt"
+path="res://.godot/imported/Informativo.png-1dc2514248d5ccc829fd4852062cce48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/missao_vitaminas/Imagens/Outros/UrsoSemFundo.png"
-dest_files=["res://.godot/imported/UrsoSemFundo.png-7a17b3268c1974f0eab06b7e185d14b2.ctex"]
+source_file="res://lixeira/Informativo.png"
+dest_files=["res://.godot/imported/Informativo.png-1dc2514248d5ccc829fd4852062cce48.ctex"]
 
 [params]
 

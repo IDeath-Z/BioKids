@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0382bj1ugc02"
-path="res://.godot/imported/IconeUrsobocado.png-566623da5588f1713c8a21761e497d3f.ctex"
+uid="uid://bpu7i8jt6vuj2"
+path="res://.godot/imported/urso_sem_capa.png-84d6c4e302dd04b2ebcca871c3d7cf9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/missao_vitaminas/Imagens/Outros/IconeUrsobocado.png"
-dest_files=["res://.godot/imported/IconeUrsobocado.png-566623da5588f1713c8a21761e497d3f.ctex"]
+source_file="res://lixeira/urso_sem_capa.png"
+dest_files=["res://.godot/imported/urso_sem_capa.png-84d6c4e302dd04b2ebcca871c3d7cf9b.ctex"]
 
 [params]
 

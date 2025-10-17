@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1bvxnuvnq8ua"
-path="res://.godot/imported/ciruclo_touch.png-7bd4381297f1bd33191a9dccda4b2a64.ctex"
+uid="uid://ddwmk45d4r6ny"
+path="res://.godot/imported/Capa04.png-9a289328789ee7bf1f2cca48cfb5c252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/missao_vitaminas/Imagens/Outros/ciruclo_touch.png"
-dest_files=["res://.godot/imported/ciruclo_touch.png-7bd4381297f1bd33191a9dccda4b2a64.ctex"]
+source_file="res://lixeira/Capa04.png"
+dest_files=["res://.godot/imported/Capa04.png-9a289328789ee7bf1f2cca48cfb5c252.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdam4mhchbkd3"
-path="res://.godot/imported/medalha.png-6bb8a519c9e76e9641fe939888dfaaa1.ctex"
+uid="uid://bcpl6gn82xlf"
+path="res://.godot/imported/Urso02.png-23f495ab8fcb28e98f5620adad223618.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/jogo_vacina/assets/medalha.png"
-dest_files=["res://.godot/imported/medalha.png-6bb8a519c9e76e9641fe939888dfaaa1.ctex"]
+source_file="res://lixeira/Urso02.png"
+dest_files=["res://.godot/imported/Urso02.png-23f495ab8fcb28e98f5620adad223618.ctex"]
 
 [params]
 

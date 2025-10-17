@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://831ufm4qc38i"
-path="res://.godot/imported/BackgroundEraser_20251008_185218930.png-31ef573121b73f1cf6f2422d71a3592a.ctex"
+uid="uid://c4va0d68rr653"
+path="res://.godot/imported/capa03.png-622a873122d9360f1584b1378e0a3247.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/missao_vitaminas/Imagens/Outros/BackgroundEraser_20251008_185218930.png"
-dest_files=["res://.godot/imported/BackgroundEraser_20251008_185218930.png-31ef573121b73f1cf6f2422d71a3592a.ctex"]
+source_file="res://lixeira/capa03.png"
+dest_files=["res://.godot/imported/capa03.png-622a873122d9360f1584b1378e0a3247.ctex"]
 
 [params]
 

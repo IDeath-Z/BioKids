@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://k5af6ci0rdbb" path="res://telas/minigames/jogo_vacina/assets/Bio_Vacina_logo.png" id="7_dg58q"]
 [ext_resource type="Theme" uid="uid://dv6ojfjvk877o" path="res://telas/interface/assets/temas/tema_botao_audio.tres" id="7_qwddr"]
 [ext_resource type="Texture2D" uid="uid://jp1oykrsqgc" path="res://telas/interface/assets/imagens/pop_up_audio.png" id="8_284dt"]
-[ext_resource type="AudioStream" uid="uid://0caj32l5375k" path="res://telas/minigames/jogo_vacina/sounds/como_jogar_audio.wav" id="9_bfm4o"]
+[ext_resource type="AudioStream" uid="uid://0caj32l5375k" path="res://lixeira/como_jogar_audio.wav" id="9_bfm4o"]
 
 [sub_resource type="Animation" id="Animation_i5nx1"]
 length = 0.001
@@ -244,7 +244,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("TexturaBalao/TextoBalao:position")
+tracks/16/path = NodePath("TexturaBalao/CenterContainer/TextoBalao:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -504,7 +504,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("TexturaBalao/TextoBalao:position")
+tracks/16/path = NodePath("TexturaBalao/CenterContainer/TextoBalao:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -577,13 +577,21 @@ grow_vertical = 2
 texture = ExtResource("2_00ial")
 expand_mode = 1
 
-[node name="BotaoPular" type="Button" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.292
+anchor_top = 0.213
+anchor_right = 0.708
+anchor_bottom = 0.306
+offset_left = -0.240021
+offset_top = -0.0400085
+offset_right = 0.23999
+offset_bottom = -0.480011
+
+[node name="BotaoPular" type="Button" parent="MarginContainer"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-offset_left = 210.0
-offset_top = 350.0
-offset_right = 510.0
-offset_bottom = 450.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("3_cvtpp")
@@ -660,7 +668,7 @@ anchor_top = -0.865
 anchor_right = 1.617
 anchor_bottom = 0.364
 offset_left = 0.183052
-offset_top = -0.0576782
+offset_top = 1.15497
 offset_right = 1198.83
 offset_bottom = 1121.99
 grow_horizontal = 2
@@ -668,24 +676,29 @@ grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("3_00ial")
 
-[node name="TextoBalao" type="Label" parent="TexturaUrso/TexturaBalao"]
+[node name="CenterContainer" type="CenterContainer" parent="TexturaUrso/TexturaBalao"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.076
-anchor_top = 0.109
-anchor_right = 0.895
-anchor_bottom = 0.694
-offset_left = 54.973
-offset_top = 46.17
-offset_right = 54.611
-offset_bottom = 45.22
+anchor_top = 0.124
+anchor_right = 0.885
+anchor_bottom = 0.643
+offset_left = 0.884567
+offset_top = 0.644958
+offset_right = -0.497559
+offset_bottom = 0.114868
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextoBalao" type="Label" parent="TexturaUrso/TexturaBalao/CenterContainer"]
+custom_minimum_size = Vector2(1600, 0)
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_dg58q")
-theme_override_font_sizes/font_size = 107
+theme_override_font_sizes/font_size = 103
 text = "O ursinho precisa da vacina para ficar forte, você precisa ajudar a vacina-lo, para isso guie a vacina até o local da indicado pelo circulo vermelho. Mas seja rápido, o local irá mudar a todo momento"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="AnimacaoBalao" type="AnimationPlayer" parent="TexturaUrso/TexturaBalao"]
@@ -744,7 +757,7 @@ theme = ExtResource("3_cvtpp")
 texture = ExtResource("7_dg58q")
 stretch_mode = 5
 
-[connection signal="pressed" from="BotaoPular" to="." method="_on_botao_pular_pressed"]
+[connection signal="pressed" from="MarginContainer/BotaoPular" to="." method="_on_botao_pular_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoIniciar" to="." method="_on_botao_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainerPrincipal2/GridBotoes/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
 [connection signal="pressed" from="TexturaUrso/TexturaBalao/AspectRatioContainer/BotaoAudio" to="." method="_on_botao_audio_pressed"]

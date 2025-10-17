@@ -199,40 +199,27 @@ func _on_color_icon_tx_t_button_pressed() -> void:
 		print("Popup aberto!")  # debug opcional
 
 func _on_save_button_pressed():
-	# Crie uma imagem combinada: outline + desenho colorido
-	var combined_img: Image = Image.create(img.get_width(), img.get_height(), false, Image.FORMAT_RGBA8)
+	await RenderingServer.frame_post_draw  # Espera o frame renderizar completamente
 	
-	# Preencha com o outline
-	for x in range(desenho_img.get_width()):
-		for y in range(desenho_img.get_height()):
-			var px = desenho_img.get_pixel(x, y)
-			combined_img.set_pixel(x, y, px)
+	# Captura a imagem da viewport atual
+	var viewport = get_viewport()
+	var captured_img = viewport.get_texture().get_image()
 	
-	# Sobreponha as cores
-	for x in range(img.get_width()):
-		for y in range(img.get_height()):
-			var color_px = img.get_pixel(x, y)
-			var outline_px = combined_img.get_pixel(x, y)
-			if outline_px.a > 0.1:  # Se há outline (não transparente), mantenha-o
-				continue
-			if color_px.a > 0.1:  # Se há cor aplicada, use-a
-				combined_img.set_pixel(x, y, color_px)
-
-	# Salve em user:// (interno do app, sempre funciona)
-	var timestamp = Time.get_datetime_string_from_system()
-	var filename = "desenho_colorido_%s.png" % timestamp.replace(":", "-")
+	# Salve em user:// com timestamp
+	var timestamp = Time.get_datetime_string_from_system().replace(":", "-")
+	var filename = "desenho_colorido_%s.png" % timestamp
 	var save_path = "user://" + filename
-
-	var error = combined_img.save_png(save_path)
+	
+	var error = captured_img.save_png(save_path)
 	if error != OK:
-		print("Erro ao salvar em user://: %s" % error)
+		print("Erro ao salvar: %s" % error)
 		var error_popup = AcceptDialog.new()
 		add_child(error_popup)
 		error_popup.dialog_text = "Erro ao preparar o desenho. Tente novamente."
 		error_popup.connect("confirmed", Callable(self, "_on_save_dialog_confirmed"))
 		error_popup.popup_centered()
 		return
-
+	
 	# Compartilhe via Android Intent para a galeria (se Android)
 	if OS.get_name() == "Android":
 		var output = []

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cse432ygis1bf"]
+[gd_scene load_steps=6 format=3 uid="uid://cse432ygis1bf"]
 
 [ext_resource type="Script" uid="uid://dhv5qhrqmghft" path="res://telas/minigames/jogo_vacina/scripts/bio_fato_vacina.gd" id="1_3215y"]
+[ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="1_ujyjc"]
 [ext_resource type="Texture2D" uid="uid://hcb1edp5f80d" path="res://telas/interface/assets/imagens/background_bio_fato.png" id="2_ajh58"]
 [ext_resource type="PackedScene" uid="uid://c0nkhbv8diqwc" path="res://telas/interface/bioFato/bio_fato.tscn" id="3_4nibg"]
-[ext_resource type="AudioStream" uid="uid://bkogoy0hfy2pk" path="res://telas/minigames/jogo_vacina/sounds/bio_fato_audio.wav" id="4_4nfbc"]
+[ext_resource type="AudioStream" uid="uid://bkogoy0hfy2pk" path="res://lixeira/bio_fato_audio.wav" id="4_4nfbc"]
 
 [node name="BioFato" type="Control"]
 layout_mode = 3
@@ -12,9 +13,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ujyjc")
 script = ExtResource("1_3215y")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background2" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,48 +30,51 @@ expand_mode = 1
 [node name="BioFato" parent="." instance=ExtResource("3_4nibg")]
 layout_mode = 1
 
-[node name="Texto" type="Label" parent="BioFato"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.204
-anchor_top = 0.524
-anchor_right = 0.836
-anchor_bottom = 0.694
-offset_left = 1.12
-offset_top = 0.0799561
-offset_right = 0.0799561
-offset_bottom = -0.52002
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.337255, 0.223529, 0.113725, 1)
-theme_override_font_sizes/font_size = 22
-text = "A vacina é um superpoder que te protege de  ficar doente. Ela funciona como 
-um escudo, deixando seu corpo 
-preparado para lutar contra 
-bichinhos de doença."
-vertical_alignment = 1
-autowrap_mode = 3
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4nfbc")
 
-[node name="Titulo" type="Label" parent="BioFato/Texto"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.216
-anchor_top = -0.257
-anchor_right = 0.714
-anchor_bottom = 0.066
-offset_left = -0.0640106
-offset_top = 0.0309868
-offset_right = 0.844025
-offset_bottom = -0.0779963
+[node name="Titulo" type="Label" parent="."]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+anchor_left = 0.172
+anchor_top = 0.481
+anchor_right = 0.797
+anchor_bottom = 0.51
+offset_left = 1.16
+offset_top = 0.519958
+offset_right = 1.15997
+offset_bottom = 0.199951
 theme_override_colors/font_color = Color(0.337255, 0.223529, 0.113725, 1)
 theme_override_font_sizes/font_size = 22
 text = "Seja um Super Herói"
-horizontal_alignment = 3
-vertical_alignment = 1
+horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_4nfbc")
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.172
+anchor_top = 0.5
+anchor_right = 0.797
+anchor_bottom = 0.684
+offset_left = 0.159996
+offset_top = 10.0
+offset_right = 0.159973
+offset_bottom = -12.72
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Texto" type="Label" parent="CenterContainer"]
+custom_minimum_size = Vector2(415, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337255, 0.223529, 0.113725, 1)
+theme_override_font_sizes/font_size = 22
+text = "A vacina é um superpoder que te 
+protege de  ficar doente. Ela funciona  como um escudo, deixando seu corpo 
+preparado para lutar contra 
+bichinhos de doença."
+vertical_alignment = 1
+autowrap_mode = 1
 
 [connection signal="botao_audio_pressed" from="BioFato" to="." method="_on_bio_fato_botao_audio_pressed"]
 [connection signal="botao_continuar_pressed" from="BioFato" to="." method="_on_bio_fato_botao_continuar_pressed"]
