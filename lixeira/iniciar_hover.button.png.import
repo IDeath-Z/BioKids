@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsmtawtthui4o"
-path="res://.godot/imported/iniciar_button.png-e669b31ea95f5f42effb7762985cf8d1.ctex"
+uid="uid://ckymk2v2ykp5k"
+path="res://.godot/imported/iniciar_hover.button.png-6eefda62e0ebd088224cb1e38bd9252c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/bio_escudo/Menu_assets/iniciar_button.png"
-dest_files=["res://.godot/imported/iniciar_button.png-e669b31ea95f5f42effb7762985cf8d1.ctex"]
+source_file="res://lixeira/iniciar_hover.button.png"
+dest_files=["res://.godot/imported/iniciar_hover.button.png-6eefda62e0ebd088224cb1e38bd9252c.ctex"]
 
 [params]
 

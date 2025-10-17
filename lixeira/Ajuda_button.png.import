@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgk6l6ftb2ou7"
-path="res://.godot/imported/fur_color_icon.png-40bf1cd8419375d0dab0d01ba5ef7379.ctex"
+uid="uid://fppbugnxmahe"
+path="res://.godot/imported/Ajuda_button.png-950d5147cf5c6147c44ab857ad861c0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/bio_escudo/assets/UI/fur_color_icon.png"
-dest_files=["res://.godot/imported/fur_color_icon.png-40bf1cd8419375d0dab0d01ba5ef7379.ctex"]
+source_file="res://lixeira/Ajuda_button.png"
+dest_files=["res://.godot/imported/Ajuda_button.png-950d5147cf5c6147c44ab857ad861c0b.ctex"]
 
 [params]
 

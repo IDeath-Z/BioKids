@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh8usyiydvljg"
-path="res://.godot/imported/fur_color_hover.icon.png-09c186a5ea49191efa2047fd6c2ac336.ctex"
+uid="uid://c4tfm8txn0tct"
+path="res://.godot/imported/Sair_button.png-475c70fbcd7372fd92084534be69eac0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/bio_escudo/assets/UI/fur_color_hover.icon.png"
-dest_files=["res://.godot/imported/fur_color_hover.icon.png-09c186a5ea49191efa2047fd6c2ac336.ctex"]
+source_file="res://lixeira/Sair_button.png"
+dest_files=["res://.godot/imported/Sair_button.png-475c70fbcd7372fd92084534be69eac0.ctex"]
 
 [params]
 
