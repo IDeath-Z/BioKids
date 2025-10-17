@@ -1552,7 +1552,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.952941, 0.894118, 0.2, 1)
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+[node name="Container_animacoes" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1560,18 +1560,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Conquista" type="Node2D" parent="AspectRatioContainer"]
+[node name="Conquista" type="Node2D" parent="Container_animacoes"]
 script = ExtResource("1_4mq2m")
 
-[node name="animacao_urso" type="AnimatedSprite2D" parent="AspectRatioContainer/Conquista"]
-position = Vector2(400, 1300)
+[node name="animacao_urso" type="AnimatedSprite2D" parent="Container_animacoes/Conquista"]
+position = Vector2(370, 1300)
 sprite_frames = SubResource("SpriteFrames_sjcsn")
 animation = &"urso_heroi"
 speed_scale = 1.1
 script = ExtResource("135_lrvcy")
 
-[node name="medalha" type="AnimatedSprite2D" parent="AspectRatioContainer/Conquista"]
-position = Vector2(369, -359)
+[node name="medalha" type="AnimatedSprite2D" parent="Container_animacoes/Conquista"]
+position = Vector2(360, -359)
 sprite_frames = SubResource("SpriteFrames_r67v1")
 animation = &"medalha_conquista"
 speed_scale = 1.5
@@ -1582,7 +1582,7 @@ script = ExtResource("370_eo67r")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="music_player"]
 stream = ExtResource("342_oegpj")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Container_label" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1590,10 +1590,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="Label" type="Label" parent="Container_label"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("371_rnfbg")
-theme_override_font_sizes/font_size = 60
-text = " PARABÉNS!!!"
+theme_override_font_sizes/font_size = 80
 script = ExtResource("372_f6ucy")
+texto_final = "PARABÉNS!"
+cor_brilho = Color(1, 1, 1, 1)
