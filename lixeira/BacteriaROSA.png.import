@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddvtytiem328c"
-path="res://.godot/imported/BacteriaAZULFELIZ.png-7545bc3169bf3404ddd492feb070b498.ctex"
+uid="uid://ckmtmcv03766n"
+path="res://.godot/imported/BacteriaROSA.png-6726312e399feac84a0253bda73f7d5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/caca_bacterias/assets/images/BacteriaAZULFELIZ.png"
-dest_files=["res://.godot/imported/BacteriaAZULFELIZ.png-7545bc3169bf3404ddd492feb070b498.ctex"]
+source_file="res://lixeira/BacteriaROSA.png"
+dest_files=["res://.godot/imported/BacteriaROSA.png-6726312e399feac84a0253bda73f7d5b.ctex"]
 
 [params]
 

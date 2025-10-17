@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfb8t65udidaf"
-path="res://.godot/imported/NewMainScreen.png-7706e867de3e314ad0190daedb09f7d8.ctex"
+uid="uid://dtuyyc37yibr1"
+path="res://.godot/imported/pngtree-arrow-right-flat-white-color-icon-ok-down-negative-vector-png-image_9756321.png-eec188702ca3545df16bda216bbee321.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/caca_bacterias/assets/images/NewMainScreen.png"
-dest_files=["res://.godot/imported/NewMainScreen.png-7706e867de3e314ad0190daedb09f7d8.ctex"]
+source_file="res://pngtree-arrow-right-flat-white-color-icon-ok-down-negative-vector-png-image_9756321.png"
+dest_files=["res://.godot/imported/pngtree-arrow-right-flat-white-color-icon-ok-down-negative-vector-png-image_9756321.png-eec188702ca3545df16bda216bbee321.ctex"]
 
 [params]
 

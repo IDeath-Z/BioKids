@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4aneik8mfme3"
-path="res://.godot/imported/Fundo LAB.png-c75f2f4f3585d7f2c8b49882303e4f42.ctex"
+uid="uid://bfb8t65udidaf"
+path="res://.godot/imported/NewMainScreen.png-b9ed8f09eb759fdf8409e89927615d5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/caca_bacterias/assets/images/Fundo LAB.png"
-dest_files=["res://.godot/imported/Fundo LAB.png-c75f2f4f3585d7f2c8b49882303e4f42.ctex"]
+source_file="res://lixeira/NewMainScreen.png"
+dest_files=["res://.godot/imported/NewMainScreen.png-b9ed8f09eb759fdf8409e89927615d5c.ctex"]
 
 [params]
 

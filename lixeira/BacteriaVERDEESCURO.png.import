@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjj4yksjomyo3"
-path="res://.godot/imported/BacteriaVERDEESCURO.png-deefb26f6538d4138744d5b6036ee803.ctex"
+path="res://.godot/imported/BacteriaVERDEESCURO.png-9e1b2bbfc3121cc945c07212a574a41b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/caca_bacterias/assets/images/BacteriaVERDEESCURO.png"
-dest_files=["res://.godot/imported/BacteriaVERDEESCURO.png-deefb26f6538d4138744d5b6036ee803.ctex"]
+source_file="res://lixeira/BacteriaVERDEESCURO.png"
+dest_files=["res://.godot/imported/BacteriaVERDEESCURO.png-9e1b2bbfc3121cc945c07212a574a41b.ctex"]
 
 [params]
 

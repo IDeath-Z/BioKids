@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s5akje3lly2l"
-path="res://.godot/imported/FundoMain.png-63718e4159fb7b527eb031ff5c1bef5d.ctex"
+path="res://.godot/imported/FundoMain.png-92ac88ebf732a2498cdd9568311fffc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://telas/minigames/caca_bacterias/assets/images/FundoMain.png"
-dest_files=["res://.godot/imported/FundoMain.png-63718e4159fb7b527eb031ff5c1bef5d.ctex"]
+source_file="res://lixeira/FundoMain.png"
+dest_files=["res://.godot/imported/FundoMain.png-92ac88ebf732a2498cdd9568311fffc1.ctex"]
 
 [params]
 
