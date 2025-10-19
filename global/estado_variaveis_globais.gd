@@ -8,3 +8,5 @@ var minigame_vitaminas_music_on: bool = false  # Novo: armazena o estado origina
 
 var in_minigame_vacina: bool = false
 var minigame_vacina_music_on: bool = false
+
+var in_menu_music = true

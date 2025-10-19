@@ -12,9 +12,11 @@ extends Control
 @onready var animacao_balao = $DicasBalaoFala/AnimacaoBalao
 @onready var fala_urso = $FalaUrso
 
+var musica_menu: AudioStream = preload("res://telas/minigames/raio_x/assets/audios/musicas/Sketchbook 2024-11-07.ogg")
 var animacao_reversa: bool
 
 func _ready() -> void:
+	MusicPlayer.trocar_musica(musica_menu)
 	botao_iniciar.disabled = true
 	botao_voltar.disabled = true
 	menu_botoes_selecao.visible = false

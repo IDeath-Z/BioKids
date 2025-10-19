@@ -34,6 +34,7 @@ func _on_animacao_urso_animation_finished(anim_name: StringName) -> void:
 
 func _on_botao_jogar_pressed() -> void:
 	botao_pressionado = "jogar"
+	EstadoVariaveisGlobais.in_menu_music = true
 	animacao()
 	
 func _on_botao_opcoes_pressed() -> void:

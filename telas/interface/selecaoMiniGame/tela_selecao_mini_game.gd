@@ -3,10 +3,16 @@ extends Control
 @onready var animacao_tela = $AnimacaoTela
 @onready var animacao_jogos = $TexturaJogos/AnimacaoJogos
 @onready var textura_jogos = $TexturaJogos
+var musica_menu: AudioStream = preload("res://telas/interface/assets/sons/musicas/WAV_The_Art_of_Courtship_Requires_Many_Save_Slots.wav")
 var saindo_tela = false
 var botao_pressionado = ""
 
 func _ready() -> void:
+	if EstadoVariaveisGlobais.in_menu_music:
+		EstadoVariaveisGlobais.in_menu_music = false
+	else:
+		print("Entrou aqui")
+		MusicPlayer.trocar_musica(musica_menu)
 	textura_jogos.visible = false
 	animacao_jogos.play("fade_out")
 

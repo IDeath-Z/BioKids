@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bv64y7j70xs4w"
+path="res://.godot/imported/Sketchbook 2024-11-07.ogg-949af86c732a7e6775f73ae2d3eb0312.oggvorbisstr"
+
+[deps]
+
+source_file="res://telas/minigames/raio_x/assets/audios/musicas/Sketchbook 2024-11-07.ogg"
+dest_files=["res://.godot/imported/Sketchbook 2024-11-07.ogg-949af86c732a7e6775f73ae2d3eb0312.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
