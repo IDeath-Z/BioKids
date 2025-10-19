@@ -49,7 +49,7 @@ func _ready():
 
 # === ENTRADAS DO USUÁRIO ===
 func _input(event):
-	if not color_layer:  # Verifica se color_layer é null antes de usar
+	if not color_layer:
 		print("Erro: color_layer é null no _input!")
 		return
 	if event is InputEventMouseButton:
@@ -198,6 +198,7 @@ func _on_color_icon_tx_t_button_pressed() -> void:
 		color_popup.popup_centered()
 		print("Popup aberto!")  # debug opcional
 
+# === BOTÃO SALVAR AJUSTADO ===
 func _on_save_button_pressed():
 	await RenderingServer.frame_post_draw  # Espera o frame renderizar completamente
 	
@@ -219,26 +220,15 @@ func _on_save_button_pressed():
 		error_popup.connect("confirmed", Callable(self, "_on_save_dialog_confirmed"))
 		error_popup.popup_centered()
 		return
-	
-	# Compartilhe via Android Intent para a galeria (se Android)
-	if OS.get_name() == "Android":
-		var output = []
-		OS.execute("am", ["start", "-a", "android.intent.action.SEND", "-t", "image/*", "-e", "android.intent.extra.STREAM", "file://" + save_path], output, false)
-		print("Intent enviado para compartilhar: %s" % filename)
-		var success_popup = AcceptDialog.new()
-		add_child(success_popup)
-		success_popup.dialog_text = "Desenho salvo e pronto para compartilhar na galeria!"
-		success_popup.connect("confirmed", Callable(self, "_on_save_dialog_confirmed"))
-		success_popup.popup_centered()
-	else:
-		print("Imagem salva em: %s" % save_path)
-		var success_popup = AcceptDialog.new()
-		add_child(success_popup)
-		success_popup.dialog_text = "Desenho salvo localmente: %s" % filename
-		success_popup.connect("confirmed", Callable(self, "_on_save_dialog_confirmed"))
-		success_popup.popup_centered()
 
-# Função chamada ao confirmar o dialog de save
+	# Exibe apenas a instrução de como salvar no celular
+	var instruction_popup = AcceptDialog.new()
+	add_child(instruction_popup)
+	instruction_popup.dialog_text = "Pressione o botão de volume pra baixo + o botão de desligar no seu celular!"
+	instruction_popup.connect("confirmed", Callable(self, "_on_save_dialog_confirmed"))
+	instruction_popup.popup_centered()
+
+# === CONFIRMAR POPUP ===
 func _on_save_dialog_confirmed():
 	get_tree().change_scene_to_file("res://telas/minigames/bio_goods/scene/bio_fato_bio_goods.tscn")
 
