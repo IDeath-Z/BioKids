@@ -22,7 +22,6 @@ var erros: int = 0  # Nova variável para contar erros
 @onready var score_label = $UI/ScoreLabel  # Novo Label para exibir pontuação
 @onready var jogar_novamente_button = $UI/JogarNovamente  # Referência ao botão existente
 @onready var voltar_menu_button = $UI/VoltarMenu  # Referência ao botão existente
-@onready var music_player = $MusicPlayer if has_node("MusicPlayer") else null  # Verificação do nó
 @onready var background = $Sprite2D
 @onready var urso = $UI/Urso
 
@@ -41,12 +40,12 @@ func _ready():
 	spawn_timer.timeout.connect(on_bacteria_spawn_timeout)
 	score_label.text = "Pontuação: " + str(score)  # Inicializa o Label
 	game_over_panel.visible = false  # Garante que o painel de Game Over comece invisível
-	# Silencia a música global ao entrar na cena
-	AudioServer.set_bus_mute(0, true)  # 0 é o barramento Master
-	if music_player and music_player.stream:  # Verifica se o nó existe e tem stream
-		music_player.play()  # Toca a música específica ao entrar na cena
-	elif not music_player:
-		print("Erro: Nó MusicPlayer não encontrado na cena!")
+
+
+func _exit_tree():
+	# Restaura o som do barramento Master ao sair da cena
+	AudioServer.set_bus_mute(0, false)
+	print("Música global restaurada via barramento Master ao sair")
 
 func proxima_fase():
 	fase += 1
@@ -114,9 +113,16 @@ func on_bacteria_spawn_timeout():
 	var removal_timer = Timer.new()
 	removal_timer.wait_time = 10.0  # 10 segundos
 	removal_timer.one_shot = true  # Executa apenas uma vez
-	removal_timer.timeout.connect(func(): if is_instance_valid(bact): bact.queue_free())
-	bact.add_child(removal_timer)
-	removal_timer.start()
+	removal_timer.timeout.connect(func():
+		if is_instance_valid(bact):
+			print("Removendo bactéria após 10s: ", bact)
+			bact.queue_free()
+	)
+	if is_instance_valid(bact):
+		bact.add_child(removal_timer)  # Adiciona o timer à árvore de cena primeiro
+		removal_timer.start()  # Inicia o timer após adicionar
+	else:
+		print("Erro: Bactéria inválida ao criar timer!")
 
 	container.add_child(bact)
 	bact.clicada.connect(_on_bact_clicada.bind(bact))  # Passa a bactéria como bind
@@ -126,6 +132,7 @@ func _on_bact_clicada(tipo: Tipo, bact: Area2D):
 	# Remove todos os timers existentes antes de criar um novo
 	for child in get_children():
 		if child is Timer and child.is_connected("timeout", func(): mensagem_label.text = ""; check_icon.visible = false; x_icon.visible = false):
+			print("Removendo timer existente: ", child)
 			child.queue_free()
 
 	if tipo == missao_atual:
@@ -146,8 +153,12 @@ func _on_bact_clicada(tipo: Tipo, bact: Area2D):
 			return
 	var local_timer = Timer.new()
 	add_child(local_timer)
-	local_timer.timeout.connect(func(): mensagem_label.text = ""; check_icon.visible = false; x_icon.visible = false)
-	local_timer.start(1.5)  # Ajustado para 1,5 segundos
+	local_timer.timeout.connect(func():
+		print("Timer de mensagem expirado")
+		mensagem_label.text = ""; check_icon.visible = false; x_icon.visible = false
+	)
+	local_timer.wait_time = 1.5
+	local_timer.start()
 	# Removido o if acertos >= total_por_fase, pois não queremos finalizar por acertos
 
 func limpar_tela():
@@ -163,10 +174,6 @@ func _on_jogar_novamente_pressed():
 	erros = 0  # Reseta erros
 	score_label.text = "Pontuação: " + str(score)
 	game_over_panel.visible = false  # Esconde o painel de Game Over
-	if music_player and music_player.stream:
-		music_player.stop()  # Para a música atual
-		music_player.play()  # Reinicia a música ao reiniciar
-	proxima_fase()
 
 func _on_voltar_menu_pressed():
 	# Transição direta para biofacts.tscn via conexão de sinal

@@ -13,12 +13,12 @@ func _ready():
 	cena_conquista_packed = preload("res://telas/minigames/jogo_vacina/cenas/Conquista_01.tscn")
 	ajustar_escala(get_viewport_rect().size)
 	change_scene("seringa")
-	
+
 	MusicPlayer.parar_para_evento_especial()
 	var player_de_audio = MusicPlayer.music_player
-	
+
 	player_de_audio.stream = preload("res://telas/minigames/jogo_vacina/sounds/music-for-game-fun-kid-game-163649.wav")
-	
+
 	player_de_audio.volume_db = -80.0
 	player_de_audio.play()
 
@@ -26,15 +26,15 @@ func _ready():
 	# Sintaxe: tween_property(objeto, "propriedade", valor_final, duração_em_segundos)
 	tween.tween_property(player_de_audio, "volume_db", -1, 0.5)
 	# O volume irá de -80.0dB para -10dB em 2.0 segundos. Você pode ajustar esse tempo!
-	
+
 	if get_viewport():
 		get_viewport().connect("size_changed", Callable(self, "_on_viewport_resized"))
 		connect("child_entered_tree", Callable(self, "_on_child_entered_tree"))
-		
+
 func change_scene(scene_name: String):
 	if current_scene:
 		current_scene.queue_free()
-		
+
 	if scenes.has(scene_name):
 		current_scene = load(scenes[scene_name]).instantiate()
 		add_child(current_scene)
@@ -44,10 +44,10 @@ func change_scene(scene_name: String):
 			current_scene.get_node("local_vacina").connect("conquista_feita", Callable(self, "_on_conquista_feita"))
 	else:
 		push_error("Cena '%s' não encontrada!" % scene_name)
-		
+
 func _on_conquista_feita():
 	get_tree().change_scene_to_packed(cena_conquista_packed)
-	
+
 func voltar_home():
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/home.tscn")
 

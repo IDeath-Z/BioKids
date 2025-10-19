@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ciqn83r4di57g"]
+[gd_scene load_steps=4 format=3 uid="uid://ciqn83r4di57g"]
 
 [ext_resource type="Script" uid="uid://crfa8yasjq26m" path="res://telas/minigames/caca_bacterias/biofacts.gd" id="1_tnd5v"]
 [ext_resource type="PackedScene" uid="uid://c0nkhbv8diqwc" path="res://telas/interface/bioFato/bio_fato.tscn" id="2_nf54r"]
+[ext_resource type="AudioStream" uid="uid://b0ih04s52e8ej" path="res://telas/minigames/caca_bacterias/assets/sounds/ElevenLabs_2025-10-18T04_49_47_Fin_pre_sp100_s50_sb75_se0_b_m2.wav" id="3_nf54r"]
 
 [node name="Biofacts" type="Control"]
 layout_mode = 3
@@ -38,4 +39,9 @@ vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="FalaUrso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nf54r")
+
+[connection signal="botao_audio_pressed" from="BioFato" to="." method="_on_bio_fato_botao_audio_pressed"]
 [connection signal="botao_continuar_pressed" from="BioFato" to="." method="_on_bio_fato_botao_continuar_pressed"]
+[connection signal="finished" from="FalaUrso" to="." method="_on_fala_urso_finished"]

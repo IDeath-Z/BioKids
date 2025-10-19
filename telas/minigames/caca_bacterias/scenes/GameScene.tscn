@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnx04k2b4f22r"]
+[gd_scene load_steps=8 format=3 uid="uid://bnx04k2b4f22r"]
 
 [ext_resource type="Script" uid="uid://5pl4ull3trqv" path="res://telas/minigames/caca_bacterias/game_scene.gd" id="1_18ig4"]
 [ext_resource type="Texture2D" uid="uid://bhjgbmhvd8r0x" path="res://telas/minigames/caca_bacterias/assets/images/Fundo LABGame.png" id="2_4jdoc"]
 [ext_resource type="Theme" uid="uid://b511ckv5t4uuq" path="res://telas/interface/assets/temas/tema_padrao.tres" id="4_4jdoc"]
-[ext_resource type="AudioStream" uid="uid://coq67k2ii0dh2" path="res://telas/minigames/caca_bacterias/assets/sounds/Walen - Gameboy (freetouse.com).mp3" id="4_6gxb4"]
 [ext_resource type="FontFile" uid="uid://72i2e5g7h0d2" path="res://telas/interface/assets/fontes/Fredoka_One/FredokaOne-Regular.ttf" id="4_hc3ru"]
 [ext_resource type="Texture2D" uid="uid://chhq2rgbo7jii" path="res://telas/minigames/caca_bacterias/assets/images/NewUrsoClique.png" id="6_pr1ea"]
 [ext_resource type="Theme" uid="uid://cy5rvrhoo14d8" path="res://telas/interface/assets/temas/tema_flecha_voltar.tres" id="7_pr1ea"]
@@ -11,11 +10,6 @@
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_18ig4")
-
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_6gxb4")
-volume_db = -10.097
-parameters/looping = true
 
 [node name="Sprite2D" type="TextureRect" parent="."]
 offset_right = 720.0
@@ -251,7 +245,6 @@ metadata/_edit_lock_ = true
 
 [node name="BacteriaSpawnTimer" type="Timer" parent="."]
 wait_time = 3.0
-autostart = true
 
 [connection signal="pressed" from="UI/JogarNovamente" to="." method="_on_jogar_novamente_pressed"]
 [connection signal="pressed" from="UI/VoltarMenu" to="." method="_on_voltar_menu_pressed"]
