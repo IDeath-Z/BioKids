@@ -13,12 +13,12 @@
 [ext_resource type="AudioStream" uid="uid://stl73his1v4t" path="res://telas/minigames/bio_goods/scene/selecionar_quadro_audio.mp3" id="11_oool0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oool0"]
-bg_color = Color(0.9098039, 0.7019608, 0.3529412, 1)
+bg_color = Color(0.909804, 0.701961, 0.352941, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.8235294, 0.5882353, 0.21176471, 1)
+border_color = Color(0.823529, 0.588235, 0.211765, 1)
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -44,9 +44,9 @@ texture_filter = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.156944
-anchor_top = 0.55470365
-anchor_right = 0.8444439
-anchor_bottom = 1.0348967
+anchor_top = 0.554704
+anchor_right = 0.844444
+anchor_bottom = 1.0349
 offset_left = -8.0
 offset_top = -0.0799561
 grow_horizontal = 0
@@ -55,71 +55,56 @@ texture = ExtResource("3_oepp8")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="MolduraQuadro1" type="NinePatchRect" parent="."]
+[node name="MolduraQuadro1" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.039
-anchor_top = 0.12100001
-anchor_right = 0.293
-anchor_bottom = 0.27600002
-offset_left = -12.08
-offset_top = -11.680008
-offset_right = 10.944931
-offset_bottom = 8.919983
+anchor_left = 0.165
+anchor_top = 0.197
+anchor_right = 0.165
+anchor_bottom = 0.197
+offset_left = -102.8
+offset_top = -93.76
+offset_right = 103.105
+offset_bottom = 94.24
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_e636p")
-region_rect = Rect2(0, 0, 128, 128)
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
 
 [node name="desenho1_consultorio" type="TouchScreenButton" parent="MolduraQuadro1"]
 position = Vector2(13, 11)
 scale = Vector2(0.177734, 0.164062)
 texture_normal = ExtResource("5_oepp8")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+[node name="NinePatchRect2" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.374
-anchor_top = 0.12100001
-anchor_right = 0.628
-anchor_bottom = 0.272
-offset_left = -11.279999
-offset_top = -11.680008
-offset_right = 11.744934
-offset_bottom = 13.23999
+anchor_left = 0.501
+anchor_top = 0.197
+anchor_right = 0.501
+anchor_bottom = 0.197
+offset_left = -102.72
+offset_top = -93.76
+offset_right = 103.185
+offset_bottom = 94.24
 texture = ExtResource("4_e636p")
-region_rect = Rect2(0, 0, 128, 128)
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
 
 [node name="desenho2_" type="TouchScreenButton" parent="NinePatchRect2"]
 position = Vector2(11, 11)
 scale = Vector2(0.233799, 0.174951)
 texture_normal = ExtResource("6_oepp8")
 
-[node name="NinePatchRect3" type="NinePatchRect" parent="."]
+[node name="NinePatchRect3" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.712
-anchor_top = 0.12100001
-anchor_right = 0.96400005
-anchor_bottom = 0.27400002
-offset_left = -12.640015
-offset_top = -11.680008
-offset_right = 11.825012
-offset_bottom = 11.079987
+anchor_left = 0.837
+anchor_top = 0.197
+anchor_right = 0.837
+anchor_bottom = 0.197
+offset_left = -102.64
+offset_top = -93.76
+offset_right = 103.265
+offset_bottom = 94.24
 texture = ExtResource("4_e636p")
-region_rect = Rect2(0, 0, 128, 128)
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="NinePatchRect3"]
 position = Vector2(11, 11)
@@ -129,10 +114,10 @@ texture_normal = ExtResource("7_bdwv4")
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.50277776
-anchor_top = 0.41551852
-anchor_right = 0.50277776
-anchor_bottom = 0.45022357
+anchor_left = 0.502778
+anchor_top = 0.415519
+anchor_right = 0.502778
+anchor_bottom = 0.450224
 offset_left = -350.0
 offset_top = -109.76
 offset_right = 350.0
@@ -147,20 +132,19 @@ text = "Preciso da sua ajuda para colorir esses itens que possuo no hospital! Po
 Escolha onde quer começar!"
 horizontal_alignment = 1
 autowrap_mode = 2
-autowrap_trim_flags = 64
 metadata/_edit_use_anchors_ = true
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.025060197
-anchor_top = 0.013918608
-anchor_right = 0.25422654
-anchor_bottom = 0.15928902
+anchor_left = 0.0250602
+anchor_top = 0.0139186
+anchor_right = 0.14
+anchor_bottom = 0.087
 offset_left = -0.0433578
 offset_top = -0.0320969
-offset_right = -0.043396
-offset_bottom = -0.032135
+offset_right = 82.2
+offset_bottom = 78.04
 scale = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 

@@ -51,7 +51,6 @@ func _on_conquista_feita():
 func voltar_home():
 	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/home.tscn")
 
-
 # resolução base que você usou para montar o layout no editor
 const BASE_SIZE := Vector2(720, 1080)
 
@@ -84,4 +83,4 @@ func _notification(what):
 
 
 func _on_botao_voltar_pressed():
-	get_tree().change_scene_to_file("res://telas/interface/inicio/tela_inicial.tscn")
+	get_tree().change_scene_to_file("res://telas/minigames/jogo_vacina/cenas/home.tscn")
